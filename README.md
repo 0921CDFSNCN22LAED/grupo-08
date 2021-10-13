@@ -24,5 +24,6 @@ obtenga su produto a partir del prospecto recetado por un especialista, subiendo
 ○ Carrito de compras
 ○ Formulario de registro
 ○ Formulario de login
+○ Ventana de categorias
 
 ★ Opcional: Boceto o diseño gráfico del sitio (logo, colores, tipografías, etc).
