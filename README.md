@@ -3,8 +3,13 @@
 ★ https://github.com/0921CDFSNCN22LAED/grupo-08.git
 
 ★ Archivo README.md con:
--Pagina web optica, con obtencion de lentes a partir de la prescripcion de un oftalmologo. En la misma se pueden vender desde estuches hasta lentes de contacto personalizados
--Público objetvio: Personas con necesidad de anteojos de todas las edades
+- Comercio electronico para Opticas, para la venta de lentes, monturas, gafas y productos varios (estuches, personalizados, etc). 
+Nuestro objetivo se basa en la posibilidad de que el cliente
+obtenga su produto a partir del prospecto recetado por un especialista, subiendo los datos de su receta en nuestra pagina web los cuales seran envidados al fabricante (optico) para que de esta manera el cliente reciba en su hogar el lente elegido con la graduacion correspondiente, y de dicho modo nos convertimos en intermediarios entre el consumidor y el optico.
+
+-PUBLICO OBJETIVO: Edad: Todas las edades
+                   Paises: Argentina
+                   Intereses: Todos aquellos que tengan la necesidad de utilizar lentes ya sean recetados o gafas de sol.
 
 ★ Listado de al menos 5 referentes:
 -https://www.ilookglasses.ca/
