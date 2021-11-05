@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+}
+.header:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 450ms;
+}
+
+.label-none {
+  display: none;
+}
+.left-box-header {
+  margin-top: auto;
+  padding: 5px;
+}
+.logo img {
+  width: 60px;
+}
+
+.search-bar {
+  display: flex;
+  width: 50%;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: auto;
+  margin-bottom: 5px;
+  border: rgba(0, 0, 0, 0.8) solid 1px;
+}
+.search-bar input {
+  width: 95%;
+  margin-top: auto;
+  height: 30px;
+  border: none;
+}
+.search-bar input {
+  outline: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.search-bar i {
+  margin: auto;
+  background-color: white;
+  font-size: 20px;
+}
+.register-opction,
+.bag-menu {
+  margin-top: auto;
+  padding: 5px;
+}
+.bag-menu {
+  position: relative;
+  list-style: none;
+}
+.bag-menu ul {
+  list-style: none;
+  position: absolute;
+  visibility: hidden;
+  left: -20px;
+  top: 12px;
+  opacity: 0;
+  background-color: pink;
+  border-radius: 5px;
+  padding: 5px;
+  transition-property: transform, opacity;
+  transition-duration: 450ms;
+}
+/* .iconos-header:active { tendia que cambiar el fondo
+  color: rgb(161, 210, 214);
+} */
+.bag-menu:active ul {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0px, 24px);
+}
+.bag-menu ul li {
+  padding-bottom: 10px;
+}

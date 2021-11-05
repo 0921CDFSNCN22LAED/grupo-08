@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+
+<body>
+    <form action="/">
+
+        <div>
+            <label>NOMBRE Y APELLIDO:</label>
+            <p>
+                <input type="text" name="Nombre">
+            </p>
+        </div>
+
+        <div>
+            <label>USUARIO:</label>
+            <p>
+                <input type="text" name="Usuario">
+            </p>
+        </div>
+
+
+        <div>
+            <label>FECHA DE NACIMIENTO:</label>
+            <p>
+                <input type="date" name="Fecha">
+            </p>
+        </div>
+
+        <div>
+            <label>DOMICILIO:</label>
+            <p>
+                <input type="text" name="Domicilio">
+            </p>
+        </div>
+
+
+        <p>
+            <label>QUIERE COMPRAR O VENDER ?</label>
+            <select name="opciones">
+                <p>
+                    <option value="comprar">comprar</option>
+                </p>
+                <option value="vender">vender</option>
+            </select>
+        </p>
+        </div>
+
+        <div>
+            <label>CATEGORIAS DE INTERES:</label>
+            <p>
+                <label>Electro</label>
+                <input type="checkbox" name="catgoria" value="Electro">
+            </p>
+            <p>
+                <label>Moda</label>
+                <input type="checkbox" name="catgoria" value="Moda">
+            </p>
+            <p>
+                <label>Hogar</label>
+                <input type="checkbox" name="catgoria" value="Hogar">
+            </p>
+            <p>
+                <label>Jugeteria</label>
+                <input type="checkbox" name="catgoria" value="Jugeteria">
+            </p>
+            <p>
+                <label>Vida sana</label>
+                <input type="checkbox" name="catgoria" value="Vida sana">
+            </p>
+
+        </div>
+
+        <div>
+            <label>Seleccione una imagen</label>
+            <p>
+                <input type="file" name="avatar" accept="jpg">
+            </p>
+        </div>
+
+        <div></div>
+        <label>CONTRASEÑA:</label>
+        <p>
+            <input type="password" name="contraseña">
+        </p>
+        </div>
+
+        <div>
+            <label>CONFIRMAR CONTRASEÑA:</label>
+            <p>
+                <input type="password" name="confirmar">
+            </p>
+        </div>
+
+        <div>
+            <button type="submit">Enviar</button>
+            <button type="reset">Borrar</button>
+        </div>
+    </form>
+</body>
+
+</html>

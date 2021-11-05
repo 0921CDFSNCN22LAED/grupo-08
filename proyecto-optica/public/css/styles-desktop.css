@@ -1,0 +1,13 @@
+@media (min-width: 1024px) {
+  .header:hover .iconos-header {
+    color: rgb(161, 210, 214);
+  }
+  .bag-menu {
+    position: relative;
+  }
+  .bag-menu:hover ul {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0px, 24px);
+  }
+}
