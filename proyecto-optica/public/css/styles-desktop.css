@@ -11,4 +11,60 @@
     opacity: 1;
     transform: translate(0px, 24px);
   }
+  .hombre-barra {
+    background-color: #0bc197;
+    padding: 1.5px;
+    padding-left: 1.5px;
+    position: absolute;
+    top: 0;
+    padding-left: 46px;
+    animation: reverse;
+    transition: all 460ms;
+    opacity: 0%;
+  }
+  .hombre:hover .hombre-barra {
+    opacity: 100%;
+  }
+  .mujer-barra {
+    background-color: #0bc197;
+    padding: 1.5px;
+    padding-left: 1.5px;
+    position: absolute;
+    top: 0;
+    padding-left: 34px;
+    animation: reverse;
+    transition: all 460ms;
+    opacity: 0%;
+  }
+  .mujer:hover .mujer-barra {
+    opacity: 100%;
+  }
+  .niños-barra {
+    background-color: #0bc197;
+    padding: 1.5px;
+    padding-left: 1.5px;
+    position: absolute;
+    top: 0;
+    padding-left: 34px;
+    animation: reverse;
+    transition: all 460ms;
+    opacity: 0%;
+  }
+  .niños:hover .niños-barra {
+    opacity: 100%;
+  }
+  .recetados-barra {
+    background-color: #0bc197;
+    padding: 1.5px;
+    padding-left: 1.5px;
+    position: absolute;
+    top: 0;
+    padding-left: 60px;
+    animation: reverse;
+    transition: all 460ms;
+    opacity: 0%;
+  }
+  .recetados:hover .recetados-barra {
+    opacity: 100%;
+  }
 }
