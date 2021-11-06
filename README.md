@@ -1,4 +1,8 @@
 # grupo-08
+Icons pages:
+https://lineicons.com/icons/
+https://fontawesome.com/
+
 
 ★ https://github.com/0921CDFSNCN22LAED/grupo-08.git
 
