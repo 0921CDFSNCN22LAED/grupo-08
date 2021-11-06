@@ -12,7 +12,7 @@
 }
 
 .w-30 {
-  width: 30%;
+  width: 35%;
 }
 .margin-10 {
   margin: 10px;
@@ -22,6 +22,15 @@
 }
 .w-15 {
   width: 15%;
+}
+.w-50 {
+  width: 50%;
+}
+.pad-10 {
+  padding: 10px;
+}
+.pad-50 {
+  padding: 50px;
 }
 .display-flex {
   display: flex;
@@ -41,8 +50,8 @@
   padding: 5px;
 }
 .logo img {
-  width: 70px;
-  color: red;
+  width: 100px;
+  margin: 0px 20px;
 }
 
 .search-bar {

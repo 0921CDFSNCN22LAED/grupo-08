@@ -1,6 +1,6 @@
 @media (min-width: 1024px) {
   .header:hover .iconos-header {
-    color: rgb(161, 210, 214);
+    color: #0bc197;
   }
   .bag-menu {
     position: relative;
