@@ -17,24 +17,40 @@
 </head>
 
 <body>
-    <header>
-        <section class="bgc-header font-color header ">
-            <section class="left-box-header">
-                <div class="logo">
-                    <a href="/"><img src="/img/logo.svg" alt="logo"></a>
+    <header class="bgc-header font-color header ">
+        <section class="w-30 display-flex">
+            <div class="margin-10 logo">
+                <a href="/"><img src="/img/logo.svg" alt="logo"></a>
+            </div>
+            <section style="align-items: center;" class="margin-10 display-flex font-12 ">
+                <div class="margin-10 ">
+                    <a class="text-decoration" href="">QUIENES SOMOS</a>
                 </div>
-                <div class="class= category "> <a href=""><i class="fas fa-bars iconos-header"></i></a>
-                    <label for="">Categorias</label>
+                <div class="margin-10">
+                    <a class="text-decoration" href="">MAPA</a>
                 </div>
-            </section>
+                <div class="margin-10">
+                    <a class="text-decoration" href="">RECETAS</a>
+                </div>
 
+            </section>
+        </section>
+
+        <section class="w-40 display-flex margin-10" style="justify-content: space-between;">
             <div class="search-bar">
                 <label for="" class="label-none">Barra de busqueda</label>
                 <input type="text" name="search-bar" id="search-bar">
                 <i class="fas fa-search"></i>
             </div>
 
-            <div class="bag-menu">
+        </section>
+
+        <nav class="display-flex margin-10 w-15">
+            <div style="margin: 0px 20px;" class="class= category"> <a href=""><i class=" fas fa-bars iconos-header">
+                    </i></a>
+                <label for=""></label>
+            </div>
+            <div style="margin: 0px 20px;" class="bag-menu">
                 <label for="" class="label-none">Register</label>
                 <a href=""><i class="fas fa-shopping-bag iconos-header"></i>
                     <ul>
@@ -43,16 +59,14 @@
                     </ul>
                 </a>
             </div>
-            <div class="register-opction">
+            <div style="margin: 0px 20px;" class="register-opction">
                 <label for="" class="label-none">Bag</label>
                 <a href=""><i class="fas fa-user-circle iconos-header"></i>
 
                 </a>
-
             </div>
 
-
-        </section>
+        </nav>
     </header>
     <main></main>
     <footer></footer>
