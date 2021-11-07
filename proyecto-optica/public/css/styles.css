@@ -41,7 +41,7 @@
   background-color: rgba(0, 0, 0, 0);
 }
 .header:hover {
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(15, 15, 15, 0.95);
 }
 
 .label-none {
@@ -71,23 +71,30 @@ header:hover .logo-verde {
   display: flex;
   flex-grow: 1;
   border-radius: 8px;
-  background-color: white;
-  border: rgba(0, 0, 0, 0.8) solid 1px;
+  border: rgba(15, 15, 15, 0.95) solid 1px;
+}
+header:hover .search-bar {
+  border: #0bc197 solid 1px;
+}
+
+header:hover .search-bar i {
+  color: white;
 }
 .search-bar input {
   width: 90%;
+  background-color: rgba(0, 0, 0, 0);
   margin-top: auto;
   height: 30px;
   border: none;
-}
-.search-bar input {
   outline: none;
+  color: white;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 .search-bar i {
   margin: auto;
-  background-color: white;
+  color: black;
+  background-color: rgba(0, 0, 0, 0);
   font-size: 20px;
 }
 
@@ -111,7 +118,7 @@ header:hover .logo-verde {
 /* .iconos-header:active { tendia que cambiar el fondo
   color: rgb(161, 210, 214);
 } */
-.bag-menu:active ul {
+.bag-menu:hover ul {
   visibility: visible;
   opacity: 1;
   transform: translate(0px, 24px);
