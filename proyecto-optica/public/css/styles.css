@@ -131,3 +131,83 @@ header:hover .search-bar i {
 .banner img {
   width: 100%;
 }
+
+/* ////////            footer         ////////      */
+
+.fotos {
+  width: 100%;
+  border-left: solid 10px #ebebeb;
+  border-right: solid 10px #ebebeb;
+  border-top: solid 10px #ebebeb;
+}
+
+.precios {
+  font-size: 18px;
+  padding: 5px;
+  margin: auto;
+}
+
+.descripcion {
+  display: none;
+  font-size: 16px;
+  color: purple;
+  padding: 5px;
+  margin: auto;
+}
+
+.camion {
+  display: block;
+  font-size: 16px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  color: #39b54a;
+  border: 1px solid #39b54a;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+}
+
+.info-producto {
+  background-color: white;
+  border-bottom: solid 15px #ebebeb;
+  border-right: solid 10px #ebebeb;
+  border-left: solid 10px #ebebeb;
+  margin: auto;
+  position: relative;
+}
+.compras {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.productos {
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  main article.productos {
+    width: 50%;
+  }
+}
+
+@media (min-width: 769px) {
+  main article.productos {
+    width: 25%;
+  }
+}
+
+.info-producto:hover .camion {
+  transition: transform 0.5s;
+  transform: rotate(-90deg);
+}
+
+.info-producto:hover .descripcion {
+  display: flex;
+}
+.compras .productos img {
+  max-width: 100%;
+}

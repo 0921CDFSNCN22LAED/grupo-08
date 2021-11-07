@@ -27,6 +27,9 @@ main {
 .screen-cant-carrito {
   padding: 5px 10px;
 }
+.icon-carro i {
+  transform: rotateY(180deg);
+}
 
 .main-carrito-de-copras {
   width: 90%;
@@ -50,7 +53,6 @@ main {
 }
 .center-div-carrito {
   width: 50%;
-  margin: auto;
 }
 .rigth-div-carrito {
   width: 20%;
@@ -79,20 +81,46 @@ h4 {
   justify-content: space-around;
   padding-bottom: 5px;
 }
+.minus-button,
+.add-button {
+  width: 20px;
+  /*  background-color: rgb(11, 127, 204); */
+  border-radius: 2px;
+  border: solid rgb(11, 127, 204) 1px;
+  color: rgb(11, 127, 204);
+}
+.minus-button:hover {
+  box-shadow: 0px 0px 10px rgb(131, 131, 131);
+}
+.add-button:hover {
+  box-shadow: 0px 0px 10px rgb(131, 131, 131);
+}
 .container-ver-similares {
   display: block;
 }
 
 .top-rigth-carrito {
   display: flex;
+  justify-content: space-between;
+  padding: 2px;
 }
 .top-rigth-carrito i {
-  padding-right: 5px;
-  margin-top: auto;
+  margin-top: 5px;
+  color: rgb(75, 228, 29);
+  font-weight: bold;
 }
-.bottom-right-carrito {
+.bottom-trash-right-carrito button {
   position: absolute;
-  padding: 5px;
-  bottom: 0px;
-  right: 0px;
+  bottom: 5px;
+  right: 5px;
+  width: 20px;
+  border: rgba(0, 0, 0, 0.37) solid 1px;
+  border-radius: 2px;
+}
+.bottom-trash-right-carrito button:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.bottom-trash-right-carrito i {
+  width: 100%;
+  color: black;
 }
