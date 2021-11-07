@@ -106,29 +106,25 @@ header:hover .search-bar i {
   list-style: none;
 }
 .bag-menu ul {
-  list-style: none;
   position: absolute;
-  visibility: hidden;
-  left: -20px;
-  top: 12px;
-  opacity: 0;
+  list-style: none;
+  width: 400%;
+  text-align: center;
   background-color: pink;
   border-radius: 5px;
-  padding: 5px;
-  transition-property: transform, opacity;
-  transition-duration: 450ms;
+  display: none;
+  opacity: 0;
 }
-/* .iconos-header:active { tendia que cambiar el fondo
-  color: rgb(161, 210, 214);
-} */
 .bag-menu:hover ul {
-  visibility: visible;
+  display: block;
   opacity: 1;
-  transform: translate(0px, 24px);
 }
 .bag-menu ul li {
   padding-bottom: 10px;
 }
+/* .iconos-header:active { tendia que cambiar el fondo
+  color: rgb(161, 210, 214);
+} */
 
 /* //////////              main                 /////////            */
 
