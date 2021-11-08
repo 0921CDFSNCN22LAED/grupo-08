@@ -19,34 +19,57 @@
 
 <body>
     <header class="bgc-header font-color header ">
-        <section class="pad-10 w-35 display-flex">
+        <section class="container-logo-navbar">
             <div class=" logo-black">
                 <a href="/"><img src="/img/logo-black.svg" alt="logo-back"></a>
                 <div class="logo-verde">
                     <a href="/"><img src="/img/logo-verde.svg" alt="logo-verde"></a>
                 </div>
             </div>
-        </section>
-        <section style=" align-items: center;" class=" margin-10 display-flex w-50 font-12 ">
-            <div class="hombre margin-10 ">
-                <div class="hombre-barra""></div>
-                <a class=" text-decoration" href="">HOMBRE
+            <nav class="top-nav-icons display-flex">
+                <div class="bag-menu">
+                    <label for="" class="label-none">Bag</label>
+                    <a href="">
+                        <i class="lni lni-shopping-basket iconos-header"></i>
+                        <ul>
+                            <a href="/carrito">
+                                <li>Copras</li>
+                            </a>
+                            <a href="#">
+                                <li>Favoritos</li>
+                            </a>
+                        </ul>
                     </a>
                 </div>
-                <div class="mujer margin-10">
-                    <div class="mujer-barra""></div>
+                <div class="register-icon">
+                    <label for="" class="label-none">Register</label>
+                    <a href="">
+                        <i class="lni lni-user iconos-header"></i>
+                    </a>
+                </div>
+            </nav>
+        </section>
+        <section style=" align-items: center;" class=" top-navbar-left display-flex font-12 ">
+            <div class="hombre ">
+                <div class="hombre-barra"></div>
+                <a class=" text-decoration" href="">HOMBRE
+                </a>
+            </div>
+            <div class="mujer">
+                <div class="mujer-barra""></div>
                     <a class=" text-decoration" href="">MUJER</a>
-                    </div>
-                    <div class=" niños margin-10">
-                        <div class="niños-barra""></div>
+                </div>
+                <div class=" niños">
+                    <div class="niños-barra"></div>
                     <a class=" text-decoration" href="">NIÑOS</a>
-                        </div>
-                        <div class=" recetados margin-10">
-                            <div class="recetados-barra""></div>
-                    <a class=" text-decoration" href="">RECETADOS</a></div>
+                </div>
+                <div class=" recetados">
+                    <div class="recetados-barra"></div>
+                    <a class=" text-decoration" href="">RECETADOS</a>
+                </div>
         </section>
 
-        <section class="w-50 display-flex margin-10">
+        <section class="display-flex">
             <div class="search-bar">
                 <label for="" class="label-none">Barra de busqueda</label>
                 <input type="text" name="search-bar" id="search-bar" placeholder="¿Qué estás buscando?">
@@ -55,34 +78,13 @@
 
         </section>
 
-        <nav class="display-flex margin-10 w-15">
-            <div style="margin: 0px 20px;" class="class= category"> <a href=""><i
-                        class="lni lni-menu iconos-header"></i></a>
-                <label for=""></label>
-            </div>
-            <div style="margin: 0px 20px;" class="bag-menu">
-                <label for="" class="label-none">Register</label>
-                <a href=""><i class="lni lni-shopping-basket iconos-header"></i>
 
-
-                    <ul>
-                        <a href="/carrito">
-                            <li>Copras</li>
-                        </a>
-                        <a href="#">
-                            <li>Favoritos</li>
-                        </a>
-                    </ul>
-
-                </a>
-            </div>
-            <div style="margin: 0px 20px;" class="register-opction">
-                <label for="" class="label-none">Bag</label>
-                <a href=""><i class="lni lni-user iconos-header"></i></i>
-                </a>
-            </div>
-
-        </nav>
+        <div class="burger-menu">
+            <a href="">
+                <i class="lni lni-menu iconos-header"></i>
+            </a>
+            <label for=""></label>
+        </div>
     </header>
     <main>
         <section>
@@ -91,23 +93,16 @@
             </div>
 
         </section>
-        <div class="bg-skyblue pad-10">
-            <h2 class="display-flex" style="justify-content: space-around; align-items: center;">
-                <p class=" font-20">
-                    <a class="text-decoration-2" href="">ENVIOS GRATIS <i class=" margin-10 fas fa-shipping-fast"
-                            style="color: white;"></i></a>
-
-                </p>
-                <p class="font-20">
-                    <a class="text-decoration-2" href="">DEVOLUCIONES GRATIS <i class=" margin-10 fas fa-exchange-alt"
-                            style="color: white;"></i></a>
-
-                </p>
-                <p class=" font-20">
-                    <a class="text-decoration-2 " href="">GARANTIA 30 DIAS <i class=" margin-10 fas fa-user-check"
-                            style="border: 0px, 10px; color: white;"></i></a>
-
-                </p>
+        <div class="bg-skyblue pad-10 main-nav-bottom">
+            <div>
+                <a class="text-decoration-2" href="">ENVIOS GRATIS <i class=" fas fa-shipping-fast"></i></a>
+            </div>
+            <div>
+                <a class="text-decoration-2" href="">DEVOLUCIONES GRATIS <i class=" fas fa-exchange-alt"></i></a>
+            </div>
+            <div>
+                <a class="text-decoration-2 " href="">GARANTIA 30 DIAS <i class=" fas fa-user-check"></i></a>
+            </div>
             </h2>
         </div>
         <section class="products">
