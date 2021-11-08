@@ -19,6 +19,7 @@
 }
 .logo-black img {
   width: 100%;
+  padding-top: 5px;
 }
 .logo-verde {
   display: none;
@@ -31,7 +32,7 @@
 }
 .bag-menu,
 .register-icon {
-  padding: 15px 25px;
+  padding: 25px;
   margin: auto;
 }
 .label-none {

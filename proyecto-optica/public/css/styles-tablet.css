@@ -1,4 +1,36 @@
-@media (min-width: 480px) {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 500px) {
+  .logo-black {
+    width: 20%;
+  }
+  .top-navbar-left {
+    display: flex;
+  }
+  .top-navbar-left div {
+    display: flex;
+    padding-right: 8px;
+  }
+  .top-navbar-left div a {
+    border-top: solid #0bc197 2px;
+    padding: 34px 0px;
+  }
+
+  .text-decoration {
+    color: black;
+    text-decoration: none;
+    transition: all 450ms;
+    animation: reverse;
+  }
+  .header:hover .text-decoration {
+    color: #0bc197;
+  }
+}
+
+@media (min-width: 800px) {
   .header {
     display: flex;
     justify-content: space-around;
