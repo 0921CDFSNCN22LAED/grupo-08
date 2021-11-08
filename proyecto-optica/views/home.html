@@ -9,6 +9,8 @@
     <!--  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/theme.css">
     <link rel="stylesheet" href="/css/styles.css">
@@ -18,66 +20,65 @@
 </head>
 
 <body>
-    <header class="bgc-header font-color header ">
-        <section class="pad-10 w-35 display-flex">
-            <div class=" logo-black">
-                <a href="/"><img src="/img/logo-black.svg" alt="logo-back"></a>
-                <div class="logo-verde">
-                    <a href="/"><img src="/img/logo-verde.svg" alt="logo-verde"></a>
+    <header class=" j-space-between bgc-header font-color header ">
+        <div class="block-A display-flex" style="justify-content: space-between; align-items:center;">
+            <section class="logotype display-flex">
+                <div class=" logo">
+                    <a href="/"><img src="/img/logo.svg" alt="logo"></a>
                 </div>
-            </div>
-        </section>
-        <section style=" align-items: center;" class=" margin-10 display-flex w-50 font-12 ">
-            <div class="hombre margin-10 ">
-                <div class="hombre-barra""></div>
-                <a class=" text-decoration" href="">HOMBRE
+            </section>
+            <section style=" align-items: center;" class=" categorias margin-10 display-flex w-45 font-12 ">
+                <div class="hombre margin-10 ">
+                    <div class="hombre-barra""></div>
+                    <a class=" text-decoration" href="">HOMBRE
+                        </a>
+                    </div>
+                    <div class="mujer margin-10">
+                        <div class="mujer-barra""></div>
+                        <a class=" text-decoration" href="">MUJER</a>
+                        </div>
+                        <div class=" niños margin-10">
+                            <div class="niños-barra""></div>
+                        <a class=" text-decoration" href="">NIÑOS</a>
+                            </div>
+                            <div class=" recetados margin-10">
+                                <div class="recetados-barra""></div>
+                        <a class=" text-decoration" href="">RECETADOS</a></div>
+            </section>
+            <nav class=" nav-icon display-flex margin-10 ">
+                <div style="margin: 0px 20px;" class="bag-menu">
+                    <label for="" class="label-none">Register</label>
+                    <a href=""><i class="lni lni-user iconos-header"></i></i>
+
+                        <ul>
+                            <li><a href=""></a>Copras</li>
+                            <li><a href=""></a>Favoritos</li>
+                        </ul>
                     </a>
                 </div>
-                <div class="mujer margin-10">
-                    <div class="mujer-barra""></div>
-                    <a class=" text-decoration" href="">MUJER</a>
-                    </div>
-                    <div class=" niños margin-10">
-                        <div class="niños-barra""></div>
-                    <a class=" text-decoration" href="">NIÑOS</a>
-                        </div>
-                        <div class=" recetados margin-10">
-                            <div class="recetados-barra""></div>
-                    <a class=" text-decoration" href="">RECETADOS</a></div>
-        </section>
+                <div style="margin: 0px 20px;" class="register-opction">
+                    <label for="" class="label-none">Bag</label>
+                    <a href=""><i class="lni lni-shopping-basket iconos-header"></i>
+                    </a>
+                </div>
 
-        <section class="w-50 display-flex margin-10" style="justify-content: space-between;">
+            </nav>
+
+        </div>
+
+        <section class="bar w-30 display-flex margin-10" style="justify-content: space-between;align-items: center;">
             <div class="search-bar">
                 <label for="" class="label-none">Barra de busqueda</label>
                 <input type="text" name="search-bar" id="search-bar">
                 <i class="lni lni-search-alt"></i>
             </div>
+            <div style="margin: 0px 20px;"> <a href=""><i class="lni lni-menu iconos-header"></i></a>
+                <label for=""></label>
 
         </section>
 
-        <nav class="display-flex margin-10 w-15">
-            <div style="margin: 0px 20px;" class="class= category"> <a href=""><i
-                        class="lni lni-menu iconos-header"></i></a>
-                <label for=""></label>
-            </div>
-            <div style="margin: 0px 20px;" class="bag-menu">
-                <label for="" class="label-none">Register</label>
-                <a href=""><i class="lni lni-user iconos-header"></i></i>
+        </div>
 
-                    <ul>
-                        <li><a href=""></a>Copras</li>
-                        <li><a href=""></a>Favoritos</li>
-                    </ul>
-
-                </a>
-            </div>
-            <div style="margin: 0px 20px;" class="register-opction">
-                <label for="" class="label-none">Bag</label>
-                <a href=""><i class="lni lni-shopping-basket iconos-header"></i>
-                </a>
-            </div>
-
-        </nav>
     </header>
     <main class="main">
         <section>
@@ -125,8 +126,52 @@
             <div>porducto1</div>
         </section>
     </main>
+    <footer>
+        <p>
+        <div class="loguitos">
+            <i class="far fa-handshake"></i>
+        </div>
+        <div class="pies">TERMINOS Y CONDICIONES</div>
+        <p>Una vez admitida la resolución del contrato, en caso de devolución del dinero la entidad debe hacer el
+            reintegro en 14
+            días contados desde la solicitud, de acuerdo a lo dispuesto en el RD 1/2007, por lo que el establecimiento
+            no debe
+            diferir mucho más la devolución excusándose en plazos más amplios.</p>
+        </p>
 
-    <footer></footer>
+        <p>
+        <div class="loguitos">
+            <i class="fas fa-users"></i>
+        </div>
+        <div class="pies">NOSOTROS</div>
+        <p>Nuestra misión es contribuir al desarrollo de la salud visual en el país al precio más bajo del mercado. Para
+            ello,
+            contamos con asesoría profesional en todas nuestras sucursales y la más amplia variedad en productos
+            ópticos: lentes
+            oftálmicos, lentes de sol, lentes de contactos y accesorios..</p>
+        </p>
+
+        <p>
+        <div class="loguitos">
+            <i class="far fa-comments"></i>
+        </div>
+        <div class="pies">CONTACTO</div>
+        <p>
+        <ul>Ecommerce@optica.com.ar</ul>
+        <ul>Sucursales@optica.com.ar</ul>
+        </p>
+
+        <p>
+        <div class="loguitos">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+        <div class="pies">REDES</div>
+        <p>Seguinos en nuestras redes sociales</p>
+        </p>
+    </footer>
+
 </body>
 
 </html>

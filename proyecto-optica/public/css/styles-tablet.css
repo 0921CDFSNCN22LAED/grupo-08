@@ -1,0 +1,27 @@
+@media (max-width: 1023px) {
+  .categorias {
+    display: none;
+  }
+  .bar {
+    width: 40%;
+  }
+  .logotype {
+    width: 50%;
+  }
+  .nav-icon {
+    width: auto;
+  }
+}
+@media (max-width: 480px) {
+  .header {
+    display: block;
+    justify-content: space-between;
+  }
+  .block-A {
+    width: 100%;
+  }
+  .bar {
+    width: 100%;
+    padding: 5px;
+  }
+}
