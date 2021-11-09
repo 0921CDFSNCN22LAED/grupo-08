@@ -54,4 +54,7 @@
       margin: 0px 35%;
     }
   }
+  .main {
+    justify-content: space-evenly;
+  }
 }
