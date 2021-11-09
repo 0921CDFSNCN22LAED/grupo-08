@@ -1,7 +1,27 @@
 @media (min-width: 1024px) {
+  .header {
+    display: flex;
+    align-items: center;
+    transition: 450ms;
+    animation: reverse;
+  }
   .header:hover .iconos-header {
     color: #0bc197;
   }
+  .logo {
+    position: relative;
+  }
+  .logo-verde {
+    position: absolute;
+    top: 0px;
+    display: none;
+    transition: 450ms;
+    animation: reverse;
+  }
+  .header:hover .logo-verde {
+    display: block;
+  }
+
   .bag-menu {
     position: relative;
     animation: reverse;
