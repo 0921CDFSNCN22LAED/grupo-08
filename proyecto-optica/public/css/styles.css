@@ -134,3 +134,54 @@
   justify-content: space-between;
   align-items: center;
 }
+.fotos {
+  width: 100%;
+  border-left: solid 10px #ebebeb;
+  border-right: solid 10px #ebebeb;
+  border-top: solid 10px #ebebeb;
+}
+
+.precios {
+  font-size: 18px;
+  padding: 5px;
+  margin: auto;
+}
+
+.bolsa {
+  display: block;
+  font-size: 16px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  color: #39b54a;
+  border: 1px solid #39b54a;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+}
+
+.precios-descripcion {
+  background-color: white;
+  border-bottom: solid 15px #ebebeb;
+  border-right: solid 10px #ebebeb;
+  border-left: solid 10px #ebebeb;
+  margin: auto;
+  position: relative;
+}
+
+.productos {
+  width: 100%;
+}
+
+.gondola {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.descripcion {
+  font-size: 16px;
+}

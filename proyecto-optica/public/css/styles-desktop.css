@@ -88,3 +88,8 @@
     opacity: 100%;
   }
 }
+@media (min-width: 769px) {
+  main article.productos {
+    width: 25%;
+  }
+}

@@ -6,23 +6,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles-tablet.css">
+    <link rel="stylesheet" href="/css/styles-desktop.css">
+    <link rel="stylesheet" href="/css/style-register.css">
 </head>
+<header class=" j-space-between bgc-header font-color header-register ">
+    <div style="justify-content: space-between; align-items:center;">
+        <section class="logotype">
+            <div class=" logo">
+                <a href="/"><img src="/img/logo-white.svg" alt="logo"></a>
+            </div>
+        </section>
+    </div>
+    <section style=" align-items: center;" class=" categorias margin-10 display-flex  font-12 ">
+        <div class="hombre margin-10 ">
+            <div class="hombre-barra""></div>
+                <a class=" text-decoration-reg" href="">HOMBRE
+                </a>
+            </div>
+            <div class="mujer margin-10">
+                <div class="mujer-barra""></div>
+                    <a class=" text-decoration-reg" href="">MUJER</a>
+                </div>
+                <div class=" niños margin-10">
+                    <div class="niños-barra""></div>
+                    <a class=" text-decoration-reg" href="">NIÑOS</a>
+                    </div>
+                    <div class=" recetados margin-10">
+                        <div class="recetados-barra""></div>
+                    <a class=" text-decoration-reg" href="">RECETADOS</a></div>
+    </section>
+    <div>
+        <section class="bar w-30 display-flex margin-10">
+            <div style="margin: 0px 20px;"> <a href=""><i style="color: white;"
+                        class="lni lni-menu iconos-header"></i></a>
+                <label for=""></label>
+        </section>
+    </div>
+</header>
 
 <body>
+
+    <main class="main display-flex">
+        <h3 class="margin-10" style="text-align: center;">
+            Tu perfil
+        </h3>
+        <div class=" display-flex margin-10">
+
+            <p>
+                <a class=" text-sinformato margin-10" href="">FAQ</a>
+            </p>
+        </div>
+
+
+    </main>
     <form action="">
-        <div class="form-login">
-            <div>
-                <label for="name">nick name</label>
-                <input type="text" name="neme" id="" value="" placeholder="Nombre de usuario">
-            </div>
-            <div>
-                <label for="password">password</label>
-                <input type="password" name="password" id="" value="" placeholder="Ingrese su contraseña">
-            </div>
-            <div class="form-button-send">
-                <label for="">Enviar</label>
-                <button type="submit">Enviar</button>
-            </div>
+        <div class="m-formularies">
+            <label>
+                <p>
+                    <input class="formularies-deco flex-q-1" type=" text" name="Nombre" placeholder="Nombre">
+                </p>
+            </label>
+        </div>
+        <div class="m-formularies">
+            <label>
+                <p>
+                    <input class=" formularies-deco flex-q-1" type="password" name="contraseña"
+                        placeholder="Contraseña">
+                </p>
+            </label>
         </div>
     </form>
 </body>
