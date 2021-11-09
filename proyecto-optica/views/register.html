@@ -6,103 +6,271 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!--  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> -->
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles-tablet.css">
+    <link rel="stylesheet" href="/css/styles-desktop.css">
+    <link rel="stylesheet" href="/css/style-register.css">
 </head>
 
 <body>
+    <header class=" j-space-between bgc-header font-color header-register  ">
+        <div style="justify-content: space-between; align-items:center;">
+            <section class="logotype">
+                <div class=" logo">
+                    <a href="/"><img src="/img/logo.svg" alt="logo"></a>
+                </div>
+            </section>
+        </div>
+        <section style=" align-items: center;" class=" categorias margin-10 display-flex  font-12 ">
+            <div class="hombre margin-10 ">
+                <div class="hombre-barra""></div>
+                <a class=" text-decoration" href="">HOMBRE
+                    </a>
+                </div>
+                <div class="mujer margin-10">
+                    <div class="mujer-barra""></div>
+                    <a class=" text-decoration" href="">MUJER</a>
+                    </div>
+                    <div class=" niños margin-10">
+                        <div class="niños-barra""></div>
+                    <a class=" text-decoration" href="">NIÑOS</a>
+                        </div>
+                        <div class=" recetados margin-10">
+                            <div class="recetados-barra""></div>
+                    <a class=" text-decoration" href="">RECETADOS</a></div>
+        </section>
+        <div>
+            <section class="bar w-30 display-flex margin-10">
+                <div style="margin: 0px 20px;"> <a href=""><i style="color: white;"
+                            class="lni lni-menu iconos-header"></i></a>
+                    <label for=""></label>
+            </section>
+        </div>
+
+    </header>
+    <main class="j-space-between display-flex">
+        <h3 class="margin-10" style="text-align: center;">
+            Tu perfil
+        </h3>
+        <div class=" display-flex margin-10">
+            <p>
+                <a href="login">Iniciar sesion</a>
+            </p>
+            <p>
+                <a class="margin-10" href="login">FAQ</a>
+            </p>
+        </div>
+
+
+    </main>
     <form action="/">
+        <h2 class="margin-10" style="text-align: center;">
+            Crea Tu cuenta
+        </h2>
+        <section class="formularies">
+            <div>
+                <div class="m-formularies">
+                    <label>
+                        <p>
+                            <input class="formularies-deco flex-q-1" type=" text" name="Nombre" placeholder="Nombre">
+                        </p>
+                    </label>
+                </div>
+                <div class="m-formularies">
+                    <label>
+                        <p>
+                            <input class=" formularies-deco flex-q-1" type="text" name="Nombre" placeholder="Apellido">
+                        </p>
+                    </label>
+                </div>
+                <div class="m-formularies">
+                    <i class="fas fa-grip-lines"></i>
+                </div>
+                <div class="m-formularies">
+                    <p>
+                        <label> Pais/Region
+                        </label>
+                    </p>
+                    <select class="flex-q-1 formularies-deco" name="opciones">
+                        <p>
+                            <option value="Argentna">Argentna</option>
+                            <option value="Estados Unidos">Estados Unidos</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Chile">Chile</option>
+                            <option value="Uruguay">Uruguay</option>
+                            <option value="Pais">Pais</option>
+                            <option value="Pais">Pais</option>
+                            <option value="Pais">Pais</option>
+                            <option value="Pais">Pais</option>
+                            <option value="Pais">Pais</option>
+                            <option value="Pais">Pais</option>
+                            <option value="Pais">Pais</option>
 
-        <div>
-            <label>NOMBRE Y APELLIDO:</label>
-            <p>
-                <input type="text" name="Nombre">
-            </p>
-        </div>
+                        </p>
+                    </select>
+                </div class="m-formularies">
 
-        <div>
-            <label>USUARIO:</label>
-            <p>
-                <input type="text" name="Usuario">
-            </p>
-        </div>
+                <div class="m-formularies">
+                    <label>Fecha Nacimiento:</label>
+                    <p>
+                        <input class=" formularies-deco flex-q-1" type="date" name="Fecha">
+                    </p>
+                </div>
+                <div class="m-formularies">
+                    <i class="fas fa-grip-lines"></i>
+                </div>
+                <div class="m-formularies">
+                    <label>
+                        Email
+                        <p>
+                            <input class=" formularies-deco flex-q-1" type="email" name="email">
+                        </p>
+
+                    </label>
+                </div>
+                <div class="m-formularies">
+                    <label>
+                        <p>
+                            <input class=" formularies-deco flex-q-1" type="password" name="contraseña"
+                                placeholder="Contraseña">
+                        </p>
+
+                    </label>
+                </div>
+                <div class="m-formularies">
+                    <label>
+                        <p>
+                            <input class=" formularies-deco flex-q-1" type="password" name="confirmar"
+                                placeholder="Confirmar contraseña">
+                        </p>
+
+                    </label>
+                </div>
+
+                <div class="m-formularies">
+                    <i class="fas fa-grip-lines"></i>
+                </div>
+
+                <div class="m-formularies">
+                    <label>
+                        <p>
+                            <input class=" formularies-deco flex-q-1" type="text" name="Domicilio"
+                                placeholder="Domicilio">
+                        </p>
+                    </label>
+                </div>
+
+                <div class="m-formularies">
+                    <p>
+                        <label>Interes:</label>
+                        <select class="boton-deco" name="opciones">
+                            <p>
+                                <option value="comprar">comprar</option>
+                                <option value="vender">vender</option>
+                            </p>
+
+                        </select>
+                    </p>
+                </div>
 
 
-        <div>
-            <label>FECHA DE NACIMIENTO:</label>
-            <p>
-                <input type="date" name="Fecha">
-            </p>
-        </div>
+                <div class="m-formularies">
+                    <label>Seleciones Categorias Favoritas:</label>
+                    <p>
+                        <label>Electro</label>
+                        <input class="flex-q-1" type="checkbox" name="catgoria" value="Electro">
+                    </p>
+                    <p>
+                        <label>Moda</label>
+                        <input class="flex-q-1" type="checkbox" name="catgoria" value="Moda">
+                    </p>
+                    <p>
+                        <label>Hogar</label>
+                        <input class="flex-q-1" type="checkbox" name="catgoria" value="Hogar">
+                    </p>
+                    <p>
+                        <label>Jugeteria</label>
+                        <input class="flex-q-1" type="checkbox" name="catgoria" value="Jugeteria">
+                    </p>
+                    <p>
+                        <label>Vida sana</label>
+                        <input class="flex-q-1" type="checkbox" name="catgoria" value="Vida sana">
+                    </p>
 
-        <div>
-            <label>DOMICILIO:</label>
-            <p>
-                <input type="text" name="Domicilio">
-            </p>
-        </div>
+                </div>
 
+                <div class="m-formularies">
+                    <label>Seleccione una imagen</label>
+                    <p>
+                        <input type="file" name="avatar" accept="jpg">
+                    </p>
+                </div>
 
-        <p>
-            <label>QUIERE COMPRAR O VENDER ?</label>
-            <select name="opciones">
-                <p>
-                    <option value="comprar">comprar</option>
-                </p>
-                <option value="vender">vender</option>
-            </select>
-        </p>
-        </div>
+                <div style="text-align: center;" class="m-formularies">
+                    <button class=" continuar-deco" type="submit">Enviar</button>
+                    < <button class="borrar-deco" type="reset">Borrar</button>
+                </div>
+            </div>
+        </section>
 
-        <div>
-            <label>CATEGORIAS DE INTERES:</label>
-            <p>
-                <label>Electro</label>
-                <input type="checkbox" name="catgoria" value="Electro">
-            </p>
-            <p>
-                <label>Moda</label>
-                <input type="checkbox" name="catgoria" value="Moda">
-            </p>
-            <p>
-                <label>Hogar</label>
-                <input type="checkbox" name="catgoria" value="Hogar">
-            </p>
-            <p>
-                <label>Jugeteria</label>
-                <input type="checkbox" name="catgoria" value="Jugeteria">
-            </p>
-            <p>
-                <label>Vida sana</label>
-                <input type="checkbox" name="catgoria" value="Vida sana">
-            </p>
-
-        </div>
-
-        <div>
-            <label>Seleccione una imagen</label>
-            <p>
-                <input type="file" name="avatar" accept="jpg">
-            </p>
-        </div>
-
-        <div></div>
-        <label>CONTRASEÑA:</label>
-        <p>
-            <input type="password" name="contraseña">
-        </p>
-        </div>
-
-        <div>
-            <label>CONFIRMAR CONTRASEÑA:</label>
-            <p>
-                <input type="password" name="confirmar">
-            </p>
-        </div>
-
-        <div>
-            <button type="submit">Enviar</button>
-            <button type="reset">Borrar</button>
-        </div>
     </form>
+    <footer>
+        <p>
+        <div class="loguitos">
+            <i class="far fa-handshake"></i>
+        </div>
+        <div class="pies">TERMINOS Y CONDICIONES</div>
+        <p>Una vez admitida la resolución del contrato, en caso de devolución del dinero la entidad debe hacer el
+            reintegro en 14
+            días contados desde la solicitud, de acuerdo a lo dispuesto en el RD 1/2007, por lo que el establecimiento
+            no debe
+            diferir mucho más la devolución excusándose en plazos más amplios.</p>
+        </p>
+
+        <p>
+        <div class="loguitos">
+            <i class="fas fa-users"></i>
+        </div>
+        <div class="pies">NOSOTROS</div>
+        <p>Nuestra misión es contribuir al desarrollo de la salud visual en el país al precio más bajo del mercado. Para
+            ello,
+            contamos con asesoría profesional en todas nuestras sucursales y la más amplia variedad en productos
+            ópticos: lentes
+            oftálmicos, lentes de sol, lentes de contactos y accesorios..</p>
+        </p>
+
+        <p>
+        <div class="loguitos">
+            <i class="far fa-comments"></i>
+        </div>
+        <div class="pies">CONTACTO</div>
+        <p>
+        <ul>Ecommerce@optica.com.ar</ul>
+        <ul>Sucursales@optica.com.ar</ul>
+        </p>
+
+        <p>
+        <div class="loguitos">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+        </div>
+        <div class="pies">REDES</div>
+        <p>Seguinos en nuestras redes sociales</p>
+        </p>
+    </footer>
 </body>
 
 </html>
