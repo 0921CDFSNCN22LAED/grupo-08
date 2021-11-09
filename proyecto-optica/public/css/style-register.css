@@ -29,20 +29,28 @@
   background-color: white;
 }
 .continuar-deco {
-  text-align: center;
-  padding: 5px;
-  padding-left: 20px;
-  border-radius: 5px;
+  font-size: 18px;
+  padding: 10px 50px;
+  border-radius: 10px;
   border: rgba(0, 0, 0, 0.2) solid 1px;
   background-color: #0bc197;
-  color: white;
+  color: black;
+  margin: 10px;
 }
 .borrar-deco {
-  padding: 5px;
-  border-radius: 5px;
+  font-size: 18px;
+  padding: 10px 50px;
+  border-radius: 10px;
   border: rgba(0, 0, 0, 0.2) solid 1px;
-  background-color: red;
+  background-color: #fff;
+  color: #000;
+  margin: 10px;
+}
+.text-decoration-reg {
   color: white;
+  text-decoration: none;
+  transition: all 450ms;
+  animation: reverse;
 }
 
 @media (min-width: 480px) {
@@ -56,5 +64,9 @@
   }
   .main {
     justify-content: space-evenly;
+  }
+
+  .text-decoration-reg:hover {
+    color: #0bc197;
   }
 }
