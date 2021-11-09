@@ -96,7 +96,9 @@
   main article.productos {
     width: 20%;
   }
+
   .shadows:hover {
     box-shadow: 0px 0px 10px rgb(100, 100, 100, 1);
+    transform: scale(105%);
   }
 }
