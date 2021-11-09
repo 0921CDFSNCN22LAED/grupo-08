@@ -1,4 +1,4 @@
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .categorias {
     display: none;
   }
@@ -10,6 +10,9 @@
   }
   .nav-icon {
     width: auto;
+  }
+  .main {
+    margin-top: 0px;
   }
 
   @media (max-width: 480px) {
@@ -23,6 +26,9 @@
     .bar {
       width: 100%;
       padding: 5px;
+    }
+    .main {
+      margin-top: -10px;
     }
   }
 }
