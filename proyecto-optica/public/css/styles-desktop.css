@@ -1,3 +1,8 @@
+@media (min-width: 769px) {
+  main article.productos {
+    width: 45%;
+  }
+}
 @media (min-width: 1024px) {
   .header {
     display: flex;
@@ -5,6 +10,7 @@
     transition: 450ms;
     animation: reverse;
   }
+
   .header:hover .iconos-header {
     color: #0bc197;
   }
@@ -87,9 +93,10 @@
   .recetados:hover .recetados-barra {
     opacity: 100%;
   }
-}
-@media (min-width: 769px) {
   main article.productos {
-    width: 25%;
+    width: 20%;
+  }
+  .shadows:hover {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100, 1);
   }
 }

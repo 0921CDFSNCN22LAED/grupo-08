@@ -11,22 +11,23 @@
   .nav-icon {
     width: auto;
   }
-}
-@media (max-width: 480px) {
-  .header {
-    display: block;
-    justify-content: space-between;
-  }
-  .block-A {
-    width: 100%;
-  }
-  .bar {
-    width: 100%;
-    padding: 5px;
+
+  @media (max-width: 480px) {
+    .header {
+      display: block;
+      justify-content: space-between;
+    }
+    .block-A {
+      width: 100%;
+    }
+    .bar {
+      width: 100%;
+      padding: 5px;
+    }
   }
 }
 @media (min-width: 480px) {
   main article.productos {
-    width: 50%;
+    width: 45%;
   }
 }

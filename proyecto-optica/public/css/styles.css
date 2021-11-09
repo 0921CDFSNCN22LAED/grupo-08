@@ -40,7 +40,7 @@
   padding: 10px;
 }
 .pad-50 {
-  padding: 50px;
+  padding: 50px 0px 0px;
 }
 .display-flex {
   display: flex;
@@ -136,9 +136,6 @@
 }
 .fotos {
   width: 100%;
-  border-left: solid 10px #ebebeb;
-  border-right: solid 10px #ebebeb;
-  border-top: solid 10px #ebebeb;
 }
 
 .precios {
@@ -150,28 +147,26 @@
 .bolsa {
   display: block;
   font-size: 16px;
-  padding: 5px;
-  width: 30px;
-  height: 30px;
-  color: #39b54a;
-  border: 1px solid #39b54a;
+  padding: 10px;
+  color: #4a4a4a;
+  border: 1px solid #868686;
   background-color: #fff;
-  border-radius: 50%;
   position: absolute;
   right: 20px;
 }
 
 .precios-descripcion {
-  background-color: white;
-  border-bottom: solid 15px #ebebeb;
-  border-right: solid 10px #ebebeb;
-  border-left: solid 10px #ebebeb;
-  margin: auto;
   position: relative;
+  padding: 5px;
 }
 
 .productos {
   width: 100%;
+}
+.shadows {
+  box-shadow: 0px 0px 10px rgb(100, 100, 100, 0);
+  transition: all 0.5s;
+  animation: reverse;
 }
 
 .gondola {
