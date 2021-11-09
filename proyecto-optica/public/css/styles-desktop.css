@@ -17,6 +17,7 @@
     transition: 450ms;
     animation: reverse;
     z-index: 1000;
+    top: 0px;
   }
 
   .header:hover .iconos-header {
