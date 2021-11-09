@@ -58,12 +58,11 @@
 }
 footer {
   text-align: center;
-  background-color: black;
   font-size: 10px;
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   margin: auto;
   width: 100%;
-  border-bottom: solid black 15px;
+  border-top: solid gray 1px;
 }
