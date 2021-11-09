@@ -37,6 +37,13 @@
   color: black;
   margin: 10px;
 }
+.no-access {
+  color:#E86850;
+  padding: 10px 50px;
+  margin:20px 20px 20px -57%;
+  text-decoration:underline;
+  cursor:pointer;
+}
 .borrar-deco {
   font-size: 18px;
   padding: 10px 50px;
