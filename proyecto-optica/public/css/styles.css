@@ -108,8 +108,8 @@
   transition-duration: 450ms;
 }
 /* .iconos-header:active { tendia que cambiar el fondo
-  color: rgb(161, 210, 214);
-} */
+    color: rgb(161, 210, 214);
+  } */
 .bag-menu:active ul {
   visibility: visible;
   opacity: 1;
@@ -129,6 +129,10 @@
   padding: 8px;
   text-align: center;
   font-size: 1.5em;
+}
+.carousel {
+  width: 80%;
+  margin: auto;
 }
 .main {
   justify-content: space-between;
@@ -180,16 +184,4 @@
 
 .descripcion {
   font-size: 16px;
-}
-.icono-receta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.texto-1 {
-  width: 100%;
-}
-.info {
-  display: block;
 }

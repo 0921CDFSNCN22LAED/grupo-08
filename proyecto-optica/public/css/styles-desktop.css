@@ -41,8 +41,9 @@
     position: relative;
     animation: reverse;
   }
-  .bag-menu:hover ul {
-    visibility: visible;
+  .bag-menu:hover ul,
+  .register-opction:hover ul {
+    display: block;
     opacity: 1;
     transform: translate(0px, 24px);
   }
