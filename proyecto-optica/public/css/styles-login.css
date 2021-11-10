@@ -1,7 +1,17 @@
 .no-access {
-    color: black;
-    margin:20px 20px 20px -57%;
-    text-decoration:underline;
-    cursor:pointer;
-    text-align: center;
+  color: #2567e6;
+  margin: 10px 0px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.m-formularies-2 {
+  margin: 10px 0px;
+  text-align: center;
+}
+
+@media (max-width: 479px) {
+  .modelos {
+    display: none;
   }
+}

@@ -66,3 +66,7 @@ footer {
   width: 100%;
   border-top: solid gray 1px;
 }
+
+.boder-1px {
+  border-top: solid gray 1px;
+}

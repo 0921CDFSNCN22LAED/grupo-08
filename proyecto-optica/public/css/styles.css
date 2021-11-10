@@ -181,3 +181,15 @@
 .descripcion {
   font-size: 16px;
 }
+.icono-receta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.texto-1 {
+  width: 100%;
+}
+.info {
+  display: block;
+}
