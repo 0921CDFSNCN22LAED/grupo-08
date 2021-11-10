@@ -130,10 +130,6 @@
   text-align: center;
   font-size: 1.5em;
 }
-.carousel {
-  width: 80%;
-  margin: auto;
-}
 .main {
   justify-content: space-between;
   align-items: center;
@@ -184,4 +180,16 @@
 
 .descripcion {
   font-size: 16px;
+}
+.icono-receta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.texto-1 {
+  width: 100%;
+}
+.info {
+  display: block;
 }
