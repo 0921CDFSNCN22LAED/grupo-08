@@ -54,13 +54,14 @@
 </header>
 
 <main>
-    <form action="/">
-        <h2 class="margin-10" style="text-align: center;">
-            Ingresa a tu cuenta
-        </h2>
-        <section class="formularies">
+    <form class="form" action="/">
+        <section class="formularies login">
+
+            <h2 class="margin-10" style="text-align: left;">
+                Ingresa a tu cuenta
+            </h2>
             <div>
-                <div class="m-formularies">
+                <div class="m-formularies-2">
                     <label>
                         <p>
                             <input class="formularies-deco flex-q-1" type="email" name="mail"
@@ -68,23 +69,31 @@
                         </p>
                     </label>
                 </div>
-                <div class="m-formularies ">
+                <div class="m-formularies-2 ">
                     <label>
                         <p>
                             <input class=" formularies-deco flex-q-1" type="password" name="password"
                                 placeholder="Contraseña">
                         </p>
                     </label>
-                    <div><input type="radio" name="recordar contraseña" value="recordar contraseña">
-                        <label for="">Recordar contraseña</label>
-                    </div>
-                    <h6 class="no-access">Recuperar contraseña</h6>
-                    <div class="m-formularies">
-                        <button class=" continuar-deco" type="submit">Ingresa</button>
-                    </div>
                 </div>
-            </div>       
+                <div><input type="radio" name="recordar contraseña" value="recordar contraseña">
+                    <label style="font-size: 14px;" for="">Recordar contraseña</label>
+                </div>
+                <div>
+                    <h5 class="no-access">Recuperar contraseña</h5>
+
+                </div>
+                <div class="m-formularies-2">
+                    <button class=" continuar-deco" type="submit">Ingresa</button>
+                </div>
+            </div>
+
+
         </section>
+        <div>
+            <img class="modelos" style="width: 700px; height: 100%;" src="/img/modelos.jpg" alt="">
+        </div>
     </form>
 </main>
 <footer>
