@@ -130,6 +130,10 @@
   text-align: center;
   font-size: 1.5em;
 }
+.carousel {
+  width: 90%;
+  margin: auto;
+}
 .main {
   justify-content: space-between;
   align-items: center;
@@ -143,18 +147,21 @@
   padding: 5px;
   margin: auto;
 }
-
+.shadows div {
+  border: none;
+}
 .bolsa {
   display: block;
   font-size: 16px;
   padding: 5px;
-  color: #4a4a4a;
-  border: 1px solid #868686;
+
   background-color: #fff;
   position: absolute;
   right: 20px;
 }
-
+.bolsa a i {
+  color: #086788;
+}
 .precios-descripcion {
   position: relative;
   padding: 5px;
@@ -180,16 +187,4 @@
 
 .descripcion {
   font-size: 16px;
-}
-.icono-receta {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.texto-1 {
-  width: 100%;
-}
-.info {
-  display: block;
 }
