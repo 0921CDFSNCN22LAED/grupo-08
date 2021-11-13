@@ -31,6 +31,24 @@
       margin-top: -10px;
     }
   }
+  /* 
+
+
+
+*/
+
+  .offcanvas-end {
+    width: 50%;
+  }
+
+  /* 
+
+
+
+
+
+
+*/
 }
 @media (min-width: 480px) {
   main article.productos {

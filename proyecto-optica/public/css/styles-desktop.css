@@ -19,8 +19,45 @@
     z-index: 1000;
     top: 0px;
   }
+
+  /* 
+
+
+
+
+
+*/
+
+  .header {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .header {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .container-fluid {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .main-home {
+    margin-top: 60px;
+  }
+  .offcanvas-end {
+    width: 40%;
+  }
+
+  .header:hover .navbar-toggler {
+    border: solid 1px #0bc197;
+  }
+
+  /* 
+
+
+
+
+
+*/
+
   .main {
-    margin-top: 58px;
+    margin-top: 60px;
   }
   .header:hover .iconos-header {
     color: #0bc197;
