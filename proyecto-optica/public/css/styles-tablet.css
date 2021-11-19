@@ -60,4 +60,10 @@
   .info-footer {
     width: 50%;
   }
+  .lentes-blueligth {
+    display: flex;
+  }
+  .lentes-bltxt {
+    width: 30%;
+  }
 }
