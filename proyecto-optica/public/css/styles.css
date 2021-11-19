@@ -46,7 +46,7 @@
   display: flex;
 }
 .header {
-  background-color: #292C2E
+  background-color: #292c2e;
 }
 
 .label-none {
@@ -167,7 +167,7 @@
   font-size: 1.5em;
 }
 .carousel {
-  width: 90%;
+  width: 70%;
   margin: auto;
 }
 .main {
