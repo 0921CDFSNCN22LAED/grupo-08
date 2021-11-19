@@ -1,3 +1,5 @@
+//const path =require ("path");
+const products = [{}];
 const mainControllers = {
   home: function (req, res) {
     res.render("home");
