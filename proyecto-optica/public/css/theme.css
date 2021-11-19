@@ -62,7 +62,7 @@
   transition: all 450ms;
   animation: reverse;
 }
-.header:hover .text-decoration {
+.text-decoration:hover {
   color: #0bc197;
 }
 .text-decoration-2 {

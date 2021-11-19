@@ -17,7 +17,8 @@
   }
 
   .header {
-    background-color: #292C2E;}
+    background-color: #292c2e;
+  }
   .main-home {
     margin-top: 60px;
   }
@@ -25,14 +26,14 @@
     width: 40%;
   }
 
-  .header:hover .navbar-toggler {
+  .navbar-toggler:hover {
     border: solid 1px #0bc197;
   }
 
   .main {
     margin-top: 60px;
   }
-  .header:hover .iconos-header {
+  .iconos-header:hover {
     color: #0bc197;
   }
   .logo {
@@ -45,7 +46,7 @@
     transition: 450ms;
     animation: reverse;
   }
-  .header:hover .logo-verde {
+  .logo:hover .logo-verde {
     display: block;
   }
 
