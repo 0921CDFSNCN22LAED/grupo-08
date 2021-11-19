@@ -1,5 +1,3 @@
-const express = require("express");
-const path = require("path");
 const mainControllers = {
   home: function (req, res) {
     res.render("home");
