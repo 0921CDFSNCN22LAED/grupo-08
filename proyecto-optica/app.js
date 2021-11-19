@@ -1,28 +1,16 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const routeMain = require("./routers/main-router");
+const routeRegister = require("./routers/register-router");
+const routeLogin = require("./routers/login-router");
+const routeCarrito = require("./routers/carrito-router");
+app.listen(3000, () => console.log("Server funcionando"));
+
+app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "/public")));
-app.listen(3000, () => console.log("El server esta funcionando"));
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/home.html"));
-});
-// si hago estatica la carpeta public entonces desde el html puedo acceder con / y siempre con barra
 
-app.get("/register", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/register.html"));
-});
-
-app.get("/login", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/login.html"));
-});
-
-app.get("/carrito", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/carrito.html"));
-});
-app.get("/how-to-read", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/how-to-read.html"));
-});
-
-app.get("/product-detail", (req, res) => {
-  res.sendFile(path.join(__dirname, "/views/product-detail.html"));
-});
+app.use("/", routeMain);
+app.use("/", routeRegister);
+app.use("/", routeLogin);
+app.use("/", routeCarrito);
