@@ -3,11 +3,7 @@
   margin: 0;
   padding: 0px;
 }
-@media (min-width: 769px) {
-  main article.productos {
-    width: 45%;
-  }
-}
+
 @media (min-width: 1024px) {
   .header {
     position: fixed;
@@ -20,23 +16,8 @@
     top: 0px;
   }
 
-  /* 
-
-
-
-
-
-*/
-
   .header {
-    background-color: rgba(0, 0, 0, 0);
-  }
-  .header {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  .container-fluid {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
+    background-color: #292C2E;}
   .main-home {
     margin-top: 60px;
   }
@@ -47,14 +28,6 @@
   .header:hover .navbar-toggler {
     border: solid 1px #0bc197;
   }
-
-  /* 
-
-
-
-
-
-*/
 
   .main {
     margin-top: 60px;
