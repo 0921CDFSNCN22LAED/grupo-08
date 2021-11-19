@@ -7,16 +7,27 @@
   color: black;
 }
 
+.text-sinformato-2 {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
 .j-space-between {
   justify-content: space-between;
   align-items: center;
 }
+.j-center {
+  justify-content: center;
+}
 .bgc-header {
   color: #0bc197;
-  color: #292C2E;
+  color: #292c2e;
 }
 .bg-skyblue {
   background-color: #0bc197;
+}
+.bg-footer {
+  background-color: #000000f2;
 }
 .font-ligth {
   font-weight: lighter;
@@ -69,4 +80,8 @@ footer {
 
 .boder-1px {
   border-top: solid gray 1px;
+}
+
+p {
+  margin: 0px;
 }

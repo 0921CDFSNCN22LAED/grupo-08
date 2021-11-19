@@ -21,6 +21,9 @@
 .margin-10 {
   margin: 10px;
 }
+.margin-20 {
+  margin: 20px;
+}
 .w-40 {
   width: 40%;
 }
@@ -46,9 +49,13 @@
   display: flex;
 }
 .header {
-  background-color: #292C2E
+  background-color: #292c2e;
 }
-
+.info-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 .label-none {
   display: none;
 }
@@ -85,6 +92,17 @@
   margin: auto;
   background-color: white;
   font-size: 20px;
+}
+.texto-titulo {
+  font-size: 14px;
+  font-weight: bolder;
+  color: #fff;
+}
+
+ol {
+  list-style: none;
+  padding: 0px;
+  border: 0px;
 }
 
 /* 
@@ -160,11 +178,11 @@
 }
 
 .loguitos {
-  color: black;
+  color: #0bc197;
   margin: 8px, 8px;
   padding: 8px;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 .carousel {
   width: 90%;
