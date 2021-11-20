@@ -75,10 +75,10 @@
   }
   .man {
     width: 50%;
-    padding: 10px 50px;
+    padding: 20px 10px 20px 50px;
   }
   .woman {
     width: 50%;
-    padding: 10px 50px;
+    padding: 20px 50px 20px 10px;
   }
 }

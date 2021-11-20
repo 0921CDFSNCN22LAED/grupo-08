@@ -137,10 +137,10 @@
   }
   .man {
     width: 50%;
-    padding: 10px 100px;
+    padding: 100px 10px 30px 100px;
   }
   .woman {
     width: 50%;
-    padding: 10px 100px;
+    padding: 100px 100px 30px 10px;
   }
 }
