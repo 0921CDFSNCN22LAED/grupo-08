@@ -275,3 +275,34 @@ ol {
   background-color: #fff;
   padding: 10px;
 }
+
+/* ////// boostrap menu-icons header  /////// */
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.btn-icons-header {
+  font-size: 20px;
+  color: black;
+}
+
+.btn-icons-header:hover {
+  color: black;
+  transform: scale(120%);
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+  box-shadow: none;
+}
+.dropdown-menu {
+  z-index: 2000;
+  background-color: rgb(15, 15, 15);
+}
+.dropdown-menu a {
+  color: white;
+}
+.dropdown-menu a:hover {
+  background-color: #0bc197;
+}
