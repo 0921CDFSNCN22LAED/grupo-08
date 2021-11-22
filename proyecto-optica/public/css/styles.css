@@ -58,6 +58,10 @@
 .header {
   background-color: #292c2e;
 }
+.texto-1 {
+  font-size: 14px;
+}
+
 .info-footer {
   display: flex;
   flex-wrap: wrap;
@@ -104,6 +108,7 @@
   font-size: 14px;
   font-weight: bolder;
   color: #0bc197;
+  font-family: times new roman;
 }
 
 ol {

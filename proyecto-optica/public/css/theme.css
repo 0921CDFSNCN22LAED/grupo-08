@@ -37,6 +37,9 @@
 .bg-footer {
   background-color: #000000f2;
 }
+.bg-tablero {
+  background-color: #f5f5f5;
+}
 .font-ligth {
   font-weight: lighter;
 }

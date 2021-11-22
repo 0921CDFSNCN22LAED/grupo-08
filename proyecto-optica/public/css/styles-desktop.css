@@ -143,4 +143,7 @@
     width: 50%;
     padding: 100px 100px 30px 10px;
   }
+  .texto-19 {
+    display: flex;
+  }
 }
