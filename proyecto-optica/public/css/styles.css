@@ -282,7 +282,7 @@ ol {
   color: black;
 }
 
-.btn:hover {
+.btn-icons-header:hover {
   color: black;
   transform: scale(120%);
 }
