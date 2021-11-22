@@ -53,23 +53,25 @@
                         <a class=" text-decoration" href="">RECETADOS</a></div>
             </section>
             <nav class=" nav-icon display-flex margin-10 ">
-                <div style="margin: 0px 20px;" class="bag-menu">
-                    <label for="" class="label-none">Register</label>
-                    <a href="register"><i class="lni lni-user iconos-header"></i></i>
-                        <ul>
-                            <a href="register">
-                                <li>Registrate</li>
-                            </a>
-                            <a href="">
-                                <li>Ingresa</li>
-                            </a>
-                        </ul>
-                    </a>
+                <div class="dropdown">
+                    <button class="btn btn-icons-header dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="lni lni-user iconos-header"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="register">Registrate</a></li>
+                        <li><a class="dropdown-item" href="login">Ingresa</a></li>
+                    </ul>
                 </div>
-                <div style="margin: 0px 20px;" class="register-opction">
-                    <label for="" class="label-none">Bag</label>
-                    <a href="carrito"><i class="lni lni-shopping-basket iconos-header"></i>
-                    </a>
+                <div class="dropdown">
+                    <button class="btn btn-icons-header dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="lni lni-shopping-basket iconos-header"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="carrito">Carrito</a></li>
+                        <li><a class="dropdown-item" href="favoritos">Favoritos</a></li>
+                    </ul>
                 </div>
             </nav>
         </div>
