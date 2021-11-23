@@ -3,7 +3,12 @@
   margin: 0;
   padding: 0;
 }
-
+h5 {
+  font-size: 14px;
+}
+label {
+  display: block;
+}
 .header {
   display: flex;
   align-items: center;

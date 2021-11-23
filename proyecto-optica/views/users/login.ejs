@@ -6,59 +6,6 @@
         <header class="j-space-between bgc-header font-color header">
             <%- include ("../partials/header-home") %>
         </header>
-
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Registrate</title>
-            <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-            <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-            <link rel="stylesheet" href="/css/normalize.css">
-            <link rel="stylesheet" href="/css/theme.css">
-            <link rel="stylesheet" href="/css/styles.css">
-            <link rel="stylesheet" href="/css/styles-tablet.css">
-            <link rel="stylesheet" href="/css/styles-desktop.css">
-            <link rel="stylesheet" href="/css/style-register.css">
-            <link rel="stylesheet" href="/css/styles-login.css">
-        </head>
-        <header class=" j-space-between bgc-header font-color header-register ">
-            <div style="justify-content: space-between; align-items:center;">
-                <section class="logotype">
-                    <div class=" logo">
-                        <a href="/"><img src="/img/logo-white.svg" alt="logo"></a>
-                    </div>
-                </section>
-            </div>
-            <section style=" align-items: center;" class=" categorias margin-10 display-flex  font-12 ">
-                <div class="hombre margin-10 ">
-                    <div class="hombre-barra""></div>
-                <a class=" text-decoration-reg" href="">HOMBRE
-                        </a>
-                    </div>
-                    <div class="mujer margin-10">
-                        <div class="mujer-barra""></div>
-                    <a class=" text-decoration-reg" href="">MUJER</a>
-                        </div>
-                        <div class=" niños margin-10">
-                            <div class="niños-barra""></div>
-                    <a class=" text-decoration-reg" href="">NIÑOS</a>
-                            </div>
-                            <div class=" recetados margin-10">
-                                <div class="recetados-barra""></div>
-                    <a class=" text-decoration-reg" href="">RECETADOS</a></div>
-            </section>
-            <div>
-                <section class="bar w-30 display-flex margin-10">
-                    <div style="margin: 0px 20px;"> <a href=""><i style="color: white;"
-                                class="lni lni-menu iconos-header"></i></a>
-                        <label for=""></label>
-                </section>
-            </div>
-        </header>
-
         <main>
             <form class="form" action="/">
                 <section class="formularies login">
@@ -67,10 +14,10 @@
                         Ingresa a tu cuenta
                     </h2>
                     <div>
-                        <div class="m-formularies-2">
+                        <div class=" m-formularies-2">
                             <label>
                                 <p>
-                                    <input class="formularies-deco flex-q-1" type="email" name="mail"
+                                    <input class="formularies-deco margin-10 flex-q-1" type="email" name="mail"
                                         placeholder="Nombre/Correo Electronico">
                                 </p>
                             </label>
@@ -78,19 +25,22 @@
                         <div class="m-formularies-2 ">
                             <label>
                                 <p>
-                                    <input class=" formularies-deco flex-q-1" type="password" name="password"
+                                    <input class=" formularies-deco margin-10 flex-q-1" type="password" name="password"
                                         placeholder="Contraseña">
                                 </p>
                             </label>
                         </div>
-                        <div><input type="radio" name="recordar contraseña" value="recordar contraseña">
-                            <label style="font-size: 14px;" for="">Recordar contraseña</label>
+                        <div class="margin-10"><input type="radio" name="recordar contraseña"
+                                value="recordar contraseña">
+                            <label style="font-size: 14px; display:inline-block;" for="">Recordar contraseña</label>
                         </div>
-                        <div>
-                            <h5 class="no-access">Recuperar contraseña</h5>
+                        <div class="margin-10">
+                            <a href="">
+                                <h5 class=" no-access">Recuperar contraseña</h5>
+                            </a>
 
                         </div>
-                        <div class="m-formularies-2">
+                        <div class="text-center m-formularies-2">
                             <button class=" continuar-deco" type="submit">Ingresa</button>
                         </div>
                     </div>
