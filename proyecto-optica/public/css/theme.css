@@ -100,3 +100,15 @@ p {
 h2 {
   margin: 0px;
 }
+/* /////////           theme product-detail         ///////////  */
+
+.parte-derecha h2 {
+  font-size: 20px;
+}
+.parte-derecha h3 {
+  font-size: 15px;
+}
+.bottom-article ul a li h3,
+.bottom-article ul a li h3 {
+  font-size: 20px;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/headerSecondary') %>
+            <section>
+                <article class="article-detail-product">
+
+                    <section class="top-izquierda">
+                        <div class="parte-derecha">
+                            <div id="carousel-product-details" class="carousel carrusel-product slide"
+                                data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="<%= product.img %>" class="d-block w-100" alt="photo1">
+
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/img/img2-product-datail.webp" class="d-block w-100" alt="photo2">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/img/img1-produc-detail.webp" class="d-block w-100" alt="photo3">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carousel-product-details" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carousel-product-details" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+
+                        </div>
+                        <div class="imgs-del-producto">
+                            <a href=""> <img src="/img/img1-produc-detail.webp" alt=""></a>
+                            <a href=""> <img src="/img/img2-product-datail.webp" alt=""></a>
+                        </div>
+                    </section>
+                    <section class="parte-derecha">
+                        <div class=" container-title-icon">
+                            <h2>
+                                <%= product.name%>
+                            </h2>
+
+                            <div class="icons">
+                                <a href="">
+                                    <i class="fas fa-shopping-bag"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3>
+                            <%= product.description %>
+                        </h3>
+                        <div>
+                            <div class="container-desciption" style="display:flex">
+                                <h4>
+                                    <%=`$ ${product.price}`%>
+                                </h4>
+                            </div>
+                            <h4>seleccionar colores</h4>
+                            <h4>tamaño</h4>
+                            <h4>descuento</h4>
+                            <h4>envio</h4>
+                        </div>
+                        <div class=" cont-btn-buy-dp">
+                            <button type="button" class="btn btn-dark"> Seleccionar lentes </button>
+                        </div>
+                        <h6>ese boton nos lleva a un html donde cargamos la prescripcion</h6>
+                    </section>
+
+                </article>
+                <section class=" bottom-article">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                aria-selected="true">Descripción</button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                                aria-selected="false">Detalle</button>
+                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                aria-selected="false">Recomendaciones</button>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                            aria-labelledby="nav-home-tab">
+                            <p class="descripcion-detail-product">Botanist tiene una forma de marco que es
+                                clásica y
+                                atemporal. La forma sencilla y los
+                                tacos de bisagra sutiles son discretos y elegantes. Lo que realmente hace que
+                                estos
+                                espejuelos se destaquen es el acabado en dos tonos gris y marrón. El suave
+                                desvanecimiento entre los colores en el marco de la lente crea un aspecto
+                                verdaderamente
+                                moderno.</p>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <p class="details-glasses">Tamaño: mediano | 52 □ 18-145
+                                Color: gris marrón
+                                Peso: ligero (15 g)
+                                Material: acetato
+                                Forma: rectángulo
+                                Borde: Borde completo
+                                Revestimiento de lente anti-rayado</p>
+                        </div>
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            ...</div>
+                    </div>
+                </section>
+            </section>
+            </main>
+            <%- include('../partials/footer.ejs') %>
+                <%- include('../partials/scripts-boostrap.ejs') %>
+
+    </body>
+
+</html>

@@ -6,28 +6,47 @@
 .top-article {
   width: 100%;
 }
+.top-izquierda {
+  width: 80%;
+  margin: auto;
+}
+.carrusel-product {
+  width: auto;
+}
 .parte-izquierda,
 .parte-derecha {
-  max-width: 90%;
+  max-width: 80%;
   margin: auto;
 }
 .imgs-del-producto {
   width: 90%;
-  max-height: 50px;
   display: flex;
   margin: auto;
+  text-align: center;
+  border-top: black 1px solid;
+  border-bottom: black 1px solid;
+  padding: 5px 0px;
 }
 .imgs-del-producto img {
-  width: 30%;
+  width: 40%;
 }
-.bottom-artible {
-  width: 90%;
+.container-title-icon {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+.icons a i {
+  color: #086788;
+}
+.container-title-icon .icons {
+  margin-left: 15px;
+}
+.bottom-article {
+  width: 100%;
   margin: auto;
 }
-.imgs-del-producto {
-  border: black 1px solid;
-}
-.bottom-artible ul {
+
+.bottom-article ul {
   display: flex;
   justify-content: space-between;
   padding: 10px;
@@ -35,36 +54,81 @@
   color: black;
   position: relative;
 }
-.bottom-artible ul li,
-.bottom-artible ul li a {
-  color: black;
-  text-decoration: none;
+.bottom-article ul a li,
+.bottom-article ul a li {
   list-style: none;
 }
-.bottom-artible ul a {
-  border: black solid 1px;
+.bottom-article ul a,
+.bottom-article ul a {
+  text-decoration: none;
+  color: black;
 }
 
-.descripcion-detail-product {
-  width: 80%;
-  text-align: center;
-  display: none;
-  position: absolute;
-  top: 50px;
-  background-color: lightslategray;
+.cont-btn-buy-dp {
+  width: 40%;
+  margin: auto;
+}
+.nav-tabs .nav-link.active {
+  color: #2e6171;
+}
+.cont-btn-buy-dp button {
+  width: 100%;
+}
+.nav-tabs button {
+  color: #2e6171;
+  font-weight: bolder;
+  font-size: 14px;
+}
+/* boostrap */
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+  background-color: #212529;
   color: white;
+  border: solid 1px #212529;
 }
 
-.bottom-artible li:hover .descripcion-detail-product {
-  display: block;
+.nav-tabs {
+  width: 98%;
+  margin: auto;
+  margin-top: 20px;
+}
+.descripcion-detail-product {
+  background-color: #212529;
+  color: white;
+  width: 98%;
+  margin: auto;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 10px;
+}
+.details-glasses {
+  background-color: #212529;
+  color: white;
+  width: 98%;
+  margin: auto;
   border-radius: 10px;
   padding: 10px;
 }
-.btn-sec-lentes {
-  width: 50%;
-  height: 30px;
-  margin-left: 25%;
-  background-color: #f6bd60;
-  border: black solid 2px;
-  border-radius: 5px;
+
+@media (min-width: 480px) {
+  .container-title-icon {
+    justify-content: start;
+  }
+  .container-title-icon .icons {
+    margin-left: 25px;
+  }
+  .nav-tabs button {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  .article-detail-product {
+    display: flex;
+    padding: 10px;
+    margin: 10px 0px;
+  }
+  .bottom-article ul {
+    justify-content: space-around;
+  }
 }

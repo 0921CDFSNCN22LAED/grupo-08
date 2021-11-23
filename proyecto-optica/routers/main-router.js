@@ -5,6 +5,6 @@ const mainControllers = require("../controllers/mainControllers");
 router.get("/", mainControllers.home);
 router.get("/home", mainControllers.home);
 router.get("/how-to-read", mainControllers.howToRead);
-router.get("/product-detail", mainControllers.productos);
+router.get("/product-detail/:id", mainControllers.productos);
 
 module.exports = router;

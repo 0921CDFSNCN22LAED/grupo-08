@@ -5,15 +5,13 @@ const routeMain = require("./routers/main-router");
 const routeRegister = require("./routers/register-router");
 const routeLogin = require("./routers/login-router");
 const routeCarrito = require("./routers/carrito-router");
-
-app.listen(3000, () => console.log("Server coriendo en puerto 3000"));
+app.listen(3000, () => console.log("Server funcionando"));
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "/public")));
 
 app.use("/", routeMain);
-app.use("/", routeRegister);
-app.use("/", routeLogin);
-app.use("/", routeCarrito);
-
-//localhost:300//
+app.use("/register", routeRegister);
+app.use("/login", routeLogin);
+app.use("/carrito", routeCarrito);
+/* app.use("/product-detail", routeMain); */

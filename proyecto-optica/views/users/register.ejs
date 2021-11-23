@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ("../partials/head") %>
+
+
+    <body>
+        <header class="j-space-between bgc-header font-color header">
+            <%- include ("../partials/header-home") %>
+        </header>
+
+        <main class="main display-flex">
+            <h3 class="margin-10" style="text-align: center;">
+                Tu perfil
+            </h3>
+            <div class=" display-flex margin-10">
+                <p>
+                    <a class="text-sinformato" href="login">Iniciar sesion</a>
+                </p>
+                <p>
+                    <a class=" text-sinformato margin-10" href="">FAQ</a>
+                </p>
+            </div>
+
+
+        </main>
+        <form action="/">
+            <h2 class="margin-10" style="text-align: center;">
+                Crea Tu cuenta
+            </h2>
+            <section class="formularies">
+                <div>
+                    <div class="m-formularies">
+                        <label>
+                            <p>
+                                <input class="formularies-deco flex-q-1" type=" text" name="Nombre"
+                                    placeholder="Nombre">
+                            </p>
+                        </label>
+                    </div>
+                    <div class="m-formularies">
+                        <label>
+                            <p>
+                                <input class=" formularies-deco flex-q-1" type="text" name="lastname"
+                                    placeholder="Apellido">
+                            </p>
+                        </label>
+                    </div>
+                    <div class=" text-center">
+                        <img src="/img/line.png" style="width: 15%;" alt="">
+                    </div>
+                    <div class="m-formularies">
+                        <p>
+                            <label> Pais/Region
+                            </label>
+                        </p>
+                        <select class="flex-q-1 formularies-deco" name="opciones">
+                            <p>
+                                <option value="Argentna">Argentina</option>
+                                <option value="Estados Unidos">Estados Unidos</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="Chile">Chile</option>
+                                <option value="Uruguay">Uruguay</option>
+                                <option value="Pais">Pais</option>
+                                <option value="Pais">Pais</option>
+                                <option value="Pais">Pais</option>
+                                <option value="Pais">Pais</option>
+                                <option value="Pais">Pais</option>
+                                <option value="Pais">Pais</option>
+                                <option value="Pais">Pais</option>
+
+                            </p>
+                        </select>
+                    </div class="m-formularies">
+
+                    <div class="m-formularies">
+                        <label>Fecha Nacimiento:</label>
+                        <p>
+                            <input class=" formularies-deco flex-q-1" type="date" name="Fecha">
+                        </p>
+                    </div>
+                    <div class=" text-center">
+                        <img src="/img/line.png" style="width: 15%;" alt="">
+                    </div>
+                    <div class="m-formularies">
+                        <label>
+                            Email
+                            <p>
+                                <input class=" formularies-deco flex-q-1" type="email" name="email">
+                            </p>
+
+                        </label>
+                    </div>
+                    <div class="m-formularies">
+                        <label>
+                            <p>
+                                <input class=" formularies-deco flex-q-1" type="password" name="contraseña"
+                                    placeholder="Contraseña">
+                            </p>
+
+                        </label>
+                    </div>
+                    <div class="m-formularies">
+                        <label>
+                            <p>
+                                <input class=" formularies-deco flex-q-1" type="password" name="confirmar"
+                                    placeholder="Confirmar contraseña">
+                            </p>
+
+                        </label>
+                    </div>
+
+                    <div class=" text-center">
+                        <img src="/img/line.png" style="width: 15%;" alt="">
+                    </div>
+
+                    <div class="m-formularies">
+                        <label>
+                            <p>
+                                <input class=" formularies-deco flex-q-1" type="text" name="Domicilio"
+                                    placeholder="Domicilio">
+                            </p>
+                        </label>
+                    </div>
+
+                    <div class="m-formularies">
+                        <p>
+                            <label>Interes:</label>
+                            <select class="boton-deco" name="opciones">
+                                <p>
+                                    <option value="comprar">comprar</option>
+                                    <option value="vender">vender</option>
+                                </p>
+
+                            </select>
+                        </p>
+                    </div>
+
+
+                    <div class="m-formularies">
+                        <label>Seleciones Categorias Favoritas:</label>
+                        <p>
+                            <label>Electro</label>
+                            <input class="flex-q-1" type="checkbox" name="catgoria" value="Electro">
+                        </p>
+                        <p>
+                            <label>Moda</label>
+                            <input class="flex-q-1" type="checkbox" name="catgoria" value="Moda">
+                        </p>
+                        <p>
+                            <label>Hogar</label>
+                            <input class="flex-q-1" type="checkbox" name="catgoria" value="Hogar">
+                        </p>
+                        <p>
+                            <label>Jugeteria</label>
+                            <input class="flex-q-1" type="checkbox" name="catgoria" value="Jugeteria">
+                        </p>
+                        <p>
+                            <label>Vida sana</label>
+                            <input class="flex-q-1" type="checkbox" name="catgoria" value="Vida sana">
+                        </p>
+
+                    </div>
+
+                    <div class="m-formularies">
+                        <label>Seleccione una imagen</label>
+                        <p>
+                            <input type="file" name="avatar" accept="jpg">
+                        </p>
+                    </div>
+
+                    <div class="m-formularies">
+                        <button class=" continuar-deco" type="submit">Continuar</button>
+                        <button class="borrar-deco" type="reset">Borrar</button>
+                    </div>
+                </div>
+            </section>
+
+        </form>
+        <footer>
+            <%- include('../partials/footer.ejs') %>
+                <%- include('../partials/scripts-boostrap.ejs') %>
+        </footer>
+    </body>
+
+</html>
