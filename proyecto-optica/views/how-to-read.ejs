@@ -1,83 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Como leer una receta</title>
-
-    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/theme.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/styles-tablet.css">
-    <link rel="stylesheet" href="/css/styles-desktop.css">
-    <link rel="stylesheet" href="/css/style-register.css">
-</head>
+    <%- include ("partials/head") %>
 
 <body>
-    <header class=" j-space-between bgc-header font-color header ">
-        <div class="block-A display-flex" style="justify-content: space-between; align-items:center;">
-            <section class="logotype display-flex">
-                <div class=" logo">
-                    <a href="/"><img src="/img/logo-white.svg" alt="logo"></a>
-                    <div class="logo-verde">
-                        <a href="/"><img src="/img/logo-verde.svg" alt="logo"></a>
-                    </div>
-                </div>
-            </section>
-            <section style=" align-items: center;" class=" categorias margin-10 display-flex w-45 font-12 ">
-                <div class="hombre margin-10 ">
-                    <div class="hombre-barra""></div>
-                        <a class=" text-decoration" href="">HOMBRE</a>
-                    </div>
-                    <div class="mujer margin-10">
-                        <div class="mujer-barra""></div>
-                            <a class=" text-decoration" href="">MUJER</a>
-                        </div>
-                        <div class=" niños margin-10">
-                            <div class="niños-barra"></div>
-                            <a class=" text-decoration" href="">NIÑOS</a>
-                        </div>
-                        <div class=" recetados margin-10">
-                            <div class="recetados-barra""></div>
-                            <a class=" text-decoration" href="">RECETADOS</a></div>
-            </section>
-            <nav class=" nav-icon display-flex margin-10 ">
-                <div style="margin: 0px 20px;" class="bag-menu">
-                    <label for="" class="label-none">Register</label>
-                    <a href="register"><i class="lni lni-user iconos-header"></i></i>
-                        <ul>
-                            <a href="register">
-                                <li>Registrate</li>
-                            </a>
-                            <a href="">
-                                <li>Ingresa</li>
-                            </a>
-                        </ul>
-                    </a>
-                </div>
-                <div style="margin: 0px 20px;" class="register-opction">
-                    <label for="" class="label-none">Bag</label>
-                    <a href="carrito"><i class="lni lni-shopping-basket iconos-header"></i>
-                    </a>
-                </div>
-            </nav>
-        </div>
-
-        <section class="bar w-30 display-flex margin-10" style="justify-content: space-between;align-items: center;">
-            <div class="search-bar">
-                <label for="" class="label-none">Barra de busqueda</label>
-                <input type="text" name="search-bar" id="search-bar">
-                <i class="lni lni-search-alt"></i>
-            </div>
-        </section>
-
+    <header class="j-space-between bgc-header font-color header">
+        <%- include ("partials/header") %>
     </header>
+
     <main>
         <div class="margin-10">
             <h2 class="margin-10">
@@ -218,76 +146,8 @@
         </div>
 
     </main>
+    <%- include ("partials/footer") %>
+    
 </body>
-<footer>
-    <section class="display-flex bg-footer" style="flex-wrap: wrap;">
-
-        <div class="info-footer">
-            <div class="margin-10 ">
-                <h6 class="texto-titulo">NOSTROS</h6>
-
-                <ol>
-                    <li> <a class="text-sinformato-2" href="">Contactanos</a> </li>
-                    <li> <a class="text-sinformato-2" href="">Sobre Nosotros</a> </li>
-                    <li> <a class="text-sinformato-2" href="">Historia</a> </li>
-                    <li> <a class="text-sinformato-2" href="">Comentarios</a> </li>
-                </ol>
-            </div>
-            <div class="margin-10 ">
-                <h6 class="texto-titulo">AYUDA</h6>
-
-                <ol>
-                    <li> <a class="text-sinformato-2" href="">Pagos</a> </li>
-                    <li> <a class="text-sinformato-2" href="">Compras</a> </li>
-                    <li> <a class="text-sinformato-2" href="">Devoluciones</a> </li>
-                    <li> <a class="text-sinformato-2" href="">Cancelar Compra</a> </li>
-                </ol>
-            </div>
-            <div class="margin-10 ">
-                <h6 class="texto-titulo">POLITICA</h6>
-
-                <ol>
-                    <li> <a class="text-sinformato-2" href="">Politica de Retorno</a> </li>
-                    <li> <a class="text-sinformato-2" href="">Terminos de Uso</a> </li>
-                    <li> <a class="text-sinformato-2" href="">Seguridad</a> </li>
-                    <li> <a class="text-sinformato-2" href="">Privacidad</a> </li>
-                </ol>
-            </div>
-            <div class="margin-10 ">
-                <h6 class="texto-titulo">COMPANIA</h6>
-
-                <ol>
-                    <li> <a class="text-sinformato-2" href="">Iniciar Sesion</a> </li>
-                    <li> <a class="text-sinformato-2" href="">Registrarse</a> </li>
-                    <li> <a class="text-sinformato-2" href="">Mapa</a> </li>
-                    <li> <a class="text-sinformato-2" href="">Nuestrs Productos</a> </li>
-                </ol>
-            </div>
-        </div>
-        <div class="footer-somos">
-            <div class="margin-10 ">
-                <h6 class="texto-titulo">¿QUIENES SOMOS?</h6>
-                <p style="color: rgb(255, 255, 255);">
-                    Nuestra misión es contribuir al desarrollo de la salud visual en el país al precio más bajo del
-                    mercado. Para
-                    ello,
-                    contamos con asesoría profesional en todas nuestras sucursales y la más amplia variedad en productos
-                    ópticos: lentes
-                    oftálmicos, lentes de sol, lentes de contactos y accesorios.
-                </p>
-            </div>
-            <div class="loguitos">
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-facebook"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-google"></i>
-                <i class="fas fa-envelope"></i>
-            </div>
-        </div>
-        <p style="color: rgb(255, 255, 255);">
-            © 2019 NameCompany All risghts reserved.
-        </p>
-    </section>
-</footer>
 
 </html>
