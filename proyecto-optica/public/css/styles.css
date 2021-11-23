@@ -297,7 +297,7 @@ ol {
 }
 .dropdown-menu {
   z-index: 2000;
-  background-color: rgb(15, 15, 15);
+  background-color: #292c2e;
 }
 .dropdown-menu a {
   color: white;

@@ -3,6 +3,7 @@ const glasses = [
   {
     name: "JOSS negro mate",
     desc: "breve descripcion",
+    seller: "Nombre de vendedor",
     size: "M",
     price: "$6999",
     img: "/img/joss-negro-mate.jpg",
@@ -11,6 +12,7 @@ const glasses = [
   {
     name: "JOSS rosa",
     desc: "breve descripcion",
+    seller: "Nombre de vendedor",
     size: "S",
     price: "4499",
     img: "/img/joss-rosa.jpg",
@@ -19,6 +21,7 @@ const glasses = [
   {
     name: "AHREN carey habano",
     desc: "breve descripcion",
+    seller: "Nombre de vendedor",
     size: "L",
     price: "$8999",
     img: "/img/ahren-carey-habano.jpg",
@@ -27,6 +30,7 @@ const glasses = [
   {
     name: "AHREN cristal",
     desc: "breve descripcion",
+    seller: "Nombre de vendedor",
     size: "S",
     price: "$9499",
     img: "/img/ahren-cristal.jpg",
