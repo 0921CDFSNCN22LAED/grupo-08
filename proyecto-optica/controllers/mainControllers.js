@@ -1,8 +1,52 @@
 //const path =require ("path");
-const products = [{}];
+const glasses = [
+  {
+    name: "JOSS negro mate",
+    desc: "breve descripcion",
+    size: "S",
+    price: "$6999",
+    img: "/img/joss-negro-mate.jpg",
+    higlights: "Descatado",
+  },
+  {
+    name: "JOSS negro mate",
+    desc: "breve descripcion",
+    size: "S",
+    price: "$6999",
+    img: "/img/joss-negro-mate.jpg",
+    higlights: "Descatado",
+  },
+  {
+    name: "JOSS negro mate",
+    desc: "breve descripcion",
+    size: "S",
+    price: "$6999",
+    img: "/img/joss-negro-mate.jpg",
+    higlights: "Descatado",
+  },
+  {
+    name: "JOSS negro mate",
+    desc: "breve descripcion",
+    size: "S",
+    price: "$6999",
+    img: "/img/joss-negro-mate.jpg",
+    higlights: "Descatado",
+  },
+  {
+    name: "JOSS negro mate",
+    desc: "breve descripcion",
+    size: "S",
+    price: "$6999",
+    img: "/img/joss-negro-mate.jpg",
+    higlights: "Descatado",
+  },
+];
+
 const mainControllers = {
   home: function (req, res) {
-    res.render("home");
+    res.render("home", {
+      glasses: glasses,
+    });
   },
   howToRead: function (req, res) {
     res.render("how-to-read");
