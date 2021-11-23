@@ -1,57 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include ("partials/head") %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/theme.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/styles-tablet.css">
-    <link rel="stylesheet" href="/css/styles-desktop.css">
-    <link rel="stylesheet" href="/css/style-register.css">
-    <link rel="stylesheet" href="/css/styles-login.css">
-</head>
-<header class=" j-space-between bgc-header font-color header-register ">
-    <div style="justify-content: space-between; align-items:center;">
-        <section class="logotype">
-            <div class=" logo">
-                <a href="/"><img src="/img/logo-white.svg" alt="logo"></a>
-            </div>
-        </section>
-    </div>
-    <section style=" align-items: center;" class=" categorias margin-10 display-flex  font-12 ">
-        <div class="hombre margin-10 ">
-            <div class="hombre-barra""></div>
-                <a class=" text-decoration-reg" href="">HOMBRE
-                </a>
-            </div>
-            <div class="mujer margin-10">
-                <div class="mujer-barra""></div>
-                    <a class=" text-decoration-reg" href="">MUJER</a>
-                </div>
-                <div class=" niños margin-10">
-                    <div class="niños-barra""></div>
-                    <a class=" text-decoration-reg" href="">NIÑOS</a>
-                    </div>
-                    <div class=" recetados margin-10">
-                        <div class="recetados-barra""></div>
-                    <a class=" text-decoration-reg" href="">RECETADOS</a></div>
-    </section>
-    <div>
-        <section class="bar w-30 display-flex margin-10">
-            <div style="margin: 0px 20px;"> <a href=""><i style="color: white;"
-                        class="lni lni-menu iconos-header"></i></a>
-                <label for=""></label>
-        </section>
-    </div>
-</header>
+<body>
+    <%- include ("partials/header") %>
+
 
 <main>
     <form class="form" action="/">
@@ -96,50 +47,9 @@
         </div>
     </form>
 </main>
-<footer>
-    <p>
-    <div class="loguitos">
-        <i class="far fa-handshake"></i>
-    </div>
-    <div class="pies">TERMINOS Y CONDICIONES</div>
-    <p>Una vez admitida la resolución del contrato, en caso de devolución del dinero la entidad debe hacer el
-        reintegro en 14
-        días contados desde la solicitud, de acuerdo a lo dispuesto en el RD 1/2007, por lo que el establecimiento
-        no debe
-        diferir mucho más la devolución excusándose en plazos más amplios.</p>
-    </p>
 
-    <p>
-    <div class="loguitos">
-        <i class="fas fa-users"></i>
-    </div>
-    <div class="pies">NOSOTROS</div>
-    <p>Nuestra misión es contribuir al desarrollo de la salud visual en el país al precio más bajo del mercado. Para
-        ello,
-        contamos con asesoría profesional en todas nuestras sucursales y la más amplia variedad en productos
-        ópticos: lentes
-        oftálmicos, lentes de sol, lentes de contactos y accesorios..</p>
-    </p>
+<%- include ("partials/footer") %>
 
-    <p>
-    <div class="loguitos">
-        <i class="far fa-comments"></i>
-    </div>
-    <div class="pies">CONTACTO</div>
-    <p>
-    <ul>Ecommerce@optica.com.ar</ul>
-    <ul>Sucursales@optica.com.ar</ul>
-    </p>
-
-    <p>
-    <div class="loguitos">
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-twitter"></i>
-    </div>
-    <div class="pies">REDES</div>
-    <p>Seguinos en nuestras redes sociales</p>
-    </p>
-</footer>
+</body>
 
 </html>

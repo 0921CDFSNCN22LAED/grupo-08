@@ -1,83 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de productos</title>
-    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/theme.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/styles-tablet.css">
-    <link rel="stylesheet" href="/css/styles-desktop.css">
-</head>
+<%- include ("partials/head") %>
 
 <body>
-    <header class="bgc-header font-color header ">
-        <section class="pad-10 w-35 display-flex">
-            <div class=" logo-black">
-                <a href="/"><img src="/img/logo-black.svg" alt="logo-back"></a>
-                <div class="logo-verde">
-                    <a href="/"><img src="/img/logo-verde.svg" alt="logo-verde"></a>
-                </div>
-            </div>
-        </section>
-        <section style=" align-items: center;" class=" margin-10 display-flex w-50 font-12 ">
-            <div class="hombre margin-10 ">
-                <div class="hombre-barra""></div>
-                <a class=" text-decoration" href="">HOMBRE
-                    </a>
-                </div>
-                <div class="mujer margin-10">
-                    <div class="mujer-barra""></div>
-                    <a class=" text-decoration" href="">MUJER</a>
-                    </div>
-                    <div class=" niños margin-10">
-                        <div class="niños-barra""></div>
-                    <a class=" text-decoration" href="">NIÑOS</a>
-                        </div>
-                        <div class=" recetados margin-10">
-                            <div class="recetados-barra""></div>
-                    <a class=" text-decoration" href="">RECETADOS</a></div>
-        </section>
+    <%- include ("partials/header") %>
 
-        <section class="w-50 display-flex margin-10">
-            <div class="search-bar">
-                <label for="" class="label-none">Barra de busqueda</label>
-                <input type="text" name="search-bar" id="search-bar" placeholder="¿Qué estás buscando?">
-                <i class="lni lni-search-alt"></i>
-            </div>
-
-        </section>
-
-        <nav class="display-flex margin-10 w-15">
-            <div style="margin: 0px 20px;" class="class= category"> <a href=""><i
-                        class="lni lni-menu iconos-header"></i></a>
-                <label for=""></label>
-            </div>
-            <div style="margin: 0px 20px;" class="bag-menu">
-                <label for="" class="label-none">Register</label>
-                <a href=""><i class="lni lni-shopping-basket iconos-header"></i>
-
-
-                    <ul>
-                        <li><a href="#"></a>Copras</li>
-                        <li><a href="#"></a>Favoritos</li>
-                    </ul>
-
-                </a>
-            </div>
-            <div style="margin: 0px 20px;" class="register-opction">
-                <label for="" class="label-none">Bag</label>
-                <a href=""><i class="lni lni-user iconos-header"></i></i>
-                </a>
-            </div>
-
-        </nav>
-    </header>
+    <main>
     <section>
         <article>
 
@@ -137,7 +63,9 @@
         </article>
     </section>
     </main>
-    <footer></footer>
+
+    <%- include ("partials/footer") %>
+    
 </body>
 
 </html>
