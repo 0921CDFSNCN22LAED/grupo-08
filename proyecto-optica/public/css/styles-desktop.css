@@ -124,7 +124,7 @@
   }
 
   .bolsa i:hover {
-    transform: scale(130%);
+    transform: scale(110%);
     transition: all 300ms;
     animation: reverse;
     color: #171a21;

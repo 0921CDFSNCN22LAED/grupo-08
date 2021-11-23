@@ -289,7 +289,6 @@ ol {
 
 .btn-icons-header:hover {
   color: black;
-  transform: scale(120%);
 }
 
 .btn-check:focus + .btn,
