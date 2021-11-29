@@ -15,3 +15,6 @@ app.use("/register", routeRegister);
 app.use("/login", routeLogin);
 app.use("/carrito", routeCarrito);
 /* app.use("/product-detail", routeMain); */
+
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
