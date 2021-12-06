@@ -172,7 +172,14 @@ module.exports = {
   login: function (req, res) {
     res.render("users/login");
   },
+  inicio: function (req, res) {
+    res.redirect("home");
+  },
   register: (req, res) => {
     res.render("users/register");
   },
+  create: function (req,res){
+    res.redirect("/login")
+  },
+ 
 };
