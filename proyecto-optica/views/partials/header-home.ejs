@@ -32,8 +32,12 @@
                 <i class="lni lni-user iconos-header"></i>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="register">Registrate</a></li>
-                <li><a class="dropdown-item" href="login">Ingresa</a></li>
+                <a class="dropdown-item" href="/user/register">
+                    <li>Registrate</li>
+                </a>
+                <a class="dropdown-item" href="/user/login">
+                    <li>Ingresa</li>
+                </a>
             </ul>
         </div>
         <div class="dropdown">
@@ -42,19 +46,25 @@
                 <i class="lni lni-shopping-basket iconos-header"></i>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="carrito">Carrito</a></li>
-                <li><a class="dropdown-item" href="favoritos">Favoritos</a></li>
+                <a class="dropdown-item" href="/car">
+                    <li>Carrito</li>
+                </a>
+                <a class="dropdown-item" href="favoritos">
+                    <li>Favoritos</li>
+                </a>
             </ul>
         </div>
     </nav>
 </div>
 
 <section class="bar w-30 display-flex margin-10" style="justify-content: space-between;align-items: center;">
-    <div class="search-bar">
-        <label for="" class="label-none">Barra de busqueda</label>
-        <input type="text" name="search-bar" id="search-bar">
-        <i class="lni lni-search-alt"></i>
-    </div>
+    <form action="/search" method="GET">
+        <div class="search-bar">
+            <label for="" class="label-none">Barra de busqueda</label>
+            <input type="text" name="search">
+            <button type="submit"> <i class="lni lni-search-alt"></i></button>
+        </div>
+    </form>
     <nav class="navbar navbar-light  fixed-top ">
         <div>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -64,17 +74,17 @@
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="/products">Todos los productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="/products/create">Crea Producto</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button"

@@ -9,3 +9,19 @@
   margin: 10px 0px;
   text-align: center;
 }
+/*****      FOOTER LOGIN     *****/
+.footer-login {
+  position: absolute;
+  bottom: 0;
+}
+.formularies {
+  max-width: 700px;
+}
+.form-login {
+  display: flex;
+}
+@media (min-width: 1024px) {
+  .main-login {
+    margin-top: 64px;
+  }
+}

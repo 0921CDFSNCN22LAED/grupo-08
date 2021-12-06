@@ -9,10 +9,6 @@ h5 {
 label {
   display: block;
 }
-.header {
-  display: flex;
-  align-items: center;
-}
 
 .logo-verde {
   display: none;
@@ -61,7 +57,10 @@ label {
   display: flex;
 }
 .header {
-  background-color: #292c2e;
+  background-color: rgb(15, 15, 15);
+  /*  background-color: #292c2e; */
+  display: flex;
+  align-items: center;
 }
 .texto-1 {
   font-size: 14px;
@@ -109,6 +108,10 @@ label {
   background-color: white;
   font-size: 20px;
 }
+.search-bar button {
+  border: white;
+  background-color: white;
+}
 .texto-titulo {
   font-size: 14px;
   font-weight: bolder;
@@ -134,13 +137,6 @@ ol {
   padding: 0px;
 }
 
-/* 
-
-
-
-
-
-*/
 .navbar {
   padding: 0px;
 }
@@ -162,17 +158,6 @@ ol {
 .navbar-toggler:focus {
   box-shadow: 0px 0px 10px rgb(100, 100, 100, 0);
 }
-/* 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  */
 
 .bag-menu {
   position: relative;
@@ -191,9 +176,7 @@ ol {
   transition-property: transform, opacity;
   transition-duration: 450ms;
 }
-/* .iconos-header:active { tendia que cambiar el fondo
-    color: rgb(161, 210, 214);
-  } */
+
 .bag-menu:active ul {
   visibility: visible;
   opacity: 1;
@@ -233,6 +216,7 @@ ol {
 .shadows div {
   border: none;
 }
+
 .bolsa {
   display: block;
   font-size: 16px;
@@ -281,7 +265,11 @@ ol {
   padding: 10px;
 }
 
-/* ////// boostrap menu-icons header  /////// */
+.container-fluid {
+  background-color: #292c2e;
+}
+
+/*******    BOOSTRAP MENU-ICONS HEADER      *******/
 
 .dropdown-toggle::after {
   display: none;
@@ -310,7 +298,7 @@ ol {
 .dropdown-menu a:hover {
   background-color: #0bc197;
 }
-/*          ////////////      menu desplegable boostrap     //////// */
+/*******    MENU DESPLEGABLE BOOSTRAP     *******/
 
 .offcanvas {
   background-color: rgb(15, 15, 15);
@@ -328,8 +316,13 @@ ol {
   color: #0bc197 !important;
 }
 
-/* error de productos despues de 480 */
+/**** ERROR DE PRODUCTOS DEPUES DE 480PX *****/
 .container-products {
   width: 90%;
   margin: auto;
+}
+/****     SOMBRA PRODUCTOS      *****/
+.container-products-list {
+  box-shadow: 0px 0px 10px rgb(100, 100, 100, 1);
+  border-radius: 5px;
 }

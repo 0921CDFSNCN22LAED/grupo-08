@@ -103,10 +103,12 @@ h2 {
 /* /////////           theme product-detail         ///////////  */
 
 .parte-derecha h2 {
-  font-size: 20px;
+  font-size: 35px;
+  font-weight: 400;
+  color: black;
 }
 .parte-derecha h3 {
-  font-size: 15px;
+  font-size: 20px;
 }
 .bottom-article ul a li h3,
 .bottom-article ul a li h3 {

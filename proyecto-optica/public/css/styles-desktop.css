@@ -6,6 +6,7 @@
 
 @media (min-width: 1024px) {
   .header {
+    /*    background-color: #292c2e; */
     position: fixed;
     width: 100%;
     display: flex;
@@ -14,10 +15,6 @@
     animation: reverse;
     z-index: 1000;
     top: 0px;
-  }
-
-  .header {
-    background-color: #292c2e;
   }
 
   .offcanvas-end {
@@ -147,4 +144,13 @@
   .texto-19 {
     display: flex;
   }
+}
+/*  ********  PRODUCTS ********  */
+.margin-top {
+  margin-top: 100px;
+}
+/****     SOMBRA PRODUCTOS      *****/
+.container-products-list {
+  box-shadow: none;
+  border-radius: none;
 }

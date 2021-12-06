@@ -1,9 +1,11 @@
 .header-register {
+  background-color: rgba(15, 15, 15, 0.95);
+
   display: flex;
   align-items: center;
   transition: 450ms;
   animation: reverse;
-  background-color: #292c2e;
+  /* background-color: #292c2e; */
 }
 .color-p {
   color: #535b61;
@@ -73,10 +75,13 @@
       display: flex;
     }
   }
-  .main {
+  .main-register {
     justify-content: space-evenly;
+    margin-top: 80px;
   }
-
+  .form-register {
+    width: 100%;
+  }
   .text-decoration-reg:hover {
     color: #0bc197;
   }
