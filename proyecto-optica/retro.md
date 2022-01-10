@@ -12,3 +12,17 @@ seccion 3: Cosas que debemos seguir haciendo podria entrar el mantener nuestro r
 seccion 4: Cosas que debemos hacer menos seria dejar de irnos de temas en las reuniones
 
 seccion 5: Dejar de arrancar los sprint tarde.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+*SPRINT 4:*
+
+Start Doing: Establecer fechas fijas, en la que todos estemos disponibles, para hacer las reuniones, puestas en comun, dudas del equipo etc.
+
+More of: Darle mayor uso al tablero de trello, para organizar tareas y llevar un seguimiento de las mismas. Mas enfoque en lo principal durante las reuniones.
+
+Keep Doing : Mantener el dialogo y comunicacion diaria entre el equipo.
+
+Less of: Menos dialogo inesesario al comienzo de las reuniones.
+
+Stop Doing: No cargar con mas responsabildades al que compañero que esta mas "avanzado".
