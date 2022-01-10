@@ -9,112 +9,192 @@
         </header>
 
         <main class="main-register display-flex">
+            <% const invalid="is-invalid" %>
+                <form class="form-register" action="/user/register" method="post" enctype="multipart/form-data">
+                    <h2 class="margin-10" style="text-align: center;">
+                        Crea Tu cuenta
+                    </h2>
+                    <section class="formularies">
+                        <div>
+                            <div class="m-formularies">
+                                <label for="name"></label>
+                                <input class="form-control <%= locals.errors && errors.name? 'is-invalid': '' %> "
+                                    name="name" id="name" placeholder="Nombre" <%if(locals.oldData && oldData.name){%>
+                                value="<%=oldData.name%>"
+                                    <% } %>>
+                                        <% if(locals.errors && errors.name) { %>
+                                            <div class=" text-danger">
+                                                <p>
+                                                    <%=errors.name.msg%>
+                                                </p>
+                                            </div>
+                                            <% } %>
+                            </div>
 
-            <form class="form-register" action="/user/register" method="post">
-                <h2 class="margin-10" style="text-align: center;">
-                    Crea Tu cuenta
-                </h2>
-                <section class="formularies">
-                    <div>
-                        <div class="m-formularies">
-                            <label for="name"></label>
-                            <input class="formularies-deco flex-q-1" type=" text" name="name" id="name"
-                                placeholder="Nombre">
-                        </div>
-                        <div class=" m-formularies">
-                            <label for="lastname"></label>
-                            <input class=" formularies-deco flex-q-1" type="text" name="lastName" id="lastName"
-                                placeholder="Apellido">
-                        </div>
-                        <div class=" text-center">
-                            <img src="/img/line.png" style="width: 15%;" alt="">
-                        </div>
-                        <div class="m-formularies">
-                            <label> Pais/Region</label>
-                            <select class="flex-q-1 formularies-deco" name="country" id="country">
-                                <option value="Argentna">Argentina</option>
-                                <option value="Estados Unidos">Estados Unidos</option>
-                                <option value="Mexico">Mexico</option>
-                                <option value="Chile">Chile</option>
-                                <option value="Uruguay">Uruguay</option>
-                                <option value="Pais">Pais</option>
-                                <option value="Pais">Pais</option>
-                                <option value="Pais">Pais</option>
-                                <option value="Pais">Pais</option>
-                                <option value="Pais">Pais</option>
-                                <option value="Pais">Pais</option>
-                                <option value="Pais">Pais</option>
-                            </select>
-                        </div class="m-formularies">
+                            <div class=" m-formularies">
+                                <label for="lastname"></label>
+                                <input class=" formularies-deco flex-q-1 form-control 
+                                <%= locals.errors && errors.lastName ? 'is-invalid' : '' %> " name="lastName"
+                                    id="lastName" placeholder="Apellido" <% if(locals.oldData && oldData.name) { %>
+                                value="<%=oldData.lastName%> "
+                                    <% } %>>
+                                        <% if( locals.errors && errors.lastName) { %>
+                                            <div class="text-danger">
+                                                <p>
+                                                    <%= errors.lastName.msg %>
+                                                </p>
+                                            </div>
+                                            <% } %>
+                            </div>
 
-                        <div class="m-formularies">
-                            <label>Fecha Nacimiento:</label>
-                            <input class=" formularies-deco flex-q-1" type="date" name="datetime" id="date-time">
-                        </div>
-                        <div class=" text-center">
-                            <img src="/img/line.png" style="width: 15%;" alt="">
-                        </div>
-                        <div class="m-formularies">
-                            <label for="Email"></label>
-                            <input class=" formularies-deco flex-q-1" type="email" name="email" placeholder="Email"
-                                id="email">
-                        </div>
-                        <div class="m-formularies">
-                            <label for="password"></label>
-                            <input class=" formularies-deco flex-q-1" type="password" name="password" id="password"
-                                placeholder="Contraseña">
-                        </div>
-                        <div class="m-formularies">
-                            <label for="password"></label>
-                            <input class=" formularies-deco flex-q-1" type="password" name="confirmPassword"
-                                id="password" placeholder="Confirmar contraseña">
-                        </div>
-                        <div class=" text-center">
-                            <img src="/img/line.png" style="width: 15%;" alt="">
-                        </div>
-                        <div class="m-formularies">
-                            <label for="address"> </label>
-                            <input class=" formularies-deco flex-q-1" type="text" name="streetAddress"
-                                placeholder="Domicilio" id="address">
-                        </div>
-                        <div class="m-formularies">
-                            <label>Interes:</label>
-                            <select class="boton-deco" name="favoriteCategory" id="favoriteCategory">
-                                <option value="comprar">comprar</option>
-                                <option value="vender">vender</option>
-                            </select>
-                        </div>
-                        <div class="m-formularies">
-                            <label>Seleciones Categorias Favoritas:</label>
-                            <label>Glass x</label>
-                            <input class="flex-q-1" type="checkbox" name="catgoria1" value="">
+                            <div class=" text-center">
+                                <img src="/img/line.png" style="width: 15%;" alt="">
+                            </div>
+                            <div class="m-formularies">
+                                <label> Pais/Region</label>
+                                <select class="flex-q-1 form-control formularies-deco 
+                                <%= locals.errors && errors.country ? 'is-invalid' : '' %> " name="country">
+                                    <option value="">Elige un pais</option>
+                                    <%const
+                                        paises=['Argentina','Mexico','Chile','Uruguay','Colombia','Venezuela','Brasil','Bolivia','USA']
+                                        %>
+                                        <% for(const pais of paises) { %>
+                                            <option value="<%=pais %>" <%=locals.oldData && (oldData.country==pais)
+                                                ? "selected" : "" %> >
+                                                <%=pais %>
+                                            </option>
+                                            <% } %>
+                                </select>
+                                <% if(locals.errors && errors.country) { %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.country.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
 
-                            <label>Glass x</label>
-                            <input class="flex-q-1" type="checkbox" name="catgoria2" value="">
+                            </div class="m-formularies">
 
-                            <label>Glass x</label>
-                            <input class="flex-q-1" type="checkbox" name="catgoria3" value="">
+                            <div class="m-formularies">
+                                <label>Fecha Nacimiento:</label>
+                                <input class=" formularies-deco flex-q-1 form-control
+                                <%= locals.errors && errors.datetime ? 'is-invalid' : '' %> " type="date"
+                                    name="datetime" id="date-time" <%if(locals.oldData && oldData.datetime) { %>
+                                value="<%=oldData.datetime%>"
+                                    <% } %>>
+                                        <% if(locals.errors && errors.datetime) { %>
+                                            <div class="text-danger">
+                                                <p>
+                                                    <%= errors.datetime.msg %>
+                                                </p>
+                                            </div>
+                                            <% } %>
+                            </div>
+                            <div class=" text-center">
+                                <img src="/img/line.png" style="width: 15%;" alt="">
+                            </div>
+                            <div class="m-formularies">
+                                <label for="Email"></label>
+                                <input class=" formularies-deco flex-q-1 form-control
+                                <%= locals.errors && errors.email ? 'is-invalid' : '' %> " name="email"
+                                    placeholder="Email" id="email" <%if(locals.oldData && oldData.email) { %>
+                                value="<%=oldData.email%>"
+                                    <% } %>>
+                                        <% if( locals.errors && errors.email) { %>
+                                            <div class="text-danger">
+                                                <p>
+                                                    <%= errors.email.msg %>
+                                                </p>
+                                            </div>
+                                            <% } %>
+                            </div>
+                            <div class="m-formularies">
+                                <label for="password"></label>
+                                <input class=" formularies-deco flex-q-1 form-control
+                                <%= locals.errors && errors.password ? 'is-invalid' : '' %> " type="password"
+                                    name="password" id="password" placeholder="Contraseña">
+                                <% if(locals.errors && errors.password) { %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.password.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <div class="m-formularies">
+                                <label for="password"></label>
+                                <input class=" formularies-deco flex-q-1 form-control
+                                <%= locals.errors && errors.confirmPassword ? 'is-invalid' : '' %> " type="password"
+                                    name="confirmPassword" id="password" placeholder="Confirmar contraseña">
+                                <% if(locals.errors && errors.confirmPassword) { %>
+                                    <div class="text-danger">
+                                        <p>
+                                            <%= errors.confirmPassword.msg %>
+                                        </p>
+                                    </div>
+                                    <% } %>
+                            </div>
+                            <div class=" text-center">
+                                <img src="/img/line.png" style="width: 15%;" alt="">
+                            </div>
+                            <div class="m-formularies">
+                                <label for="address"> </label>
+                                <input class=" formularies-deco flex-q-1 form-control
+                                <%= locals.errors && errors.lastName ? 'is-invalid' : '' %> " type=" text"
+                                    name="streetAddress" placeholder="Domicilio" id="address" <%if(locals.oldData &&
+                                    oldData.name) { %>
+                                value="<%=oldData.streetAddress%>"
+                                    <% } %>>
+                                        <% if(locals.errors && errors.streetAddress) { %>
+                                            <div class="text-danger">
+                                                <p>
+                                                    <%= errors.streetAddress.msg %>
+                                                </p>
+                                            </div>
+                                            <% } %>
+                            </div>
+                            <div class="m-formularies">
+                                <label>Interes:</label>
+                                <select class="boton-deco" name="buySell" id="favoriteCategory">
+                                    <option value="comprar">comprar</option>
+                                    <option value="vender">vender</option>
+                                </select>
+                            </div>
+                            <div class="m-formularies checkbox-container">
+                                <label>Seleciones Categorias Favoritas:</label>
+                                <% const categories=["catgoria1","catgoria2","catgoria3","catgoria4"] %>
+                                    <% for(category of categories) { %>
+                                        <div class="flex-q-1">
+                                            <label for="">
+                                                <%= category%>
+                                            </label>
+                                            <input type="checkbox" name="favoriteCategory" value="<%=category%>"
+                                                <%=locals.oldData && (oldData.favoriteCategory===category) ? "checked"
+                                                : "" %>>
+                                        </div>
+                                        <% } %>
+                            </div>
 
-                            <label>Glass x</label>
-                            <input class="flex-q-1" type="checkbox" name="catgoria4" value="">
+                            <div class="m-formularies">
+                                <label for="avatar">Seleccione una imagen</label>
+                                <input class="form-control 
+                                <%=locals.errors && errors.avatar ? 'is-invalid' : ''%>" type="file" name="avatar"
+                                    id=" avatar">
+                                <div class="text-danger">
+                                    <% if(locals.errors && errors.avatar) {%>
+                                        <%= errors.avatar.msg %>
+                                            <% } %>
+                                </div>
+                            </div>
 
-                            <label>Glass x</label>
-                            <input class="flex-q-1" type="checkbox" name="catgoria5" value="">
+                            <div class="m-formularies">
+                                <button class="continuar-deco" type="submit">Continuar</button>
+                                <button class="borrar-deco" type="reset">Borrar</button>
+                            </div>
                         </div>
+                    </section>
 
-                        <div class="m-formularies">
-                            <label for="avatar">Seleccione una imagen</label>
-                            <input type="file" name="avatar" accept="jpg" id=" avatar">
-                        </div>
-
-                        <div class="m-formularies">
-                            <button class="continuar-deco" type="submit">Continuar</button>
-                            <button class="borrar-deco" type="reset">Borrar</button>
-                        </div>
-                    </div>
-                </section>
-
-            </form>
+                </form>
         </main>
         <footer>
             <%- include('../partials/footer.ejs') %>

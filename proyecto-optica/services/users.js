@@ -1,31 +1,44 @@
-const fs = require("fs");
-const path = require("path");
-const usersFilePath = path.join(__dirname, "../data/usersDateBase.json");
-const usersDataBase = fs.readFileSync(usersFilePath);
-const users = JSON.parse(usersDataBase);
+const bcryptjs = require("bcryptjs");
+const jsonHelper = require("../lib/jsonHelper");
+const pahtUserJson = "../data/usersDataBase.json";
 
-function saveUsers() {
-  const usersText = JSON.stringify(users, null, 4);
-  fs.writeFileSync(usersFilePath, usersText, "utf-8");
-}
+const users = jsonHelper.getData(pahtUserJson);
+
 module.exports = {
   users,
-  saveUsers,
+  findOne: (userId) => {
+    const user = users.find((user) => {
+      return userId == user.userId;
+    });
+    return user;
+  },
+  findEmail: (email) => {
+    const user = users.find((user) => {
+      return email == user.email;
+    });
+    return user;
+  },
+  findByField: function (field, text) {
+    return users.find((oneUser) => oneUser[field] === text);
 
-  registerUser: (body) => {
+    //retorna el primero que encuentra
+  },
+  registerUser: (body, file) => {
+    const password = bcryptjs.hashSync(body.password, 10);
+    if (bcryptjs.compareSync(body.confirmPassword, password)) {
+      body.confirmPassword = password;
+    }
     const user = {
       userId: Date.now(),
       ...body,
+      password: password,
+      avatar: file,
     };
-    const verification = users.find((user) => {
-      return body.email == user.email;
-    });
-    if (verification === undefined) {
+
+    const verification = users.find((user) => body.email === user.email);
+    if (!verification) {
       users.push(user);
-      saveUsers();
-      return true;
-    } else {
-      return false;
+      jsonHelper.seveData(users, pahtUserJson);
     }
   },
 };

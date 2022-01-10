@@ -1,24 +1,10 @@
-const { name } = require("ejs");
-const fs = require("fs");
-const path = require("path");
-const { brotliDecompress } = require("zlib");
+const jsonHelper = require("../lib/jsonHelper");
 const libFunctions = require("../lib/libFunctions");
-const productsFilePath = path.join(__dirname, "../data/productsDataBase.json");
-const productsDateBase = fs.readFileSync(productsFilePath, {
-  encoding: "utf-8",
-});
-
-const products = JSON.parse(productsDateBase);
-
-function saveProducts() {
-  const texto = JSON.stringify(products, null, 4);
-  fs.writeFileSync(productsFilePath, texto, "utf-8");
-}
+const productsFilePath = "../data/productsDataBase.json";
+const products = jsonHelper.getData(productsFilePath);
 
 module.exports = {
   products,
-
-  saveProducts,
 
   listProductsHome: () => {
     const arrayProducts = [];
@@ -39,6 +25,7 @@ module.exports = {
 
   createOne: (body, files) => {
     const productId = Date.now();
+
     const filenames = libFunctions.fileNameImage(files);
     const name = libFunctions.firstLetterUpperCase(body.name);
     libFunctions.estructuraCreateObject(
@@ -46,8 +33,7 @@ module.exports = {
       body,
       name,
       filenames,
-      products,
-      saveProducts
+      products
     );
     return productId;
   },
@@ -61,20 +47,13 @@ module.exports = {
     const index = libFunctions.indexOne(productId, products);
     const filenames = libFunctions.fileNameImage(files);
     const name = libFunctions.firstLetterUpperCase(body.name);
-    libFunctions.estructuraUpdateObject(
-      body,
-      name,
-      filenames,
-      index,
-      products,
-      saveProducts
-    );
+    libFunctions.estructuraUpdateObject(body, name, filenames, index, products);
   },
   eliminatedOne: (productId) => {
     const index = products.findIndex((prod) => {
       return productId == prod.productId;
     });
     products.splice(index, 1);
-    saveProducts();
+    jsonHelper.seveData(products, productsFilePath);
   },
 };

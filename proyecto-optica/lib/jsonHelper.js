@@ -1,10 +1,17 @@
 const fs = require("fs");
 const path = require("path");
-const usersFilePath = path.join(__dirname, "../data/usersDateBase.json");
-const usersDataBase = fs.readFileSync(usersFilePath);
-const users = JSON.parse(usersDataBase);
 
-function saveUsers() {
-  const usersText = JSON.stringify(users, null, 4);
-  fs.writeFileSync(usersFilePath, usersText, "utf-8");
-}
+module.exports = {
+  getData: (pathJson) => {
+    const filePath = path.join(__dirname, pathJson);
+    const jsonParseado = JSON.parse(
+      fs.readFileSync(filePath, { encoding: "utf-8" })
+    );
+    return jsonParseado;
+  },
+  seveData: (paramToSave, pathToSave) => {
+    const filePath = path.join(__dirname, pathToSave);
+    const paramStringify = JSON.stringify(paramToSave, null, 4);
+    fs.writeFileSync(filePath, paramStringify);
+  },
+};

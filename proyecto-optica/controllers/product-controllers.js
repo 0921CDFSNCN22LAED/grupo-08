@@ -11,6 +11,7 @@ module.exports = {
   store: (req, res) => {
     const body = req.body;
     const files = req.files;
+
     const productId = productsServices.createOne(body, files);
     res.redirect(`/products/${productId}`);
   },

@@ -190,6 +190,27 @@ ol {
   color: #000;
 }
 
+/********   SECTION LOGGED-LOGOUT HEADER  ********/
+.container-section-logged {
+  display: flex;
+}
+.container-section-logged h6 {
+  color: white;
+}
+.container-profile-header {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+.container-profile-header > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background-color: white;
+}
+/********----------------********/
+
 .loguitos {
   color: #0bc197;
   margin: 8px, 8px;
@@ -276,10 +297,15 @@ ol {
 }
 
 .btn-icons-header {
+  display: flex;
   font-size: 20px;
   color: black;
 }
 
+.name-logged {
+  margin: auto;
+  margin-left: 10px;
+}
 .btn-icons-header:hover {
   color: black;
 }
@@ -295,9 +321,11 @@ ol {
 .dropdown-menu a {
   color: white;
 }
+
 .dropdown-menu a:hover {
   background-color: #0bc197;
 }
+
 /*******    MENU DESPLEGABLE BOOSTRAP     *******/
 
 .offcanvas {

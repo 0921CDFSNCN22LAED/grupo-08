@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ("../partials/head") %>
+
+
+    <body>
+        <header class="j-space-between bgc-header font-color header">
+            <%- include ("../partials/header-home") %>
+        </header>
+
+        <body>
+            <section class="container-user">
+
+                <h1> Hola <%=userLogged.name %>
+                </h1>
+                <div class="containerImgProfile">
+
+                    <img src="<%=`/img/users/${locals.userLogged.avatar}`%>" alt="">
+
+
+                </div>
+                <input type="text" name="user" id="" value="">
+            </section>
+            <footer class="footer-login">
+                <%- include ("../partials/footer") %>
+            </footer>
+            <%- include('../partials/scripts-boostrap.ejs') %>
+        </body>
+
+</html>

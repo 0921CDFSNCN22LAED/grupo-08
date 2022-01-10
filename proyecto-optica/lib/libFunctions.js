@@ -1,3 +1,5 @@
+const jsonHelper = require("./jsonHelper");
+const productsFilePath = "../data/productsDataBase.json";
 module.exports = {
   firstLetterUpperCase: (query) => {
     const upperCaseInput = query.charAt(0).toUpperCase() + query.slice(1);
@@ -16,14 +18,7 @@ module.exports = {
     });
     return filenames;
   },
-  estructuraCreateObject: (
-    productId,
-    body,
-    name,
-    filenames,
-    products,
-    saveProducts
-  ) => {
+  estructuraCreateObject: (productId, body, name, filenames, products) => {
     const createProduct = {
       productId: productId,
       name: name,
@@ -49,16 +44,9 @@ module.exports = {
     };
     products.push(createProduct);
 
-    saveProducts();
+    jsonHelper.seveData(products, productsFilePath);
   },
-  estructuraUpdateObject: (
-    body,
-    name,
-    filenames,
-    index,
-    products,
-    saveProducts
-  ) => {
+  estructuraUpdateObject: (body, name, filenames, index, products) => {
     const images = products[index].image;
     if (images.length > 0) {
       for (image of filenames) {
@@ -91,6 +79,6 @@ module.exports = {
       envio: body.envio,
     };
     products[index] = updateProduct;
-    saveProducts();
+    jsonHelper.seveData(products, productsFilePath);
   },
 };
