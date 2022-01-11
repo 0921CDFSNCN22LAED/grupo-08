@@ -26,3 +26,16 @@ Keep Doing : Mantener el dialogo y comunicacion diaria entre el equipo.
 Less of: Menos dialogo inesesario al comienzo de las reuniones.
 
 Stop Doing: No cargar con mas responsabildades al que compañero que esta mas "avanzado".
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+*SPRINT 5:*
+Start Doing: Establecer las tareas y ayudarnos entre nosotros.
+
+More of: Distribuir los commit entre nosotros, muchas veces trabajamos en conjunto y lo termina subiendo el que mas sabe para corregir cosas.
+
+Keep Doing: Mantener el dialago diario que llevamos.
+
+Less of: Sostenernos siempre en el que mas sabe.
+
+Stop Doing: De tratar de buscar resultados fuera del proyecto, y trabajar en el aunque nos confundamos.
