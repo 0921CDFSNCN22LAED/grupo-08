@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Products'; // esto debería estar en singular
+    let alias = 'Price'; // esto debería estar en singular
     let cols = {
         id: {
             type: dataTypes.BIGINT(10).UNSIGNED,
@@ -9,26 +9,24 @@ module.exports = (sequelize, dataTypes) => {
         },
         // created_at: dataTypes.TIMESTAMP,
         // updated_at: dataTypes.TIMESTAMP,
-        productName: {
-            type: dataTypes.STRING(500),
+        price: {
+            type: dataTypes.INTEGRAL,
             allowNull: false
         },
-        shortDescription: {
-            type: dataTypes.STRING(500),
-            allowNull: false
-        },
-        longDescription: {
-            type: dataTypes.STRING(500),
+        discount: {
+            type: dataTypes.INTEGRAL,
             allowNull: false
         },
         
     };
     let config = {
-        tableName: "products",
+        tableName: "price",
         timestamps: true,
         
     }
-    const Products = sequelize.define(alias,cols,config);
+    const User = sequelize.define(alias,cols,config);
 
-    return Products
+   
+
+    return Price
 };
