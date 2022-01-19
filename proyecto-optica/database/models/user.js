@@ -1,41 +1,54 @@
-module.exports = (sequelize, dataTypes)=> {
-let alias = 'User'; // esto debería estar en singular
-    let cols = {
-        id: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
-            primaryKey: true,
-            allowNull: false,
-            autoIncrement: true
-        },
-        name: {
-            type: dataTypes.STRING(100),
-            allowNull: false
-        },
-        lastName: {
-            type: dataTypes.STRING(100),
-            allowNull: false
-        },
-        dateBirth: {
-            type: dataTypes.DATEONLY,
-            allowNull: false
-        },
-        country: {
-            type: dataTypes.STRING(100),
-            allowNull: false
-        },
-        email: {
-            type: dataTypes.STRING(500),
-            allowNull: false
-        }, 
-        streetAdress : {
-            type : dataTypes.BIGINIT(100),
-            allowNull: false,
-        }
-    }
-        let config = {
-        tableName: "user",
-        timestamps: true,
-}
-const User = sequelize.define(alias,cols,config);
-return User
+module.exports = (sequelize, dataTypes) => {
+	let alias = "User"; // esto debería estar en singular
+	let cols = {
+		id: {
+			type: dataTypes.BIGINT(10).UNSIGNED,
+			primaryKey: true,
+			allowNull: false,
+			autoIncrement: true,
+		},
+		name: {
+			type: dataTypes.STRING(100),
+			allowNull: false,
+		},
+		lastName: {
+			type: dataTypes.STRING(100),
+			allowNull: false,
+		},
+		dateBirth: {
+			type: dataTypes.DATEONLY,
+			allowNull: false,
+		},
+		country: {
+			type: dataTypes.STRING(100),
+			allowNull: false,
+		},
+		email: {
+			type: dataTypes.STRING(500),
+			allowNull: false,
+		},
+		streetAdress: {
+			type: dataTypes.BIGINIT(100),
+			allowNull: false,
+		},
+	};
+	let config = {
+		tableName: "user",
+		timestamps: true,
+	};
+	const User = sequelize.define(alias, cols, config);
+
+	User.asssociate = function (modelos) {
+		User.belongsTo(modelos.Car, {
+			as: "car",
+			foreignKey: "user_id",
+		});
+		User.belongsToMany(modelos.Orders, {
+			as: "orders",
+			through: "order_detail",
+			foreignKey: "user_id",
+			otherId: "order_id",
+		});
+	};
+	return User;
 };

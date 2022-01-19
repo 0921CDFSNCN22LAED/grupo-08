@@ -1,19 +1,19 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Car"
+    let alias = "Car";
     let cols = {
-        id : {
-            type : dataTypes.BIGINIT(100),
+        id: {
+            type: dataTypes.BIGINIT(100),
             allowNull: false,
             primaryKey: true,
-            autoincrement : true
+            autoIncrement: true,
         },
-        orderDate : dataTypes.DATEONLYE,
-        allowNull: false
-    } 
-let config = {
-    tableName: "user",
-    timestamps: true,
-} 
-const Car = sequelize.define(alias,cols,config);
-return Car
+        orderDate: dataTypes.DATEONLYE,
+        allowNull: false,
+    };
+    let config = {
+        tableName: "user",
+        timestamps: true,
+    };
+    const Car = sequelize.define(alias, cols, config);
+    return Car;
 };
