@@ -1,5 +1,5 @@
 modelue.exports = (sequelize, dataTypes) => {
-	let alias = "Prescriptions";
+	let alias = "Categories";
 	let cols = {
 		id: {
 			type: dataTypes.BIGINIT(100),
@@ -8,7 +8,7 @@ modelue.exports = (sequelize, dataTypes) => {
 			autoIncrement: true,
 		},
 		name: {
-			type: dataTypes.BOLEEAN,
+			type: dataTypes.STRING(200),
 			allowNull: true,
 		},
 	};
@@ -18,6 +18,6 @@ modelue.exports = (sequelize, dataTypes) => {
 		updatedAt: "updated_at",
 		deletedAt: false,
 	};
-	const Prescriptions = sequelize.define(alias, cols, config);
-	return Prescriptions;
+	const Categories = sequelize.define(alias, cols, config);
+	return Categories;
 };
