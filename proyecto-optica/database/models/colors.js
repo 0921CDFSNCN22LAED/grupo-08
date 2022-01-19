@@ -1,8 +1,10 @@
-module.exports = (sequelize, dataTypes) => {
+const { Sequelize } = require(".");
+const dataTypes = Sequelize.DataTypes;
+module.exports = (sequelize) => {
   const alias = "colors"; // esto debería estar en singular
   const cols = {
     id: {
-      type: dataTypes.BIGINT(10).UNSIGNED,
+      type: dataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,

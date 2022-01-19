@@ -1,8 +1,10 @@
-module.exports = (sequelize, dataTypes) => {
+const { Sequelize } = require(".");
+const dataTypes = Sequelize.DataTypes;
+module.exports = (sequelize) => {
   const alias = "price"; // esto debería estar en singular
   const cols = {
     id: {
-      type: dataTypes.BIGINT(10).UNSIGNED,
+      type: dataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,
@@ -10,11 +12,11 @@ module.exports = (sequelize, dataTypes) => {
     // created_at: dataTypes.TIMESTAMP,
     // updated_at: dataTypes.TIMESTAMP,
     price: {
-      type: dataTypes.INTEGRAL,
+      type: dataTypes.INTEGER,
       allowNull: false,
     },
     discount: {
-      type: dataTypes.INTEGRAL,
+      type: dataTypes.INTEGER,
       allowNull: false,
     },
   };

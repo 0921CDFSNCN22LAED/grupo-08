@@ -1,13 +1,15 @@
-module.exports = (sequelize, dataTypes) => {
+const { Sequelize } = require(".");
+const dataTypes = Sequelize.DataTypes;
+module.exports = (sequelize) => {
   const alias = "Car";
   const cols = {
     id: {
-      type: dataTypes.BIGINIT(100),
+      type: dataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    orderDate: dataTypes.DATEONLYE,
+    orderDate: dataTypes.DATE,
     allowNull: false,
   };
   const config = {

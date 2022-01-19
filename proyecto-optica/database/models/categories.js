@@ -1,8 +1,10 @@
-modelue.exports = (sequelize, dataTypes) => {
-  const alias = "Categories";
+const { Sequelize } = require(".");
+const dataTypes = Sequelize.DataTypes;
+modelue.exports = (sequelize) => {
+  const alias = "Category";
   const cols = {
     id: {
-      type: dataTypes.BIGINIT(100),
+      type: dataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,

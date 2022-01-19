@@ -1,8 +1,10 @@
-module.exports = (sequelize, dataTypes) => {
+const { Sequelize } = require(".");
+const dataTypes = Sequelize.DataTypes;
+module.exports = (sequelize) => {
   const alias = "User"; // esto debería estar en singular
   const cols = {
     id: {
-      type: dataTypes.BIGINT(10).UNSIGNED,
+      type: dataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
       autoIncrement: true,
@@ -16,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     dateBirth: {
-      type: dataTypes.DATEONLY,
+      type: dataTypes.DATE,
       allowNull: false,
     },
     country: {
@@ -28,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     streetAdress: {
-      type: dataTypes.BIGINIT(100),
+      type: dataTypes.BIGINT(100),
       allowNull: false,
     },
   };
@@ -38,7 +40,7 @@ module.exports = (sequelize, dataTypes) => {
   };
   const User = sequelize.define(alias, cols, config);
 
-  User.asssociate = function (modelos) {
+  User.associate = function (modelos) {
     User.belongsTo(modelos.Car, {
       as: "car",
       foreignKey: "user_id",
