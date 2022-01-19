@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Price'; // esto debería estar en singular
+    let alias = 'price'; // esto debería estar en singular
     let cols = {
         id: {
             type: dataTypes.BIGINT(10).UNSIGNED,
@@ -24,9 +24,13 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: true,
         
     }
-    const User = sequelize.define(alias,cols,config);
-
+    const Price = sequelize.define(alias,cols,config);
    
-
+    Price.associate = function(modelos){
+        Price.belongsTo(modelos.Products,{
+            as: "products",
+            foreignKey: "price_id"
+        })
+    }
     return Price
 };

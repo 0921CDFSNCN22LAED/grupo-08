@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Products'; // esto debería estar en singular
+    let alias = 'products'; // esto debería estar en singular
     let cols = {
         id: {
             type: dataTypes.BIGINT(10).UNSIGNED,
@@ -30,5 +30,20 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Products = sequelize.define(alias,cols,config);
 
+    Products.associate = function(modelos){
+        Products.belongsTo(modelos.Price,{
+            as: "price",
+            foreignKey: "price_id"
+        })
+        Products.belongsToMany(modelos.Color,{
+        as: "colors",
+        through: "product_color",
+        foreignKey: "product_id", 
+        otherKey: "color_id" 
+
+        })
+    }
+
+    
     return Products
-};
+    }
