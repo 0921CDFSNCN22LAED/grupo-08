@@ -1,10 +1,10 @@
 const sequelize = require("sequelize");
 const dataTypes = sequelize.DataTypes;
 module.exports = (sequelize) => {
-  const alias = "Order";
+  const alias = "PrescriptionValue";
   const cols = {
-    user_id: dataTypes.INTEGER,
-    orderDate: dataTypes.DATE,
+    prescription_id: dataTypes.INTEGER,
+    valueEye_id: dataTypes.INTEGER,
   };
   const config = {
     timestamps: true,
@@ -12,8 +12,6 @@ module.exports = (sequelize) => {
     updatedAt: "updated_at",
     deletedAt: false,
   };
-  const Order = sequelize.define(alias, cols, config);
-
-  return Order;
+  const PrescriptionValue = sequelize.define(alias, cols, config);
+  return PrescriptionValue;
 };
-

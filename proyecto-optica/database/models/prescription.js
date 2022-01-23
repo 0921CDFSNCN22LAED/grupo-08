@@ -1,18 +1,9 @@
-const { Sequelize } = require(".");
-const dataTypes = Sequelize.DataTypes;
+const sequelize = require("sequelize");
+const dataTypes = sequelize.DataTypes;
 modelue.exports = (sequelize) => {
   const alias = "Prescription";
   const cols = {
-    id: {
-      type: dataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      autoIncrement: true,
-    },
-    name: {
-      type: dataTypes.BOLEEAN,
-      allowNull: true,
-    },
+    prescriptionName: dataTypes.INTEGER,
   };
   const config = {
     timestamps: true,
@@ -20,6 +11,6 @@ modelue.exports = (sequelize) => {
     updatedAt: "updated_at",
     deletedAt: false,
   };
-  const Prescriptions = sequelize.define(alias, cols, config);
-  return Prescriptions;
+  const Prescription = sequelize.define(alias, cols, config);
+  return Prescription;
 };

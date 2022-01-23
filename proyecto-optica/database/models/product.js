@@ -1,41 +1,32 @@
-const { Sequelize } = require(".");
-const dataTypes = Sequelize.DataTypes;
+const sequelize = require("sequelize");
+const dataTypes = sequelize.DataTypes;
 module.exports = (sequelize) => {
   const alias = "Product"; // esto debería estar en singular
   const cols = {
-    id: {
-      type: dataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      autoIncrement: true,
-    },
-    // created_at: dataTypes.TIMESTAMP,
-    // updated_at: dataTypes.TIMESTAMP,
-    productName: {
-      type: dataTypes.STRING(500),
-      allowNull: false,
-    },
-    shortDescription: {
-      type: dataTypes.STRING(500),
-      allowNull: false,
-    },
-    longDescription: {
-      type: dataTypes.TEXT,
-      allowNull: false,
-    },
+    productName: dataTypes.STRING,
+
+    shortDescription: dataTypes.STRING,
+
+    longDescription: dataTypes.TEXT,
+
+    prescription_id: dataTypes.INTEGER,
+
+    image_id: dataTypes.INTEGER,
   };
   const config = {
-    tableName: "products",
     timestamps: true,
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+    deletedAt: false,
   };
-  const Products = sequelize.define(alias, cols, config);
+  const Product = sequelize.define(alias, cols, config);
 
-  Products.associate = function (modelos) {
-    Products.belongsTo(modelos.Price, {
+  Product.associate = function (modelos) {
+    Product.belongsTo(modelos.Price, {
       as: "price",
       foreignKey: "price_id",
     });
-    Products.belongsToMany(modelos.Color, {
+    Product.belongsToMany(modelos.Color, {
       as: "colors",
       through: "product_color",
       foreignKey: "product_id",
@@ -43,5 +34,5 @@ module.exports = (sequelize) => {
     });
   };
 
-  return Products;
+  return Product;
 };

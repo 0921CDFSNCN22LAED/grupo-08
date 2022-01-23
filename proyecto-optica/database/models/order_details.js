@@ -1,10 +1,10 @@
 const sequelize = require("sequelize");
 const dataTypes = sequelize.DataTypes;
 module.exports = (sequelize) => {
-  const alias = "Order";
+  const alias = "OrderDetail";
   const cols = {
-    user_id: dataTypes.INTEGER,
-    orderDate: dataTypes.DATE,
+    order_id: dataTypes.INTEGER,
+    product_id: dataTypes.INTEGER,
   };
   const config = {
     timestamps: true,
@@ -12,8 +12,6 @@ module.exports = (sequelize) => {
     updatedAt: "updated_at",
     deletedAt: false,
   };
-  const Order = sequelize.define(alias, cols, config);
-
-  return Order;
+  const OrderDetail = sequelize.define(alias, cols, config);
+  return OrderDetail;
 };
-
