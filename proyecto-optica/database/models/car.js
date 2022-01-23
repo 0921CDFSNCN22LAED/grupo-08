@@ -1,21 +1,18 @@
-const { Sequelize } = require(".");
-const dataTypes = Sequelize.DataTypes;
+const sequelize = require("sequelize");
+const dataTypes = sequelize.DataTypes;
 module.exports = (sequelize) => {
   const alias = "Car";
   const cols = {
-    id: {
-      type: dataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
+    user_id: dataTypes.INTEGER,
     orderDate: dataTypes.DATE,
-    allowNull: false,
   };
   const config = {
-    tableName: "user",
     timestamps: true,
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+    deletedAt: false,
   };
   const Car = sequelize.define(alias, cols, config);
   return Car;
 };
+

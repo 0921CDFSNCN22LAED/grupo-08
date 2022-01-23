@@ -1,24 +1,15 @@
-const { Sequelize } = require(".");
-const dataTypes = Sequelize.DataTypes;
+const sequelize = require("sequelize");
+const dataTypes = sequelize.DataTypes;
 module.exports = (sequelize) => {
-  const alias = "color"; // esto debería estar en singular
+  const alias = "Color"; // esto debería estar en singular
   const cols = {
-    id: {
-      type: dataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      autoIncrement: true,
-    },
-    // created_at: dataTypes.TIMESTAMP,
-    // updated_at: dataTypes.TIMESTAMP,
-    nameColor: {
-      type: dataTypes.DATE,
-      allowNull: false,
-    },
+    colorName: dataTypes.DATE,
   };
   const config = {
-    tableName: "colors",
     timestamps: true,
+    createdAt: "created_at",
+    updatedAt: "updated_at",
+    deletedAt: false,
   };
   const Color = sequelize.define(alias, cols, config);
 
@@ -31,5 +22,5 @@ module.exports = (sequelize) => {
     });
   };
 
-  return Colors;
+  return Color;
 };
