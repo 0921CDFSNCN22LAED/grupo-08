@@ -12,5 +12,18 @@ modelue.exports = (sequelize) => {
     deletedAt: false,
   };
   const Prescription = sequelize.define(alias, cols, config);
+
+   Prescription.associate = function (modelos) { 
+   
+    Prescription.belongsToMany(modelos.Product, {
+      as: "Product",
+      through: "products_prescription",
+      foreignKey: "prescription_id",
+      otherKey: "product_id",
+    });
+
+   }
+
+
   return Prescription;
 };
