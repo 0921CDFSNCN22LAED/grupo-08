@@ -17,7 +17,7 @@ module.exports = (sequelize) => {
 
   Price.associate = function (modelos) {
     Price.belongsTo(modelos.Products, {
-      as: "products",
+      as: "Product",
       foreignKey: "price_id",
     });
   };
