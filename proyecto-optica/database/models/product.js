@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
   const Product = sequelize.define(alias, cols, config);
 
   Product.associate = function (modelos) {
-    Product.belongsTo(modelos.Price, {
+    Product.hasMany(modelos.Price, {
       as: "price",
       foreignKey: "price_id",
     });
