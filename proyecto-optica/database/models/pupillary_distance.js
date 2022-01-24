@@ -14,5 +14,12 @@ module.exports = (sequelize) => {
     deletedAt: false,
   };
   const pupillaryDistance = sequelize.define(alias, cols, config);
-  return pupillaryDistance;
+
+  pupillaryDistance.associate = (models) => {
+    pupillaryDistance.belongsTo(models.ValueEye, {
+      as: "valueEye",
+      foreignKey: "pupillaryDistance_id",
+    });
+    return pupillaryDistance;
+  };
 };

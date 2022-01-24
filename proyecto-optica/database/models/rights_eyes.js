@@ -14,5 +14,13 @@ module.exports = (sequelize) => {
     deletedAt: false,
   };
   const RightEye = sequelize.define(alias, cols, config);
+  //preguntar como usar belongsTO
+  //usan la foreignKey porque no usan hasOne?
+  RightEye.associate = (models) => {
+    RightEye.belongsTo(models.ValueEye, {
+      as: "valueEye",
+      foreignKey: "rightEye_id",
+    });
+  };
   return RightEye;
 };

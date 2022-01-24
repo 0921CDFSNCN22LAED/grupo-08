@@ -14,5 +14,13 @@ module.exports = (sequelize) => {
     deletedAt: false,
   };
   const LeftEye = sequelize.define(alias, cols, config);
+
+  LeftEye.associate = (models) => {
+    LeftEye.belongsTo(models.ValueEye, {
+      as: "valueEye",
+      foreignKey: "leftEye_id",
+    });
+  };
+
   return LeftEye;
 };
