@@ -23,15 +23,26 @@ module.exports = (sequelize) => {
 
   Product.associate = function (modelos) {
     Product.hasMany(modelos.Price, {
-      as: "price",
+      as: "Price",
       foreignKey: "price_id",
     });
     Product.belongsToMany(modelos.Color, {
-      as: "colors",
+      as: "Color",
       through: "product_color",
       foreignKey: "product_id",
       otherKey: "color_id",
     });
+    Product.hasMany(modelos.Image, {
+      as: "Image",
+      foreignKey: "image_id",
+    });
+    Product.belongsToMany(modelos.Sizes, {
+      as: "Size",
+      through: "products_sizes",
+      foreignKey: "product_id",
+      otherKey: "size_id",
+    });
+  
   };
 
   return Product;

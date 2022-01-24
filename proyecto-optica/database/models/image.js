@@ -13,5 +13,14 @@ module.exports = (sequelize) => {
     deletedAt: false,
   };
   const Image = sequelize.define(alias, cols, config);
-  return Image;
+
+
+  Image.associate = function (modelos) {
+    Image.belongsTo(modelos.Products, {
+      as: "Product",
+      foreignKey: "image_id",
+    });
+  };
+  return Price;
 };
+
