@@ -14,12 +14,21 @@ modelue.exports = (sequelize) => {
   const Prescription = sequelize.define(alias, cols, config);
   Prescription.associate = (models) => {
     Prescription.hasMany(models.Product);
+
     Prescription.belongsToMany(models.ValueEye, {
       as: "ValueEyes",
       through: "prescriptions_values",
       foreignKey: "prescription_id",
       otherKey: "values_eyes",
     });
+
+    Prescription.belongsToMany(models.Product, {
+      as: "Product",
+      through: "products_prescription",
+      foreignKey: "prescription_id",
+      otherKey: "product_id",
+    });
   };
+
   return Prescription;
 };
