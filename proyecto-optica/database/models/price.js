@@ -16,11 +16,10 @@ module.exports = (sequelize) => {
   const Price = sequelize.define(alias, cols, config);
 
   Price.associate = function (modelos) {
-    Price.hasMany(modelos.Products, { 
+    Price.hasMany(modelos.Products, {
       as: "Product",
       foreignKey: "price_id",
     });
   };
   return Price;
 };
-
