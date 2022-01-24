@@ -13,6 +13,14 @@ module.exports = (sequelize) => {
     deletedAt: false,
   };
   const Car = sequelize.define(alias, cols, config);
+
+  Car.associate = function (modelos) {
+    Car.belongsTo(modelos.User, {
+      as: "User",
+      foreignKey: "user_id",
+    });
+  };
+
   return Car;
 };
 

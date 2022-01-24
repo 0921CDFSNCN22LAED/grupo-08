@@ -14,6 +14,13 @@ module.exports = (sequelize) => {
   };
   const Order = sequelize.define(alias, cols, config);
 
+  Color.associate = function (modelos) {
+    Color.hasMany(modelos.User, {
+      as: "User",
+      foreignKey: "user_id",
+    });
+  };
+
   return Order;
 };
 
