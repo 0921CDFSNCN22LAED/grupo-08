@@ -37,11 +37,11 @@ module.exports = (sequelize) => {
 
   User.associate = function (modelos) {
     User.belongsTo(modelos.Car, {
-      as: "Car",
+      as: "car",
       foreignKey: "user_id",
     });
     User.belongsTo(modelos.Orders, {
-      as: "Orders",
+      as: "orders",
       foreignKey: "user_id",
     });
   };
