@@ -16,7 +16,7 @@ module.exports = (sequelize) => {
 
 
   Image.associate = function (modelos) {
-    Image.belongsTo(modelos.Products, {
+    Image.hasMany(modelos.Products, {
       as: "Product",
       foreignKey: "image_id",
     });

@@ -40,11 +40,9 @@ module.exports = (sequelize) => {
 			as: "car",
 			foreignKey: "user_id",
 		});
-		User.belongsToMany(modelos.Orders, {
+		User.belongsTo(modelos.Orders, {
 			as: "orders",
-			through: "order_detail",
 			foreignKey: "user_id",
-			otherId: "order_id",
 		});
 	};
 	return User;

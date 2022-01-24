@@ -12,5 +12,15 @@ modelue.exports = (sequelize) => {
     deletedAt: false,
   };
   const Category = sequelize.define(alias, cols, config);
+
+  Category.associate = function (modelos) {
+   Category.belongsToMany(modelos.Product, {
+      as: "Product",
+      through: "products_categories",
+      foreignKey: "category_id", 
+      otherKey: "product_id",
+    });
+
+  };
   return Category;
 };
