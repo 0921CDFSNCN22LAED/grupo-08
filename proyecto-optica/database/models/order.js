@@ -14,12 +14,12 @@ module.exports = (sequelize) => {
 	};
 	const Order = sequelize.define(alias, cols, config);
 
-	Order.associate = function (modelos) {
-		Order.hasMany(modelos.User, {
+	Order.associate = function (models) {
+		Order.hasMany(models.User, {
 			as: "user",
 			foreignKey: "user_id",
 		});
-		Order.belongsTo(modelos.Products, {
+		Order.belongsTo(models.Products, {
 			as: "products",
 			through: "order_details",
 			foreignKey: "car_id",

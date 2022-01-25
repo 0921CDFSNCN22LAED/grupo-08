@@ -14,12 +14,12 @@ module.exports = (sequelize) => {
 	};
 	const Car = sequelize.define(alias, cols, config);
 
-	Car.associate = function (modelos) {
-		Car.belongsTo(modelos.User, {
+	Car.associate = function (models) {
+		Car.belongsTo(models.User, {
 			as: "user",
 			foreignKey: "user_id",
 		});
-		Car.hasMany(modelos.Products, {
+		Car.hasMany(models.Products, {
 			as: "car",
 			through: "products_cars",
 			foreignKey: "car_id",

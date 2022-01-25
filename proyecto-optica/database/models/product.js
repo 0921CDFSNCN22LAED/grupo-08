@@ -21,46 +21,46 @@ module.exports = (sequelize) => {
 	};
 	const Product = sequelize.define(alias, cols, config);
 
-	Product.associate = function (modelos) {
-		Product.belongsTo(modelos.Price, {
+	Product.associate = function (models) {
+		Product.belongsTo(models.Price, {
 			as: "Price",
 			foreignKey: "price_id",
 		});
-		Product.belongsToMany(modelos.Color, {
+		Product.belongsToMany(models.Color, {
 			as: "Color",
 			through: "product_color",
 			foreignKey: "product_id",
 			otherKey: "color_id",
 		});
-		Product.belongsTo(modelos.Image, {
+		Product.belongsTo(models.Image, {
 			as: "Image",
 			foreignKey: "image_id",
 		});
-		Product.belongsToMany(modelos.Sizes, {
+		Product.belongsToMany(models.Sizes, {
 			as: "Size",
 			through: "products_sizes",
 			foreignKey: "product_id",
 			otherKey: "size_id",
 		});
-		Product.belongsToMany(modelos.Category, {
+		Product.belongsToMany(models.Category, {
 			as: "Category",
 			through: "products_categories",
 			foreignKey: "product_id",
 			otherKey: "category_id",
 		});
-		Product.belongsToMany(modelos.Prescription, {
+		Product.belongsToMany(models.Prescription, {
 			as: "Prescription",
 			through: "products_prescription",
 			foreignKey: "product_id",
 			otherKey: "prescription_id",
 		});
-		Product.belongsTo(modelos.Orders, {
+		Product.belongsTo(models.Orders, {
 			as: "orders",
 			through: "orders_details",
 			foreignKey: "product_id",
 			otherKey: "order_id",
 		});
-		Product.belongsToMany(modelos.Car, {
+		Product.belongsToMany(models.Car, {
 			as: "car",
 			through: "products_cars",
 			foreignKey: "product_id",
