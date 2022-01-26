@@ -17,6 +17,14 @@ module.exports = {
       axis: {
         type: Sequelize.REAL,
       },
+      createdAt: {
+        allowNull: true,
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
+        allowNull: true,
+        type: Sequelize.DATE,
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {

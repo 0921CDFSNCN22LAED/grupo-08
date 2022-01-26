@@ -12,7 +12,25 @@ module.exports = {
         type: Sequelize.STRING,
       },
       format: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(5),
+      },
+      status: {
+        type: Sequelize.INTEGER,
+      },
+      product_id: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "products",
+          key: "id",
+        },
+      },
+      createdAt: {
+        allowNull: true,
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
+        allowNull: true,
+        type: Sequelize.DATE,
       },
     });
   },

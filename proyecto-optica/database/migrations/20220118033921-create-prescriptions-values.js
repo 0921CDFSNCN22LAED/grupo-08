@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      prescriptionName_id: {
+      prescription_id: {
         type: Sequelize.INTEGER,
         references: {
           model: "prescriptions",
@@ -21,6 +21,14 @@ module.exports = {
           model: "values_eyes",
           key: "id",
         },
+      },
+      createdAt: {
+        allowNull: true,
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
+        allowNull: true,
+        type: Sequelize.DATE,
       },
     });
   },

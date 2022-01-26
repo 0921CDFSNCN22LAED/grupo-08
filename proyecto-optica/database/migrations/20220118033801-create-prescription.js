@@ -14,6 +14,14 @@ module.exports = {
       prescriptionName: {
         type: Sequelize.STRING,
       },
+      createdAt: {
+        allowNull: true,
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
+        allowNull: true,
+        type: Sequelize.DATE,
+      },
     });
   },
   //20220118035801-create-prescription

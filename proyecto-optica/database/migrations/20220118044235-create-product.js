@@ -13,10 +13,10 @@ module.exports = {
         type: Sequelize.STRING,
       },
       shortDescription: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(500),
       },
       longDescriptions: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       prescription_id: {
         type: Sequelize.INTEGER,
@@ -25,19 +25,13 @@ module.exports = {
           key: "id",
         },
       },
-      image_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: "images",
-          key: "id",
-        },
+      createdAt: {
+        allowNull: true,
+        type: Sequelize.DATE,
       },
-      price_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: "prices",
-          key: "id",
-        },
+      updatedAt: {
+        allowNull: true,
+        type: Sequelize.DATE,
       },
     });
   },
