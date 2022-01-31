@@ -103,4 +103,7 @@ module.exports = {
     productsServices.eliminatedOne(productId);
     res.redirect("/products");
   },
+  tarjeta: (req, res) => {
+    res.render("tarjeta");
+  },
 };
