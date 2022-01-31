@@ -1,7 +1,7 @@
 const sequelize = require("sequelize");
 const dataTypes = sequelize.DataTypes;
 module.exports = (sequelize) => {
-  const alias = "Prescription";
+  const alias = "Prescription"; //siempre en singular
   const cols = {
     name: dataTypes.STRING,
     valueStatus: dataTypes.INTEGER,

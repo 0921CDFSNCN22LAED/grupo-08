@@ -4,6 +4,7 @@ const path = require("path");
 const routeMain = require("./routers/main-router");
 const routeUser = require("./routers/user-router");
 const routeCar = require("./routers/car-router");
+const routertarjeta = require("./routers/tarjeta")
 const routeProducts = require("./routers/product-router");
 const session = require("express-session");
 const cookies = require("cookie-parser");
@@ -28,7 +29,7 @@ app.use(
 app.use(cookies());
 app.use(rememberUserCookieMiddleware);
 app.use(userLoggedMiddleware);
-
+ 
 // ********  HOME ********//
 app.use("/", routeMain);
 
@@ -40,3 +41,7 @@ app.use("/user", routeUser);
 
 // ******** CARRITO ********//
 app.use("/car", routeCar);
+
+// ******** TARJETA ********//
+
+app.use("/tarjeta", routertarjeta);

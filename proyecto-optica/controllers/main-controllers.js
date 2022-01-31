@@ -17,4 +17,7 @@ module.exports = {
   car: (req, res) => {
     res.render("carrito");
   },
+  tarjeta: function(req, res){
+    res.render("tarjeta")
+  }
 };
