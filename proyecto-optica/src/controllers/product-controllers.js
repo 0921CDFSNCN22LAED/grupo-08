@@ -99,7 +99,6 @@ module.exports = {
   },
   destroy: (req, res) => {
     const productId = req.params.productId;
-    console.log(productId);
     productsServices.eliminatedOne(productId);
     res.redirect("/products");
   },
