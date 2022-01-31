@@ -39,3 +39,16 @@ Keep Doing: Mantener el dialago diario que llevamos.
 Less of: Sostenernos siempre en el que mas sabe.
 
 Stop Doing: De tratar de buscar resultados fuera del proyecto, y trabajar en el aunque nos confundamos.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+*SPRINT 6:*
+Start Doing: Hacer la retro al principio del sprint.
+
+More of: Aprovechar la dinamica de la reunion diaria.
+
+Keep Doing: Estar pendiente de lo que hace cada uno para no pisarse codigo.
+
+Less of: Dejar desactualizado el Trello.
+
+Stop Doing: Dejar la retro para el final del sprint.
