@@ -1,0 +1,19 @@
+const express = require("express");
+const mainRouter = require("./main-router");
+const productRouter = require("./product-router");
+const userRouter = require("./user-router");
+const carRouter = require("./car-router");
+const tarjetaRouter = require("./tarjeta-router");
+const apiIndexRouter = require("./api/apiIndexRouter");
+const router = express.Router();
+
+router.use("/", mainRouter);
+
+router.use("/products", productRouter);
+router.use("/user", userRouter);
+// preguntar a pablo donde poner el carrito
+router.use("/car", carRouter);
+router.use("/tarjeta", tarjetaRouter);
+router.use("/api", apiIndexRouter);
+
+module.exports = router;

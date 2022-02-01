@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+</head>
+
+<body>
+    <header class="j-space-between bgc-header font-color header">
+        <%- include ("../partials/header-home") %>
+    </header>
+    <form action="/products/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <section>
+            <article class="article-detail-product article-product-edit">
+                <section class="top-izquierda">
+                    <div class="cont-prod-edit-carrusel ">
+                        <div id=" carousel-product-details" class="carousel carrusel-product slide"
+                            data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <% for(let i=0; i < product.image.length ; i++) { %>
+                                    <% if(i==0) { %>
+                                        <div class="carousel-item active" id="big-carrusel">
+                                            <img src="<%=`/img/products/${product.image[i].filename}`%>"
+                                                class="d-block w-100 " alt="image<%=`${i}`%>">
+                                        </div>
+                                        <% } else { %>
+                                            <div class="carousel-item small-carrusel">
+                                                <img src="<%=`/img/products/${product.image[i].filename}`%>"
+                                                    class="d-block w-100" alt="image<%=`${i}`%>">
+                                            </div>
+                                            <% } %>
+                                                <% } %>
+                            </div>
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carousel-product-details" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carousel-product-details" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="imgs-del-producto">
+                        <% for(image of product.image) { %>
+                            <img src="<%=`/img/products/${image.filename}`%>" width="20%" alt="">
+                            <% } %>
+                    </div>
+                    <label for="image">Imagenes de productos</label>
+                    <input class="form-control 
+                    <%=locals.errors && errors.images ? 'is-invalid' : ''%>" type="file" name="image-edit-product"
+                        multiple>
+                    <% if(locals.errors && errors.images){ %>
+                        <h5 class=" text-danger">
+                            <%= errors.images.msg %>
+                        </h5>
+                        <% } %>
+                </section>
+                <section class="parte-derecha data">
+                    <div class=" container-title-icon">
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label">Nombre del producto</label>
+
+
+                            <input type="text" name="name"
+                                value="<%=(locals.oldData && oldData.name)? oldData.name : product.name %>"
+                                class="form-control" id="">
+                        </div>
+                        <div class="icons">
+                            <a href="">
+                                <i class="fas fa-shopping-bag"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Breve description</label>
+                        <input type="text" name="shortDescription"
+                            value="<%=(locals.oldData && oldData.shortDescription)? oldData.shortDescription : product.shortDescription %>"
+                            class="form-control" id="">
+                    </div>
+                    <div>
+                        <div class="container-desciption" style="display:flex">
+                            <div class="mb-3">
+                                <label for="" class="form-label">Precio</label>
+                                <input type="text" name="price"
+                                    value="<%=(locals.oldData && oldData.price)? oldData.price :product.price[0].price%>"
+                                    class="form-control" id="">
+                            </div>
+                        </div>
+                        <label for="" class="form-label">Seleccione un color</label>
+                        <input type="color" class="form-control form-control-color" name="color" id="exampleColorInput"
+                            value="<%=locals.oldData && oldData.color ? oldData.color : product.color[0].name %>"
+                            title="Choose your color">
+                        <div class="picker" name="color"></div>
+                        <div class="form-floating">
+                            <select class="form-select" name="size" id="" aria-label="Floating label select example">
+                                <option value="">Seleccione tamaño</option>
+                                <% for(size of sizes){ %>
+                                    <option
+                                        class="form-control <%= locals.oldData && oldData.size ? 'is-invalid' : '' %> "
+                                        value="<%=size.id %>" <%=size.id==product.size_id ? 'selected' : "" %> >
+                                        <%= size.size %>
+                                    </option>
+                                    <% } %>
+                            </select>
+                            <label for="floatingSelect">Works with selects</label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Descuento</label>
+                            <input type="text" name="discount"
+                                value="<%=(locals.oldData && oldData.discount)? oldData.discount : product.price[0].discount %>"
+                                placeholder="Descuento" class="form-control" id="">
+                        </div>
+                        <div class="form-floating">
+                            <select class="form-select" name="envio" id="" aria-label="Floating label select example">
+                                <option value="0">Seleccione empresa con la que
+                                    desea hacer envios</option>
+
+                                <!-- hacer if ternario como hicimos ne el selected de mercado liebre , lo mismos con lso sizes -->
+                                <option value="1">Urbano</option>
+                                <option value="2">Andreani</option>
+                                <option value="3">Correo Argentino</option>
+                                <option value="4">Oca</option>
+                            </select>
+                            <label for="floatingSelect">Works with selects</label>
+                        </div>
+                    </div>
+                    <div class=" cont-btn-buy-dp">
+                        <button type="submit" class="btn btn-outline-info btn-savechanges">Guardar cambios</button>
+                    </div>
+                </section>
+            </article>
+
+
+            <section class=" bottom-article">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                            data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                            aria-selected="true">Descripción</button>
+                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                            type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Detalle</button>
+                        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                            type="button" role="tab" aria-controls="nav-contact"
+                            aria-selected="false">Recomendaciones</button>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                            aria-labelledby="nav-home-tab">
+                            <label for="product-description" class="product-description">Descripcion del
+                                producto</label>
+                            <div class="descripcion-detail-product">
+                                <textarea class="form-control" placeholder="Descripcion del producto"
+                                    id="floatingTextarea2" style="height: 100px"
+                                    name="longDescription"><%=product.longDescription%></textarea>
+                                <label for="floatingTextarea2">Descripcion</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <div class="details-glasses">
+                            <div class="div1-detail-glasses">
+
+                                <label for="">Tamaño</label>
+                                <input type="text" value="<%=`${product.size}`%> ">
+
+                                <label for="">Peso:</label>
+                                <input type="text" name="weigth" value="<%=`${product.weigth}`%>"
+                                    placeholder="Solo numero">
+
+                                <label for=""> Material</label>
+                                <select class="form-select" name="material" id=""
+                                    aria-label="Floating label select example">
+                                    <option selected>Seleccione un material</option>
+                                    <% for(material of materials){%>
+                                        <option value="<%= material.id %>" <%=material.id==product.material_id
+                                            ? 'selected' : '' %>>
+                                            <%= material.material %>
+                                        </option>
+                                        <% }%>
+
+                                </select>
+
+                            </div>
+                            <div class=" div2-detail-glasses">
+
+                                <label for=""> Forma:</label>
+                                <input type="text" name="shape" value="<%=product.shape%>">
+
+                                <label for=""> Borde: </label>
+                                <input type=" text" name="border" value="<%=product.border %>">
+
+                                <label for=""> Especificacion del lente : </label>
+                                <input type="text" name="glassSpecification" value="<%=product.glassSpecification %>">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                            ...</div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </form>
+
+    <footer class="">
+        <%- include ("../partials/footer") %>
+    </footer>
+    <%- include('../partials/scripts-boostrap.ejs') %>
+        <script src="../../../js/products/product-edit.js"></script>
+
+</body>
+
+</html>
