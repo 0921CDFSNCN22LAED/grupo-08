@@ -1,6 +1,6 @@
 const path = require("path");
 const { body } = require("express-validator");
-const db = require("../../database/models");
+const db = require("../../../database/models");
 module.exports = [
   body("name").notEmpty().withMessage("El campo nombre es obligatorio"),
   body("lastName").notEmpty().withMessage("El campo apellido es obligatorio"),
