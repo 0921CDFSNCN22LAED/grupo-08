@@ -44,6 +44,7 @@ module.exports = {
         material_id: body.material,
         active: 1,
       });
+
       const productId = product.id;
 
       /****    IMAGE    ****/
@@ -89,34 +90,11 @@ module.exports = {
     });
     return searchar;
   },
-  updateOne: async (productId, body, files, req) => {
+  updateOne: async (productId, body, files) => {
     try {
       const name = libFunctions.firstLetterUpperCase(body.name);
       const newImages = libFunctions.dataImages(files);
       //newImages me devuelve un array de objetos como esta en la db la tabla images
-
-      if (body.size == "") {
-        req.session.errorLoad = {
-          size: {
-            msg: "Debe seleccionar un tamaño de lente",
-          },
-        };
-        req.session.oldData = body;
-        return `/products/${productId}/edit`;
-      } else {
-        delete req.session.oldData;
-      }
-      if (body.material == "") {
-        req.session.errorLoad = {
-          material: {
-            msg: "Debe seleccionar un material para el lente",
-          },
-        };
-        req.session.oldData = body;
-        return `/products/${productId}/edit`;
-      } else {
-        delete req.session.oldData;
-      }
       const product = await db.Product.update(
         {
           name: body.name,
@@ -172,9 +150,9 @@ module.exports = {
         nest: true,
       });
       const countImagesActives = libFunctions.countImagesActives(ImagesInDB);
-
       //devuelve un numero con la cantidad de imágenes que hay en la db relacionada con este producto
       const countImagesIngresadas = libFunctions.countImagesActives(newImages);
+      //devuelve un numero con la cantidad de imágenes que quiere ingresar
       if (8 - countImagesActives > 0) {
         //si tiene menos de 8 fotos activas entra al if
         for (let i = 0; i < 8 - countImagesActives; i++) {
@@ -188,15 +166,11 @@ module.exports = {
             });
           }
         }
-      } else {
-        req.session.errorLoad = {
-          images: {
-            msg: "Ya tiene 8 fotos de antejos , debe eliminar alguna para cargar nuevas",
-          },
-        };
-        req.session.oldData = body;
-        return `/products/${productId}/edit`;
       }
+
+      // ****probar hacer ese else dentro de express-validator*****
+
+      //  return `/products/${productId}/edit`;
       return `/products/${productId}`;
     } catch (error) {
       console.log(error);

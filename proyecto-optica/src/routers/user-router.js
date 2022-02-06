@@ -8,7 +8,7 @@ const userControllers = require("../controllers/user-controllers");
 const guestMiddleware = require("../middlewares/middleware-user/guest-middleware");
 const authMilddleware = require("../middlewares/middleware-user/auth-milddleware");
 const uploadFiles = require("../middlewares/middleware-user/middleware-multer");
-const validationsRegister = require("../validations/validation-form-register");
+const validationsRegister = require("../middlewares/validations/validation-form-register");
 
 /***  REGISTER  ***/
 

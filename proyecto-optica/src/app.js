@@ -16,17 +16,17 @@ app.use(express.json()); // LO CAPTURADO DEL FORMULARIO QUE ME LO GUARDE EN FORM
 app.set("views", path.resolve(__dirname, "./views"));
 app.set("view engine", "ejs");
 
-// ********  MIDDLEWARES DE APLICATION ********//
+// ********  MIDDLEWARES DE APLICATION  ********//
 app.use(
-	session({
-		secret: "princesa bebe",
-		resave: false,
-		saveUninitialized: true,
-	})
+  session({
+    secret: "princesa bebe",
+    resave: false,
+    saveUninitialized: true,
+  })
 );
 app.use(cookies());
 app.use(rememberUserCookieMiddleware);
 app.use(userLoggedMiddleware);
 
-// ********  RUTAS ********//
+// ********  RUTAS  ********//
 app.use("/", indexRouter);

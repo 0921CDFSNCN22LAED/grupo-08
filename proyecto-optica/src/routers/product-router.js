@@ -2,14 +2,18 @@ const express = require("express");
 const router = express.Router();
 const productControllers = require("../controllers/product-controllers");
 const uploadFiles = require("../middlewares/middleware-products/middleware-multer");
-
+const multer = require("multer");
+const validationFormCreateProduct = require("../middlewares/validations/validation-form-create-product");
+const validationFormUpdateProduct = require("../middlewares/validations/validation-form-update-product");
 /*** GET ALL PRODUCTS ***/
 router.get("/", productControllers.index);
 // ******** CREATE PRODUCT ********//
 router.get("/create", productControllers.create);
 router.post(
   "/",
-  uploadFiles.array("img-product-crete", 8),
+  uploadFiles.array("img_product_create", 8),
+  validationFormCreateProduct,
+
   productControllers.store
 );
 
@@ -21,7 +25,8 @@ router.get("/:productId/edit", productControllers.edit);
 
 router.put(
   "/:productId",
-  uploadFiles.array("image-edit-product", 8),
+  uploadFiles.array("image_edit_product", 8),
+  validationFormUpdateProduct,
   productControllers.update
 );
 

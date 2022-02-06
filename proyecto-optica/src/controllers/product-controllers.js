@@ -1,109 +1,116 @@
+const fs = require("fs");
 const db = require("../database/models");
-const { saveProducts } = require("../services/products");
+const { validationResult } = require("express-validator");
+const { materialAndSize } = require("../lib/libFunctions");
 const productsServices = require("../services/products");
 
 module.exports = {
-	index: async (req, res) => {
-		const products = await db.Product.findAll({
-			where: {
-				active: 1,
-			},
-			include: [{ association: "image" }, { association: "price" }],
-		});
+  index: async (req, res) => {
+    const products = await db.Product.findAll({
+      where: {
+        active: 1,
+      },
+      include: ["image", "price"],
+    });
 
-		res.render("products/products", { products });
-	},
-	create: async (req, res) => {
-		const sizes = await db.Size.findAll({
-			raw: true,
-			nest: true,
-		});
-		const materials = await db.Material.findAll({
-			raw: true,
-			nest: true,
-		});
-		res.render("products/products-create", { sizes, materials });
-	},
-	store: async (req, res) => {
-		const body = req.body;
-		const files = req.files;
-		const productId = await productsServices.createOne(body, files);
-		res.redirect(`/products/${productId}`);
-	},
-	detail: async (req, res) => {
-		const productId = req.params.productId;
-		const sizes = await db.Size.findAll({
-			raw: true,
-			nest: true,
-		});
-		const product = await db.Product.findOne({
-			where: {
-				id: productId,
-			},
-			include: [
-				{ association: "image" },
-				{ association: "size" },
-				{ association: "material" },
-				{ association: "price" },
-				{ association: "color" },
-			],
-		});
-		console.log(product);
-		console.log(product.image);
+    res.render("products/products", { products });
+  },
 
-		res.render("products/product-detail", { product, sizes });
-	},
-	edit: async (req, res) => {
-		const productId = req.params.productId;
-		const sizes = await db.Size.findAll({
-			raw: true,
-			nest: true,
-		});
-		const materials = await db.Material.findAll({
-			raw: true,
-			nest: true,
-		});
-		const product = await db.Product.findOne({
-			where: {
-				id: productId,
-			},
-			include: [
-				{ association: "image" },
-				{ association: "size" },
-				{ association: "material" },
-				{ association: "price" },
-				{ association: "color" },
-			],
-		});
+  create: async (req, res) => {
+    const dataParaLaVista = await materialAndSize();
+    res.render("products/products-create", {
+      sizes: dataParaLaVista[0],
+      materials: dataParaLaVista[1],
+      errors: req.session.ErrorProductCreate,
+      oldData: req.session.oldDataProductCreate,
+    });
+  },
 
-		res.render("products/product-edit", {
-			product,
-			sizes,
-			materials,
-			errors: req.session.errorLoad,
-			oldData: req.session.oldData,
-		});
-	},
+  store: async (req, res) => {
+    const body = req.body;
+    const files = req.files;
+    const validations = validationResult(req);
 
-	update: async (req, res) => {
-		const productId = req.params.productId;
-		const body = req.body;
-		const files = req.files;
-		const product = await productsServices.updateOne(
-			productId,
-			body,
-			files,
-			req
-		);
-		res.redirect(product);
-	},
-	destroy: (req, res) => {
-		const productId = req.params.productId;
-		console.log(productId);
-		productsServices.eliminatedOne(productId);
-		res.redirect("/products");
-	},
-	confirm: (req, res) => {
-		res.render("confirm-page");
-	},
+    if (validations.errors.length !== 0) {
+      req.session.ErrorProductCreate = validations.mapped();
+      req.session.oldDataProductCreate = body;
+      for (image of files) {
+        fs.unlink(image.path, (err) => {
+          if (err) {
+            console.log(err);
+          }
+        });
+      }
+      res.redirect("products/create");
+    } else {
+      const productId = await productsServices.createOne(body, files);
+      res.redirect(`/products/${productId}`);
+    }
+  },
+
+  detail: async (req, res) => {
+    const productId = req.params.productId;
+    const sizes = await db.Size.findAll({
+      raw: true,
+      nest: true,
+    });
+    const product = await db.Product.findOne({
+      where: {
+        id: productId,
+      },
+      include: ["image", "size", "material", "price", "color"],
+    });
+
+    res.render("products/product-detail", { product, sizes });
+  },
+
+  edit: async (req, res) => {
+    const productId = req.params.productId;
+    const dataParaLaVista = await materialAndSize();
+    const product = await db.Product.findOne({
+      where: {
+        id: productId,
+      },
+      include: ["image", "size", "material", "price", "color"],
+    });
+
+    res.render("products/product-edit", {
+      product,
+      sizes: dataParaLaVista[0],
+      materials: dataParaLaVista[1],
+      errors: req.session.errorProductUpdate,
+      oldData: req.session.oldDataProductUpdate,
+    });
+  },
+
+  update: async (req, res) => {
+    const productId = req.params.productId;
+    const body = req.body;
+    const files = req.files;
+
+    const validations = validationResult(req);
+    console.log(validations.mapped());
+    if (validations.errors.length !== 0) {
+      req.session.errorProductUpdate = validations.mapped();
+      req.session.oldDataProductUpdate = body;
+      for (image of files) {
+        fs.unlink(image.path, (err) => {
+          if (err) {
+            console.log(err);
+          }
+        });
+      }
+      res.redirect(`/products/${productId}/edit`);
+    } else {
+      const product = await productsServices.updateOne(productId, body, files);
+      res.redirect(`/products/${productId}`);
+    }
+  },
+
+  destroy: (req, res) => {
+    const productId = req.params.productId;
+    console.log(productId);
+    productsServices.eliminatedOne(productId);
+    res.redirect("/products");
+  },
 };
