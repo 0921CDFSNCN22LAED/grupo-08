@@ -2,6 +2,7 @@ const express = require("express");
 const mainRouter = require("./main-router");
 const productRouter = require("./product-router");
 const userRouter = require("./user-router");
+const paymentRouter = require("./payment-router");
 const carRouter = require("./car-router");
 const apiIndexRouter = require("./api/apiIndexRouter");
 const router = express.Router();
