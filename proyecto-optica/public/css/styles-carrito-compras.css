@@ -140,37 +140,3 @@ h4 {
     margin-left: 15%;
   }
 }
-.main-prescripcion{
-  text-align: center;
-}
-.distancia{
-  display: flex;
-  text-align: center;
-}
-
-.eye{
-  display: flex;
- flex-direction: row; 
- padding: 10px;
-}
-.esfera{
-  display: flex;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-.cilindro{
-  display: flex;
-  padding-left: 15px;
-  padding-right: 5px;
-}
-.objetos{
-  display: flex;
-  padding-left: 100px;
-}
-.lente{
-  display: flex;
-  padding-right: 15px;
-}
-.no-pres{
-  display: flex;
-}

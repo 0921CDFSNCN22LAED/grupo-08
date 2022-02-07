@@ -23,7 +23,7 @@ module.exports = {
   },
 
   detail: async (req, res) => {
-    const product = Product.findByPk(req.params.id, {
+    const product = await Product.findByPk(req.params.id, {
       include: ["image", "price", "size", "material", "color"],
     });
     let status;

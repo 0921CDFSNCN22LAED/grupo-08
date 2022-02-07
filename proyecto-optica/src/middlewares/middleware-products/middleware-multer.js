@@ -12,7 +12,6 @@ const storage = multer.diskStorage({
     const newFileName = `product_${Date.now()}` + extension;
     cb(null, newFileName);
   },
-  
 });
 
 const uploadFiles = multer({
