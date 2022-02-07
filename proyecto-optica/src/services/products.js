@@ -32,32 +32,28 @@ module.exports = {
     }
   },
 
-  createOne: async (body, files, res) => {
-    /****    PRODUCT    ****/
-    //creo el producto en la db
+  createOne: async (body, files) => {
     try {
       const product = await db.Product.create({
         name: body.name,
         shortDescription: body.shortDescription,
         longDescription: body.longDescription,
-        size_id: body.size,
         material_id: body.material,
         active: 1,
       });
+      product.setSize(body.size);
+      product.setMaterial(body.material);
       const productId = product.id;
-
-      /****    IMAGE    ****/
+      //  IMAGE
       const dataImages = libFunctions.dataImages(files);
       //dataImages es un array de objetos que tienen la estructura qeu requiere la DB (es decir las cols con sus filas)
-      console.log(dataImages);
       dataImages.forEach(async (file) => {
         const image = await db.Image.create({
           ...file,
-          product_id: productId,
         });
+        image.setProduct(productId);
       });
-
-      /****    PRICE    ****/
+      //  PRICE
       let priceDiscount;
       if (body.discount) {
         const discount = (body.discount * body.price) / 100;
@@ -69,18 +65,17 @@ module.exports = {
         price: body.price,
         discount: body.discount,
         priceDiscount: priceDiscount,
-        product_id: productId,
       });
-      /****    COLOR    ****/
-      const color = db.Color.create({
+      price.setProduct(productId);
+      //  COLOR
+      const color = await db.Color.create({
         name: body.color,
-        product_id: productId,
       });
+      color.setProduct(productId);
       return productId;
     } catch (error) {
       console.log(error);
     }
-
     //falta hacer todo eso con todas los demás campos del formulario que tengan relaciones
   },
   search: (query) => {
@@ -89,41 +84,16 @@ module.exports = {
     });
     return searchar;
   },
-  updateOne: async (productId, body, files, req) => {
+  updateOne: async (productId, body, files) => {
     try {
       const name = libFunctions.firstLetterUpperCase(body.name);
       const newImages = libFunctions.dataImages(files);
       //newImages me devuelve un array de objetos como esta en la db la tabla images
-
-      if (body.size == "") {
-        req.session.errorLoad = {
-          size: {
-            msg: "Debe seleccionar un tamaño de lente",
-          },
-        };
-        req.session.oldData = body;
-        return `/products/${productId}/edit`;
-      } else {
-        delete req.session.oldData;
-      }
-      if (body.material == "") {
-        req.session.errorLoad = {
-          material: {
-            msg: "Debe seleccionar un material para el lente",
-          },
-        };
-        req.session.oldData = body;
-        return `/products/${productId}/edit`;
-      } else {
-        delete req.session.oldData;
-      }
       const product = await db.Product.update(
         {
           name: body.name,
           shortDescription: body.shortDescription,
           longDescription: body.longDescription,
-          size_id: body.size,
-          material_id: body.material,
           active: 1,
         },
         {
@@ -132,7 +102,8 @@ module.exports = {
           },
         }
       );
-
+      product.setSize(body.size);
+      product.setMaterial(body.material);
       let priceDiscount;
       if (body.discount) {
         const discount = (body.discount * body.price) / 100;
@@ -172,9 +143,9 @@ module.exports = {
         nest: true,
       });
       const countImagesActives = libFunctions.countImagesActives(ImagesInDB);
-
       //devuelve un numero con la cantidad de imágenes que hay en la db relacionada con este producto
       const countImagesIngresadas = libFunctions.countImagesActives(newImages);
+      //devuelve un numero con la cantidad de imágenes que quiere ingresar
       if (8 - countImagesActives > 0) {
         //si tiene menos de 8 fotos activas entra al if
         for (let i = 0; i < 8 - countImagesActives; i++) {
@@ -188,14 +159,6 @@ module.exports = {
             });
           }
         }
-      } else {
-        req.session.errorLoad = {
-          images: {
-            msg: "Ya tiene 8 fotos de antejos , debe eliminar alguna para cargar nuevas",
-          },
-        };
-        req.session.oldData = body;
-        return `/products/${productId}/edit`;
       }
       return `/products/${productId}`;
     } catch (error) {

@@ -1,6 +1,6 @@
-const jsonHelper = require("./jsonHelper");
+const db = require("../database/models");
 const funciones = require("./functions");
-const productsFilePath = "../data/productsDataBase.json";
+
 module.exports = {
   firstLetterUpperCase: (query) => {
     const upperCaseInput = query.charAt(0).toUpperCase() + query.slice(1);
@@ -36,67 +36,18 @@ module.exports = {
     }
     return array;
   },
-  estructuraCreateObject: (productId, body, name, filenames, products) => {
-    const createProduct = {
-      productId: productId,
-      name: name,
-      shortDescription: body.shortDescription,
-      price: {
-        price: body.price,
-        discount: body.discount,
-      },
-      seller: "",
-      category: "",
-      image: filenames,
-      specification: {
-        color: body.color,
-        longDescription: body.longDescription,
-        size: body.size,
-        weigth: body.weigth,
-        material: body.material,
-        shape: body.shape,
-        border: body.border,
-        glassSpecification: body.glassSpecification,
-      },
-      envio: body.envio,
-    };
-    products.push(createProduct);
-
-    jsonHelper.seveData(products, productsFilePath);
-  },
-  estructuraUpdateObject: (body, name, filenames, index, products) => {
-    const images = products[index].image;
-    if (images.length > 0) {
-      for (image of filenames) {
-        images.push(image);
-      }
-    } else {
-      images = filenames;
-    }
-    const updateProduct = {
-      productId: products[index].productId,
-      name: name,
-      shortDescription: body.shortDescription,
-      price: {
-        price: body.price,
-        discount: body.discount,
-      },
-      seller: "",
-      category: "",
-      image: images,
-      specification: {
-        color: body.color,
-        longDescription: body.longDescription,
-        size: body.size,
-        weigth: body.weigth,
-        material: body.material,
-        shape: body.shape,
-        border: body.border,
-        glassSpecification: body.glassSpecification,
-      },
-      envio: body.envio,
-    };
-    products[index] = updateProduct;
-    jsonHelper.seveData(products, productsFilePath);
+  materialAndSize: async () => {
+    const data = [];
+    const sizes = await db.Size.findAll({
+      raw: true,
+      nest: true,
+    });
+    const materials = await db.Material.findAll({
+      raw: true,
+      nest: true,
+    });
+    data.push(sizes);
+    data.push(materials);
+    return data;
   },
 };
