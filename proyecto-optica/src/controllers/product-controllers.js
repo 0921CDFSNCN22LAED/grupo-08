@@ -32,6 +32,7 @@ module.exports = {
     const validations = validationResult(req);
 
     if (validations.errors.length !== 0) {
+      console.log("hubo errores");
       req.session.ErrorProductCreate = validations.mapped();
       req.session.oldDataProductCreate = body;
       for (image of files) {
@@ -44,6 +45,7 @@ module.exports = {
       res.redirect("products/create");
     } else {
       const productId = await productsServices.createOne(body, files);
+      console.log(productId);
       res.redirect(`/products/${productId}`);
     }
   },
@@ -89,7 +91,7 @@ module.exports = {
     const files = req.files;
 
     const validations = validationResult(req);
-    console.log(validations.mapped());
+
     if (validations.errors.length !== 0) {
       req.session.errorProductUpdate = validations.mapped();
       req.session.oldDataProductUpdate = body;

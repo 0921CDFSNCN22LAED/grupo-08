@@ -3,8 +3,8 @@ const router = express.Router();
 const productControllers = require("../controllers/product-controllers");
 const uploadFiles = require("../middlewares/middleware-products/middleware-multer");
 const multer = require("multer");
-const validationFormCreateProduct = require("../middlewares/middleware-products/validations/validation-form-create-product");
-const validationFormUpdateProduct = require("../middlewares/middleware-products/validations/validation-form-update-product");
+const validationFormCreateProduct = require("../middlewares/validations/validation-form-create-product");
+const validationFormUpdateProduct = require("../middlewares/validations/validation-form-update-product");
 /*** GET ALL PRODUCTS ***/
 router.get("/", productControllers.index);
 // ******** CREATE PRODUCT ********//

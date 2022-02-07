@@ -32,33 +32,28 @@ module.exports = {
     }
   },
 
-  createOne: async (body, files, res) => {
-    /****    PRODUCT    ****/
-    //creo el producto en la db
+  createOne: async (body, files) => {
     try {
       const product = await db.Product.create({
         name: body.name,
         shortDescription: body.shortDescription,
         longDescription: body.longDescription,
-        size_id: body.size,
         material_id: body.material,
         active: 1,
       });
-
+      product.setSize(body.size);
+      product.setMaterial(body.material);
       const productId = product.id;
-
-      /****    IMAGE    ****/
+      //  IMAGE
       const dataImages = libFunctions.dataImages(files);
       //dataImages es un array de objetos que tienen la estructura qeu requiere la DB (es decir las cols con sus filas)
-      console.log(dataImages);
       dataImages.forEach(async (file) => {
         const image = await db.Image.create({
           ...file,
-          product_id: productId,
         });
+        image.setProduct(productId);
       });
-
-      /****    PRICE    ****/
+      //  PRICE
       let priceDiscount;
       if (body.discount) {
         const discount = (body.discount * body.price) / 100;
@@ -70,18 +65,17 @@ module.exports = {
         price: body.price,
         discount: body.discount,
         priceDiscount: priceDiscount,
-        product_id: productId,
       });
-      /****    COLOR    ****/
-      const color = db.Color.create({
+      price.setProduct(productId);
+      //  COLOR
+      const color = await db.Color.create({
         name: body.color,
-        product_id: productId,
       });
+      color.setProduct(productId);
       return productId;
     } catch (error) {
       console.log(error);
     }
-
     //falta hacer todo eso con todas los demás campos del formulario que tengan relaciones
   },
   search: (query) => {
@@ -100,8 +94,6 @@ module.exports = {
           name: body.name,
           shortDescription: body.shortDescription,
           longDescription: body.longDescription,
-          size_id: body.size,
-          material_id: body.material,
           active: 1,
         },
         {
@@ -110,7 +102,8 @@ module.exports = {
           },
         }
       );
-
+      product.setSize(body.size);
+      product.setMaterial(body.material);
       let priceDiscount;
       if (body.discount) {
         const discount = (body.discount * body.price) / 100;
@@ -167,10 +160,6 @@ module.exports = {
           }
         }
       }
-
-      // ****probar hacer ese else dentro de express-validator*****
-
-      //  return `/products/${productId}/edit`;
       return `/products/${productId}`;
     } catch (error) {
       console.log(error);

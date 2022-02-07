@@ -22,7 +22,7 @@ module.exports = {
   prueba: async (req, res) => {
     const producto = await db.Product.findOne({
       where: {
-        id: 1,
+        id: 55,
       },
       include: [
         { association: "image" },
