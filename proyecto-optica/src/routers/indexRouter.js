@@ -5,7 +5,8 @@ const userRouter = require("./user-router");
 const carRouter = require("./car-router");
 const confirmPageRouter = require("./confirm-page-router");
 const apiIndexRouter = require("./api/apiIndexRouter");
-const router = express.Router();
+const prescription = require ("./prescription-router")
+const router = express.Router("./prescription");
 
 router.use("/", mainRouter);
 
@@ -15,5 +16,6 @@ router.use("/user", userRouter);
 router.use("/car", carRouter);
 router.use("/confirm", confirmPageRouter);
 router.use("/api", apiIndexRouter);
+router.use("/prescription", prescription)
 
 module.exports = router;

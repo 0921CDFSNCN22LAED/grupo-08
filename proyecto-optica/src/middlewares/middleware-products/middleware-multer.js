@@ -12,6 +12,7 @@ const storage = multer.diskStorage({
       `product_${Date.now()}` + path.extname(file.originalname);
     cb(null, newFileName);
   },
+  
 });
 const uploadFiles = multer({ storage });
 module.exports = uploadFiles;
