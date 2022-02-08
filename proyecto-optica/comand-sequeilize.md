@@ -1,4 +1,4 @@
-para ejeutar las migraciones :
+para ejecutar las migraciones :
 
 npx sequelize-cli db:migrate
 
