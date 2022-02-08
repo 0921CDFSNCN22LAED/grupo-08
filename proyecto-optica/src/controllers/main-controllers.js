@@ -1,3 +1,4 @@
+const res = require("express/lib/response");
 const db = require("../database/models");
 const productsServices = require("../services/products");
 module.exports = {
@@ -38,5 +39,9 @@ module.exports = {
     } else {
       res.send("Ese producto no se encuentra activado");
     }
+    
   },
+  prescription: function(req, res) {
+    res.render("prescription")
+  }
 };

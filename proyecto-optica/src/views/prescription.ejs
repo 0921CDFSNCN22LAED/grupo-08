@@ -2,7 +2,7 @@
 <html lang="en">
 <%- include ("partials/head") %>
 
-    <body>
+    <body class="body-prescripcion">
         <header class="j-space-between bgc-header font-color header">
             <%- include ("partials/header-home") %>
         </header>
@@ -10,8 +10,8 @@
                 <form class="form-login" action="/tarjeta" method="POST" enctype="multipart/form-data">
                     <section class="formularies login">
             
-                        <h1 class="margin-10" style="text-align: left;">
-                            RECETARIO
+                        <h1 class="margin-50" style="text-align: left;">
+                            Prescripcion
                         </h1>
                         <div class ="distance">
                             <h3 class="Distancia">Distancia</h3>
@@ -195,10 +195,10 @@
                                             
                                                 </div>
                                                 </div>
-                                                <p>-----------------------------------</p>
-                                                    <p>
-                                                      <button class="continuar-deco" type="submit">Enviar</button>
-                                                    </p>
+                                     <p>-----------------------------------</p>
+                                        <p class="boton-front">
+                                          <button class="continuar-deco" type="submit">Enviar sin receta</button>
+                                        </p>
                     </section>
                     
                 </form>
@@ -206,6 +206,7 @@
 
 
              <%- include('partials/footer.ejs') %>
+             <script src = "js/prescription.js"></script>
                 
    </body>
             

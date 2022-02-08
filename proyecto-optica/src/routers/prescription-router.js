@@ -5,7 +5,7 @@ const mainControllers = require("../controllers/main-controllers");
  
 
 router.get("/", mainControllers.prescription);
-router.post("/", validator, mainControllers.compra);
+//router.post("/", validator, mainControllers.compra);
 
 
 module.exports = router;
