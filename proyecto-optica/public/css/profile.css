@@ -3,7 +3,9 @@
   margin: 0;
   padding: 0;
 }
-
+.body-prodile {
+  position: relative;
+}
 .container-user {
   width: 100%;
   margin: auto;
@@ -22,10 +24,10 @@
   border-radius: 100%;
 }
 
-.formNone {
+.none {
   display: none;
 }
-.formBlock {
+.block {
   display: block;
 }
 .section2 {
@@ -52,4 +54,27 @@
 }
 #btnEdit {
   margin-top: 5px;
+}
+
+@media (min-width: 480px) {
+  #formProfile input {
+    width: 60%;
+    margin-left: 20%;
+  }
+}
+@media (min-width: 1024px) {
+  .container-user {
+    margin-top: 60px;
+  }
+  #formProfile input {
+    width: 40%;
+    margin-left: 30%;
+  }
+  .container-btns {
+    display: flex;
+    padding-top: 10px;
+    width: 60%;
+    margin: auto;
+    justify-content: space-evenly;
+  }
 }

@@ -4,7 +4,7 @@
 <%- include ("../partials/head") %>
 
 
-    <body>
+    <body id="body-prodile">
         <header class="j-space-between bgc-header font-color header">
             <%- include ("../partials/header-home") %>
         </header>
@@ -41,11 +41,11 @@
                     </form>
                 </div>
                 <div class="container-btns">
-                    <button type="button" class="btn btn-primary">Enviar</button>
+                    <button type="button" class="btn btn-primary" id="btnEnviar">Enviar</button>
                     <button type="button" class="btn btn-danger">Eliminar Cuenta</button>
                 </div>
             </section>
-            <footer class="footer-login">
+            <footer class="footer-profile">
                 <%- include ("../partials/footer") %>
             </footer>
             <%- include('../partials/scripts-boostrap.ejs') %>
