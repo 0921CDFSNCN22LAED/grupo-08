@@ -110,8 +110,8 @@
                                 name="size" id="" aria-label="Floating label select example">
                                 <option value="">Seleccione tamaño</option>
                                 <% for(size of sizes){ %>
-                                    <option value="<%=size.id %>" <%=((locals.oldData && oldData.size) &&
-                                        (oldData.size==size.id ))? 'selected' : "" %> >
+                                    <option value="<%=size.id %>"
+                                        <%=((locals.oldData)&&(oldData.size==size.id))? 'selected' : "" %> >
                                         <%= size.size %>
                                     </option>
                                     <% } %>

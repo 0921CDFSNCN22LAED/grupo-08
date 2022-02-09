@@ -6,7 +6,7 @@ window.onload = async () => {
   divGondola.setAttribute("class", "gondola");
   const response = await fetch("http://localhost:3001/api/");
   const products = await response.json();
-  console.log(products);
+
   products.data.forEach((product) => {
     const id = product.id;
     const article = document.createElement("article");
@@ -14,6 +14,9 @@ window.onload = async () => {
       "class",
       "margin-10 productos container-products-list"
     );
+
+    const bag = document.createElement("div");
+    bag.setAttribute("class", "bolsa");
     const a1 = document.createElement("a");
     a1.setAttribute("href", `products/${id}`);
     const div1 = document.createElement("div");
@@ -25,12 +28,38 @@ window.onload = async () => {
     } else {
       img.setAttribute("src", "");
     }
-    const div2 = document.createElement("div");
-    div2.setAttribute("class", "bolsa");
+    const i = document.createElement("i");
+    i.setAttribute("class", "fas fa-shopping-bag ");
+
+    const favProduct = getFavoriteIds();
+    const index = favProduct.indexOf(id);
+
+    if (index != -1) {
+      i.classList.add("bagRose");
+    } else {
+      i.classList.add("bagBlue");
+    }
+
+    bag.addEventListener("click", (event) => {
+      event.preventDefault();
+      const favoritesProduct = getFavoriteIds();
+      const index = favoritesProduct.indexOf(id);
+      if (index == -1) {
+        favoritesProduct.push(id);
+        i.classList.replace("bagBlue", "bagRose");
+      } else {
+        favoritesProduct.splice(index, 1);
+        i.classList.replace("bagRose", "bagBlue");
+      }
+      localStorage.setItem(
+        "favoritesProduct",
+        JSON.stringify(favoritesProduct)
+      );
+    });
+
     const a2 = document.createElement("a");
     a2.setAttribute("href", "");
-    const i = document.createElement("i");
-    i.setAttribute("class", "fas fa-shopping-bag");
+
     const a3 = document.createElement("a");
     a3.setAttribute("href", `products/${id}`);
     const div3 = document.createElement("div");
@@ -47,12 +76,20 @@ window.onload = async () => {
     article.appendChild(a1);
     a1.appendChild(div1);
     div1.appendChild(img);
-    div1.appendChild(div2);
-    div2.appendChild(a2);
-    a2.appendChild(i);
-    div1.appendChild(a3);
-    a3.appendChild(div3);
+    div1.appendChild(bag);
+    bag.appendChild(i);
+    // a2.appendChild(i);
+    div1.appendChild(div3);
+    //a3.appendChild(div3);
     div3.appendChild(p);
     div3.appendChild(h4);
   });
 };
+function getFavoriteIds() {
+  const jsonValue = localStorage.getItem("favoritesProduct");
+  let favoritesProduct = [];
+  if (jsonValue) {
+    favoritesProduct = JSON.parse(jsonValue);
+  }
+  return favoritesProduct;
+}

@@ -32,7 +32,6 @@ module.exports = {
     const validations = validationResult(req);
 
     if (validations.errors.length !== 0) {
-      console.log("hubo errores");
       req.session.ErrorProductCreate = validations.mapped();
       req.session.oldDataProductCreate = body;
       for (image of files) {

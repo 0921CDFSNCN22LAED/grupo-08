@@ -247,8 +247,11 @@ ol {
   position: absolute;
   right: 20px;
 }
-.bolsa a i {
+.bagBlue {
   color: #086788;
+}
+.bagRose {
+  color: #ff90b3;
 }
 .precios-descripcion {
   position: relative;

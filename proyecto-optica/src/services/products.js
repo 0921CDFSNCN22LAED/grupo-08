@@ -47,6 +47,7 @@ module.exports = {
       //  IMAGE
       const dataImages = libFunctions.dataImages(files);
       //dataImages es un array de objetos que tienen la estructura qeu requiere la DB (es decir las cols con sus filas)
+      console.log(files);
       dataImages.forEach(async (file) => {
         const image = await db.Image.create({
           ...file,
@@ -94,6 +95,8 @@ module.exports = {
           name: body.name,
           shortDescription: body.shortDescription,
           longDescription: body.longDescription,
+          material_id: body.material,
+          size_id: body.size,
           active: 1,
         },
         {
@@ -102,8 +105,8 @@ module.exports = {
           },
         }
       );
-      product.setSize(body.size);
-      product.setMaterial(body.material);
+      //   product.setSize(body.size);
+      //   product.setMaterial(body.material);
       let priceDiscount;
       if (body.discount) {
         const discount = (body.discount * body.price) / 100;
