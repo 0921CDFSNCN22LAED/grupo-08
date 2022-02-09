@@ -15,17 +15,41 @@
                 <h1> Hola <%=userLogged.name %>
                 </h1>
                 <div class="containerImgProfile">
-
                     <img src="<%=`/img/users/${locals.userLogged.avatar}`%>" alt="">
-
-
+                    <button type="button" class="btn btn-primary" id="btnEdit">Editar datos</button>
                 </div>
-                <input type="text" name="user" id="" value="">
+            </section>
+            <section class="section2">
+                <div id="containerForm">
+                    <form action="" id="formProfile">
+                        <label for="">Nombre de Usuario</label>
+                        <input class="formularies-deco" type="text" name="name" id="" value="<%=userLogged.name %>">
+                        <label for="">Apellido</label>
+                        <input class="formularies-deco" type="text" name="lastName" id=""
+                            value="<%=userLogged.lastName %>">
+                        <label for="">Contraseña Actual</label>
+                        <input class="formularies-deco" type="text" name="oldPassword" id="" value="">
+                        <label for="">Nueva Contraseña</label>
+                        <input class="formularies-deco" type="text" name="password" id="" value="">
+                        <label for="">Confirmar Contraseña</label>
+                        <input class="formularies-deco" type="text" name="confirmPassword" id="" value="">
+                        <label for="">Dirección</label>
+                        <input class="formularies-deco" type="text" name="streetAddress" id=""
+                            value="<%=userLogged.streetAddress %>">
+                        <label for="">Foto</label>
+                        <input class="form-control" type="file" name="avatar" id="avatar">
+                    </form>
+                </div>
+                <div class="container-btns">
+                    <button type="button" class="btn btn-primary">Enviar</button>
+                    <button type="button" class="btn btn-danger">Eliminar Cuenta</button>
+                </div>
             </section>
             <footer class="footer-login">
                 <%- include ("../partials/footer") %>
             </footer>
             <%- include('../partials/scripts-boostrap.ejs') %>
+                <script src="/js/user/user-profile.js"></script>
         </body>
 
 </html>
