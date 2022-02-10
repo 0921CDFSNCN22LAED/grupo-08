@@ -139,4 +139,31 @@ h4 {
   .top-carrito {
     margin-left: 15%;
   }
+  .margin-50{
+    padding-left: 155px;
+  }
+  
+  .eye{
+    display: flex;
+    
+  }
+  .objetos{
+    display: flex;
+    padding-left: 200px;
+  }
+  .esfera{
+    display: flex;
+  }
+  .cilindro{
+    display: flex;
+    padding-left: 15px;
+  }
+  .margin-50{
+    padding-left: 355px;
+  }
+  .boton-front{
+    text-align: center;
+  }
+
+  
 }
