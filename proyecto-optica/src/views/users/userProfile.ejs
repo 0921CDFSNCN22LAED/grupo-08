@@ -16,17 +16,20 @@
                 </h1>
                 <div class="containerImgProfile">
                     <img src="<%=`/img/users/${locals.userLogged.avatar}`%>" alt="">
-                    <button type="button" class="btn btn-primary" id="btnEdit">Editar datos</button>
+                    <!--  <form action="<%=`/api/user/profile/${userLogged.id}`%>" method="get"> -->
+                    <button type="submit" class="btn btn-primary" id="btnEdit">Editar datos</button>
+                    <!--   </form> -->
                 </div>
             </section>
             <section class="section2">
                 <div id="containerForm">
-                    <form action="" id="formProfile">
+                    <form action="/api/user/profile/<%=userLogged.id%>/edit?_method=PUT" method="POST"
+                        enctype="multipart/form-data" id="formProfile">
                         <label for="">Nombre de Usuario</label>
-                        <input class="formularies-deco" type="text" name="name" id="" value="<%=userLogged.name %>">
+                        <input class="formularies-deco" type="text" name="name" id="" value="<%=userLogged.name%> ">
                         <label for="">Apellido</label>
                         <input class="formularies-deco" type="text" name="lastName" id=""
-                            value="<%=userLogged.lastName %>">
+                            value="<%=userLogged.lastName %> ">
                         <label for="">Contraseña Actual</label>
                         <input class="formularies-deco" type="text" name="oldPassword" id="" value="">
                         <label for="">Nueva Contraseña</label>
@@ -35,20 +38,20 @@
                         <input class="formularies-deco" type="text" name="confirmPassword" id="" value="">
                         <label for="">Dirección</label>
                         <input class="formularies-deco" type="text" name="streetAddress" id=""
-                            value="<%=userLogged.streetAddress %>">
+                            value="<%=userLogged.streetAddress %> ">
                         <label for="">Foto</label>
                         <input class="form-control" type="file" name="avatar" id="avatar">
+                        <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>
                     </form>
                 </div>
                 <div class="container-btns">
-                    <button type="button" class="btn btn-primary" id="btnEnviar">Enviar</button>
                     <button type="button" class="btn btn-danger">Eliminar Cuenta</button>
                 </div>
             </section>
             <footer class="footer-profile">
-                <%- include ("../partials/footer") %>
+                <%- include ("../partials/footer")%>
             </footer>
-            <%- include('../partials/scripts-boostrap.ejs') %>
+            <%- include('../partials/scripts-boostrap.ejs')%>
                 <script src="/js/user/user-profile.js"></script>
         </body>
 

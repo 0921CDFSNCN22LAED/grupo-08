@@ -32,6 +32,7 @@ module.exports = {
     //leyendo la cookie, es plural porque es un objeto con varias
     res.render("users/userProfile", { userLogged: req.session.userLogged });
   },
+
   logout: (req, res) => {
     res.clearCookie("userEmail"); //elimina  cualquier cookie que exista con ese nombre
     req.session.destroy(); // destruye la session

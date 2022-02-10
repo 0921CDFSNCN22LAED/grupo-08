@@ -34,6 +34,9 @@ router.post("/login", userControllers.processLogin);
 // Perfil de Usuario
 router.get("/profile", authMilddleware, userControllers.profile);
 
+//Edit perfil esta hecho con apis
+//router.get("/profile/:id/edit", userControllers.ProfileEdit);
+
 // Logout
 router.get("/logout", userControllers.logout);
 
