@@ -6,11 +6,11 @@ const userControllers = require("../controllers/user-controllers");
 
 /***  MIDDLEWARES DE RUTA ***/
 const guestMiddleware = require("../middlewares/middleware-user/guest-middleware");
-const authMilddleware = require("../middlewares/middleware-user/auth-milddleware");
+const authMiddleware = require("../middlewares/middleware-user/auth-middleware");
 const uploadFiles = require("../middlewares/middleware-user/middleware-multer");
 const validationsRegister = require("../middlewares/validations/validation-form-register");
 const validationFormProfileEdit = require("../middlewares/validations/validation-form-profile-edit");
-const checkDeleteAcount = require("../middlewares/middleware-user/check-delete-acount");
+const checkDeleteAccount = require("../middlewares/middleware-user/check-delete-account");
 
 /***  REGISTER  ***/
 
@@ -31,10 +31,10 @@ router.post(
 router.get("/login", guestMiddleware, userControllers.login);
 
 // Procesar el login
-router.post("/login", checkDeleteAcount, userControllers.processLogin);
+router.post("/login", checkDeleteAccount, userControllers.processLogin);
 
 // Perfil de Usuario
-router.get("/profile", authMilddleware, userControllers.profile);
+router.get("/profile", authMiddleware, userControllers.profile);
 
 //edit profile
 router.put(

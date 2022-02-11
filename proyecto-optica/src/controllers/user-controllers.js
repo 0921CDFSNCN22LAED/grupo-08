@@ -25,6 +25,7 @@ module.exports = {
     res.render("users/login", {
       errors: req.session.errorsLogin,
       oldData: req.session.oldData,
+      deleteAccount: req.session.checkDeleteAccount,
     });
   },
   processLogin: async (req, res) => {

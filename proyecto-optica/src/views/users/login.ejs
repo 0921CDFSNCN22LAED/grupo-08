@@ -7,10 +7,10 @@
             <%- include ("../partials/header-home") %>
         </header>
         <main class="main-login">
-            <form class="form-login" action="" method="POST">
+            <form class="form-login" action="/user/login" method="POST">
                 <section class="formularies login">
                     <p class="text-danger">
-                        <%= locals.checkDeleteAcount ? checkDeleteAcount : "" %>
+                        <%= locals.checkDeleteAccount ? checkDeleteAccount.msg : "" %>
                     </p>
                     <h2 class="margin-10" style="text-align: left;">
                         Ingresa a tu cuenta
