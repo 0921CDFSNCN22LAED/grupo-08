@@ -6,12 +6,12 @@ module.exports = [
   body("name")
     .notEmpty()
     .withMessage("Debe llenar el campo nombre")
-    .isLength({ min: 4 })
+    .isLength({ min: 3 })
     .withMessage("Debe tener al menos 3 caracteres"),
   body("lastName")
     .notEmpty()
     .withMessage("Debe llenar el campo nombre")
-    .isLength({ min: 4 })
+    .isLength({ min: 3 })
     .withMessage("Debe tener al menos 3 caracteres"),
   body("oldPassword")
     .notEmpty()
@@ -39,7 +39,6 @@ module.exports = [
         throw new Error("Su contraseña no coincide con la confirmación");
       }
     }),
-
   body("avatar").custom(async (values, { req }) => {
     const file = req.file;
     const user = await findOne(req.params.id);

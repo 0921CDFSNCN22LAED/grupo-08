@@ -23,22 +23,21 @@
             </section>
             <section class="section2">
                 <div id="containerForm">
-                    <form action="/api/user/profile/<%=userLogged.id%>/edit?_method=PUT" method="POST"
-                        enctype="multipart/form-data" id="formProfile">
+                    <form action="/user/profile/<%=userLogged.id%>/edit?_method=PUT" method="post" id="formProfile">
                         <label for="">Nombre de Usuario</label>
-                        <input class="formularies-deco" type="text" name="name" id="" value="<%=userLogged.name%> ">
+                        <input class="formularies-deco" type="text" name="name" id="" value="<%=userLogged.name%>">
                         <label for="">Apellido</label>
                         <input class="formularies-deco" type="text" name="lastName" id=""
-                            value="<%=userLogged.lastName %> ">
+                            value="<%=userLogged.lastName%>">
                         <label for="">Contraseña Actual</label>
-                        <input class="formularies-deco" type="text" name="oldPassword" id="" value="">
+                        <input class="formularies-deco" type="password" name="oldPassword" id="" value="">
                         <label for="">Nueva Contraseña</label>
-                        <input class="formularies-deco" type="text" name="password" id="" value="">
+                        <input class="formularies-deco" type="password" name="password" id="" value="">
                         <label for="">Confirmar Contraseña</label>
-                        <input class="formularies-deco" type="text" name="confirmPassword" id="" value="">
+                        <input class="formularies-deco" type="password" name="confirmPassword" id="" value="">
                         <label for="">Dirección</label>
                         <input class="formularies-deco" type="text" name="streetAddress" id=""
-                            value="<%=userLogged.streetAddress %> ">
+                            value="<%=userLogged.streetAddress%>">
                         <label for="">Foto</label>
                         <input class="form-control" type="file" name="avatar" id="avatar">
                         <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>

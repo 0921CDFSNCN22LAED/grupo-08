@@ -1,3 +1,4 @@
+const { validationResult } = require("express-validator");
 const usersServices = require("../services/users");
 
 module.exports = {
@@ -31,6 +32,16 @@ module.exports = {
   profile: (req, res) => {
     //leyendo la cookie, es plural porque es un objeto con varias
     res.render("users/userProfile", { userLogged: req.session.userLogged });
+  },
+  profileEdit: (req, res) => {
+    const body = req.body;
+    console.log(body);
+    const validations = validationResult(req);
+    if (validations.errors.length !== 0) {
+      console.log(validations);
+      req.session.errorsFormProfile = validations.mapped();
+      req.session.dataUserProfiles = body;
+    }
   },
 
   logout: (req, res) => {

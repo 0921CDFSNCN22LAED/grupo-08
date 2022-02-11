@@ -1,3 +1,4 @@
+const fs = require("fs");
 const { validationResult } = require("express-validator");
 const { findOne } = require("../../lib/functions");
 
@@ -11,9 +12,5 @@ module.exports = {
         user,
       });
     }
-  },
-  profileEdit: (req, res) => {
-    const validations = validationResult(req);
-    console.log(validations);
   },
 };

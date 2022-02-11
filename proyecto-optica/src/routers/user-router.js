@@ -9,6 +9,7 @@ const guestMiddleware = require("../middlewares/middleware-user/guest-middleware
 const authMilddleware = require("../middlewares/middleware-user/auth-milddleware");
 const uploadFiles = require("../middlewares/middleware-user/middleware-multer");
 const validationsRegister = require("../middlewares/validations/validation-form-register");
+const validationFormProfileEdit = require("../middlewares/validations/validation-form-profile-edit");
 
 /***  REGISTER  ***/
 
@@ -34,8 +35,8 @@ router.post("/login", userControllers.processLogin);
 // Perfil de Usuario
 router.get("/profile", authMilddleware, userControllers.profile);
 
-//Edit perfil esta hecho con apis
-//router.get("/profile/:id/edit", userControllers.ProfileEdit);
+//edit profile
+router.put("/profile/:id/edit", userControllers.profileEdit);
 
 // Logout
 router.get("/logout", userControllers.logout);
