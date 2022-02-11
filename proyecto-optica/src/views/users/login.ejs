@@ -9,10 +9,13 @@
         <main class="main-login">
             <form class="form-login" action="" method="POST">
                 <section class="formularies login">
-
+                    <p class="text-danger">
+                        <%= locals.checkDeleteAcount ? checkDeleteAcount : "" %>
+                    </p>
                     <h2 class="margin-10" style="text-align: left;">
                         Ingresa a tu cuenta
                     </h2>
+
                     <div>
                         <div class=" m-formularies-2">
                             <label></label>
@@ -48,7 +51,8 @@
                     </div>
                     <div class="margin-10">
                         <input type="checkbox" name="rememberuser">
-                        <label style="font-size: 14px; display:inline-block;" for="">Recordar contraseña</label>
+                        <label style="font-size: 14px; display:inline-block;" for="">Recordar
+                            contraseña</label>
                     </div>
                     <div class="margin-10">
                         <a href="">
