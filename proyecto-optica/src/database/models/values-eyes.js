@@ -3,8 +3,8 @@ const dataTypes = sequelize.DataTypes;
 module.exports = (sequelize) => {
   const alias = "ValueEye";
   const cols = {
-    rightEye_id: dataTypes.INTEGER,
-    leftEye_id: dataTypes.INTEGER,
+    sphere_id: dataTypes.INTEGER,
+    cylinder_id: dataTypes.INTEGER,
     pupillaryDistance_id: dataTypes.INTEGER,
   };
   const config = {
@@ -13,9 +13,9 @@ module.exports = (sequelize) => {
   };
   const ValueEye = sequelize.define(alias, cols, config);
   ValueEye.associate = (models) => {
-    ValueEye.belongsTo(models.LeftEye, {
-      as: "leftEye",
-      foreignKey: "leftEye_id",
+    ValueEye.belongsTo(models.Sphere, {
+      as: "sphere",
+      foreignKey: "sphere_id",
     });
 
     ValueEye.belongsTo(models.PupillaryDistance, {
@@ -23,9 +23,9 @@ module.exports = (sequelize) => {
       foreignKey: "pupillaryDistance_id",
     });
 
-    ValueEye.belongsTo(models.RightEye, {
-      as: "rightEye",
-      foreignKey: "rightEye_id",
+    ValueEye.belongsTo(models.Cylinder, {
+      as: "cylinder",
+      foreignKey: "cylinder_id",
     });
   };
   return ValueEye;

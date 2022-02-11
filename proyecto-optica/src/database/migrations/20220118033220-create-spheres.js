@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("rights_eyes", {
+    await queryInterface.createTable("spheres", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -9,13 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       sphere: {
-        type: Sequelize.REAL,
-      },
-      cylinder: {
-        type: Sequelize.REAL,
-      },
-      axis: {
-        type: Sequelize.REAL,
+        type: Sequelize.DOUBLE,
       },
       createdAt: {
         allowNull: true,
@@ -28,6 +22,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("rights_eyes");
+    await queryInterface.dropTable("spheres");
   },
 };

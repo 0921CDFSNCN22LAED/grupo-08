@@ -8,14 +8,8 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      oneValue: {
-        type: Sequelize.REAL,
-      },
-      rightPD: {
-        type: Sequelize.REAL,
-      },
-      leftPD: {
-        type: Sequelize.REAL,
+      pupillaryDistance: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: true,
@@ -28,6 +22,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("pupillary_disctances");
+    await queryInterface.dropTable("pupillary_distances");
   },
 };

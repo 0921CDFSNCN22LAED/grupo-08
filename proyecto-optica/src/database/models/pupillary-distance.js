@@ -3,9 +3,7 @@ const dataTypes = sequelize.DataTypes;
 module.exports = (sequelize) => {
   const alias = "PupillaryDistance";
   const cols = {
-    oneValue: dataTypes.REAL,
-    rightPD: dataTypes.REAL,
-    leftPD: dataTypes.REAL,
+    pupillaryDistance: dataTypes.INTEGER,
   };
   const config = {
     timestamps: true,
@@ -13,7 +11,7 @@ module.exports = (sequelize) => {
   };
   const PupillaryDistance = sequelize.define(alias, cols, config);
   PupillaryDistance.associate = (models) => {
-    PupillaryDistance.hasOne(models.ValueEye, {
+    PupillaryDistance.hasMany(models.ValueEye, {
       as: "valueEye",
       foreignKey: "pupillaryDistance_id",
     });
