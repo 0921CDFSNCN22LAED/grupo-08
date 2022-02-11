@@ -23,28 +23,67 @@
             </section>
             <section class="section2">
                 <div id="containerForm">
-                    <form action="/user/profile/<%=userLogged.id%>/edit?_method=PUT" method="post" id="formProfile">
+                    <form action="/user/profile/<%=userLogged.id%>/edit?_method=PUT" method="post"
+                        enctype="multipart/form-data" id="formProfile">
                         <label for="">Nombre de Usuario</label>
-                        <input class="formularies-deco" type="text" name="name" id="" value="<%=userLogged.name%>">
+                        <input
+                            class="formularies-deco form-control <%=locals.errors && errors.name ? 'is-invalid' : "" %> "
+                            type="text" name="name" id=""
+                            value="<%=locals.oldData && oldData.name ?oldData.name : userLogged.name%>">
+                        <p class="text-danger">
+                            <%=locals.errors && errors.name ? errors.name.msg: "" %>
+                        </p>
                         <label for="">Apellido</label>
-                        <input class="formularies-deco" type="text" name="lastName" id=""
-                            value="<%=userLogged.lastName%>">
+                        <input
+                            class="formularies-deco form-control <%=locals.errors && errors.lastName ? 'is-invalid' : ""  %>"
+                            type="text" name="lastName" id=""
+                            value="<%=locals.oldData && oldData.lastName ?oldData.lastName : userLogged.lastName%>">
+                        <p class="text-danger">
+                            <%=locals.errors && errors.lastName ? errors.lastName.msg: "" %>
+                        </p>
                         <label for="">Contraseña Actual</label>
-                        <input class="formularies-deco" type="password" name="oldPassword" id="" value="">
+                        <input
+                            class="formularies-deco  form-control <%=locals.errors && errors.oldPassword ? 'is-invalid' : ""  %>"
+                            type="password" name="oldPassword" id="" value="">
+                        <p class="text-danger">
+                            <%=locals.errors && errors.oldPassword ? errors.oldPassword.msg: "" %>
+                        </p>
                         <label for="">Nueva Contraseña</label>
-                        <input class="formularies-deco" type="password" name="password" id="" value="">
+                        <input
+                            class="formularies-deco form-control <%=locals.errors && errors.password ? 'is-invalid' : ""  %>"
+                            type="password" name="password" id="" value="">
+                        <p class="text-danger">
+                            <%=locals.errors && errors.password ? errors.password.msg: "" %>
+                        </p>
                         <label for="">Confirmar Contraseña</label>
-                        <input class="formularies-deco" type="password" name="confirmPassword" id="" value="">
+                        <input
+                            class="formularies-deco form-control <%=locals.errors && errors.confirmPassword ? 'is-invalid' : ""  %>"
+                            type="password" name="confirmPassword" id="" value="">
+                        <p class="text-danger">
+                            <%=locals.errors && errors.confirmPassword ? errors.confirmPassword.msg: "" %>
+                        </p>
                         <label for="">Dirección</label>
-                        <input class="formularies-deco" type="text" name="streetAddress" id=""
-                            value="<%=userLogged.streetAddress%>">
+                        <input
+                            class="formularies-deco form-control <%=locals.errors && errors.streetAddress ? 'is-invalid' : ""  %>"
+                            type="text" name="streetAddress" id=""
+                            value="<%=locals.oldData && oldData.streetAddress ?oldData.streetAddress : userLogged.streetAddress%>">
+                        <p class=" text-danger">
+                            <%=locals.errors && errors.streetAddress ? errors.streetAddress.msg: "" %>
+                        </p>
                         <label for="">Foto</label>
-                        <input class="form-control" type="file" name="avatar" id="avatar">
+                        <input class=" form-control <%=locals.errors && errors.avatar ? 'is-invalid' : ""  %>"
+                            type="file" name="avatar" id="avatar">
+                        <p class="text-danger">
+                            <%=locals.errors && errors.avatar ? errors.avatar.msg: "" %>
+                        </p>
                         <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>
                     </form>
                 </div>
                 <div class="container-btns">
-                    <button type="button" class="btn btn-danger">Eliminar Cuenta</button>
+                    <form action="/user/delete/<%=userLogged.id%>?_method=DELETE" id="deleteAccount" method="post">
+                        <button type="submit" class="btn btn-danger">Eliminar Cuenta</button>
+
+                    </form>
                 </div>
             </section>
             <footer class="footer-profile">

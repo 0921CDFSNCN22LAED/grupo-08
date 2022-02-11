@@ -1,3 +1,4 @@
+const fs = require("fs");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
@@ -12,9 +13,15 @@ module.exports = {
       const errorsRegister = validationResult(req);
       //errorsRegister es un objeto con la propiedad errors, dicha propiedad error contiene un array de objetos con los errores
       if (!errorsRegister.isEmpty()) {
+        console.log(file);
         //si tengo errores , entro aca
         req.session.errors = errorsRegister.mapped();
         req.session.oldData = body;
+        fs.unlink(req.file.path, (error) => {
+          if (error) {
+            console.log(error);
+          }
+        });
         return "/user/register";
       } else {
         const password = bcryptjs.hashSync(body.password, 10);
@@ -26,6 +33,7 @@ module.exports = {
           ...body,
           password: password,
           avatar: file,
+          active: 1,
         };
         const createUser = await User.create({
           ...user,
@@ -75,6 +83,30 @@ module.exports = {
       };
       req.session.oldData = req.body;
       return "/user/login";
+    }
+  },
+
+  updateProfile: async (body, file, id) => {
+    try {
+      const user = await db.User.findOne({
+        where: {
+          id: id,
+        },
+      });
+      const password = bcryptjs.hashSync(body.password, 10);
+      user.set({
+        name: body.name,
+        lastName: body.lastName,
+        password: password,
+        confirmPassword: password,
+        streetAddress: body.streetAddress,
+        avatar: file,
+        active: 1,
+      });
+      user.save();
+      return user;
+    } catch (error) {
+      console.log(error);
     }
   },
 };

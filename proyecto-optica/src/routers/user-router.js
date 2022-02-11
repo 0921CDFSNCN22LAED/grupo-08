@@ -36,9 +36,16 @@ router.post("/login", userControllers.processLogin);
 router.get("/profile", authMilddleware, userControllers.profile);
 
 //edit profile
-router.put("/profile/:id/edit", userControllers.profileEdit);
+router.put(
+  "/profile/:id/edit",
+  uploadFiles.single("avatar"),
+  validationFormProfileEdit,
+  userControllers.profileEdit
+);
 
 // Logout
 router.get("/logout", userControllers.logout);
+
+router.delete("/delete/:id", userControllers.delete);
 
 module.exports = router;

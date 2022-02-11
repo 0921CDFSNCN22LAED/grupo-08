@@ -49,6 +49,9 @@
 #formProfile input {
   width: 100%;
 }
+#formProfile p {
+  text-align: center;
+}
 .container-btns {
   display: flex;
   padding: 15px;
