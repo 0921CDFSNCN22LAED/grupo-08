@@ -8,14 +8,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      rightEye_id: {
+      sphere_id: {
         type: Sequelize.INTEGER,
         references: {
           model: "rights_eyes",
           key: "id",
         },
       },
-      leftEye_id: {
+      cylinder_id: {
         type: Sequelize.INTEGER,
         references: {
           model: "lefts_eyes",
