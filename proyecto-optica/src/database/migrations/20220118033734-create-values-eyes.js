@@ -11,14 +11,14 @@ module.exports = {
       sphere_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: "rights_eyes",
+          model: "spheres",
           key: "id",
         },
       },
       cylinder_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: "lefts_eyes",
+          model: "cylinders",
           key: "id",
         },
       },
