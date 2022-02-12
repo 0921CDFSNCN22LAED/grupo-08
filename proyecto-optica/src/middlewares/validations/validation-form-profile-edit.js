@@ -1,7 +1,7 @@
 const path = require("path");
 const bcryptjs = require("bcryptjs");
 const { body } = require("express-validator");
-const { findOne } = require("../../lib/functions");
+const { findOne } = require("../../utils/functions");
 
 module.exports = [
   body("name")

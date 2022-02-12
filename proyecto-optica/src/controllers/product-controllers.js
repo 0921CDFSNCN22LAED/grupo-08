@@ -1,7 +1,7 @@
 const fs = require("fs");
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
-const { materialAndSize } = require("../lib/libFunctions");
+const { materialAndSize } = require("../utils/libFunctions");
 const productsServices = require("../services/products");
 
 module.exports = {

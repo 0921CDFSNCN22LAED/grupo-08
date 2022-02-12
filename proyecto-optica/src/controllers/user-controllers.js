@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 const usersServices = require("../services/users");
-const { findOne } = require("../lib/functions");
+const { findOne } = require("../utils/functions");
 const { updateProfile } = require("../services/users");
 
 module.exports = {

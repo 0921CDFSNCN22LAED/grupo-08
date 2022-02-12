@@ -1,4 +1,4 @@
-const { findEmail } = require("../../lib/functions");
+const { findEmail } = require("../../utils/functions");
 async function checkDeleteAccount(req, res, next) {
   const user = await findEmail(req.body.email);
   if (user && user.active !== 0) {

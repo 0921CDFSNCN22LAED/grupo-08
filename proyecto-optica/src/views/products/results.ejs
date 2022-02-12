@@ -7,48 +7,17 @@
             <%- include ("../partials/header-home") %>
         </header>
         <main>
-            <section class="container-products cont-results">
-                <div class="gondola ">
-                    <%if (searchar.length !==0) { %>
-                        <%for(element of searchar){ %>
-                            <article class=" margin-10 productos">
-                                <a href=" <%= `products/${element.productId}`%>">
-                                    <div class="precios-descripcion shadows">
-                                        <img src="<%=`/img/products/${element.image[0]}`%>" class="fotos" alt="">
-                                        <div class="bolsa">
-                                            <a href=""> <i class="fas fa-shopping-bag"></i></a>
-                                        </div>
-                                        <div>
-                                            <p class="precios">
-                                                <%= `$ ${element.price.price}` %>
-                                            </p>
-                                            <h4 class="name">
-                                                <%= element.name %>
-                                            </h4>
-                                        </div>
-                                    </div>
-                                </a>
-                            </article>
-                            <% } %>
-                                <% } else { %>
-                                    <div class="col-12">
-                                        <h2 class="products-title" style="color: #0bc197;">No hay productos que
-                                            coincidan con esa búsqueda</h2>
-                                    </div>
-                                    <% } %>
-                </div>
+            <section class="container-products cont-results " id="container-products">
+
             </section>
         </main>
-        <%if (searchar.length !==0) { %>
-            <footer>
-                <%- include ("../partials/footer") %>
-            </footer>
-            <% } else { %>
-                <footer class="footer-results">
-                    <%- include ("../partials/footer") %>
-                </footer>
-                <% } %>
-                    <%- include('../partials/scripts-boostrap.ejs') %>
+
+        <footer class="footer-results">
+            <%- include ("../partials/footer") %>
+        </footer>
+
+        <%- include('../partials/scripts-boostrap.ejs') %>
+            <script src="/js/products/search-results.js"></script>
     </body>
 
 </html>

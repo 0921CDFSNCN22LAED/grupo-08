@@ -1,4 +1,4 @@
-const { findEmail } = require("../../lib/functions");
+const { findEmail } = require("../../utils/functions");
 
 async function rememberUserCookieMiddleware(req, res, next) {
   try {

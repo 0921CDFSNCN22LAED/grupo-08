@@ -8,9 +8,9 @@ module.exports = {
     res.render("main/home", { products });
   },
   search: (req, res) => {
-    const query = req.query.search;
-    const searchar = productsServices.search(query);
-    res.render("products/results", { searchar });
+    /*  const query = req.query.search;
+    const searchar = productsServices.search(query); */
+    res.render("products/results");
   },
 
   howToRead: (req, res) => {
@@ -39,9 +39,8 @@ module.exports = {
     } else {
       res.send("Ese producto no se encuentra activado");
     }
-    
   },
-  prescription: function(req, res) {
-    res.render("prescription")
-  }
+  prescription: function (req, res) {
+    res.render("prescription");
+  },
 };

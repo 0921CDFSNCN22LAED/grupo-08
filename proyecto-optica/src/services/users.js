@@ -2,7 +2,7 @@ const fs = require("fs");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
-const { findEmail } = require("../lib/functions");
+const { findEmail } = require("../utils/functions");
 const User = db.User;
 
 module.exports = {

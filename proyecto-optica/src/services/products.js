@@ -1,6 +1,6 @@
 const db = require("../database/models");
-const jsonHelper = require("../lib/jsonHelper");
-const libFunctions = require("../lib/libFunctions");
+const jsonHelper = require("../utils/jsonHelper");
+const libFunctions = require("../utils/libFunctions");
 const productsFilePath = "../data/productsDataBase.json";
 const products = jsonHelper.getData(productsFilePath);
 

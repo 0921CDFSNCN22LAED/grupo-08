@@ -1,6 +1,6 @@
 const fs = require("fs");
 const { validationResult } = require("express-validator");
-const { findOne } = require("../../lib/functions");
+const { findOne } = require("../../utils/functions");
 
 module.exports = {
   profile: async (req, res) => {
