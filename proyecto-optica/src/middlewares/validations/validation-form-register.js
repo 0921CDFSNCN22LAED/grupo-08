@@ -19,8 +19,6 @@ module.exports = [
           email: req.body.email,
         },
       });
-      // const userFind = userServices.findByField("email", req.body.email);
-      // console.log(userFind);
       if (userFind) {
         throw new Error("Este mail ya esta registrado");
       } else {

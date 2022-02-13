@@ -1,7 +1,5 @@
-const { query } = require("express");
-const res = require("express/lib/response");
 const path = require("path");
-const { Sequelize } = require("../database/models");
+const { Sequelize, sequelize } = require("../database/models");
 const Op = Sequelize.Op;
 const db = require("../database/models");
 const User = db.User;
@@ -55,8 +53,15 @@ module.exports = {
       where: {
         name: { [Op.like]: `%${query}%` },
       },
-      include: ["image", "price"],
+      include: [
+        { association: "image" },
+        {
+          association: "price",
+        },
+      ],
+      //  order: [[db.Price, "price", "DESC"]],
     });
+    console.log(products);
     return products;
   },
 };

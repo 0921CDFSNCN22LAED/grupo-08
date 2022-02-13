@@ -1,4 +1,5 @@
 const fs = require("fs");
+const path = require("path");
 const bcryptjs = require("bcryptjs");
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
@@ -10,18 +11,20 @@ module.exports = {
     try {
       const body = req.body;
       const file = req.file.filename;
+      const pathNewFile = path.resolve("public", "img", "users", file);
       const errorsRegister = validationResult(req);
       //errorsRegister es un objeto con la propiedad errors, dicha propiedad error contiene un array de objetos con los errores
       if (!errorsRegister.isEmpty()) {
-        console.log(file);
         //si tengo errores , entro aca
         req.session.errors = errorsRegister.mapped();
         req.session.oldData = body;
-        fs.unlink(req.file.path, (error) => {
-          if (error) {
-            console.log(error);
-          }
-        });
+        if (file != "default.png") {
+          fs.unlink(pathNewFile, (error) => {
+            if (error) {
+              console.log(error);
+            }
+          });
+        }
         return "/user/register";
       } else {
         const password = bcryptjs.hashSync(body.password, 10);
@@ -87,26 +90,28 @@ module.exports = {
   },
 
   updateProfile: async (body, file, id) => {
-    try {
-      const user = await db.User.findOne({
-        where: {
-          id: id,
-        },
-      });
-      const password = bcryptjs.hashSync(body.password, 10);
-      user.set({
-        name: body.name,
-        lastName: body.lastName,
-        password: password,
-        confirmPassword: password,
-        streetAddress: body.streetAddress,
-        avatar: file,
-        active: 1,
-      });
-      user.save();
-      return user;
-    } catch (error) {
-      console.log(error);
+    const user = await db.User.findOne({
+      where: {
+        id: id,
+      },
+    });
+
+    let password;
+    if (body.oldPassword == "") {
+      password = user.password;
+    } else {
+      password = bcryptjs.hashSync(body.password, 10);
     }
+    await user.set({
+      name: body.name,
+      lastName: body.lastName,
+      password: password,
+      confirmPassword: password,
+      streetAddress: body.streetAddress,
+      avatar: file,
+      active: 1,
+    });
+    await user.save();
+    return user;
   },
 };

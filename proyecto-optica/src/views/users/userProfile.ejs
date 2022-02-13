@@ -14,12 +14,16 @@
 
                 <h1> Hola <%=userLogged.name %>
                 </h1>
-                <div class="containerImgProfile">
-                    <img src="<%=`/img/users/${locals.userLogged.avatar}`%>" alt="">
-                    <!--  <form action="<%=`/api/user/profile/${userLogged.id}`%>" method="get"> -->
-                    <button type="submit" class="btn btn-primary" id="btnEdit">Editar datos</button>
-                    <!--   </form> -->
-                </div>
+                <% if(locals.errors) {%>
+                    <p class="text-danger">Tiene errores en el formulario</p>
+                    <%} %>
+
+                        <div class="containerImgProfile">
+                            <img src="<%=`/img/users/${locals.userLogged.avatar}`%>" alt="">
+                            <!--  <form action="<%=`/api/user/profile/${userLogged.id}`%>" method="get"> -->
+                            <button type="submit" class="btn btn-primary" id="btnEdit">Editar datos</button>
+                            <!--   </form> -->
+                        </div>
             </section>
             <section class="section2">
                 <div id="containerForm">

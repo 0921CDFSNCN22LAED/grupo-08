@@ -45,16 +45,20 @@ module.exports = {
   profileEdit: async (req, res) => {
     const id = req.params.id;
     const body = req.body;
-    console.log(body);
     const file = req.file.filename;
-    console.log(req.file, "estamos en profile edit controller");
     const user = await findOne(id);
     //ruta de la foto qeu esta subiendo
     const validations = validationResult(req);
+
     if (validations.errors.length !== 0) {
-      console.log(validations.mapped());
+      const validation = validations.mapped();
       const pathNewFile = path.resolve("public", "img", "users", file);
-      req.session.errorsFormProfile = validations.mapped();
+      if (validation.oldPassword) {
+        //borro los errores para que no quede feo
+        delete validation.password;
+        delete validation.confirmPassword;
+      }
+      req.session.errorsFormProfile = validation;
       req.session.dataUserProfiles = body;
       if (user.avatar != file) {
         // si el usuario tiene errores y no subió una nueva foto, al asignarle
@@ -69,29 +73,28 @@ module.exports = {
       }
       res.redirect("/user/profile");
     } else {
-      //si no hay errores
-      const pathOldFile = path.resolve("public", "img", "users", user.avatar);
-      console.log(user.avatar, "avatar");
-      console.log(pathOldFile, "oldPath");
-      if (user.avatar != file) {
-        //si la foto es distinta, borra la vieja
-        fs.unlink(pathOldFile, (error) => {
-          if (error) {
-            console.log(error);
-          }
-        });
-      }
+      console.log("entre al else porque no hay errores ", 454465456456);
+      //   //si no hay errores
+      //   const pathOldFile = path.resolve("public", "img", "users", user.avatar);
+      //   if (user.avatar != file) {
+      //     //si la foto es distinta, borra la vieja
+      //     fs.unlink(pathOldFile, (error) => {
+      //       if (error) {
+      //         console.log(error);
+      //       }
+      //     });
+      //   }
+      //   const userActualice = await updateProfile(body, file, id);
+      //   const userData = userActualice.dataValues;
+      //   delete userData.password;
+      //   delete userData.confirmPassword;
+      //   delete userData.admin;
+      //   delete userData.admin;
+      //   delete userData.acreatedAt;
+      //   delete userData.updatedAt;
+      //   req.session.userLogged = userActualice.dataValues;
+      //   res.redirect("/user/profile");
     }
-    const userActualice = await updateProfile(body, file, id);
-    const userData = userActualice.dataValues;
-    delete userData.password;
-    delete userData.confirmPassword;
-    delete userData.admin;
-    delete userData.admin;
-    delete userData.acreatedAt;
-    delete userData.updatedAt;
-    req.session.userLogged = userActualice.dataValues;
-    res.redirect("/user/profile");
   },
 
   logout: (req, res) => {
