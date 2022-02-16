@@ -23,7 +23,7 @@ module.exports = {
   prueba: async (req, res) => {
     const producto = await db.Product.findOne({
       where: {
-        id: 55,
+        id: 40,
       },
       include: [
         { association: "image" },
@@ -31,7 +31,9 @@ module.exports = {
         { association: "material" },
         { association: "price" },
         { association: "color" },
+        "category",
       ],
+      raw: true,
     });
     if (producto.active == 1) {
       console.log(producto);

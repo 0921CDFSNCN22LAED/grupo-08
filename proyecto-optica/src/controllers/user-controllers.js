@@ -70,7 +70,7 @@ module.exports = {
     } else {
       //si no hay errores
       const pathOldFile = path.resolve("public", "img", "users", user.avatar);
-      if (user.avatar != file) {
+      if (user.avatar != file && user.avatar != "default.png") {
         //si la foto es distinta, borra la vieja
         fs.unlink(pathOldFile, (error) => {
           if (error) {
