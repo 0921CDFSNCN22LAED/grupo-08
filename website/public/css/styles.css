@@ -5,6 +5,7 @@
 }
 h5 {
   font-size: 14px;
+  color: #0bc197;
 }
 label {
   display: block;
@@ -57,8 +58,8 @@ label {
   display: flex;
 }
 .header {
-  background-color: rgb(15, 15, 15);
-  /*  background-color: #292c2e; */
+  /*background-color: rgb(15, 15, 15);*/
+  background-color: #292c2e;
   display: flex;
   align-items: center;
 }
@@ -148,7 +149,7 @@ ol {
 }
 
 .offcanvas-end {
-  width: 80%;
+  width: 40%;
 }
 
 .navbar-light .navbar-toggler {
@@ -221,6 +222,7 @@ ol {
 .carousel {
   width: 100%;
 }
+
 .main {
   justify-content: space-between;
   align-items: center;
