@@ -42,4 +42,85 @@ module.exports = {
     };
     res.json(response);
   },
+  men: async (req, res) => {
+    const productsMen = await db.Category.findAll({
+      where: {
+        id: 1,
+      },
+      include: {
+        model: db.Product,
+        as: "product",
+        include: ["image", "price"],
+      },
+    });
+    let status;
+    if (productsMen) {
+      status = 200;
+    } else {
+      status = 404;
+    }
+    let response = {
+      meta: {
+        status: status,
+        total: productsMen.length,
+        url: "/api/products/men",
+      },
+      data: productsMen,
+    };
+    res.json(response);
+  },
+  women: async (req, res) => {
+    const productsWomen = await db.Category.findAll({
+      where: {
+        id: 2,
+      },
+      include: {
+        model: db.Product,
+        as: "product",
+        include: ["image", "price"],
+      },
+    });
+    let status;
+    if (productsWomen) {
+      status = 200;
+    } else {
+      status = 404;
+    }
+    let response = {
+      meta: {
+        status: status,
+        total: productsWomen.length,
+        url: "/api/products/men",
+      },
+      data: productsWomen,
+    };
+    res.json(response);
+  },
+  children: async (req, res) => {
+    const productsChildren = await db.Category.findAll({
+      where: {
+        id: 3,
+      },
+      include: {
+        model: db.Product,
+        as: "product",
+        include: ["image", "price"],
+      },
+    });
+    let status;
+    if (productsChildren) {
+      status = 200;
+    } else {
+      status = 404;
+    }
+    let response = {
+      meta: {
+        status: status,
+        total: productsChildren.length,
+        url: "/api/products/men",
+      },
+      data: productsChildren,
+    };
+    res.json(response);
+  },
 };

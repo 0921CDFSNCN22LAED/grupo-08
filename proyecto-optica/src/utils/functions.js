@@ -56,10 +56,11 @@ module.exports = {
       include: [
         { association: "image" },
         {
-          association: "price",
+          model: db.Price,
+          as: "price",
         },
       ],
-      //order: [[db.Price, "price", "ASC"]],
+      order: [[{ model: db.Price, as: "price" }, "price", "ASC"]],
     });
     console.log(products);
     return products;
