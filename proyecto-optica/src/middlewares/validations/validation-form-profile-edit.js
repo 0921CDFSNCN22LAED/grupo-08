@@ -15,7 +15,7 @@ module.exports = [
     .isLength({ min: 3 })
     .withMessage("Debe tener al menos 3 caracteres"),
   body("oldPassword").custom(async (value, { req }) => {
-    if (!value) {
+    if (!req.body.oldPassword) {
       return true;
     }
     const user = await findOne(req.params.id);
@@ -25,9 +25,10 @@ module.exports = [
     return true;
   }),
   body("password").custom((value, { req }) => {
-    if (!req.oldPassword) {
-      if (!value) {
-        throw new Error("Debe llenar el campo Contraseña actual");
+    if (req.body.oldPassword != "") {
+      console.log(value, "value password");
+      if (value != "") {
+        throw new Error("Debe llenar el campo de su nueva contraseña ");
       }
       if (value.length < 7) {
         throw new Error("El campo debe tener al menos 8 caracteres");
@@ -36,10 +37,8 @@ module.exports = [
     return true;
   }),
   body("confirmPassword").custom((value, { req }) => {
-    console.log(value, "value=confirmPassword");
-    console.log(req.body.password, "req.body.password = password");
-    if (!req.oldPassword) {
-      if (!value) {
+    if (req.body.oldPassword != "") {
+      if (value != "") {
         throw new Error("Debe confirmar su contraseña");
       }
       if (value.length < 7) {

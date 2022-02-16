@@ -53,11 +53,6 @@ module.exports = {
     if (validations.errors.length !== 0) {
       const validation = validations.mapped();
       const pathNewFile = path.resolve("public", "img", "users", file);
-      if (validation.oldPassword) {
-        //borro los errores para que no quede feo
-        delete validation.password;
-        delete validation.confirmPassword;
-      }
       req.session.errorsFormProfile = validation;
       req.session.dataUserProfiles = body;
       if (user.avatar != file) {
@@ -65,7 +60,7 @@ module.exports = {
         //la misma en la validación la comparo para con la db para que no me la borre
         //si es otra foto la borro porque tuvo errores, lo mismo si carga una nueva y tiene errores no se cargar porque no coincide con su foto de usuario
         fs.unlink(pathNewFile, (error) => {
-          //tambien en vez de pathFile se podia poner file.path que es la ruta de la foto que subió , pero como para saber mas lo hago asi
+          //también, en vez de pathFile se podia poner file.path que es la ruta de la foto que subió , pero como para saber mas lo hago asi
           if (error) {
             console.log(error);
           }
@@ -73,27 +68,27 @@ module.exports = {
       }
       res.redirect("/user/profile");
     } else {
-      console.log("entre al else porque no hay errores ", 454465456456);
-      //   //si no hay errores
-      //   const pathOldFile = path.resolve("public", "img", "users", user.avatar);
-      //   if (user.avatar != file) {
-      //     //si la foto es distinta, borra la vieja
-      //     fs.unlink(pathOldFile, (error) => {
-      //       if (error) {
-      //         console.log(error);
-      //       }
-      //     });
-      //   }
-      //   const userActualice = await updateProfile(body, file, id);
-      //   const userData = userActualice.dataValues;
-      //   delete userData.password;
-      //   delete userData.confirmPassword;
-      //   delete userData.admin;
-      //   delete userData.admin;
-      //   delete userData.acreatedAt;
-      //   delete userData.updatedAt;
-      //   req.session.userLogged = userActualice.dataValues;
-      //   res.redirect("/user/profile");
+      //si no hay errores
+      const pathOldFile = path.resolve("public", "img", "users", user.avatar);
+      if (user.avatar != file) {
+        //si la foto es distinta, borra la vieja
+        fs.unlink(pathOldFile, (error) => {
+          if (error) {
+            console.log(error);
+          }
+        });
+      }
+      const userActualice = await updateProfile(body, file, id);
+      const userData = userActualice.dataValues;
+      delete userData.password;
+      delete userData.confirmPassword;
+      delete userData.admin;
+      delete userData.admin;
+      delete userData.createdAt;
+      delete userData.updatedAt;
+      req.session.userLogged = userActualice.dataValues;
+      console.log(req.session.userLogged, "userloged ");
+      res.redirect("/user/profile");
     }
   },
 

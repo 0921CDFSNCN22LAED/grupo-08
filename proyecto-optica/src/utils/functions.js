@@ -59,7 +59,7 @@ module.exports = {
           association: "price",
         },
       ],
-      //  order: [[db.Price, "price", "DESC"]],
+      //order: [[db.Price, "price", "ASC"]],
     });
     console.log(products);
     return products;
