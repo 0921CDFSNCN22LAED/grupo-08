@@ -303,6 +303,12 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        product_id: 50,
+        category_id: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ]);
   },
 
