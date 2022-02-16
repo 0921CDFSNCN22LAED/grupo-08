@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include ("partials/head") %>
+
+    <body>
+        <header class="j-space-between bgc-header font-color header">
+            <%- include ("partials/header-home") %>
+        </header>
+
+
+        <main class="main-carrito">
+            <section class="container-carro-de-compras">
+                <div class="top-carrito">
+                    <div class="icons icon-detail-product">
+                        <i class="lni lni-cart"> </i> (cant)
+                    </div>
+
+                </div>
+                <div class="main-carrito-de-copras">
+                    <article class="article-carrito">
+                        <div class="left-div-carrito ">
+                            <img src="/img/foto-producto-carrito.jpg" alt="">
+                        </div>
+                        <div class="center-div-carrito ">
+                            <div class="center-div-top">
+                                <h3>Nombre del producto</h3>
+                                <h4>Nombre del vendedor/tienda</h4>
+                            </div>
+                            <div class="center-div-bottom">
+                                <div>
+                                    <div class="button-add-minus">
+                                        <button type="button" class="btn btn-dark btn-minus">
+                                            <i class="lni lni-minus"></i>
+                                        </button>
+                                        <label for="">(cant)</label>
+                                        <button type="button" class="btn btn-dark btn-add">
+                                            <i class="lni lni-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="container-ver-similares">
+                                        <a href="#">Ver similares</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rigth-div-carrito ">
+                            <div class="top-rigth-carrito icons">
+                                <i class="fas fa-dollar-sign"></i>
+                                <label for="">precio</label>
+                            </div>
+                            <div class="bottom-trash-right-carrito icons">
+                                <button>
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                    </article>
+
+                </div>
+                <div class="main-carrito-de-copras">
+                    <article class="article-carrito">
+                        <div class="left-div-carrito ">
+                            <img src="/img/foto-producto-carrito.jpg" alt="">
+                        </div>
+                        <div class="center-div-carrito ">
+                            <div class="center-div-top">
+                                <h3>Nombre del producto</h3>
+                                <h4>Nombre del vendedor/tienda</h4>
+                            </div>
+                            <div class="center-div-bottom">
+                                <div>
+                                    <div class="button-add-minus">
+                                        <button type="button" class="btn btn-dark btn-minus">
+                                            <i class="lni lni-minus"></i>
+                                        </button>
+                                        <label for="">(cant)</label>
+                                        <button type="button" class="btn btn-dark btn-add">
+                                            <i class="lni lni-plus"></i>
+                                        </button>
+                                    </div>
+                                    <div class="container-ver-similares">
+                                        <a href="#">Ver similares</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rigth-div-carrito ">
+                            <div class="top-rigth-carrito icons">
+                                <i class="fas fa-dollar-sign"></i>
+                                <label for="">precio</label>
+                            </div>
+                            <div class="bottom-trash-right-carrito icons">
+                                <button>
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+            </section>
+        </main>
+        <%- include('partials/footer.ejs') %>
+            <%- include('./partials/scripts-boostrap.ejs') %>
+    </body>
+
+</html>
