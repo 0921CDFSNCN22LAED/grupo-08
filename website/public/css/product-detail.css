@@ -128,7 +128,7 @@
 
 /***** CARRUSEL PRODUCT DETAIL *****/
 .carousel-item img {
-  height: 300px;
+  height: auto;
 }
 .carousel-inner {
   border-radius: 8px;
