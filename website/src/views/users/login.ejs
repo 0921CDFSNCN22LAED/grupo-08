@@ -20,7 +20,7 @@
                         <div class=" m-formularies-2">
                             <label></label>
                             <div>
-                                <input class="formularies-deco flex-q-1 email-login" type="email" name="email"
+                                <input class="formularies-deco flex-q-1 email-login" type="email" name="email" id="email"
                                     placeholder="Nombre/Correo Electronico"
                                     value="<%= (locals.oldData && oldData.email) ? oldData.email : '' %>">
                             </div>
@@ -36,7 +36,7 @@
                         <div class="m-formularies-2 ">
                             <label> </label>
                             <div>
-                                <input class=" formularies-deco margin-10 flex-q-1" type="password" name="password"
+                                <input class=" formularies-deco margin-10 flex-q-1" type="password" name="password" id="password"
                                     placeholder="Contraseña">
                             </div>
                             <% if(locals.errors && errors.password) { %>
@@ -76,6 +76,6 @@
             <%- include ("../partials/footer") %>
         </footer>
         <%- include('../partials/scripts-boostrap.ejs') %>
-        <script src = "js/login.js"></script>
+        <script src="/js/user/login.js"></script>
 
 </html>
