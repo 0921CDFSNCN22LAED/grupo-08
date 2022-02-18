@@ -3,6 +3,8 @@
 
 node create-data-base.js
 
+ctl + c para matar el proceso
+
 `para ejecutar las migraciones :`
 
 npx sequelize-cli db:migrate

@@ -11,7 +11,7 @@ const connection = mySql.createConnection(config);
 //corremos la creación de la base de datos
 
 connection.query(
-  `CREATE DATABASE IF NOT EXISTS proyecto_optica`,
+  `CREATE DATABASE IF NOT EXISTS vision`,
   function (err, result) {
     console.log(err);
     console.log(result);
