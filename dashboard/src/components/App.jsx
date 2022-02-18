@@ -1,5 +1,5 @@
-import banner1 from "../img/banner1.jpg";
 import banner5 from "../img/banner5.png";
+import banner1 from "../img/banner1.jpg";
 import banner3 from "../img/banner4.jpg";
 import banner4 from "../img/banner3.jpg";
 
@@ -20,9 +20,8 @@ function App() {
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide-to="0"
               class="active"
-              aria-current="true"
               aria-label="Slide 1"
-            ></button>
+              ></button>
             <button
               type="button"
               data-bs-target="#carouselExampleIndicators"
@@ -40,7 +39,7 @@ function App() {
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide-to="3"
               aria-label="Slide 4"
-            ></button>
+              ></button>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -56,6 +55,7 @@ function App() {
                 src={banner4}
                 height="350px"
                 class="d-block w-100"
+                aria-current="true"
                 alt="..."
               />
             </div>
