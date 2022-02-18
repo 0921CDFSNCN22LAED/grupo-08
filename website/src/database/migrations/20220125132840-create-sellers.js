@@ -10,9 +10,11 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       cellPhone: {
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
       shippingWay: {
         type: Sequelize.STRING,
@@ -26,6 +28,7 @@ module.exports = {
       },
       active: {
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
       createdAt: {
         allowNull: true,

@@ -10,9 +10,11 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING(15),
+        allowNull: false,
       },
       product_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: "products",
           key: "id",

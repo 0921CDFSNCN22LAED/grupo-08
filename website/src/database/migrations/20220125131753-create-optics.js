@@ -10,24 +10,31 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       email: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       address: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       postalCode: {
         type: Sequelize.INTEGER(6),
+        allowNull: false,
       },
       province: {
         type: Sequelize.STRING(100),
+        allowNull: false,
       },
       schedule: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       cellPhone: {
         type: Sequelize.INTEGER(12),
+        allowNull: false,
       },
       shippingWay: {
         type: Sequelize.STRING,
@@ -44,6 +51,7 @@ module.exports = {
       },
       active: {
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
 
       createdAt: {

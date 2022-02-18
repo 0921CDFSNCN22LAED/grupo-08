@@ -10,6 +10,7 @@ module.exports = {
       },
       price: {
         type: Sequelize.DOUBLE,
+        allowNull: false,
       },
       discount: {
         type: Sequelize.INTEGER,
@@ -20,6 +21,7 @@ module.exports = {
       },
       product_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: "products",
           key: "id",

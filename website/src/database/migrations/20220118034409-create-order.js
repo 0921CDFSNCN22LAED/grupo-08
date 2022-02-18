@@ -18,6 +18,7 @@ module.exports = {
       },
       orderDate: {
         type: Sequelize.DATE,
+        allowNull: false,
       },
       createdAt: {
         allowNull: true,

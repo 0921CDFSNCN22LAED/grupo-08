@@ -10,15 +10,19 @@ module.exports = {
       },
       filename: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       format: {
         type: Sequelize.STRING(5),
+        allowNull: false,
       },
       active: {
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
       product_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: "products",
           key: "id",

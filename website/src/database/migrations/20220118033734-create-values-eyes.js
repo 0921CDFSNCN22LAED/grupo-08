@@ -10,6 +10,7 @@ module.exports = {
       },
       sphere_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: "spheres",
           key: "id",
@@ -17,6 +18,7 @@ module.exports = {
       },
       cylinder_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: "cylinders",
           key: "id",
@@ -24,6 +26,7 @@ module.exports = {
       },
       pupillaryDistance_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: "pupillary_distances",
           key: "id",

@@ -10,9 +10,11 @@ module.exports = {
       },
       categoryName: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       active: {
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
       createdAt: {
         allowNull: true,

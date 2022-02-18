@@ -11,12 +11,15 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
+        allowNull: false,
       },
       shortDescription: {
         type: Sequelize.STRING(500),
+        allowNull: false,
       },
       longDescription: {
         type: Sequelize.TEXT,
+        allowNull: false,
       },
       prescription_id: {
         type: Sequelize.INTEGER,
@@ -27,6 +30,7 @@ module.exports = {
       },
       size_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: "sizes",
           key: "id",
@@ -34,6 +38,7 @@ module.exports = {
       },
       material_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: "materials",
           key: "id",
@@ -41,6 +46,7 @@ module.exports = {
       },
       active: {
         type: Sequelize.INTEGER,
+        allowNull: false,
       },
       createdAt: {
         allowNull: true,
