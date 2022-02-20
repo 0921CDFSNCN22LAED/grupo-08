@@ -34,7 +34,7 @@ module.exports = {
         "category",
       ],
     });
-    if (producto.active == 1) {
+    if (producto.active === 1) {
       console.log(producto);
       res.send(producto);
     } else {

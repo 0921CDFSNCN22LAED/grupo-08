@@ -114,4 +114,7 @@ module.exports = {
     productsServices.eliminatedOne(productId);
     res.redirect("/products");
   },
+  prescription: (req, res) => {
+    res.render("products/prescription-form");
+  },
 };

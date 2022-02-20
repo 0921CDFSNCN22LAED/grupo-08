@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <header class="j-space-between bgc-header font-color header">
+            <%- include ("../partials/header-home") %>
+        </header>
+        <main class="main_prescription_form" style="display: block;">
+            <section class="section_top w-100">
+                <div class="div_container_img">
+
+                    <figure class="p-2">
+                        <img src="" alt="">
+                    </figure>
+                </div>
+                <div class="container_total " id=" container">
+                    <form action="">
+                        <div class="" id="container_top">
+                            <ul class="static_center d-flex  p-2">
+                                <li class="lis_top list-unstyled w-20">
+                                    <div>vacio</div>
+                                    <div class="div_right_eye mb-3"> OD
+                                        <span>(Right eye)</span>
+                                    </div>
+                                    <div class=" div_left_eye">OS
+                                        <span>(Left eye)</span>
+                                    </div>
+                                </li>
+                                <li class="lis_top list-unstyled  ">
+                                    <div class="p-1">
+                                        <span> Sphere(SPH)</span>
+                                    </div>
+                                    <div>
+                                        <select class="form-select mb-3 select_eye" name="" id="od_sph">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <select class="form-select select_eye " name="" id="os_sph">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="lis_top list-unstyled ">
+                                    <div class="p-1">
+                                        <span>Cylinder(CYL)</span>
+                                    </div>
+                                    <div>
+                                        <select class=" form-select mb-3 select_eye" name="" id="od_cyl">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                    <div class="">
+                                        <select class="form-select select_eye" name="" id="os_cyl">
+                                            <option value="" selected></option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li class="lis_top list-unstyled w-20">
+                                    <div class="p-1">
+                                        <span> Axis</span>
+                                    </div>
+                                    <div>
+                                        <input class="mb-3 form-control" type="number" id="od_axis">
+                                    </div>
+                                    <div>
+                                        <input class="mb-3 form-control" type="number" id="os_axis">
+                                    </div>
+                                </li>
+
+                                <div></div>
+                            </ul>
+                        </div>
+                        <div class="static_center pb-3 ">
+                            <ul class="second_ul d-flex  ">
+                                <li class="list-unstyled ">
+                                    <div class="pt-1">
+                                        PD
+                                        <span> (Pupillary Distance)</span>
+                                    </div>
+                                </li>
+                                <li class="list-unstyled mx-3">
+                                    <div>
+                                        <select class="form-select select_PD" name="" id="pd">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="static_center ps-2">
+                            <button type="submit" class="btn btn-success ">Comprar</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <%- include ("../partials/footer") %>
+        </footer>
+        <%- include('../partials/scripts-boostrap.ejs') %>
+
+    </body>

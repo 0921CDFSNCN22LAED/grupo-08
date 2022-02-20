@@ -23,6 +23,7 @@ router.get("/:productId", productControllers.detail);
 // ******** EDIT PRODUCT ********//
 router.get("/:productId/edit", productControllers.edit);
 
+// ******** update PRODUCT ********//
 router.put(
   "/:productId",
   uploadFiles.array("image_edit_product", 8),
@@ -32,5 +33,7 @@ router.put(
 
 // ******** DELETE PRODUCT ********//
 router.delete("/:productId", productControllers.destroy);
+
+router.get("/:productId/prescription", productControllers.prescription);
 
 module.exports = router;
