@@ -1,3 +1,4 @@
+import React from "react";
 import banner5 from "../img/banner5.png";
 import banner1 from "../img/banner1.jpg";
 import banner3 from "../img/banner4.jpg";
@@ -100,4 +101,3 @@ function home() {
   );
 }
 export default home;
-    

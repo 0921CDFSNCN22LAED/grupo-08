@@ -1,12 +1,15 @@
-import home from "./home";
-import { Router } from "react-router-dom";
+import React from "react";
+import Home from "./home";
+import { Route, Routes } from "react-router-dom";
 import "../App.css";
 
 
 function App() {
   return (
     <div>
-      <Router path="/" exact={ true } element={ <home/> }/>
+      <Routes>
+      <Route path="/" exact={ true } element={<Home/>} />
+      </Routes>
     </div>
   );
 }
