@@ -197,6 +197,7 @@ ol {
 }
 .container-section-logged h6 {
   color: white;
+  margin-bottom: 0%;
 }
 .container-profile-header {
   display: flex;
