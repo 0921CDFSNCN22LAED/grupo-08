@@ -10,7 +10,7 @@
 
         <main class="main-register display-flex">
             <% const invalid="is-invalid" %>
-                <form class="form-register" action="/user/register" method="post" enctype="multipart/form-data">
+                <form class="form-register" id="formRegister" action="/user/register" method="post" enctype="multipart/form-data">
                     <h2 class="margin-10" style="text-align: center;">
                         Crea Tu cuenta
                     </h2>
@@ -29,6 +29,7 @@
                                                 </p>
                                             </div>
                                             <% } %>
+                                            <p id="erroesName"> </p>
                             </div>
 
                             <div class=" m-formularies">
