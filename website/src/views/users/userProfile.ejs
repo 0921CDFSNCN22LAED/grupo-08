@@ -5,10 +5,11 @@
 
 
     <body id="body-prodile">
+
         <header class="j-space-between bgc-header font-color header">
             <%- include ("../partials/header-home") %>
         </header>
-
+    
         <body>
             <section class="container-user">
 
@@ -26,15 +27,17 @@
                         </div>
             </section>
             <section class="section2">
-                <div id="containerForm">
-                    <form action="/user/profile/<%=userLogged.id%>/edit?_method=PUT" method="post"
+                    
+                </div>
+                <div id="containerForm" >
+                    <form  action="/user/profile/<%=userLogged.id%>/edit?_method=PUT" method="post"
                         enctype="multipart/form-data" id="formProfile">
                         <label for="">Nombre de Usuario</label>
                         <input
-                            class="formularies-deco form-control <%=locals.errors && errors.name ? 'is-invalid' : "" %> "
-                            type="text" name="name" id=""
+                            class="formularies-deco form-control  <%=locals.errors && errors.name ? 'is-invalid' : "" %> "
+                            type="text" name="name" id = "profileName"
                             value="<%=locals.oldData && oldData.name ?oldData.name : userLogged.name%>">
-                        <p class="text-danger">
+                        <p class="text-danger" id="errores">
                             <%=locals.errors && errors.name ? errors.name.msg: "" %>
                         </p>
                         <label for="">Apellido</label>
@@ -95,6 +98,8 @@
             </footer>
             <%- include('../partials/scripts-boostrap.ejs')%>
                 <script src="/js/user/user-profile.js"></script>
+                <script src="/js/front-validation/profile-validation.js"></script>
+                
         </body>
 
 </html>
