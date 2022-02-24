@@ -9,7 +9,7 @@
     <header class="j-space-between bgc-header font-color header">
         <%- include ("../partials/header-home") %>
     </header>
-    <form action="/products" method="post" enctype="multipart/form-data">
+    <form action="/products" method="post" enctype="multipart/form-data" id="formValidation">
         <section>
             <article class="article-detail-product article-product-edit">
                 <section class="top-izquierda">
@@ -45,19 +45,28 @@
 
                     </div>
                     <div class="imgs-del-producto">
-                        <!-- hacer algo con la variable locals para que cuando se carguen las fotos se vean -->
-                        <a href=""> <img src="" alt=""></a>
-                        <a href=""> <img src="" alt=""></a>
+                        <% for(image of product.image) { %>
+                            <img src="<%=`/img/products/${image.filename}`%>" width="20%" alt="">
+                            <% } %>
                     </div>
+                    <label for="image">Imagenes de productos</label>
+                    <input class="form-control 
+                   " type="file" name="image_edit_product" id="avatar_p_edit" multiple>
+
+
+                    <p class=" text-danger" id="msg_error_files">
+                        <%= locals.errors && errors.image_edit_product ? errors.image_edit_product.msg :""%>
+                    </p>
                 </section>
                 <section class="parte-derecha data">
                     <div class=" container-title-icon">
                         <div class="mb-3">
                             <label for="formGroupExampleInput" class="form-label">Nombre del producto</label>
-                            <input type="text" name="name"
+
+                            <input type="text" name="name id="title"
                                 value="<%= locals.oldData && oldData.name ? oldData.name :""%>" id=""
                                 class="form-control<%=locals.errors && errors.name ?" is-invalid": " is-valid" %>">
-                            <p class="text-danger">
+                            <p class="text-danger" id="error_title">
                                 <%= locals.errors && errors.name ? errors.name.msg : "" %>
                             </p>
 
@@ -70,11 +79,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="formGroupExampleInput" class="form-label">Breve description</label>
-                        <input type="text" name="shortDescription"
+                        <input type="text" name="shortDescription" id="shortDescription"
                             value="<%=locals.oldData && oldData.shortDescription ? oldData.shortDescription : "" %> "
                             id="" class="form-control <%= locals.errors && errors.shortDescription ? " is-invalid"
                             : " is-valid" %>">
-                        <p class="text-danger">
+                        <p class="text-danger" id="error_shortDescription">
                             <%= locals.errors&& errors.shortDescription ? errors.shortDescription.msg : "" %>
                         </p>
 
@@ -83,11 +92,11 @@
                         <div class="container-desciption" style="display:flex">
                             <div class="mb-3">
                                 <label for="" class="form-label">Precio</label>
-                                <input type="text" name="price"
+                                <input type="text" name="price id="price"
                                     value="<%=locals.oldData&& oldData.price ? oldData.price : "" %> " id=""
                                     class="form-control <%= locals.errors && errors.price ? " is-invalid" : " is-valid"
                                     %> ">
-                                <p class="text-danger">
+                                <p class="text-danger" id="error_price">
                                     <%= locals.errors && errors.price ? errors.price.msg : "" %>
                                 </p>
                             </div>
@@ -98,20 +107,18 @@
                         <div class="picker" name="color"></div>
                         <label for=""> Seleccione tamaño</label>
                         <div class="form-floating">
-                            <select class="form-select <%= locals.errors && errors.size ? " is-invalid" : " is-valid"
-                                %>" name="size"
-                                id="size"
-                                aria-label="Floating label select example">
+                            <select class="form-select <%= locals.errors && errors.size ? " is-invalid" : " is-valid" %>" 
+                                name="size" id="size" aria-label="Floating label select example">
                                 <option value="">Seleccione un talle</option>
                                 <% for(size of sizes){%>
-                                    <option value="<%=size.id%>" <%=locals.oldData && oldData.size==size.id ? "selected"
-                                        : "" %> >
+                                    <option value="<%=size.id%>" 
+                                        <%=locals.oldData && oldData.size==size.id ? "selected" : "" %> >
                                         <%= size.size %>
                                     </option>
                                     <% }%>
 
                             </select>
-                            <p class="text-danger">
+                            <p class="text-danger" id="error_size">
                                 <%= locals.errors && errors.size ? errors.size.msg : "" %>
                             </p>
                         </div>
@@ -169,12 +176,14 @@
                                 producto</label>
                             <div class="descripcion-detail-product">
                                 <textarea id="floatingTextarea2" style="height: 100px" name="longDescription"
-                                    class="form-control  <%=locals.errors && errors.longDescription ? " is-invalid" : ""
-                                    %>"
-                                     placeholder="Descripcion del producto"
-                                    ><%=locals.oldData && oldData.longDescription ? oldData.longDescription : "" %></textarea>
+                                    class="form-control  <%=locals.errors && errors.longDescription ? " is-invalid" 
+                                    : ""
+                                    %>" placeholder="Descripcion del producto"
+                                    id="longDescription" style="height: 100px"
+                                    name="longDescription"><%=locals.oldData && oldData.longDescription ? oldData.longDescription : "" %></textarea>
                                 <label for="floatingTextarea2">Descripcion</label>
                             </div>
+                            <p class="text-danger" id="error_longDescription"></p>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
@@ -189,10 +198,9 @@
 
                                 <label for=""> Material</label>
                                 <div class="form-floating">
-                                    <select class="form-select <%=locals.errors && errors.size ? " is-invalid"
+                                    <select class="form-select <%=locals.errors && errors.material ? " is-invalid"
                                         : " is-valid" %>"
-                                        name="material" id=""
-                                        aria-label="Floating label select example">
+                                        name="material" id="material" aria-label="Floating label select example">
                                         <option selected>Seleccione un material</option>
                                         <% for(material of materials){%>
                                             <option value="<%= material.id %>" <%=locals.oldData&&
@@ -200,7 +208,7 @@
                                                 <%= material.material %>
                                             </option>
                                             <% }%>
-                                                <p class="text-danger">
+                                                <p class="text-danger" id="error_material">
                                                     <%= locals.errors && errors.material? errors.material.msg : "" %>
                                                 </p>
                                     </select>
