@@ -49,6 +49,8 @@ window.onload = function () {
     } else {
       if (errors.title) {
         delete errors.title;
+        error_title.innerText = "";
+        title.classList.remove("is-invalid");
       }
     }
     const valueShortDescription = shortDescription.value;
@@ -64,6 +66,8 @@ window.onload = function () {
     } else {
       if (errors.shortDescription) {
         delete errors.shortDescription;
+        error_shortDescription.innerText = "";
+        shortDescription.classList.remove("is-invalid");
       }
     }
     const valuePrice = price.value;
@@ -76,6 +80,8 @@ window.onload = function () {
     } else {
       if (errors.price) {
         delete errors.price;
+        error_price.innerText = "";
+        price.classList.remove("is-invalid");
       }
     }
     const valueSize = size.value;
@@ -85,15 +91,20 @@ window.onload = function () {
     } else {
       if (errors.size) {
         delete errors.size;
+        error_size.innerText = "";
+        size.classList.remove("is-invalid");
       }
     }
     const valueMaterial = material.value;
+
     console.log(valueMaterial == "", 'material = ""');
     if (valueMaterial == "") {
       errors.material = "Debe seleccionar un material";
     } else {
       if (errors.material) {
         delete errors.material;
+        error_material.innerText = "";
+        material.classList.remove("is-invalid");
       }
     }
     const valueLongDescription = longDescription.value;
@@ -122,47 +133,26 @@ window.onload = function () {
       if (errors.title) {
         error_title.innerText = errors.title;
         title.classList.add("is-invalid");
-      } else {
-        error_title.innerText = "";
-        title.classList.remove("is-invalid");
       }
       if (errors.shortDescription) {
         error_shortDescription.innerText = errors.shortDescription;
         shortDescription.classList.add("is-invalid");
-      } else {
-        error_shortDescription.innerText = "";
-        shortDescription.classList.remove("is-invalid");
       }
-
       if (errors.price) {
         error_price.innerText = errors.price;
         price.classList.add("is-invalid");
-      } else {
-        error_price.innerText = "";
-        price.classList.remove("is-invalid");
       }
-
       if (errors.size) {
         error_size.innerText = errors.size;
         size.classList.add("is-invalid");
-      } else {
-        error_size.innerText = "";
-        size.classList.remove("is-invalid");
       }
       if (errors.material) {
         error_material.innerText = errors.material;
         material.classList.add("is-invalid");
-      } else {
-        error_material.innerText = "";
-        material.classList.remove("is-invalid");
       }
-
       if (errors.longDescription) {
         error_longDescription.innerText = errors.longDescription;
         longDescription.classList.add("is-invalid");
-      } else {
-        error_longDescription.innerText = "";
-        longDescription.classList.remove("is-invalid");
       }
       if (errors.images) {
         msg_error_files.innerText = errors.images;
