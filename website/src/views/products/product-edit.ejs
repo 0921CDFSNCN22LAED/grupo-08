@@ -9,7 +9,8 @@
     <header class="j-space-between bgc-header font-color header">
         <%- include ("../partials/header-home") %>
     </header>
-    <form action="/products/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form action="/products/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data"
+        id="form_edit_product">
         <section>
             <article class="article-detail-product article-product-edit">
                 <section class="top-izquierda">
@@ -51,12 +52,13 @@
                     </div>
                     <label for="image">Imagenes de productos</label>
                     <input class="form-control 
-                   " type="file" name="image_edit_product" multiple>
-                    <% if(locals.errors && errors.image_edit_product){ %>
-                        <p class=" text-danger">
-                            <%= errors.image_edit_product.msg %>
-                        </p>
-                        <% } %>
+                   " type="file" name="image_edit_product" id="avatar_p_edit" multiple>
+
+
+                    <p class=" text-danger" id="msg_error_files">
+                        <%= locals.errors && errors.image_edit_product ? errors.image_edit_product.msg :""%>
+                    </p>
+
                 </section>
                 <section class="parte-derecha data">
                     <div class=" container-title-icon">
@@ -64,10 +66,11 @@
                             <label for="formGroupExampleInput" class="form-label">Nombre del producto</label>
 
 
-                            <input type="text" name="name"
+                            <input type="text" name="name" id="title"
                                 value="<%= locals.oldData && oldData.name ? oldData.name : product.name %>"
-                                class="form-control <%=locals.errors && errors.name ? 'is-invalid' : "" %> " id="">
-                            <p class="text-danger">
+                                class="form-control <%=locals.errors && errors.name ? 'is-invalid' : "" %> ">
+
+                            <p class="text-danger" id="error_title">
                                 <%=locals.errors && errors.name ?errors.name.msg : "" %>
                             </p>
                         </div>
@@ -79,11 +82,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="formGroupExampleInput" class="form-label">Breve description</label>
-                        <input type="text" name="shortDescription"
+                        <input type="text" name="shortDescription" id="shortDescription"
                             value="<%=(locals.oldData && oldData.shortDescription)? oldData.shortDescription : product.shortDescription %>"
                             class="form-control <%= locals.errors && errors.shortDescription ? ' is-invalid': "" %> "
                             id="">
-                        <p class="text-danger">
+                        <p class="text-danger" id="error_shortDescription">
                             <%= locals.errors && errors.shortDescription ? errors.shortDescription.msg : "" %>
                         </p>
                     </div>
@@ -91,11 +94,11 @@
                         <div class="container-desciption" style="display:flex">
                             <div class="mb-3">
                                 <label for="" class="form-label">Precio</label>
-                                <input type="text" name="price"
+                                <input type="text" name="price" id="price"
                                     value="<%=(locals.oldData && oldData.price)? oldData.price :product.price[0].price%>"
                                     class="form-control <%=locals.errors && errors.price ? ' is-invalid' : ""  %>"
                                     id="">
-                                <p class="text-danger">
+                                <p class="text-danger" id="error_price">
                                     <%=locals.errors && errors.price ? errors.price.msg : "" %>
                                 </p>
                             </div>
@@ -107,7 +110,7 @@
                         <div class="picker" name="color"></div>
                         <div class="form-floating">
                             <select class="form-select <%= locals.errors && errors.size ? " is-invalid" : "" %>"
-                                name="size" id="" aria-label="Floating label select example">
+                                name="size" id="size" aria-label="Floating label select example">
                                 <option value="">Seleccione tamaño</option>
                                 <% for(size of sizes){ %>
                                     <option value="<%=size.id %>"
@@ -116,7 +119,7 @@
                                     </option>
                                     <% } %>
                             </select>
-                            <p class="text-danger">
+                            <p class="text-danger" id="error_size">
                                 <%= locals.errors && errors.size ? errors.size.msg : "" %>
                             </p>
                         </div>
@@ -128,8 +131,8 @@
                         </div>
                         <label for=""> Material</label>
                         <select class="form-select <%= locals.errors && errors.material ? ' is-invalid' : "" %>"
-                            name="material" id="" aria-label="Floating label select example">
-                            <option selected>Seleccione un material</option>
+                            name="material" id="material" aria-label="Floating label select example">
+                            <option value="" selected>Seleccione un material</option>
                             <% for(material of materials){%>
                                 <option value="<%= material.id %>" <%=material.id==product.material_id ? 'selected' : ''
                                     %>>
@@ -138,7 +141,7 @@
                                 <% }%>
 
                         </select>
-                        <p class="text-danger">
+                        <p class="text-danger" id="error_material">
                             <%= locals.errors && errors.material ? errors.material.msg : "" %>
                         </p>
                     </div>
@@ -172,10 +175,11 @@
                                 <textarea class="form-control <%=locals.errors && errors.longDescription ? " is-invalid"
                                     : ""
                                     %>" placeholder="Descripcion del producto"
-                                    id="floatingTextarea2" style="height: 100px"
+                                    id="longDescription" style="height: 100px"
                                     name="longDescription"><%=locals.oldData && oldData.longDescription ? oldData.longDescription: product.longDescription%></textarea>
                                 <label for="floatingTextarea2">Descripcion</label>
                             </div>
+                            <p class="text-danger" id="error_longDescription"></p>
                         </div>
                     </div>
 
@@ -213,11 +217,9 @@
         </section>
     </form>
 
-    <footer class="">
-        <%- include ("../partials/footer") %>
-    </footer>
+
     <%- include('../partials/scripts-boostrap.ejs') %>
-        <script src="../../../js/products/product-edit.js"></script>
+        <script src="/js/products/validation-form-update.js"></script>
 
 </body>
 
