@@ -6,13 +6,13 @@ module.exports = [
   body("name")
     .notEmpty()
     .withMessage("No completo el campo, se cargo con los valores anteriores")
-    .isLength({ min: 4 })
-    .withMessage("el nombre del producto debe contener al menos 3 caracteres"),
+    .isLength({ min: 5 })
+    .withMessage("el nombre del producto debe contener al menos 5 caracteres"),
   body("shortDescription")
     .notEmpty()
     .withMessage("No completo el campo, se cargo con los valores anteriores")
-    .isLength({ max: 255 })
-    .withMessage("La descripción debe contener menso de 255 caracteres"),
+    .isLength({ max: 20 })
+    .withMessage("La descripción debe contener menso de 20 caracteres"),
   body("price")
     .notEmpty()
     .withMessage("No completo el campo, se cargo con los valores anteriores")
@@ -79,7 +79,9 @@ module.exports = [
   }),
   body("longDescription")
     .notEmpty()
-    .withMessage("Debe completar el campo descripción"),
+    .withMessage("Debe completar el campo descripción")
+    .isLength({ min: 20 })
+    .withMessage("La descripción debe contener menso de 20 caracteres"),
   body("material")
     .notEmpty()
     .isNumeric()

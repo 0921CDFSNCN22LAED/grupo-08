@@ -7,13 +7,13 @@ module.exports = [
   body("name")
     .notEmpty()
     .withMessage("Debe llenar el campo nombre")
-    .isLength({ min: 3 })
-    .withMessage("Debe tener al menos 3 caracteres"),
+    .isLength({ min: 2 })
+    .withMessage("Debe tener al menos 2 caracteres"),
   body("lastName")
     .notEmpty()
-    .withMessage("Debe llenar el campo nombre")
-    .isLength({ min: 3 })
-    .withMessage("Debe tener al menos 3 caracteres"),
+    .withMessage("Debe llenar el campo Apellido")
+    .isLength({ min: 2 })
+    .withMessage("Debe tener al menos 2 caracteres"),
   body("oldPassword").custom(async (value, { req }) => {
     if (!req.body.oldPassword) {
       return true;
