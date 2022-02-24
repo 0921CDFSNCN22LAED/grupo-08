@@ -103,7 +103,10 @@
                                     </div>
                         </div>
                         <div class=" cont-btn-buy-dp">
-                            <button type="submit" class="btn btn-dark"> Seleccionar lentes </button>
+
+                            <a href="/products/<%=product.id%>/prescription">
+                                <button type="submit" class="btn btn-dark"> Seleccionar Prescripción </button>
+                            </a>
                         </div>
                         <% if(locals.userLogged && (userLogged.admin==1)) { %>
                             <div class="btn-edit-delete">

@@ -18,7 +18,7 @@ module.exports = (sequelize) => {
       foreignKey: "sphere_id",
     });
 
-    ValueEye.belongsTo(models.PupillaryDistance, {
+    ValueEye.belongsTo(models.Pupillary_Distance, {
       as: "pupillaryDistance",
       foreignKey: "pupillaryDistance_id",
     });

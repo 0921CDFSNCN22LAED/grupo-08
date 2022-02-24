@@ -33,12 +33,20 @@
                                     </div>
                                     <div>
                                         <select class="form-select mb-3 select_eye" name="" id="od_sph">
-                                            <option value=""></option>
+                                            <% for(sphere of dbSphere){ %>
+                                                <option value="<%=sphere.id%>" <%=sphere.id==52 ? 'selected' : "" %> >
+                                                    <%= sphere.sphere %>
+                                                </option>
+                                                <% } %>
                                         </select>
                                     </div>
                                     <div>
                                         <select class="form-select select_eye " name="" id="os_sph">
-                                            <option value=""></option>
+                                            <% for(sphere of dbSphere){ %>
+                                                <option value="<%=sphere.id%>" <%=sphere.id==52 ? 'selected' : "" %> >
+                                                    <%= sphere.sphere %>
+                                                </option>
+                                                <% } %>
                                         </select>
                                     </div>
                                 </li>
@@ -48,12 +56,22 @@
                                     </div>
                                     <div>
                                         <select class=" form-select mb-3 select_eye" name="" id="od_cyl">
-                                            <option value=""></option>
+                                            <% for(cylinder of dbCylinder){ %>
+                                                <option value="<%=cylinder.id%>" <%=cylinder.id==52 ? 'selected' : "" %>
+                                                    >
+                                                    <%= cylinder.cylinder %>
+                                                </option>
+                                                <% } %>
                                         </select>
                                     </div>
                                     <div class="">
                                         <select class="form-select select_eye" name="" id="os_cyl">
-                                            <option value="" selected></option>
+                                            <% for(cylinder of dbCylinder){ %>
+                                                <option value="<%=cylinder.id%>" <%=cylinder.id==52 ? 'selected' : "" %>
+                                                    >
+                                                    <%= cylinder.cylinder %>
+                                                </option>
+                                                <% } %>
                                         </select>
                                     </div>
                                 </li>
@@ -83,7 +101,13 @@
                                 <li class=" second_li list-unstyled mx-3">
                                     <div>
                                         <select class="form-select select_PD" name="" id="pd">
-                                            <option value=""></option>
+                                            <% for(pupillaryDistance of dbPupillaryDistance){ %>
+                                                <option value="<%=pupillaryDistance.id%>" <%=pupillaryDistance.id==52
+                                                    ? 'selected' : "" %>
+                                                    >
+                                                    <%= pupillaryDistance.pupillaryDistance %>
+                                                </option>
+                                                <% } %>
                                         </select>
                                     </div>
                                 </li>
@@ -96,7 +120,7 @@
                 </div>
             </section>
         </main>
-        <footer class="footer-produts">
+        <footer class="footer-prescriptions">
             <%- include('../partials/footer.ejs') %>
         </footer>
         <%- include('../partials/scripts-boostrap.ejs') %>

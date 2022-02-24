@@ -1,3 +1,4 @@
+const { sequelize } = require("../database/models");
 const db = require("../database/models");
 const jsonHelper = require("../utils/jsonHelper");
 const libFunctions = require("../utils/libFunctions");
@@ -181,6 +182,15 @@ module.exports = {
     const image = product.image[0];
     return image;
   },
+  dataEyes: async () => {
+    const data = await Promise.all([
+      db.Sphere.findAll({ raw: true }),
+      db.Cylinder.findAll({ raw: true }),
+      db.Pupillary_Distance.findAll({ raw: true }),
+    ]);
+    return data;
+  },
+
   eliminatedOne: async (productId) => {
     try {
       const product = await db.Product.findByPk(productId);

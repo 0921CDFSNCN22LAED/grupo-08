@@ -3,7 +3,7 @@ const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const { materialAndSize } = require("../utils/libFunctions");
 const productsServices = require("../services/products");
-const { imageProduct } = require("../services/products");
+const { imageProduct, dataEyes } = require("../services/products");
 
 module.exports = {
   index: async (req, res) => {
@@ -117,8 +117,18 @@ module.exports = {
   },
   prescription: async (req, res) => {
     const id = req.params.productId;
+    const data = await dataEyes();
+    const dbSphere = data[0];
+    const dbCylinder = data[1];
+    const dbPupillaryDistance = data[2];
+
     const image = await imageProduct(id);
-    console.log(image);
-    res.render("products/prescription-form", { image: image.filename });
+
+    res.render("products/prescription-form", {
+      image: image.filename,
+      dbSphere,
+      dbCylinder,
+      dbPupillaryDistance,
+    });
   },
 };

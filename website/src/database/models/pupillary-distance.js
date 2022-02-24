@@ -1,7 +1,7 @@
 const sequelize = require("sequelize");
 const dataTypes = sequelize.DataTypes;
 module.exports = (sequelize) => {
-  const alias = "PupillaryDistance";
+  const alias = "Pupillary_Distance";
   const cols = {
     pupillaryDistance: dataTypes.INTEGER,
   };
@@ -9,13 +9,13 @@ module.exports = (sequelize) => {
     timestamps: true,
     deletedAt: false,
   };
-  const PupillaryDistance = sequelize.define(alias, cols, config);
-  PupillaryDistance.associate = (models) => {
-    PupillaryDistance.hasMany(models.ValueEye, {
+  const Pupillary_Distance = sequelize.define(alias, cols, config);
+  Pupillary_Distance.associate = (models) => {
+    Pupillary_Distance.hasMany(models.ValueEye, {
       as: "valueEye",
       foreignKey: "pupillaryDistance_id",
     });
   };
 
-  return PupillaryDistance;
+  return Pupillary_Distance;
 };

@@ -10,7 +10,6 @@ module.exports = (sequelize) => {
     deletedAt: false,
   };
   const Sphere = sequelize.define(alias, cols, config);
-
   Sphere.associate = (models) => {
     Sphere.hasMany(models.ValueEye, {
       as: "valueEye",
