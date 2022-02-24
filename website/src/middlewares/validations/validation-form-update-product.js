@@ -11,7 +11,7 @@ module.exports = [
   body("shortDescription")
     .notEmpty()
     .withMessage("No completo el campo, se cargo con los valores anteriores")
-    .isLength({ max: 20 })
+    .isLength({ min: 20 })
     .withMessage("La descripción debe contener menso de 20 caracteres"),
   body("price")
     .notEmpty()
