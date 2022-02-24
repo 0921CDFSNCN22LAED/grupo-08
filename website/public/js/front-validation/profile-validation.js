@@ -17,19 +17,15 @@ window.onload = function () {
         if (userName.value == "") {
             errors.name = "El nombre no puede estar vacio";
         }
-
+        //object.keys recorre el objeto completo
         if (Object.keys(errors) === 0) {
             form.submit();
-            if (errors.name) {
-                delete errors;
-                nameError.innerText = "";
-            }
-        } else {
+        } else if (Object.keys(errors) != 0) {
             e.preventDefault();
-            console.log(errors, "existen errores");
-            if (errors.name) {
-                nameError.innerText = errors.name;
-            }
+            console.log(errors);
+            nameError.innerText = errors.name;
         }
+        //eliminar propiedad de un objeto
+        delete errors.name;
     });
 };
