@@ -1,27 +1,35 @@
-window.addEventListener("load", function () {
-    alert("hola");
-    const formValidation = document.querySelector("#formProfile");
-    const blankName = document.querySelector("#profileName");
-    const blankLastName = document.querySelector("#profileLastName");
-    const errorName = document.querySelector("#errorName");
-    const errorLastName = document.querySelector("#errorLastName");
+window.onload = function () {
+    const form = document.querySelector("#formProfile");
+    const userName = document.querySelector("#profileName");
+    const nameError = document.querySelector("#errorName");
+    /*const expresiones = {
+        usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+        nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+        password: /^.{4,12}$/, // 4 a 12 digitos.
+        correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+        telefono: /^\d{7,14}$/, // 7 a 14 numeros.
+    };*/
+    console.log(form);
 
-    formValidation.addEventListener("submit", function (e) {
-        const errors = [];
+    let errors = {};
 
-        if (blankName.value == "") {
-            errors.push("");
+    form.addEventListener("submit", function (e) {
+        if (userName.value == "") {
+            errors.name = "El nombre no puede estar vacio";
         }
-        if (errors.length > 0) {
-            errorName.innerText = "El nombre debe estar lleno";
+
+        if (Object.keys(errors) === 0) {
+            form.submit();
+            if (errors.name) {
+                delete errors;
+                nameError.innerText = "";
+            }
+        } else {
             e.preventDefault();
-        }
-        if (blankLastName.value == "") {
-            errors.push("");
-        }
-        if (errors.length > 0) {
-            errorLastName.innerText = "El apellido debe estar lleno";
-            e.preventDefault();
+            console.log(errors, "existen errores");
+            if (errors.name) {
+                nameError.innerText = errors.name;
+            }
         }
     });
-});
+};
