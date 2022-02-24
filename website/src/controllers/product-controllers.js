@@ -3,6 +3,7 @@ const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const { materialAndSize } = require("../utils/libFunctions");
 const productsServices = require("../services/products");
+const { imageProduct } = require("../services/products");
 
 module.exports = {
   index: async (req, res) => {
@@ -114,7 +115,10 @@ module.exports = {
     productsServices.eliminatedOne(productId);
     res.redirect("/products");
   },
-  prescription: (req, res) => {
-    res.render("products/prescription-form");
+  prescription: async (req, res) => {
+    const id = req.params.productId;
+    const image = await imageProduct(id);
+    console.log(image);
+    res.render("products/prescription-form", { image: image.filename });
   },
 };

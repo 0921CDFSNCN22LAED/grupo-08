@@ -11,9 +11,11 @@
   width: 100%;
 }
 figure {
-  width: 400px;
-  height: 400px;
   margin: auto;
+  margin-top: 80px;
+}
+figure img {
+  max-width: 100%;
 }
 .second_ul {
   padding-left: 0.5rem;
@@ -53,6 +55,9 @@ footer {
   .second_ul {
     padding-left: 1.5rem !important;
   }
+  figure {
+    max-width: 600px;
+  }
   footer {
     position: absolute;
     bottom: -400px;
@@ -61,6 +66,7 @@ footer {
 @media (min-width: 1024px) {
   .section_top {
     display: flex;
+    margin-top: 59px;
   }
   .container_btn {
     padding-left: 1.5rem !important;

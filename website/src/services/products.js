@@ -168,7 +168,19 @@ module.exports = {
       console.log(error);
     }
   },
+  imageProduct: async (id) => {
+    const product = await db.Product.findOne({
+      where: {
+        id: id,
+      },
+      include: { association: "image" },
 
+      nest: true,
+    });
+
+    const image = product.image[0];
+    return image;
+  },
   eliminatedOne: async (productId) => {
     try {
       const product = await db.Product.findByPk(productId);
