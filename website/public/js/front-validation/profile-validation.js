@@ -9,19 +9,19 @@ window.addEventListener("load", function () {
   formValidation.addEventListener("submit", function (e) {
     const errors = [];
 
-    if (blankName.value == "") {
-      errors.push("");
-    }
-    if (errors.length > 0) {
-      errorName.innerText = "El nombre debe estar lleno";
-      e.preventDefault();
-    }
-    if (blankLastName.value == "") {
-      errors.push("");
-    }
-    if (errors.length > 0) {
-      errorLastName.innerText = "El apellido debe estar lleno";
-      e.preventDefault();
-    }
-  });
-});
+    form.addEventListener("submit", function (e) {
+        if (userName.value == "") {
+            errors.name = "El nombre no puede estar vacio";
+        }
+        //object.keys recorre el objeto completo
+        if (Object.keys(errors) === 0) {
+            form.submit();
+        } else if (Object.keys(errors) != 0) {
+            e.preventDefault();
+            console.log(errors);
+            nameError.innerText = errors.name;
+        }
+        //eliminar propiedad de un objeto
+        delete errors.name;
+    });
+};
