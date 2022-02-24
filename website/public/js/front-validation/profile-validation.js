@@ -1,15 +1,13 @@
-window.addEventListener("load", function () {
-  alert("hola");
-  const formValidation = document.querySelector("#formProfile");
-  const blankName = document.querySelector("#profileName");
-  const blankLastName = document.querySelector("#profileLastName");
-  const errorName = document.querySelector("#errorName");
-  const errorLastName = document.querySelector("#errorLastName");
-
-  formValidation.addEventListener("submit", function (e) {
-    const errors = [];
+window.onload = function () {
+    const form = document.querySelector("#formProfile");
+    const userName = document.querySelector("#profileName");
+    const blankLastName = document.querySelector("#profileLastName");
+    const nameError = document.querySelector("#errorName");
+    const errorLastName = document.querySelector("#errorLastName");
 
     form.addEventListener("submit", function (e) {
+        let errors = {};
+
         if (userName.value == "") {
             errors.name = "El nombre no puede estar vacio";
         }
