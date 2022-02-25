@@ -42,7 +42,7 @@
                         <label for="">Apellido</label>
                         <input
                             class="formularies-deco form-control <%=locals.errors && errors.lastName ? 'is-invalid' : ""  %>"
-                            type="text" name="lastName" id=""
+                            type="text" id="userLastName"
                             value="<%=locals.oldData && oldData.lastName ?oldData.lastName : userLogged.lastName%>">
                         <p class="text-danger" id="errorLastName">
                             <%=locals.errors && errors.lastName ? errors.lastName.msg: "" %>
