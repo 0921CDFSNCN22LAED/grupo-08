@@ -181,10 +181,21 @@
   margin-left: 10px;
   margin-top: 5px;
 }
+#labelImage {
+  max-width: 750px;
+  margin: auto;
+  padding: 20px;
+}
+#inputImagesCreateProduct {
+  width: 100%;
+
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
 @media (min-width: 480px) {
   .article-detail-product {
-    max-width: 100%;
+    max-width: 90%;
     margin: auto;
   }
   .top-izquierda {
@@ -237,10 +248,13 @@
     padding: 10px;
     margin-top: 80px;
     margin: auto;
-    max-width: 1300px;
+    max-width: 80%;
   }
   .bottom-article ul {
     justify-content: space-around;
+  }
+  #formValidation {
+    margin-top: 80px;
   }
 }
 /****     FOOTER PRODUCTOS      *****/

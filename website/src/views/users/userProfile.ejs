@@ -40,7 +40,7 @@
                             <%=locals.errors && errors.name ? errors.name.msg: "" %>
                         </p>
                         <label for="">Apellido</label>
-                        <input
+                        <input name="lastName"
                             class="formularies-deco form-control <%=locals.errors && errors.lastName ? 'is-invalid' : ""  %>"
                             type="text" id="userLastName"
                             value="<%=locals.oldData && oldData.lastName ?oldData.lastName : userLogged.lastName%>">

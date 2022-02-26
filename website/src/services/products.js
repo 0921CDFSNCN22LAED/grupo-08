@@ -39,11 +39,12 @@ module.exports = {
         name: body.name,
         shortDescription: body.shortDescription,
         longDescription: body.longDescription,
+        //size_id: body.size,
         material_id: body.material,
         active: 1,
       });
-      product.setSize(body.size);
-      product.setMaterial(body.material);
+      //await product.setSize(body.size);
+      //await product.setMaterial(body.material);
       const productId = product.id;
       //  IMAGE
       const dataImages = libFunctions.dataImages(files);
@@ -52,8 +53,9 @@ module.exports = {
       dataImages.forEach(async (file) => {
         const image = await db.Image.create({
           ...file,
+          product_id: productId,
         });
-        image.setProduct(productId);
+        //   await image.setProduct(productId);
       });
       //  PRICE
       let priceDiscount;
@@ -67,13 +69,15 @@ module.exports = {
         price: body.price,
         discount: body.discount,
         priceDiscount: priceDiscount,
+        product_id: productId,
       });
-      price.setProduct(productId);
+      //await price.setProduct(productId);
       //  COLOR
       const color = await db.Color.create({
         name: body.color,
+        product_id: productId,
       });
-      color.setProduct(productId);
+      //color.setProduct(productId);
       return productId;
     } catch (error) {
       console.log(error);
