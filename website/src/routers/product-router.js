@@ -37,4 +37,6 @@ router.delete("/:productId", productControllers.destroy);
 // ******** PRESCRIPTION PRODUCT ********//
 router.get("/:productId/prescription", productControllers.prescription);
 
+router.post("/:productId/prescription", productControllers.processPrescription);
+
 module.exports = router;

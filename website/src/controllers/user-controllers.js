@@ -98,14 +98,14 @@ module.exports = {
     res.redirect("/");
   },
   delete: async (req, res) => {
-    const user = await findOne(req.params.id);
-    user.set({
-      active: 0,
-    });
-    user.save();
-    //poner alertas con jsfront
-    res.clearCookie("userEmail"); //elimina  cualquier cookie que exista con ese nombre
-    req.session.destroy(); // destruye la session
-    res.redirect("/");
+    // const user = await findOne(req.params.id);
+    // user.set({
+    //   active: 0,
+    // });
+    // user.save();
+    // //poner alertas con jsfront
+    // res.clearCookie("userEmail"); //elimina  cualquier cookie que exista con ese nombre
+    // req.session.destroy(); // destruye la session
+    // res.redirect("/");
   },
 };

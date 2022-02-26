@@ -131,4 +131,5 @@ module.exports = {
       dbPupillaryDistance,
     });
   },
+  processPrescription: async (req, res) => {},
 };

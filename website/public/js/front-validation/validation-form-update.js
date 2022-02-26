@@ -40,7 +40,7 @@ window.onload = function () {
   console.log(form);
   form.addEventListener("submit", function (e) {
     const valueTitle = title.value;
-    console.log(valueTitle == "", "si es un string vacio");
+
     if (valueTitle == "" || valueTitle.replace(/ /g, "") == "") {
       //saco los espacios vacíos con replace
       errors.title = "Debe ingresar un titulo front-end";
@@ -126,7 +126,6 @@ window.onload = function () {
     if (Object.keys(errors) === 0) {
       form.submit();
     } else {
-      console.log(errors, "hay errorees");
       e.preventDefault();
       console.log(errors.title, "dentro del prevent");
 
