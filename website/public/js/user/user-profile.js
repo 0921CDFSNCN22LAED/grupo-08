@@ -4,10 +4,10 @@ window.onload = function () {
   const formDeleteAccount = document.getElementById("deleteAccount");
   const containerForm = document.getElementById("containerForm");
   containerForm.classList.add("none");
-  const btnEnviar = document.getElementById("btnEnviar");
+  const btnEnviar = document.getElementById("btnEnviarProfile");
   btnEnviar.classList.add("none");
 
-  const btnEdit = document.getElementById("btnEdit");
+  const btnEdit = document.getElementById("btnEditProfile");
   btnEdit.addEventListener("click", () => {
     const formNone = containerForm.classList.contains("none");
     const enviarNone = btnEnviar.classList.contains("none");

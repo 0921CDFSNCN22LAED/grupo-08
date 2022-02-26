@@ -36,6 +36,12 @@
   width: 100%;
 }
 
+#btnEnviarProfile {
+  width: 80px;
+  margin: auto;
+  margin-top: 15px;
+}
+
 #formProfile {
   width: 90%;
   margin: auto;

@@ -22,7 +22,7 @@
                         <div class="containerImgProfile">
                             <img src="<%=`/img/users/${locals.userLogged.avatar}`%>" alt="">
                             <!--  <form action="<%=`/api/user/profile/${userLogged.id}`%>" method="get"> -->
-                            <button type="submit" class="btn btn-primary" id="btnEdit">Editar datos</button>
+                            <button type="submit" class="btn btn-primary" id="btnEditProfile">Editar datos</button>
                             <!--   </form> -->
                         </div>
             </section>
@@ -82,7 +82,7 @@
                         <p class="text-danger">
                             <%=locals.errors && errors.avatar ? errors.avatar.msg: "" %>
                         </p>
-                        <button type="submit" class="btn btn-primary" id="btnEnviar">Enviar</button>
+                        <button type="submit" class="btn btn-primary" id="btnEnviarProfile">Enviar</button>
                     </form>
                 </div>
                 <div class="container-btns">
