@@ -141,6 +141,8 @@ module.exports = {
     console.log(id);
     console.log(body, 56565656565656);
 
-    await setValuesPrescription(body, id);
+    const productWitchPrescription = await setValuesPrescription(body, id);
+    console.log(productWitchPrescription);
+    res.json(productWitchPrescription);
   },
 };

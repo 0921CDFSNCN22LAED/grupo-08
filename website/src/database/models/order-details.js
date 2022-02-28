@@ -1,7 +1,7 @@
 const sequelize = require("sequelize");
 const dataTypes = sequelize.DataTypes;
 module.exports = (sequelize) => {
-  const alias = "OrderDetail";
+  const alias = "Order_Detail";
   const cols = {
     order_id: dataTypes.INTEGER,
     product_id: dataTypes.INTEGER,
@@ -10,19 +10,19 @@ module.exports = (sequelize) => {
     timestamps: true,
     deletedAt: false,
   };
-  const OrderDetail = sequelize.define(alias, cols, config);
-  OrderDetail.associate = (models) => {
-    //preguntar  * OrderDetail.hasOne(models.Optic * si esta bien , y sino , como se hace ?
-    OrderDetail.hasOne(models.Optic, {
+  const Order_Detail = sequelize.define(alias, cols, config);
+  Order_Detail.associate = (models) => {
+    //preguntar  * Order_Detail.hasOne(models.Optic * si esta bien , y sino , como se hace ?
+    Order_Detail.hasOne(models.Optic, {
       // pongo hasOne porque con esa orden solo vale para una óptica o para un seller
       as: "seller",
       as: "optic",
       foreignKey: "orderDetail_id",
     });
-    OrderDetail.hasOne(models.Seller, {
+    Order_Detail.hasOne(models.Seller, {
       as: "seller",
       foreignKey: "orderDetail_id",
     });
   };
-  return OrderDetail;
+  return Order_Detail;
 };

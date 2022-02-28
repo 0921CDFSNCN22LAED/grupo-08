@@ -31,7 +31,7 @@ module.exports = (sequelize) => {
   };
   const Optic = sequelize.define(alias, cols, config);
   Optic.associate = (models) => {
-    Optic.belongsTo(models.OrderDetail, {
+    Optic.belongsTo(models.Order_Detail, {
       as: "orderDetail",
       foreignKey: "orderDetail_id",
     });

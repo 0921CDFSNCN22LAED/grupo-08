@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const productControllers = require("../controllers/product-controllers");
 const uploadFiles = require("../middlewares/middleware-products/middleware-multer");
-const multer = require("multer");
 const validationFormCreateProduct = require("../middlewares/validations/validation-form-create-product");
 const validationFormUpdateProduct = require("../middlewares/validations/validation-form-update-product");
+const authMilddleware = require("../middlewares/middleware-user/auth-middleware");
 /*** GET ALL PRODUCTS ***/
 router.get("/", productControllers.index);
 // ******** CREATE PRODUCT ********//
@@ -37,6 +37,10 @@ router.delete("/:productId", productControllers.destroy);
 // ******** PRESCRIPTION PRODUCT ********//
 router.get("/:productId/prescription", productControllers.prescription);
 
-router.post("/:productId/prescription", productControllers.processPrescription);
+router.post(
+  "/:productId/prescription",
+  authMilddleware,
+  productControllers.processPrescription
+);
 
 module.exports = router;

@@ -21,7 +21,7 @@ module.exports = (sequelize) => {
   //preguntar lo mismo con sellers , si corresponde o sirve hacerlo asi
 
   Seller.associate = (models) => {
-    Seller.belongsTo(models.OrderDetail, {
+    Seller.belongsTo(models.Order_Detail, {
       as: "orderDetail",
       foreignKey: "orderDetail_id",
     });

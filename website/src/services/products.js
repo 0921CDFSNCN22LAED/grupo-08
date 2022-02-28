@@ -240,9 +240,9 @@ module.exports = {
     await prescription.setValueEye(valueEye, {
       through: "prescription_values",
     });
-    // const product = db.Product.findByPk(id);
-    //  await product.setPrescription
-    //   return product;
+    const product = db.Product.findByPk(id);
+    // await product.setPrescription;
+    // return product;
   },
   getDataPrescription: async (id) => {
     const dataPrescription = await db.Prescription_Value.findOne({
