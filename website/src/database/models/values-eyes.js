@@ -34,6 +34,11 @@ module.exports = (sequelize) => {
       through: "prescription_values",
       // otherKey: "prescription_id",
     });
+
+    // Value_Eye.hasOne(models.Prescription_Value, {
+    //   as: "prescriptionValue",
+    //   foreignKey: "valueEye_id",
+    // });
   };
   return Value_Eye;
 };

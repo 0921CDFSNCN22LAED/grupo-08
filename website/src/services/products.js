@@ -263,9 +263,13 @@ module.exports = {
     }
   },
   getDataPrescription: async (id) => {
-    const dataPrescription = await db.Prescription_Value.findOne({
-      where: { id: id },
+    const dataEyes = await db.Prescription_Value.findOne({
+      where: { id: 1 },
       include: [
+        {
+          model: db.Prescription,
+          as: "prescription",
+        },
         {
           model: db.Value_Eye,
           as: "valueEye",
@@ -273,30 +277,12 @@ module.exports = {
             {
               model: db.Right_Eye,
               as: "rightEye",
-              include: [
-                {
-                  model: db.Sphere,
-                  as: "sphere",
-                },
-                {
-                  model: db.Cylinder,
-                  as: "cylinder",
-                },
-              ],
+              include: [{ all: true }],
             },
             {
               model: db.Left_Eye,
               as: "leftEyes",
-              include: [
-                {
-                  model: db.Sphere,
-                  as: "sphere",
-                },
-                {
-                  model: db.Cylinder,
-                  as: "cylinder",
-                },
-              ],
+              include: [{ all: true }],
             },
             {
               model: db.Pupillary_Distance,
@@ -304,13 +290,8 @@ module.exports = {
             },
           ],
         },
-
-        {
-          model: db.Prescription,
-          as: "prescription",
-          attributes: ["name"],
-        },
       ],
     });
+    return dataEyes;
   },
 };

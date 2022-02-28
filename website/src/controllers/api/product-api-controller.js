@@ -47,11 +47,13 @@ module.exports = {
       where: {
         id: 1,
       },
-      include: {
-        model: db.Product,
-        as: "product",
-        include: ["image", "price"],
-      },
+      include: [
+        {
+          model: db.Product,
+          as: "product",
+          include: ["image", "price"],
+        },
+      ],
     });
     let status;
     if (productsMen) {
@@ -74,11 +76,13 @@ module.exports = {
       where: {
         id: 2,
       },
-      include: {
-        model: db.Product,
-        as: "product",
-        include: ["image", "price"],
-      },
+      include: [
+        {
+          model: db.Product,
+          as: "product",
+          include: ["image", "price"],
+        },
+      ],
     });
     let status;
     if (productsWomen) {
@@ -90,7 +94,7 @@ module.exports = {
       meta: {
         status: status,
         total: productsWomen.length,
-        url: "/api/products/men",
+        url: "/api/products/women",
       },
       data: productsWomen,
     };
@@ -101,11 +105,13 @@ module.exports = {
       where: {
         id: 3,
       },
-      include: {
-        model: db.Product,
-        as: "product",
-        include: ["image", "price"],
-      },
+      include: [
+        {
+          model: db.Product,
+          as: "product",
+          include: ["image", "price"],
+        },
+      ],
     });
     let status;
     if (productsChildren) {
@@ -117,7 +123,7 @@ module.exports = {
       meta: {
         status: status,
         total: productsChildren.length,
-        url: "/api/products/men",
+        url: "/api/products/children",
       },
       data: productsChildren,
     };

@@ -23,6 +23,11 @@ module.exports = (sequelize) => {
       as: "orderDetail",
       foreignKey: "prescription_id",
     });
+
+    // Prescription.hasOne(models.Prescription_Value, {
+    //   as: "prescriptionValue",
+    //   foreignKey: "prescription_id",
+    // });
   };
 
   return Prescription;

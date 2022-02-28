@@ -12,15 +12,15 @@ module.exports = (sequelize) => {
   };
   const Prescription_Value = sequelize.define(alias, cols, config);
   Prescription_Value.associate = (models) => {
-    // Prescription_Value.belongsTo(models.Prescription, {
-    //   as: "prescription",
-    //   foreignKey: "prescription_id",
-    // });
-    // Prescription_Value.belongsTo(models.Value_Eye, {
-    //   as: "valueEye",
-    //   foreignKey: "valueEye_id",
-    // });
-    //no es necesario este modelo , en el caso que tuviera mas columnas ademas de las de esos dos id si
+    Prescription_Value.belongsTo(models.Prescription, {
+      as: "prescription",
+      foreignKey: "prescription_id",
+    });
+    Prescription_Value.belongsTo(models.Value_Eye, {
+      as: "valueEye",
+      foreignKey: "valueEye_id",
+    });
+    //no es necesario este modelo , pero como necesito hacer una consulta de esta tabla SI lo es
   };
   return Prescription_Value;
 };
