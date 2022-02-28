@@ -16,7 +16,8 @@
                     </figure>
                 </div>
                 <div class=" container_total " id=" container">
-                    <form class="form_prescription" action="<%`/products/${product.id}/prescription`%>" method="post">
+                    <form class="form_prescription" action="<%`/products/${product.id}/prescription`%>" method="post"
+                        id="fromBuyProductPrescription">
                         <div class="" id="container_top">
                             <ul class="static_center d-flex  p-2">
                                 <li class="lis_top list-unstyled w-20">
@@ -116,7 +117,7 @@
                             </ul>
                         </div>
                         <div class="container_btn ps-2">
-                            <button type="submit" class="btn btn-success ">Comprar</button>
+                            <button type="submit" class="btn btn-success" id="btnBuyPrescription">Comprar</button>
                         </div>
                     </form>
                 </div>
@@ -126,5 +127,6 @@
             <%- include('../partials/footer.ejs') %>
         </footer>
         <%- include('../partials/scripts-boostrap.ejs') %>
-
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script>
+            <script src="/js/products/buyProductWithPrescription.js"></script>
     </body>

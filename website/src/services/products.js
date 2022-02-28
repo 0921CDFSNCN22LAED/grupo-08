@@ -210,53 +210,57 @@ module.exports = {
     }
   },
   setValuesPrescription: async (body, id, userLogged) => {
-    const eye = await Promise.all([
-      db.Right_Eye.create({
-        eyeRight_SPH_id: body.sphereRightEye,
-        eyeRight_CYL_id: body.cylinderRightEye,
-        axisRightEye: body.AxisRightEye,
-      }),
-      db.Left_Eye.create({
-        eyeLeft_SPH_id: body.sphereLeftEye,
-        eyeLeft_CYL_id: body.cylinderLeftEye,
-        axisLeftEye: body.AxisLeftEye,
-      }),
-    ]);
-    const rightEye = eye[0];
-    const leftEye = eye[1];
+    try {
+      const eye = await Promise.all([
+        db.Right_Eye.create({
+          eyeRight_SPH_id: body.sphereRightEye,
+          eyeRight_CYL_id: body.cylinderRightEye,
+          axisRightEye: body.AxisRightEye,
+        }),
+        db.Left_Eye.create({
+          eyeLeft_SPH_id: body.sphereLeftEye,
+          eyeLeft_CYL_id: body.cylinderLeftEye,
+          axisLeftEye: body.AxisLeftEye,
+        }),
+      ]);
+      const rightEye = eye[0];
+      const leftEye = eye[1];
 
-    const valueEye = await db.Value_Eye.create({
-      rightEye_id: rightEye.id,
-      leftEye_id: leftEye.id,
-      pupillaryDistance_id: body.pupillaryDistance,
-    });
+      const valueEye = await db.Value_Eye.create({
+        rightEye_id: rightEye.id,
+        leftEye_id: leftEye.id,
+        pupillaryDistance_id: body.pupillaryDistance,
+      });
 
-    // const name = new Date() + sessionloged algo asi
-    const prescription = await db.Prescription.create({
-      name: `User : ${userLogged.name}, Email: ${userLogged.email}`,
-      status: 1,
-    });
-    await prescription.setValueEye(valueEye, {
-      through: "prescription_values",
-    });
+      const prescription = await db.Prescription.create({
+        name: `User : ${userLogged.name}, Email: ${userLogged.email}`,
+        status: 1,
+      });
+      await prescription.setValueEye(valueEye, {
+        through: "prescription_values",
+      });
 
-    const product = await db.Product.findByPk(id);
+      const product = await db.Product.findByPk(id);
 
-    const order = await db.Order.create({
-      user_id: userLogged.id,
-    });
-    await order.setProduct(product);
+      const order = await db.Order.create({
+        user_id: userLogged.id,
+      });
+      await order.setProduct(product);
 
-    const OrderDetail = await db.Order_Detail.update(
-      {
-        prescription_id: prescription.id,
-      },
-      {
-        where: {
-          order_id: order.id,
+      await db.Order_Detail.update(
+        {
+          prescription_id: prescription.id,
         },
-      }
-    );
+        {
+          where: {
+            order_id: order.id,
+          },
+        }
+      );
+      return order;
+    } catch (errors) {
+      console.log(errors);
+    }
   },
   getDataPrescription: async (id) => {
     const dataPrescription = await db.Prescription_Value.findOne({

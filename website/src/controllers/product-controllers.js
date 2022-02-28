@@ -3,6 +3,7 @@ const db = require("../database/models");
 const { validationResult } = require("express-validator");
 const { materialAndSize } = require("../utils/libFunctions");
 const productsServices = require("../services/products");
+const swal = require("sweetalert");
 const {
   imageProduct,
   dataEyes,
@@ -140,7 +141,8 @@ module.exports = {
     const body = req.body;
     const userLogged = req.session.userLogged;
     const order = await setValuesPrescription(body, id, userLogged);
-    console.log(order);
-    res.json(order);
+    setTimeout(function () {
+      res.redirect("/");
+    }, 2000);
   },
 };
