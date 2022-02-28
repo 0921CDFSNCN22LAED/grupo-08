@@ -11,7 +11,7 @@ module.exports = (sequelize) => {
   };
   const Pupillary_Distance = sequelize.define(alias, cols, config);
   Pupillary_Distance.associate = (models) => {
-    Pupillary_Distance.hasMany(models.ValueEye, {
+    Pupillary_Distance.hasMany(models.Value_Eye, {
       as: "valueEye",
       foreignKey: "pupillaryDistance_id",
     });

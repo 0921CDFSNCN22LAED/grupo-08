@@ -123,7 +123,7 @@ window.onload = function () {
       }
     }
 
-    if (Object.keys(errors) === 0) {
+    if (Object.keys(errors) == 0) {
       form.submit();
     } else {
       e.preventDefault();

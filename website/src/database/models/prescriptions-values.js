@@ -1,7 +1,7 @@
 const sequelize = require("sequelize");
 const dataTypes = sequelize.DataTypes;
 module.exports = (sequelize) => {
-  const alias = "PrescriptionValue";
+  const alias = "Prescription_Value";
   const cols = {
     prescription_id: dataTypes.INTEGER,
     valueEye_id: dataTypes.INTEGER,
@@ -10,12 +10,17 @@ module.exports = (sequelize) => {
     timestamps: true,
     deletedAt: false,
   };
-  const PrescriptionValue = sequelize.define(alias, cols, config);
-  PrescriptionValue.associate = (models) => {
-    PrescriptionValue.belongsTo(models.Prescription, {
-      as: "Prescription",
-      foreignKey: "prescription_id",
-    });
+  const Prescription_Value = sequelize.define(alias, cols, config);
+  Prescription_Value.associate = (models) => {
+    // Prescription_Value.belongsTo(models.Prescription, {
+    //   as: "prescription",
+    //   foreignKey: "prescription_id",
+    // });
+    // Prescription_Value.belongsTo(models.Value_Eye, {
+    //   as: "valueEye",
+    //   foreignKey: "valueEye_id",
+    // });
+    //no es necesario este modelo , en el caso que tuviera mas columnas ademas de las de esos dos id si
   };
-  return PrescriptionValue;
+  return Prescription_Value;
 };

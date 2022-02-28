@@ -173,18 +173,21 @@ module.exports = {
       console.log(error);
     }
   },
-  imageProduct: async (id) => {
+  getProductById: async (id) => {
     const product = await db.Product.findOne({
       where: {
         id: id,
       },
-      include: { association: "image" },
-
-      nest: true,
+      include: [
+        "image",
+        { association: "size" },
+        { association: "material" },
+        { association: "price" },
+        { association: "color" },
+        "category",
+      ],
     });
-
-    const image = product.image[0];
-    return image;
+    return product;
   },
   dataEyes: async () => {
     const data = await Promise.all([
@@ -205,5 +208,91 @@ module.exports = {
     } catch (error) {
       console.log(error);
     }
+  },
+  setValuesPrescription: async (body, id) => {
+    console.log(body, 5555555555555);
+    const eye = await Promise.all([
+      db.Right_Eye.create({
+        eyeRight_SPH_id: body.sphereRightEye,
+        eyeRight_CYL_id: body.cylinderRightEye,
+        axisRightEye: body.AxisRightEye,
+      }),
+      db.Left_Eye.create({
+        eyeLeft_SPH_id: body.sphereLeftEye,
+        eyeLeft_CYL_id: body.cylinderLeftEye,
+        axisLeftEye: body.AxisLeftEye,
+      }),
+    ]);
+    const rightEye = eye[0];
+    const leftEye = eye[1];
+
+    const valueEye = await db.Value_Eye.create({
+      rightEye_id: rightEye.id,
+      leftEye_id: leftEye.id,
+      pupillaryDistance_id: body.pupillaryDistance,
+    });
+
+    // const name = new Date() + sessionloged algo asi
+    const prescription = await db.Prescription.create({
+      name: "nameUser+date()",
+      status: 1,
+    });
+    await prescription.setValueEye(valueEye, {
+      through: "prescription_values",
+    });
+    // const product = db.Product.findByPk(id);
+    //  await product.setPrescription
+    //   return product;
+  },
+  getDataPrescription: async (id) => {
+    const dataPrescription = await db.Prescription_Value.findOne({
+      where: { id: id },
+      include: [
+        {
+          model: db.Value_Eye,
+          as: "valueEye",
+          include: [
+            {
+              model: db.Right_Eye,
+              as: "rightEye",
+              include: [
+                {
+                  model: db.Sphere,
+                  as: "sphere",
+                },
+                {
+                  model: db.Cylinder,
+                  as: "cylinder",
+                },
+              ],
+            },
+            {
+              model: db.Left_Eye,
+              as: "leftEyes",
+              include: [
+                {
+                  model: db.Sphere,
+                  as: "sphere",
+                },
+                {
+                  model: db.Cylinder,
+                  as: "cylinder",
+                },
+              ],
+            },
+            {
+              model: db.Pupillary_Distance,
+              as: "pupillaryDistance",
+            },
+          ],
+        },
+
+        {
+          model: db.Prescription,
+          as: "prescription",
+          attributes: ["name"],
+        },
+      ],
+    });
   },
 };

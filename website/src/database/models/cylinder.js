@@ -11,9 +11,13 @@ module.exports = (sequelize) => {
   };
   const Cylinder = sequelize.define(alias, cols, config);
   Cylinder.associate = (models) => {
-    Cylinder.hasMany(models.ValueEye, {
-      as: "valueEye",
-      foreignKey: "cylinder_id",
+    Cylinder.hasMany(models.Right_Eye, {
+      as: "RightEye",
+      foreignKey: "eyeRight_CYL_id",
+    });
+    Cylinder.hasMany(models.Left_Eye, {
+      as: "LeftEye",
+      foreignKey: "eyeLeft_CYL_id",
     });
   };
   return Cylinder;

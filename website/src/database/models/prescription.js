@@ -12,9 +12,11 @@ module.exports = (sequelize) => {
   };
   const Prescription = sequelize.define(alias, cols, config);
   Prescription.associate = (models) => {
-    Prescription.hasMany(models.PrescriptionValue, {
-      as: "prescriptionValue",
+    Prescription.belongsToMany(models.Value_Eye, {
+      as: "valueEye",
       foreignKey: "prescription_id",
+      through: "prescription_values",
+      // otherKey: "valueEye_id",
     });
   };
 

@@ -11,11 +11,12 @@
                 <div class="div_container_img">
 
                     <figure class="p-2">
-                        <img src="<%=image ? `/img/products/${image}` : "" %>" alt="">
+                        <img src="<%=product && product.image[0] ? `/img/products/${product.image[0].filename}` : "" %>"
+                            alt="">
                     </figure>
                 </div>
                 <div class=" container_total " id=" container">
-                    <form class="form_prescription" action="">
+                    <form class="form_prescription" action="<%`/products/${product.id}/prescription`%>" method="post">
                         <div class="" id="container_top">
                             <ul class="static_center d-flex  p-2">
                                 <li class="lis_top list-unstyled w-20">
@@ -32,7 +33,7 @@
                                         <span> Sphere(SPH)</span>
                                     </div>
                                     <div>
-                                        <select class="form-select mb-3 select_eye" name="" id="od_sph">
+                                        <select class="form-select mb-3 select_eye" name="sphereRightEye" id="od_sph">
                                             <% for(sphere of dbSphere){ %>
                                                 <option value="<%=sphere.id%>" <%=sphere.id==52 ? 'selected' : "" %> >
                                                     <%= sphere.sphere %>
@@ -41,7 +42,7 @@
                                         </select>
                                     </div>
                                     <div>
-                                        <select class="form-select select_eye " name="" id="os_sph">
+                                        <select class="form-select select_eye " name="sphereLeftEye" id="os_sph">
                                             <% for(sphere of dbSphere){ %>
                                                 <option value="<%=sphere.id%>" <%=sphere.id==52 ? 'selected' : "" %> >
                                                     <%= sphere.sphere %>
@@ -55,7 +56,8 @@
                                         <span>Cylinder(CYL)</span>
                                     </div>
                                     <div>
-                                        <select class=" form-select mb-3 select_eye" name="" id="od_cyl">
+                                        <select class=" form-select mb-3 select_eye" name="cylinderRightEye"
+                                            id="od_cyl">
                                             <% for(cylinder of dbCylinder){ %>
                                                 <option value="<%=cylinder.id%>" <%=cylinder.id==52 ? 'selected' : "" %>
                                                     >
@@ -65,7 +67,7 @@
                                         </select>
                                     </div>
                                     <div class="">
-                                        <select class="form-select select_eye" name="" id="os_cyl">
+                                        <select class="form-select select_eye" name="cylinderLeftEye" id="os_cyl">
                                             <% for(cylinder of dbCylinder){ %>
                                                 <option value="<%=cylinder.id%>" <%=cylinder.id==52 ? 'selected' : "" %>
                                                     >
@@ -80,10 +82,10 @@
                                         <span> Axis</span>
                                     </div>
                                     <div>
-                                        <input class="mb-3 form-control" type="number" id="od_axis">
+                                        <input class="mb-3 form-control" type="number" id="od_axis" name="AxisRightEye">
                                     </div>
                                     <div>
-                                        <input class="mb-3 form-control" type="number" id="os_axis">
+                                        <input class="mb-3 form-control" type="number" id="os_axis" name="AxisLeftEye">
                                     </div>
                                 </li>
 
@@ -100,7 +102,7 @@
                                 </li>
                                 <li class=" second_li list-unstyled mx-3">
                                     <div>
-                                        <select class="form-select select_PD" name="" id="pd">
+                                        <select class="form-select select_PD" name="pupillaryDistance" id="pd">
                                             <% for(pupillaryDistance of dbPupillaryDistance){ %>
                                                 <option value="<%=pupillaryDistance.id%>" <%=pupillaryDistance.id==52
                                                     ? 'selected' : "" %>

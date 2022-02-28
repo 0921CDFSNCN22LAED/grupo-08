@@ -11,9 +11,13 @@ module.exports = (sequelize) => {
   };
   const Sphere = sequelize.define(alias, cols, config);
   Sphere.associate = (models) => {
-    Sphere.hasMany(models.ValueEye, {
-      as: "valueEye",
-      foreignKey: "sphere_id",
+    Sphere.hasMany(models.Right_Eye, {
+      as: "RightEye",
+      foreignKey: "eyeRight_SPH_id",
+    });
+    Sphere.hasMany(models.Left_Eye, {
+      as: "LeftEye",
+      foreignKey: "eyeLeft_SPH_id",
     });
   };
   return Sphere;

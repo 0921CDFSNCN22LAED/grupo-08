@@ -1,26 +1,31 @@
 "use strict";
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("prescription_values", {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable("right_eyes", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      prescription_id: {
+      eyeRight_SPH_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
-          model: "prescriptions",
+          model: "spheres",
           key: "id",
         },
       },
-      valueEye_id: {
+      eyeRight_CYL_id: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
-          model: "value_eyes",
+          model: "cylinders",
           key: "id",
         },
+      },
+      axisRightEye: {
+        type: Sequelize.REAL,
       },
       createdAt: {
         allowNull: true,
@@ -32,7 +37,7 @@ module.exports = {
       },
     });
   },
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("prescription_values");
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable("right_eyes");
   },
 };
