@@ -31,11 +31,7 @@ module.exports = {
         { association: "material" },
         { association: "price" },
         { association: "color" },
-        {
-          as: "category",
-          model: db.Category,
-          attribute: ["categoryName"],
-        },
+        "category",
       ],
     });
     if (producto.active === 1) {
