@@ -209,8 +209,7 @@ module.exports = {
       console.log(error);
     }
   },
-  setValuesPrescription: async (body, id) => {
-    console.log(body, 5555555555555);
+  setValuesPrescription: async (body, id, userLogged) => {
     const eye = await Promise.all([
       db.Right_Eye.create({
         eyeRight_SPH_id: body.sphereRightEye,
@@ -234,15 +233,30 @@ module.exports = {
 
     // const name = new Date() + sessionloged algo asi
     const prescription = await db.Prescription.create({
-      name: "nameUser+date()",
+      name: `User : ${userLogged.name}, Email: ${userLogged.email}`,
       status: 1,
     });
     await prescription.setValueEye(valueEye, {
       through: "prescription_values",
     });
-    const product = db.Product.findByPk(id);
-    // await product.setPrescription;
-    // return product;
+
+    const product = await db.Product.findByPk(id);
+
+    const order = await db.Order.create({
+      user_id: userLogged.id,
+    });
+    await order.setProduct(product);
+
+    const OrderDetail = await db.Order_Detail.update(
+      {
+        prescription_id: prescription.id,
+      },
+      {
+        where: {
+          order_id: order.id,
+        },
+      }
+    );
   },
   getDataPrescription: async (id) => {
     const dataPrescription = await db.Prescription_Value.findOne({

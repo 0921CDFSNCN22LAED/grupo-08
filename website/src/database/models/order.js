@@ -21,7 +21,7 @@ module.exports = (sequelize) => {
       as: "product",
       through: "order_details",
       foreignKey: "order_id",
-      otherKey: "product_id",
+      // otherKey: "product_id",
     });
   };
   return Order;

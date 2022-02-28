@@ -1,10 +1,11 @@
 const sequelize = require("sequelize");
+const order = require("./order");
 const dataTypes = sequelize.DataTypes;
 module.exports = (sequelize) => {
   const alias = "Prescription";
   const cols = {
     name: dataTypes.STRING,
-    valueStatus: dataTypes.INTEGER,
+    status: dataTypes.INTEGER,
   };
   const config = {
     timestamps: true,
@@ -17,6 +18,10 @@ module.exports = (sequelize) => {
       foreignKey: "prescription_id",
       through: "prescription_values",
       // otherKey: "valueEye_id",
+    });
+    Prescription.hasOne(models.Order_Detail, {
+      as: "orderDetail",
+      foreignKey: "prescription_id",
     });
   };
 

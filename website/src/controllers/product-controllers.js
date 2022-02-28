@@ -138,11 +138,9 @@ module.exports = {
   processPrescription: async (req, res) => {
     const id = req.params.productId;
     const body = req.body;
-    console.log(id);
-    console.log(body, 56565656565656);
-
-    const productWitchPrescription = await setValuesPrescription(body, id);
-    console.log(productWitchPrescription);
-    res.json(productWitchPrescription);
+    const userLogged = req.session.userLogged;
+    const order = await setValuesPrescription(body, id, userLogged);
+    console.log(order);
+    res.json(order);
   },
 };

@@ -5,6 +5,7 @@ module.exports = (sequelize) => {
   const cols = {
     order_id: dataTypes.INTEGER,
     product_id: dataTypes.INTEGER,
+    prescription_id: dataTypes.INTEGER,
   };
   const config = {
     timestamps: true,
@@ -22,6 +23,11 @@ module.exports = (sequelize) => {
     Order_Detail.hasOne(models.Seller, {
       as: "seller",
       foreignKey: "orderDetail_id",
+    });
+
+    Order_Detail.belongsTo(models.Prescription, {
+      as: " prescription",
+      foreignKey: "prescription_id",
     });
   };
   return Order_Detail;

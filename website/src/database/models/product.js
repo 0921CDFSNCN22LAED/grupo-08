@@ -9,8 +9,6 @@ module.exports = (sequelize) => {
 
     longDescription: dataTypes.TEXT,
 
-    prescription_id: dataTypes.INTEGER,
-
     size_id: dataTypes.INTEGER,
 
     material_id: dataTypes.INTEGER,
@@ -61,9 +59,9 @@ module.exports = (sequelize) => {
 
     Product.belongsToMany(models.Order, {
       as: "order",
-      through: "orders_details",
+      through: "order_details",
       foreignKey: "product_id",
-      otherKey: "order_id",
+      // otherKey: "order_id",
     });
 
     Product.belongsTo(models.Size, {

@@ -21,13 +21,7 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      prescription_id: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: "prescriptions",
-          key: "id",
-        },
-      },
+
       size_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
