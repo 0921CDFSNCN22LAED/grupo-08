@@ -11,6 +11,7 @@ window.addEventListener("load", function(){
     const erroresLastName = document.getElementById("erroresLastName")
     const erroresPasword = document.getElementById("erroresPasword")
     const errorsImages = document.getElementById("errorsImages")
+    const erroresEmail = document.getElementById("erroresEmail")
     console.log(form)
     console.log(name)
 
@@ -42,6 +43,9 @@ window.addEventListener("load", function(){
             " debe ingresar una foto con formato valido front-end los formatos aceptados son jpg, png, gif, jpeg";
             
         }
+    if (!email.isEmail()){
+        erroresEmail.innerText = "Debe ser un email"
+    }
 
     })
     
