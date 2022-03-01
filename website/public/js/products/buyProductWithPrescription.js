@@ -8,10 +8,7 @@ window.onload = function () {
     if (nameUserHeader) {
       event.preventDefault();
       swal({
-        buttons: {
-          cancel: true,
-          confirm: true,
-        },
+        title: "¿Esta seguro de comprar este producto?",
       }).then((response) => {
         if (response) {
           swal({
