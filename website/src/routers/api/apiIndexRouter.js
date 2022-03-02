@@ -5,5 +5,5 @@ const homeApiProductRouter = require("./home-api-product-router");
 const userApiRouter = require("./user-api-router");
 router.use("/", homeApiProductRouter);
 router.use("/products", productApiRouter);
-router.use("/user", userApiRouter);
+router.use("/users", userApiRouter);
 module.exports = router;
