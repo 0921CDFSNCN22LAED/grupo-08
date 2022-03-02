@@ -36,15 +36,15 @@
                             class="formularies-deco form-control  <%=locals.errors && errors.name ? 'is-invalid' : "" %> "
                             type="text" name="name" id="profileName"
                             value="<%=locals.oldData && oldData.name ?oldData.name : userLogged.name%>"
-                            placeholder = "Ingresa tu Nombre de Usuario">
+                            placeholder="Ingresa tu Nombre de Usuario">
                         <p class="text-danger" id="errorName">
                             <%=locals.errors && errors.name ? errors.name.msg: "" %>
                         </p>
                         <label for=""></label>
                         <input name="lastName"
                             class="formularies-deco form-control <%=locals.errors && errors.lastName ? 'is-invalid' : ""  %>"
-                            type="text" id="userLastName" placeholder = "Ingresa tu apellido" 
-                            value = "<%=locals.oldData && oldData.lastName ?oldData.lastName : userLogged.lastName%>" >
+                            type="text" id="userLastName" placeholder="Ingresa tu apellido"
+                            value="<%=locals.oldData && oldData.lastName ?oldData.lastName : userLogged.lastName%>">
                         <p class="text-danger" id="errorLastName">
                             <%=locals.errors && errors.lastName ? errors.lastName.msg: "" %>
                         </p>
@@ -52,15 +52,14 @@
                         <input
                             class="formularies-deco  form-control <%=locals.errors && errors.oldPassword ? 'is-invalid' : ""  %>"
                             type="password" name="oldPassword" id="profileLastName" value=""
-                            placeholder = "Ingresa tu Contraseña actual">
+                            placeholder="Ingresa tu Contraseña actual">
                         <p class="text-danger">
                             <%=locals.errors && errors.oldPassword ? errors.oldPassword.msg: "" %>
                         </p>
                         <label for=""></label>
                         <input
                             class="formularies-deco form-control <%=locals.errors && errors.password ? 'is-invalid' : ""  %>"
-                            type="password" name="password" id="" value=""
-                            placeholder = "Ingresa tu Nueva Contraseña">
+                            type="password" name="password" id="" value="" placeholder="Ingresa tu Nueva Contraseña">
                         <p class="text-danger">
                             <%=locals.errors && errors.password ? errors.password.msg: "" %>
                         </p>
@@ -68,15 +67,14 @@
                         <input
                             class="formularies-deco form-control <%=locals.errors && errors.confirmPassword ? 'is-invalid' : ""  %>"
                             type="password" name="confirmPassword" id="" value=""
-                            placeholder = "Confirma tu nueva Contraseña">
-                        <p class="text-danger" >
+                            placeholder="Confirma tu nueva Contraseña">
+                        <p class="text-danger">
                             <%=locals.errors && errors.confirmPassword ? errors.confirmPassword.msg: "" %>
                         </p>
                         <label for="">Datos adicionales:</label>
                         <input
                             class="formularies-deco form-control <%=locals.errors && errors.streetAddress ? 'is-invalid' : ""  %>"
-                            type="text" name="streetAddress" id="adress"
-                            placeholder = "Ingresa tu Direccion"
+                            type="text" name="streetAddress" id="adress" placeholder="Ingresa tu Direccion"
                             value="<%=locals.oldData && oldData.streetAddress ?oldData.streetAddress : userLogged.streetAddress%>">
                         <p class=" text-danger" id="adressError">
                             <%=locals.errors && errors.streetAddress ? errors.streetAddress.msg: "" %>
@@ -101,9 +99,9 @@
             </footer>
             <%- include('../partials/scripts-boostrap.ejs')%>
 
-            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script>
-            <script src="/js/front-validation/user-profile.js"></script>
-            <script src="/js/users/user-profile.js"></script>
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script>
+                <script src="/js/front-validation/user-profile.js"></script>
+                <script src="/js/users/user-profile.js"></script>
 
         </body>
 

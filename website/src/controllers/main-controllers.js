@@ -1,5 +1,6 @@
 const res = require("express/lib/response");
 const db = require("../database/models");
+const { getOrders } = require("../services/products");
 const productsServices = require("../services/products");
 module.exports = {
   home: async (req, res) => {
@@ -21,25 +22,8 @@ module.exports = {
     res.render("carrito");
   },
   prueba: async (req, res) => {
-    const producto = await db.Product.findOne({
-      where: {
-        id: 50,
-      },
-      include: [
-        { association: "image" },
-        { association: "size" },
-        { association: "material" },
-        { association: "price" },
-        { association: "color" },
-        "category",
-      ],
-    });
-    if (producto.active === 1) {
-      console.log(producto);
-      res.send(producto);
-    } else {
-      res.send("Ese producto no se encuentra activado");
-    }
+    const order = await getOrders();
+    res.json(order);
   },
   prescription: function (req, res) {
     res.render("prescription");
