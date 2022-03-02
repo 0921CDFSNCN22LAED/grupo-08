@@ -1,14 +1,14 @@
 const db = require("../../database/models");
 
 module.exports = {
-  getListUser: async () => {
+  getListUsers: async () => {
     try {
-      const users = await db.User.findAll({ raw: true });
-      for (let user of users) {
-        delete user.password;
-        delete user.confirmPassword;
-        delete user.admin;
-      }
+      const users = await db.User.findAll({
+        raw: true,
+        attributes: {
+          exclude: ["password", "confirmPassword", "admin"],
+        },
+      });
       return users;
     } catch (error) {
       console.log(error);
@@ -18,10 +18,10 @@ module.exports = {
     try {
       const user = await db.User.findByPk(id, {
         raw: true,
+        attributes: {
+          exclude: ["password", "confirmPassword", "admin"],
+        },
       });
-      delete user.password;
-      delete user.confirmPassword;
-      delete user.admin;
 
       return user;
     } catch (error) {
