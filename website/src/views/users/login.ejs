@@ -7,7 +7,7 @@
             <%- include ("../partials/header-home") %>
         </header>
         <main class="main-login">
-            <form class="form-login" action="/user/login" method="POST">
+            <form class="form-login" id="formLogin" action="/user/login" method="POST">
                 <section class="formularies login">
                     <p class="text-danger">
                         <%= locals.checkDeleteAccount ? checkDeleteAccount.msg : "" %>
@@ -32,6 +32,7 @@
 
                                 </div>
                                 <% } %>
+                                <p id="errorEmail"></p>
                         </div>
                         <div class="m-formularies-2 ">
                             <label> </label>
@@ -47,6 +48,7 @@
 
                                 </div>
                                 <% } %>
+                                <p id="errorPasword"></p>
                         </div>
                     </div>
                     <div class="margin-10">
