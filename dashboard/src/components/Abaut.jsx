@@ -1,4 +1,4 @@
-export default function Contenido() {
+export default function About() {
   return (
     <div class="row text-white">
       <div class="col-lg-7">
