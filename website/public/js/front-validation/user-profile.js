@@ -1,41 +1,4 @@
 window.onload = function () {
-    const formDeleteAccount = document.getElementById("deleteAccount");
-    const containerForm = document.getElementById("containerForm");
-    containerForm.classList.add("none");
-    const btnEnviar = document.getElementById("btnEnviarProfile");
-    btnEnviar.classList.add("none");
-
-    const btnEdit = document.getElementById("btnEditProfile");
-    btnEdit.addEventListener("click", () => {
-        const formNone = containerForm.classList.contains("none");
-        const enviarNone = btnEnviar.classList.contains("none");
-        //if ternario
-        formNone
-            ? containerForm.classList.replace("none", "block")
-            : containerForm.classList.replace("block", "none");
-        //if ternario
-        enviarNone
-            ? btnEnviar.classList.replace("none", "block")
-            : btnEnviar.classList.replace("block", "none");
-    });
-    console.log(swal);
-    formDeleteAccount.addEventListener("submit", (event) => {
-        event.preventDefault();
-        swal(
-            "¿Esta seguro que desea eliminar su cuenta? - No podra volver a utilizarla",
-            {
-                dangerMode: true,
-                buttons: true,
-            }
-        ).then((response) => {
-            console.log(response);
-            if (response) {
-                formDeleteAccount.submit();
-            }
-        });
-    });
-
-    alert("hola");
     const form = document.querySelector("#formProfile");
     const userName = document.querySelector("#profileName");
     const nameError = document.querySelector("#errorName");
@@ -43,7 +6,7 @@ window.onload = function () {
     const lastNameError = document.querySelector("#errorLastName");
     const adress = document.querySelector("#adress");
     const adressError = document.querySelector("#adressError");
-
+    alert("test");
     form.addEventListener("submit", function (e) {
         let errors = {};
 
