@@ -1,6 +1,6 @@
 window.addEventListener("load", function(){
 
-    const error = []    
+    const error = {}  
     const form = document.getElementById("formRegister")
     const name = document.getElementById("name")
     const lastName = document.getElementById("lastName")
@@ -22,17 +22,34 @@ window.addEventListener("load", function(){
         
 
     if (name.value != "" && name.value <= 2){
-        error.push("a")
-        erroresName.innerText = "Debe llenar por lo menos 2 caracteres. front"
+        error.name
+        
+    }
+    else{
+        if (error.name){
+            delete error.name
+            erroresName.innerText = ""
+        }
+    
+    }
+
+    if (Object.keys(error)==0)
+    {form.submit()
+
+    }else{
+        event.preventDefault()
+        if (error.name){
+            erroresName.innerText = "Debe llenar por lo menos 2 caracteres. front"
+        }
     }
     
     if (lastName.value != "" && lastName.value <= 2){
-        error.push("a")
+        //error
         erroresLastName.innerText = "Debe llenar por lo menos 2 caracteres. front"
     }
     
     if (password.value != "" && password.value <= 8){
-        error.push("a")
+        //error
         erroresPasword.innerText = "Debe llenar por lo menos 8 caracteres. front"
     }
     

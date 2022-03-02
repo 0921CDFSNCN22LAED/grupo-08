@@ -23,6 +23,10 @@ module.exports = (sequelize) => {
       foreignKey: "order_id",
       // otherKey: "product_id",
     });
+    Order.hasMany(models.Order_Detail, {
+      as: "orderDetail",
+      foreignKey: "order_id",
+    });
   };
   return Order;
 };

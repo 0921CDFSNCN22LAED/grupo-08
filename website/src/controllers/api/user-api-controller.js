@@ -2,12 +2,12 @@
 //const { validationResult } = require("express-validator");
 //const { findOne } = require("../../utils/functions");
 
-const { getListUser, getUserById } = require("../../services/api/apiUser");
+const { getListUsers, getUserById } = require("../../services/api/apiUser");
 
 module.exports = {
   list: async (req, res) => {
     try {
-      const users = await getListUser();
+      const users = await getListUsers();
       let status;
       let statusCode;
       if (users) {

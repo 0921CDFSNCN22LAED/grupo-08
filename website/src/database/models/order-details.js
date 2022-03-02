@@ -26,8 +26,16 @@ module.exports = (sequelize) => {
     });
 
     Order_Detail.belongsTo(models.Prescription, {
-      as: " prescription",
+      as: "prescription",
       foreignKey: "prescription_id",
+    });
+    Order_Detail.belongsTo(models.Product, {
+      as: "product",
+      foreignKey: "product_id",
+    });
+    Order_Detail.belongsTo(models.Order, {
+      as: "order",
+      foreignKey: "order_id",
     });
   };
   return Order_Detail;
