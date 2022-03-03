@@ -10,15 +10,38 @@ window.addEventListener("load", function(){
     const erroresPasword = document.querySelector("#erroresPasword")
     const email = document.querySelector("#email")
     const erroresEmail = document.querySelector("#erroresEmail")
-    const imagen = document.querySelector("#avatar")
+    const images = document.querySelector("#avatar")
     const errorsImages = document.querySelector("#errorsImages")
 
     
     const userDb = fetch("/api/users/validationUser")
     
+        
+        images.addEventListener("change", function(){
+        let extensionErrors = [];
+        const extensionAcepte = ["image/gif", "image/jpg", "image/jpeg"];
+        for (element of arrayFile) {
+            if (!extensionAcepte.includes(element.type)) {
+                extensionErrors.push(element);
+            }
+        }
+        if (extensionErrors.length != 0) {
+            errors.images =
+                "Formatos aceptados son jpg, png, gif, jpeg";
+        } else {
+            if (errors.images){
+                delete errors.images;
+                errorsImages.innerText = ""
+            }
+        }
+            
+        })
+    
+    
+        
+    
         form.addEventListener("submit", function(e){
          
-
         if (name.value == "" || name.value.length <= 2){
             errors.name = "Debe tener mas de 2 caracteres"
 
@@ -65,16 +88,18 @@ window.addEventListener("load", function(){
             delete errors.password;
             erroresPasword.innerText = ""
         }}
+        
          console.log(errors);
-
 
 
         //object.keys recorre el objeto completo
         if (Object.keys(errors) == 0) {
             form.submit();
             console.log("no hubo errores")
+
         } else  { 
             e.preventDefault();
+
             if(errors.name){
                 errorsName.innerText = errors.name
                 errorsName.style.color = "red"
@@ -91,6 +116,10 @@ window.addEventListener("load", function(){
             if(errors.password){
                 erroresPasword.innerText = errors.password
                 erroresPasword.style.color = "red"
+            }
+            if (errors.images) {
+                errorsImages.innerText = errors.images;
+                errorsImages.style.color = "red"
             }
             }
 
