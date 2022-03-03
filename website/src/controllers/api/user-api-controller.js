@@ -57,4 +57,30 @@ module.exports = {
       console.log(errors);
     }
   },
+    getUserValidation: async (req, res) => {
+    try {
+      const users = await getUserValidation(email);
+      let status;
+      let statusCode;
+      if (users) {
+        status = true;
+        statusCode = 200;
+      } else {
+        status = false;
+        statusCode = 404;
+      }
+      const response = {
+        meta: {
+          status: status,
+          total: users.length,
+          statusCode: statusCode,
+          url: "/api/users",
+        },
+        data: users,
+      };
+      res.json(response);
+    } catch (errors) {
+      console.log(errors);
+    }
+  },
 };

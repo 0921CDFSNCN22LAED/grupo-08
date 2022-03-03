@@ -28,4 +28,10 @@ module.exports = {
       console.log(error);
     }
   },
+  getUserValidation: async (email) => {
+    const user = db.User.findOne({
+      where: {email: email}
+    }) 
+    return user
+  }
 };

@@ -11,6 +11,7 @@ window.addEventListener("load", function(){
     const email = document.querySelector("#email")
     const erroresEmail = document.querySelector("#erroresEmail")
 
+    const userDb = fetch("/api/users/validationUser")
     
         form.addEventListener("submit", function(e){
          
