@@ -13,6 +13,7 @@ window.addEventListener("load", function(){
     const imagen = document.querySelector("#avatar")
     const errorsImages = document.querySelector("#errorsImages")
 
+    
     const userDb = fetch("/api/users/validationUser")
     
         form.addEventListener("submit", function(e){
@@ -76,19 +77,20 @@ window.addEventListener("load", function(){
             e.preventDefault();
             if(errors.name){
                 errorsName.innerText = errors.name
+                errorsName.style.color = "red"
                 
             }
             if(errors.lastName){
                 erroesLastName.innerText = errors.lastName
-                
+                erroesLastName.style.color = "red"
             }
             if(errors.email){
                 erroresEmail.innerText = errors.email
-                
+                erroresEmail.style.color = "red"
             }
             if(errors.password){
                 erroresPasword.innerText = errors.password
-                
+                erroresPasword.style.color = "red"
             }
             }
 
