@@ -8,6 +8,7 @@ window.addEventListener("load", function(){
     const errorEmail = document.getElementById("errorEmail")
     const errorPasword = document.getElementById("errorPasword")
     
+    const userDb = fetch("/api/users/validationUser")
     
     form.addEventListener("submit", function(event){
 
