@@ -10,6 +10,8 @@ window.addEventListener("load", function(){
     const erroresPasword = document.querySelector("#erroresPasword")
     const email = document.querySelector("#email")
     const erroresEmail = document.querySelector("#erroresEmail")
+    const imagen = document.querySelector("#avatar")
+    const errorsImages = document.querySelector("#errorsImages")
 
     const userDb = fetch("/api/users/validationUser")
     
