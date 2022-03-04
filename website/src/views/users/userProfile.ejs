@@ -51,7 +51,7 @@
                         <label for="">Cambiar Contraseña</label>
                         <input
                             class="formularies-deco  form-control <%=locals.errors && errors.oldPassword ? 'is-invalid' : ""  %>"
-                            type="password" name="oldPassword" id="profileLastName" value=""
+                            type="password" name="oldPassword" id="password" value=""
                             placeholder="Ingresa tu Contraseña actual">
                         <p class="text-danger">
                             <%=locals.errors && errors.oldPassword ? errors.oldPassword.msg: "" %>

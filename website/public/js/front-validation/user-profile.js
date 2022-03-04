@@ -44,15 +44,20 @@ window.onload = function () {
     const lastNameError = document.querySelector("#errorLastName");
     const adress = document.querySelector("#adress");
     const adressError = document.querySelector("#adressError");
+    const password = document.querySelector("#password");
 
     const PORT = `http://localhost:3001/`;
 
-    async function getPassInDb() {
+    async function getPasswordInDb(password) {
         const response = await fetch(
-            `${PORT}api/users/validationUser?userDB=${email}`
+            `${PORT}api/users/validationUser?passwordFront=${password}`
         );
         const data = response.json();
+        return data;
     }
+    const userPassword = getPasswordInDb(password.value);
+
+    console.log(userPassword);
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
@@ -102,10 +107,5 @@ window.onload = function () {
             }
         }
         //--------------------------------------------------------------------//
-        const userPassword = getPassInDb();
-        if (userPassword) {
-            errors.password;
-            console.log(errors);
-        }
     });
 };
