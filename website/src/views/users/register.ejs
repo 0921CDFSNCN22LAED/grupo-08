@@ -10,7 +10,8 @@
 
         <main class="main-register display-flex">
             <% const invalid="is-invalid" %>
-                <form class="form-register" id="formRegister" action="/user/register" method="post" enctype="multipart/form-data">
+                <form class="form-register" id="formRegister" action="/user/register" method="post"
+                    enctype="multipart/form-data">
                     <h2 class="margin-10" style="text-align: center;">
                         Crea Tu cuenta
                     </h2>
@@ -22,14 +23,12 @@
                                     name="name" id="name" placeholder="Nombre" <%if(locals.oldData && oldData.name){%>
                                 value="<%=oldData.name%>"
                                     <% } %>>
-                                        <% if(locals.errors && errors.name) { %>
-                                            <div class=" text-danger">
-                                                <p>
-                                                    <%=errors.name.msg%>
-                                                </p>
-                                            </div>
-                                            <% } %>
-                                            <p id="errorsName"> </p>
+
+                                        <div class=" text-danger">
+                                            <p id="errorsName">
+                                                <%= locals.errors && errors.name ? errors.name.msg : "" %>
+                                            </p>
+                                        </div>
                             </div>
 
                             <div class=" m-formularies">
@@ -39,14 +38,11 @@
                                     id="lastName" placeholder="Apellido" <% if(locals.oldData && oldData.name) { %>
                                 value="<%=oldData.lastName%> "
                                     <% } %>>
-                                        <% if( locals.errors && errors.lastName) { %>
-                                            <div class="text-danger">
-                                                <p>
-                                                    <%= errors.lastName.msg %>
-                                                </p>
-                                            </div>
-                                            <% } %>
-                                            <p id="erroesLastName"> </p>
+                                        <div class="text-danger">
+                                            <p id="errorLastName">
+                                                <%= locals.errors && errors.lastName ? errors.lastName.msg : "" %>
+                                            </p>
+                                        </div>
                             </div>
 
                             <div class=" text-center">
@@ -91,7 +87,7 @@
                                                 </p>
                                             </div>
                                             <% } %>
-                                    
+
                             </div>
                             <div class=" text-center">
                                 <img src="/img/line.png" style="width: 15%;" alt="">
@@ -110,21 +106,18 @@
                                                 </p>
                                             </div>
                                             <% } %>
-                                            <p id="erroresEmail"></p>
+                                                <p id="erroresEmail"></p>
                             </div>
                             <div class="m-formularies">
                                 <label for="password"></label>
                                 <input class=" formularies-deco flex-q-1 form-control
                                 <%= locals.errors && errors.password ? 'is-invalid' : '' %> " type="password"
                                     name="password" id="password" placeholder="Contraseña">
-                                <% if(locals.errors && errors.password) { %>
-                                    <div class="text-danger">
-                                        <p>
-                                            <%= errors.password.msg %>
-                                        </p>
-                                    </div>
-                                    <% } %>
-                                    <p id="erroresPasword"> </p>
+                                <div class="text-danger">
+                                    <p id="errorPassword">
+                                        <%= locals.errors && errors.password ? errors.password.msg : "" %>
+                                    </p>
+                                </div>
                             </div>
                             <div class="m-formularies">
                                 <label for="password"></label>
@@ -138,7 +131,7 @@
                                         </p>
                                     </div>
                                     <% } %>
-                                    <p id="erroresPasword"> </p>
+                                        <p id="erroresPasword"> </p>
                             </div>
                             <div class=" text-center">
                                 <img src="/img/line.png" style="width: 15%;" alt="">
@@ -158,7 +151,7 @@
                                                 </p>
                                             </div>
                                             <% } %>
-                                            
+
                             </div>
                             <div class="m-formularies">
                                 <label>Interes:</label>
@@ -209,7 +202,7 @@
         </footer>
         <%- include('../partials/scripts-boostrap.ejs') %>
 
-        <script src = "/js/user/register.js"></script>
+            <script src="/js/user/register.js"></script>
     </body>
 
 </html>
