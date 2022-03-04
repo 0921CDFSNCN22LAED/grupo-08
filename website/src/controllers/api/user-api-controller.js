@@ -59,7 +59,8 @@ module.exports = {
   },
     getUserValidation: async (req, res) => {
     try {
-      const users = await getUserValidation(email);
+      const query = req.query.userDB
+      const users = await getUserValidation(query);
       let status;
       let statusCode;
       if (users) {

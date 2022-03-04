@@ -16,12 +16,12 @@ window.addEventListener("load", function(){
     const PORT = `http://localhost:3001/`;
     
     
-    async function getUserInDb(){ 
+    async function getUserInDb(email){ 
         const respnse = await fetch(
       `${PORT}api/users/validationUser?userDB=${email}`
 
     );
-            const data = response.json()
+            const data = await response.json()
         
     }
     
@@ -50,7 +50,7 @@ window.addEventListener("load", function(){
         
     
         form.addEventListener("submit", function(e){
-         
+         e.preventDefault()
         if (name.value == "" || name.value.length <= 2){
             errors.name = "Debe tener mas de 2 caracteres"
 
@@ -73,9 +73,13 @@ window.addEventListener("load", function(){
             erroesLastName.innerText = ""
         }}
          
-        
+        const user = getUserInDb(email.value)
+        console.log(user)
+        if (user){
+            errors.email
+        }
 
-        console.log(email.value.indexOf(".com") == -1)
+        /* console.log(email.value.indexOf(".com") == -1)
         if (email.value == "" || email.value.indexOf(".com") == -1){
             errors.email = "Debe ser un email"
 
@@ -84,7 +88,7 @@ window.addEventListener("load", function(){
             //eliminar propiedad de un objeto
             delete errors.email;
             erroresEmail.innerText = ""
-        }}
+        }} */
          
         
 
