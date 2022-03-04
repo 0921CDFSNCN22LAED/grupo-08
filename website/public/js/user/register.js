@@ -22,35 +22,18 @@ window.addEventListener("load", function(){
 
     );
             const data = await response.json()
-        
+            return data
     }
     
         
-        images.addEventListener("change", function(){
-        let extensionErrors = [];
-        const extensionAcepte = ["image/gif", "image/jpg", "image/jpeg"];
-        for (element of arrayFile) {
-            if (!extensionAcepte.includes(element.type)) {
-                extensionErrors.push(element);
-            }
-        }
-        if (extensionErrors.length != 0) {
-            errors.images =
-                "Formatos aceptados son jpg, png, gif, jpeg";
-        } else {
-            if (errors.images){
-                delete errors.images;
-                errorsImages.innerText = ""
-            }
-        }
-            
-        })
-    
+       
     
         
     
         form.addEventListener("submit", function(e){
-         e.preventDefault()
+         
+            e.preventDefault()
+
         if (name.value == "" || name.value.length <= 2){
             errors.name = "Debe tener mas de 2 caracteres"
 
@@ -67,7 +50,7 @@ window.addEventListener("load", function(){
             errors.lastName = "Debe tener mas de 2 caracteres"
 
         } else {
-           if (errors.name) { 
+           if (errors.lastName) { 
             //eliminar propiedad de un objeto
             delete errors.lastName;
             erroesLastName.innerText = ""
@@ -101,6 +84,19 @@ window.addEventListener("load", function(){
             delete errors.password;
             erroresPasword.innerText = ""
         }}
+
+        const extensionAcepte = ["image/gif", "image/jpg", "image/jpeg"];
+        
+        if (images.value.indexOf == extensionAcepte) {
+            console.log(images)
+            errors.images =
+                "Formatos aceptados son jpg, png, gif, jpeg";
+        } else {
+            if (errors.images){
+                delete errors.images;
+                errorsImages.innerText = ""
+            }
+        }
         
          console.log(errors);
 
@@ -111,7 +107,7 @@ window.addEventListener("load", function(){
             console.log("no hubo errores")
 
         } else  { 
-            e.preventDefault();
+           
 
             if(errors.name){
                 errorsName.innerText = errors.name
