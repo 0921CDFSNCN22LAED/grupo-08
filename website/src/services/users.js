@@ -62,7 +62,7 @@ module.exports = {
         delete userToLogin.confirmPassword;
         //por seguridad eliminamos esos datos del userLogged antes de pasarlo a session
         req.session.userLogged = userToLogin;
-
+        req.session.validationUser = userToLogin;
         if (req.body.rememberuser) {
           res.cookie("userEmail", req.body.email, {
             maxAge: 1000 * 50,

@@ -51,24 +51,25 @@
                         <label for="">Cambiar Contraseña</label>
                         <input
                             class="formularies-deco  form-control <%=locals.errors && errors.oldPassword ? 'is-invalid' : ""  %>"
-                            type="password" name="oldPassword" id="profileLastName" value=""
+                            type="password" name="oldPassword" id="oldPassword" value=""
                             placeholder="Ingresa tu Contraseña actual">
-                        <p class="text-danger">
+                        <p class="text-danger" id="passwordError">
                             <%=locals.errors && errors.oldPassword ? errors.oldPassword.msg: "" %>
                         </p>
                         <label for=""></label>
                         <input
                             class="formularies-deco form-control <%=locals.errors && errors.password ? 'is-invalid' : ""  %>"
-                            type="password" name="password" id="" value="" placeholder="Ingresa tu Nueva Contraseña">
-                        <p class="text-danger">
+                            type="password" name="password" id="newPassword" value=""
+                            placeholder="Ingresa tu Nueva Contraseña">
+                        <p class="text-danger" id="newPasswordError">
                             <%=locals.errors && errors.password ? errors.password.msg: "" %>
                         </p>
                         <label for=""></label>
                         <input
                             class="formularies-deco form-control <%=locals.errors && errors.confirmPassword ? 'is-invalid' : ""  %>"
-                            type="password" name="confirmPassword" id="" value=""
+                            type="password" name="confirmPassword" id="confirmNewPassword" value=""
                             placeholder="Confirma tu nueva Contraseña">
-                        <p class="text-danger">
+                        <p class="text-danger" id="confirmPasswordError">
                             <%=locals.errors && errors.confirmPassword ? errors.confirmPassword.msg: "" %>
                         </p>
                         <label for="">Datos adicionales:</label>
@@ -99,9 +100,9 @@
             </footer>
             <%- include('../partials/scripts-boostrap.ejs')%>
 
-                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script>
                 <script src="/js/front-validation/user-profile.js"></script>
-                <script src="/js/users/user-profile.js"></script>
+
+                <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"> </script>
 
         </body>
 

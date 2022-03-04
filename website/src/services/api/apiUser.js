@@ -1,5 +1,5 @@
 const db = require("../../database/models");
-
+const bcrypt = require("bcryptjs");
 module.exports = {
   getListUsers: async () => {
     try {
@@ -22,7 +22,6 @@ module.exports = {
           exclude: ["password", "confirmPassword", "admin"],
         },
       });
-
       return user;
     } catch (error) {
       console.log(error);
@@ -37,5 +36,25 @@ module.exports = {
       raw: true,
     });
     return user;
+  },
+
+  ValidationPassword: async (userLogged, password) => {
+    const id = userLogged.id;
+    const user = await db.User.findOne({
+      where: {
+        id: id,
+      },
+      attributes: ["password", "email"],
+      raw: true,
+    });
+    console.log(
+      bcrypt.compareSync(password, user.password),
+      "comparacion password"
+    );
+    if (bcrypt.compareSync(password, user.password)) {
+      return true;
+    } else {
+      return false;
+    }
   },
 };

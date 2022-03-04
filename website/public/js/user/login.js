@@ -8,9 +8,18 @@ window.addEventListener("load", function(){
     const errorEmail = document.getElementById("errorEmail")
     const errorPasword = document.getElementById("errorPasword")
     
+    const PORT = `http://localhost:3001/`;
+    
+    
+    async function getUserInDb(email){ 
+        const respnse = await fetch(
+      `${PORT}api/users/validationUser?userDB=${email}`
+
+    );
+            const data = await response.json()
     
     form.addEventListener("submit", function(event){
-
+        
     })
-
+    }
 })

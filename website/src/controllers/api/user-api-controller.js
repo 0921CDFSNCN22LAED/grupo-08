@@ -2,10 +2,12 @@
 //const { validationResult } = require("express-validator");
 //const { findOne } = require("../../utils/functions");
 
+const session = require("express-session");
 const {
   getListUsers,
   getUserById,
   getUserToValidation,
+  ValidationPassword,
 } = require("../../services/api/apiUser");
 
 module.exports = {
@@ -65,6 +67,37 @@ module.exports = {
     try {
       console.log(req.query.userDB);
       const user = await getUserToValidation(req.query.userDB);
+      console.log(user);
+      let status;
+      let statusCode;
+      if (user) {
+        status = true;
+        statusCode = 200;
+      } else {
+        status = false;
+        statusCode = 404;
+      }
+      const response = {
+        meta: {
+          status: status,
+          total: 1,
+          statusCode: statusCode,
+          url: "/api/users/validationUser",
+        },
+        data: user,
+      };
+      res.json(response);
+    } catch (errors) {
+      console.log(errors);
+    }
+  },
+  getUserPassword: async (req, res) => {
+    try {
+      const userSession = req.session.userLogged;
+      console.log(userSession);
+      console.log(req.query.password, "query password");
+      const password = req.query.password;
+      const user = await ValidationPassword(userSession, password);
       console.log(user);
       let status;
       let statusCode;
