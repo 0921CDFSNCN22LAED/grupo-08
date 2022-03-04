@@ -28,10 +28,14 @@ module.exports = {
       console.log(error);
     }
   },
-  getUserValidation: async (email) => {
+  getUserToValidation: async (email) => {
     const user = db.User.findOne({
-      where: {email: email}
-    }) 
-    return user
-  }
+      where: { email: email },
+      attributes: {
+        exclude: ["password", "confirmPassword", "admin"],
+      },
+      raw: true,
+    });
+    return user;
+  },
 };

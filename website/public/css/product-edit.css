@@ -43,3 +43,8 @@
 .cont-prod-edit-carrusel {
   width: 100%;
 }
+@media (min-width: 1024px) {
+  #container-section-edit {
+    margin-top: 60px;
+  }
+}

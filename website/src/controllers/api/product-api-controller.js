@@ -12,7 +12,9 @@ const {
 module.exports = {
   list: async (req, res) => {
     try {
-      const response = await getAllProductsAllAssociations();
+      const page = req.query.page;
+      const countProd = req.query.countProd;
+      const response = await getAllProductsAllAssociations(page, countProd);
       res.json(response);
     } catch (error) {
       console.log(error);

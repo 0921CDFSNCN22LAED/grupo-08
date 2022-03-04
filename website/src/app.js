@@ -7,9 +7,9 @@ const cookies = require("cookie-parser");
 const methodOverride = require("method-override"); //PASAR PODER USAR LOS MÉTODOS PUT Y DELETE
 const userLoggedMiddleware = require("./middlewares/app-middleware/user-logged-middleware");
 const rememberUserCookieMiddleware = require("./middlewares/app-middleware/remember-user-cookie-middleware");
-const cors = require("cors")
+const cors = require("cors");
 
-app.use(cors({origin:"http://localhost:3000/"}))
+app.use(cors({ origin: "http://localhost:3000" }));
 app.listen(3001, () => console.log("Server funcionando en el puerto 3001"));
 app.use(express.static(path.join(__dirname, "../public"))); //  NECESARIO PARA LOS ARCHIVOS ESTÁTICOS EN EL FOLDER /PUBLIC
 app.use(methodOverride("_method"));

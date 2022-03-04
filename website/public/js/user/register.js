@@ -1,95 +1,97 @@
-window.addEventListener("load", function(){
+window.addEventListener("load", function () {
+  const errors = {};
+  const form = document.querySelector("#formRegister");
+  const name = document.querySelector("#name");
+  const errorsName = document.querySelector("#errorsName");
+  const lastName = document.querySelector("#lastName");
+  const erroesLastName = document.querySelector("#erroesLastName");
+  const password = document.querySelector("#password");
+  const erroresPasword = document.querySelector("#erroresPasword");
+  const email = document.querySelector("#email");
+  const erroresEmail = document.querySelector("#erroresEmail");
+  const PORT = `http://localhost:3001/`;
+  async function getUserInDb(email) {
+    const userDb = await fetch(
+      `${PORT}api/users/validationUser?userDB=${email}`
+    );
+    return userDb;
+  }
 
-    const errors = {}
-    const form = document.querySelector("#formRegister")
-    const name = document.querySelector("#name")
-    const errorsName = document.querySelector("#errorsName")
-    const lastName = document.querySelector("#lastName")
-    const erroesLastName = document.querySelector("#erroesLastName")
-    const password = document.querySelector("#password")
-    const erroresPasword = document.querySelector("#erroresPasword")
-    const email = document.querySelector("#email")
-    const erroresEmail = document.querySelector("#erroresEmail")
+  form.addEventListener("submit", (e) => {
+    console.log(email.value);
+    getUserInDb(email.value).then((response) => {
+      console.log(response);
+      if (response) {
+        errors.email = "este email no puede repetirse";
+      } else {
+        if (errors.email) {
+          //eliminar propiedad de un objeto
+          delete errors.email;
+          erroresEmail.innerText = "";
+        }
+      }
+    });
+    // console.log(userDB);
+    if (name.value == "" || name.value.length <= 2) {
+      errors.name = "Debe tener mas de 2 caracteres";
+    } else {
+      if (errors.name) {
+        //eliminar propiedad de un objeto
+        delete errors.name;
+        errorsName.innerText = "";
+      }
+    }
 
-    const userDb = fetch("/api/users/validationUser")
-    
-        form.addEventListener("submit", function(e){
-         
+    if (lastName.value == "" || lastName.value.length <= 2) {
+      errors.lastName = "Debe tener mas de 2 caracteres";
+    } else {
+      if (errors.name) {
+        //eliminar propiedad de un objeto
+        delete errors.lastName;
+        erroesLastName.innerText = "";
+      }
+    }
 
-        if (name.value == "" || name.value.length <= 2){
-            errors.name = "Debe tener mas de 2 caracteres"
+    // console.log(email.value.indexOf("@") != -1, 4654545465);
+    // if (email.value == "" || email.value.indexOf("@") != -1) {
+    //   errors.email = "Debe ser un email";
+    // } else {
+    //   if (errors.email) {
+    //     //eliminar propiedad de un objeto
+    //     delete errors.email;
+    //     erroresEmail.innerText = "";
+    //   }
+    // }
 
-        } else {
-           if (errors.name) { 
-            //eliminar propiedad de un objeto
-            delete errors.name;
-            errorsName.innerText = ""
-        }}
-         
-        
+    if (password.value == "" || password.value.length <= 8) {
+      errors.password = "Debe tener mas de 8 caracteres";
+    } else {
+      if (errors.password) {
+        //eliminar propiedad de un objeto
+        delete errors.password;
+        erroresPasword.innerText = "";
+      }
+    }
+    console.log(errors);
 
-        if (lastName.value == "" || lastName.value.length <= 2){
-            errors.lastName = "Debe tener mas de 2 caracteres"
-
-        } else {
-           if (errors.name) { 
-            //eliminar propiedad de un objeto
-            delete errors.lastName;
-            erroesLastName.innerText = ""
-        }}
-         
-        
-
-        console.log(email.value.indexOf(".com") == -1)
-        if (email.value == "" || email.value.indexOf(".com") == -1){
-            errors.email = "Debe ser un email"
-
-        } else {
-           if (errors.email) { 
-            //eliminar propiedad de un objeto
-            delete errors.email;
-            erroresEmail.innerText = ""
-        }}
-         
-        
-
-        if (password.value == "" || password.value.length <= 8){
-        errors.password = "Debe tener mas de 8 caracteres"
-
-        } else {
-           if (errors.password) { 
-            //eliminar propiedad de un objeto
-            delete errors.password;
-            erroresPasword.innerText = ""
-        }}
-         console.log(errors);
-
-
-
-        //object.keys recorre el objeto completo
-        if (Object.keys(errors) == 0) {
-            form.submit();
-            console.log("no hubo errores")
-        } else  { 
-            e.preventDefault();
-            if(errors.name){
-                errorsName.innerText = errors.name
-                
-            }
-            if(errors.lastName){
-                erroesLastName.innerText = errors.lastName
-                
-            }
-            if(errors.email){
-                erroresEmail.innerText = errors.email
-                
-            }
-            if(errors.password){
-                erroresPasword.innerText = errors.password
-                
-            }
-            }
-
-
-    })
-}) 
+    //object.keys recorre el objeto completo
+    if (Object.keys(errors) == 0) {
+      form.submit();
+      console.log("no hubo errores");
+    } else {
+      e.preventDefault();
+      if (errors.name) {
+        errorsName.innerText = errors.name;
+      }
+      if (errors.lastName) {
+        erroesLastName.innerText = errors.lastName;
+      }
+      if (errors.email) {
+        erroresEmail.innerText = errors.email;
+      }
+      if (errors.password) {
+        erroresPasword.innerText = errors.password;
+      }
+    }
+  });
+});

@@ -30,14 +30,27 @@ module.exports = {
     }
   },
 
-  getAllProductsAllAssociations: async () => {
+  getAllProductsAllAssociations: async (query, countProd) => {
     try {
-      const products = await db.Product.findAll({
+      const limit = 10;
+      const page = query - 1;
+
+      /* < countProd
+            ? page * limit
+            : countProd - (page - 1 * limit), */
+
+      console.log(countProd, 111111111111);
+      // console.log(page, 000000000);
+      const { count, rows } = await db.Product.findAndCountAll({
         include: ["image", "size", "material", "price", "color", "category"],
+        offset:
+          page * limit < countProd ? page * limit : countProd - page * limit,
+        limit: page * limit < countProd ? limit : countProd - page * limit,
+        distinct: true,
       });
       let status;
       let statusCode;
-      if (products) {
+      if (rows) {
         status = 200;
         statusCode = true;
       } else {
@@ -48,10 +61,11 @@ module.exports = {
         meta: {
           status: status,
           statusCode: statusCode,
-          count: products ? products.length : "",
-          url: products ? "/api/products" : "",
+          hasNext: page * limit + limit < count,
+          count: count,
+          url: rows ? "/api/products" : "",
         },
-        data: products,
+        data: rows,
       };
       return response;
     } catch (error) {

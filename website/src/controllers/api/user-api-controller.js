@@ -2,7 +2,11 @@
 //const { validationResult } = require("express-validator");
 //const { findOne } = require("../../utils/functions");
 
-const { getListUsers, getUserById } = require("../../services/api/apiUser");
+const {
+  getListUsers,
+  getUserById,
+  getUserToValidation,
+} = require("../../services/api/apiUser");
 
 module.exports = {
   list: async (req, res) => {
@@ -57,12 +61,14 @@ module.exports = {
       console.log(errors);
     }
   },
-    getUserValidation: async (req, res) => {
+  getUserValidation: async (req, res) => {
     try {
-      const users = await getUserValidation(email);
+      console.log(req.query.userDB);
+      const user = await getUserToValidation(req.query.userDB);
+      console.log(user);
       let status;
       let statusCode;
-      if (users) {
+      if (user) {
         status = true;
         statusCode = 200;
       } else {
@@ -72,11 +78,11 @@ module.exports = {
       const response = {
         meta: {
           status: status,
-          total: users.length,
+          total: 1,
           statusCode: statusCode,
-          url: "/api/users",
+          url: "/api/users/validationUser",
         },
-        data: users,
+        data: user,
       };
       res.json(response);
     } catch (errors) {
