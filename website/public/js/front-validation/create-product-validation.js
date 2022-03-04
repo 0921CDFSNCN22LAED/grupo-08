@@ -34,8 +34,8 @@ window.onload = function () {
                 " debe ingresar una foto con formato valido front-end los formatos aceptados son jpg, png, gif, jpeg";
             msg_error_files.innerText =
                 "debe ingresar una foto con formato valido front-end los formatos aceptados son jpg, png, gif, jpeg";
+            }
             //  msg_error_files.innerText esta para que sea mas rapido , ni vien cargas la foto te salta error si no es un formato valido
-        }
     });
 
     console.log(form);

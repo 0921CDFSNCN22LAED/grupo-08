@@ -1,4 +1,3 @@
-const { sequelize } = require("../database/models");
 const db = require("../database/models");
 const jsonHelper = require("../utils/jsonHelper");
 const libFunctions = require("../utils/libFunctions");
@@ -39,25 +38,20 @@ module.exports = {
         name: body.name,
         shortDescription: body.shortDescription,
         longDescription: body.longDescription,
-        //size_id: body.size,
+        size_id: body.size,
         material_id: body.material,
         active: 1,
       });
-      //await product.setSize(body.size);
-      //await product.setMaterial(body.material);
       const productId = product.id;
       //  IMAGE
       const dataImages = libFunctions.dataImages(files);
       //dataImages es un array de objetos que tienen la estructura qeu requiere la DB (es decir las cols con sus filas)
-      console.log(files);
       dataImages.forEach(async (file) => {
-        const image = await db.Image.create({
+        await db.Image.create({
           ...file,
           product_id: productId,
         });
-        //   await image.setProduct(productId);
       });
-      //  PRICE
       let priceDiscount;
       if (body.discount) {
         const discount = (body.discount * body.price) / 100;
@@ -65,19 +59,17 @@ module.exports = {
       } else {
         priceDiscount = null;
       }
-      const price = await db.Price.create({
+      await db.Price.create({
         price: body.price,
         discount: body.discount,
         priceDiscount: priceDiscount,
         product_id: productId,
       });
-      //await price.setProduct(productId);
-      //  COLOR
-      const color = await db.Color.create({
+      await db.Color.create({
         name: body.color,
         product_id: productId,
       });
-      //color.setProduct(productId);
+
       return productId;
     } catch (error) {
       console.log(error);
@@ -95,7 +87,7 @@ module.exports = {
       const name = libFunctions.firstLetterUpperCase(body.name);
       const newImages = libFunctions.dataImages(files);
       //newImages me devuelve un array de objetos como esta en la db la tabla images
-      const product = await db.Product.update(
+      db.Product.update(
         {
           name: body.name,
           shortDescription: body.shortDescription,
@@ -119,7 +111,7 @@ module.exports = {
       } else {
         priceDiscount = null;
       }
-      const price = await db.Price.update(
+      await db.Price.update(
         {
           price: body.price,
           discount: body.discount,
@@ -132,7 +124,7 @@ module.exports = {
         }
       );
 
-      const color = await db.Color.update(
+      await db.Color.update(
         {
           name: body.color,
         },
@@ -161,7 +153,7 @@ module.exports = {
           if (countImagesIngresadas > i) {
             // aca entra la cantidad de veces que de fotos tiene
             //sin ese if, tendría lugar para 5 fotos sube 3  pero en la db quedan subidas 5 y 2 de las 5 están en null
-            const image = await db.Image.create({
+            await db.Image.create({
               ...newImages[i],
               product_id: productId,
             });
@@ -293,5 +285,41 @@ module.exports = {
       ],
     });
     return dataEyes;
+  },
+  getOrders: async () => {
+    const orders = await db.Order_Detail.findAll({
+      include: [
+        {
+          model: db.Prescription,
+          as: "prescription",
+          include: [
+            {
+              model: db.Value_Eye,
+              as: "valueEye",
+              include: [{ all: true, include: [{ all: true }] }],
+            },
+          ],
+        },
+        {
+          model: db.Product,
+          as: "product",
+          include: ["image", "size", "material", "price", "color", "category"],
+        },
+        {
+          model: db.Order,
+          as: "order",
+          include: [
+            {
+              model: db.User,
+              as: "user",
+              attributes: {
+                exclude: ["password", "confirmPassword", "admin"],
+              },
+            },
+          ],
+        },
+      ],
+    });
+    return orders;
   },
 };
