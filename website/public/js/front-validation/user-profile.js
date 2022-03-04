@@ -6,7 +6,15 @@ window.onload = function () {
     const lastNameError = document.querySelector("#errorLastName");
     const adress = document.querySelector("#adress");
     const adressError = document.querySelector("#adressError");
-    alert("test");
+    const PORT = `http://localhost:3001/`;
+
+    async function getPassInDb() {
+        const response = await fetch(
+            `${PORT}api/users/validationUser?userDB=${email}`
+        );
+        const data = response.json();
+    }
+
     form.addEventListener("submit", function (e) {
         let errors = {};
 
