@@ -50,7 +50,7 @@ export default function Sidebar() {
       </ul>
 
       <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">
-        Charts
+        ...
       </p>
 
       <ul class="nav flex-column bg-white mb-0">
@@ -63,19 +63,19 @@ export default function Sidebar() {
         <li class="nav-item">
           <Link to={"/algomas"} class="nav-link text-dark font-italic">
             <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
-            al gomas
+            ...
           </Link>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
             <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
-            Pie charts
+            ...
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
             <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
-            Line charts
+            ...
           </a>
         </li>
       </ul>
