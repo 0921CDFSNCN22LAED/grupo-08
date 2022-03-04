@@ -12,9 +12,18 @@ window.addEventListener("load", function(){
     const erroresEmail = document.querySelector("#erroresEmail")
     const images = document.querySelector("#avatar")
     const errorsImages = document.querySelector("#errorsImages")
-
     
-    const userDb = fetch("/api/users/validationUser")
+    const PORT = `http://localhost:3001/`;
+    
+    
+    async function getUserInDb(){ 
+        const respnse = await fetch(
+      `${PORT}api/users/validationUser?userDB=${email}`
+
+    );
+            const data = response.json()
+        
+    }
     
         
         images.addEventListener("change", function(){
