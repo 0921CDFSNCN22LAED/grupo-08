@@ -42,7 +42,6 @@ window.onload = function () {
     const valueTitle = title.value;
 
     if (valueTitle == "" || valueTitle.replace(/ /g, "") == "") {
-      //saco los espacios vacíos con replace
       errors.title = "Debe ingresar un titulo front-end";
     } else if (valueTitle != "" && valueTitle.length <= 5) {
       errors.title = "El campo title debe tener al menos 5 caracteres";

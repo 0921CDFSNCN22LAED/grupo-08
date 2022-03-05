@@ -51,7 +51,8 @@
                             <div class="m-formularies">
                                 <label> Pais/Region</label>
                                 <select class="flex-q-1 form-control formularies-deco 
-                                <%= locals.errors && errors.country ? 'is-invalid' : '' %> " name="country">
+                                <%= locals.errors && errors.country ? 'is-invalid' : '' %> " name="country"
+                                    id="country">
                                     <option value="">Elige un pais</option>
                                     <%const
                                         paises=['Argentina','Mexico','Chile','Uruguay','Colombia','Venezuela','Brasil','Bolivia','USA']
@@ -63,31 +64,25 @@
                                             </option>
                                             <% } %>
                                 </select>
-                                <% if(locals.errors && errors.country) { %>
-                                    <div class="text-danger">
-                                        <p>
-                                            <%= errors.country.msg %>
-                                        </p>
-                                    </div>
-                                    <% } %>
-
+                                <div class="text-danger">
+                                    <p id="errorCountry">
+                                        <%= locals.errors && errors.country ? errors.country.msg : "" %>
+                                    </p>
+                                </div>
                             </div class="m-formularies">
 
                             <div class="m-formularies">
                                 <label>Fecha Nacimiento:</label>
                                 <input class=" formularies-deco flex-q-1 form-control
                                 <%= locals.errors && errors.dateBirth ? 'is-invalid' : '' %> " type="date"
-                                    name="dateBirth" id="date-time" <%if(locals.oldData && oldData.dateBirth) { %>
+                                    name="dateBirth" id="dateBirth" <%if(locals.oldData && oldData.dateBirth) { %>
                                 value="<%=oldData.dateBirth%>"
                                     <% } %>>
-                                        <% if(locals.errors && errors.dateBirth) { %>
-                                            <div class="text-danger">
-                                                <p>
-                                                    <%= errors.dateBirth.msg %>
-                                                </p>
-                                            </div>
-                                            <% } %>
-
+                                        <div class="text-danger">
+                                            <p id="errorDateBirth">
+                                                <%=locals.errors && errors.dateBirth ? errors.dateBirth.msg : "" %>
+                                            </p>
+                                        </div>
                             </div>
                             <div class=" text-center">
                                 <img src="/img/line.png" style="width: 15%;" alt="">
@@ -99,14 +94,14 @@
                                     placeholder="Email" id="email" <%if(locals.oldData && oldData.email) { %>
                                 value="<%=oldData.email%>"
                                     <% } %>>
-                                        <% if( locals.errors && errors.email) { %>
-                                            <div class="text-danger">
-                                                <p>
-                                                    <%= errors.email.msg %>
-                                                </p>
-                                            </div>
-                                            <% } %>
-                                                <p id="erroresEmail"></p>
+
+                                        <div class="text-danger">
+                                            <p id="errorEmail">
+                                                <%= locals.errors && errors.email ? errors.email.msg : "" %>
+                                            </p>
+                                        </div>
+
+
                             </div>
                             <div class="m-formularies">
                                 <label for="password"></label>
@@ -123,15 +118,14 @@
                                 <label for="password"></label>
                                 <input class=" formularies-deco flex-q-1 form-control
                                 <%= locals.errors && errors.confirmPassword ? 'is-invalid' : '' %> " type="password"
-                                    name="confirmPassword" id="password" placeholder="Confirmar contraseña">
-                                <% if(locals.errors && errors.confirmPassword) { %>
-                                    <div class="text-danger">
-                                        <p>
-                                            <%= errors.confirmPassword.msg %>
-                                        </p>
-                                    </div>
-                                    <% } %>
-                                        <p id="erroresPasword"> </p>
+                                    name="confirmPassword" id="confirmPassword" placeholder="Confirmar contraseña">
+
+                                <div class="text-danger">
+                                    <p id="errorConfirmPassword">
+                                        <%=locals.errors && errors.confirmPassword ? errors.confirmPassword.msg : "" %>
+                                    </p>
+                                </div>
+
                             </div>
                             <div class=" text-center">
                                 <img src="/img/line.png" style="width: 15%;" alt="">
@@ -144,13 +138,14 @@
                                     oldData.name) { %>
                                 value="<%=oldData.streetAddress%>"
                                     <% } %>>
-                                        <% if(locals.errors && errors.streetAddress) { %>
-                                            <div class="text-danger">
-                                                <p>
-                                                    <%= errors.streetAddress.msg %>
-                                                </p>
-                                            </div>
-                                            <% } %>
+
+                                        <div class="text-danger">
+                                            <p id="errorAddress">
+                                                <%=locals.errors && errors.streetAddress ? errors.streetAddress.msg :""
+                                                    %>
+                                            </p>
+                                        </div>
+
 
                             </div>
                             <div class="m-formularies">
@@ -181,11 +176,10 @@
                                 <%=locals.errors && errors.avatar ? 'is-invalid' : ''%>" type="file" name="avatar"
                                     id="avatar">
                                 <div class="text-danger">
-                                    <% if(locals.errors && errors.avatar) {%>
-                                        <%= errors.avatar.msg %>
-                                            <% } %>
+                                    <p id="errorAvatar">
+                                        <%= locals.errors && errors.avatar ? errors.avatar.msg : "" %>
+                                    </p>
                                 </div>
-                                <p id="errorsImages"> </p>
                             </div>
 
                             <div class="m-formularies">

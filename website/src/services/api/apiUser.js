@@ -27,15 +27,20 @@ module.exports = {
       console.log(error);
     }
   },
-  getUserToValidation: async (email) => {
+  getUserInDb: async (email) => {
     const user = db.User.findOne({
-      where: { email: email },
-      attributes: {
-        exclude: ["password", "confirmPassword", "admin"],
+      where: {
+        email: email,
       },
+      attributes: ["email", "password"],
       raw: true,
     });
-    return user;
+
+    if (user) {
+      return true;
+    } else {
+      false;
+    }
   },
 
   ValidationPassword: async (userLogged, password) => {

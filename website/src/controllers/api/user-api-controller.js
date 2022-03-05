@@ -6,7 +6,7 @@ const session = require("express-session");
 const {
   getListUsers,
   getUserById,
-  getUserToValidation,
+  getUserInDb,
   ValidationPassword,
 } = require("../../services/api/apiUser");
 
@@ -66,7 +66,8 @@ module.exports = {
   getUserValidation: async (req, res) => {
     try {
       console.log(req.query.userDB);
-      const user = await getUserToValidation(req.query.userDB);
+      const email = req.query.userDB;
+      const user = await getUserInDb(email);
       console.log(user);
       let status;
       let statusCode;
