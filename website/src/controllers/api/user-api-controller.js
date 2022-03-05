@@ -88,7 +88,7 @@ module.exports = {
             console.log(errors);
         }
     },
-    getPasswordValidation: async (req, res) => {
+    getPasswordInDb: async (userLogged, password) => {
         try {
             const query = req.query.passwordFront;
             const users = await getUserValidation(query);

@@ -44,7 +44,10 @@ window.onload = function () {
     const lastNameError = document.querySelector("#errorLastName");
     const adress = document.querySelector("#adress");
     const adressError = document.querySelector("#adressError");
-    const password = document.querySelector("#password");
+    const oldPassword = document.querySelector("#oldPassword");
+    const oldErrorPassword = document.querySelector("#oldPasswordError");
+    const newPassword = document.querySelector("#newPassword");
+    const newPasswordError = document.querySelector("#newPasswordError");
 
     const PORT = `http://localhost:3001/`;
 
@@ -61,6 +64,47 @@ window.onload = function () {
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
+
+        const data = await getPasswordInDb(oldPassword.value);
+        console.log(data, "data");
+        if (data.meta) {
+            console.log(data.meta.status, "data.meta.status");
+        }
+
+        if (oldPassword.value != "") {
+            if (oldPassword.value.length < 8) {
+                errors.oldPassword =
+                    "La contraseña debe tener al menos 8 caracteres";
+            } else {
+                if (errors.oldPassword) {
+                    delete errors.oldPassword;
+                    oldErrorPassword.innerText = "";
+                }
+                if (data.meta.status) {
+                    errors.oldPassword = "Las constraseñas deden conincidir";
+                } else {
+                    if (errors.oldPassword) {
+                        delete errors.oldPassword;
+                        oldErrorPassword.innerText = "";
+                    }
+                    if (newPassword.value == "") {
+                        errors.new = "La nueva contraseña no puede estar vacia";
+                    } else {
+                        if (errors.newPassword) {
+                            delete errors.newPassword;
+                            newPasswordError.innerText = "";
+                        }
+                        if (newPassword.value.length > 8) {
+                            errors.newPassword =
+                                "La nueva constraseña debe tener al menos 8 caracteres";
+                        } else {
+                            if (errors.newPassword) delete errors.newPassword;
+                            newPasswordError.innerText = "";
+                        }
+                    }
+                }
+            }
+        }
 
         let errors = {};
 
@@ -98,12 +142,15 @@ window.onload = function () {
         } else {
             if (errors.name) {
                 nameError.innerText = errors.name;
+                nameError.style.color = "red";
             }
             if (errors.lastname) {
                 lastNameError.innerText = errors.lastname;
+                lastNameError.style.color = "red";
             }
             if (errors.adress) {
                 adressError.innerText = errors.adress;
+                adressError.style.color = "red";
             }
         }
         //--------------------------------------------------------------------//

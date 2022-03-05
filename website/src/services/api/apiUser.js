@@ -28,12 +28,15 @@ module.exports = {
             console.log(error);
         }
     },
-    getUserValidation: async (password) => {
+    getUserValidation: async (email) => {
         console.log(email);
         const user = db.User.findOne({
             //where: { email: email },
-            where: { password: password },
+            where: { email: email },
         });
         return user;
+    },
+    passwordValidation: async (userLogged, password) => {
+        const userLogged = User.id;
     },
 };
