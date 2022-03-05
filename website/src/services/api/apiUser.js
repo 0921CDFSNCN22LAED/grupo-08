@@ -36,7 +36,7 @@ module.exports = {
         });
         return user;
     },
-    passwordValidation: async (userLogged, password) => {
+    /* passwordValidation: async (userLogged, password) => {
         const userLogged = User.id;
-    },
+    }, */
 };
