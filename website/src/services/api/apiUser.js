@@ -62,4 +62,28 @@ module.exports = {
       return false;
     }
   },
+  userLogged: async (email, password) => {
+    const user = await db.User.findOne({
+      where: {
+        email: email,
+      },
+      attributes: ["password", "email"],
+      raw: true,
+    });
+    if (user) {
+      console.log(
+        bcrypt.compareSync(password, user.password),
+        "comparacion password"
+      );
+    }
+    if (user) {
+      if (bcrypt.compareSync(password, user.password)) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  },
 };

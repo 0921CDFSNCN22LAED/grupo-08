@@ -20,35 +20,28 @@
                         <div class=" m-formularies-2">
                             <label></label>
                             <div>
-                                <input class="formularies-deco flex-q-1 email-login" type="email" name="email" id="email"
-                                    placeholder="Nombre/Correo Electronico"
+                                <input class="form-control  formularies-deco flex-q-1 email-login" type="email"
+                                    name="email" id="email" placeholder="Nombre/Correo Electrónico"
                                     value="<%= (locals.oldData && oldData.email) ? oldData.email : '' %>">
                             </div>
-                            <% if(locals.errors && errors.email) { %>
-                                <div class="container-errors text-danger">
-                                    <p>
-                                        <%=errors.email.msg %>
-                                    </p>
-
-                                </div>
-                                <% } %>
-                                <p id="errorEmail"></p>
+                            <div class="container-errors text-danger">
+                                <p id="errorEmail">
+                                    <%= locals.errors && errors.email ? errors.email.msg : "" %>
+                                </p>
+                            </div>
                         </div>
                         <div class="m-formularies-2 ">
                             <label> </label>
                             <div>
-                                <input class=" formularies-deco margin-10 flex-q-1" type="password" name="password" id="password"
-                                    placeholder="Contraseña">
+                                <input class="form-control  formularies-deco margin-10 flex-q-1" type="password"
+                                    name="password" id="password" placeholder="Contraseña">
                             </div>
-                            <% if(locals.errors && errors.password) { %>
-                                <div class="container-errors text-danger">
-                                    <p>
-                                        <%=errors.password.msg %>
-                                    </p>
 
-                                </div>
-                                <% } %>
-                                <p id="errorPasword"></p>
+                            <div class="container-errors text-danger">
+                                <p id="errorPassword">
+                                    <%= locals.errors && errors.password ? errors.password.msg : "" %>
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div class="margin-10">
@@ -78,6 +71,6 @@
             <%- include ("../partials/footer") %>
         </footer>
         <%- include('../partials/scripts-boostrap.ejs') %>
-        <script src="/js/user/login.js"></script>
+            <script src="/js/user/login.js"></script>
 
 </html>

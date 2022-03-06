@@ -9,6 +9,9 @@ router.get("/passwordValidation", userApiController.getUserPassword);
 //Register validación front
 router.get("/validationUser", userApiController.getUserValidation);
 
+//Login validación front
+router.get("/validationLogin", userApiController.getLogin);
+
 //Lista todos los usuarios
 router.get("/", userApiController.list);
 

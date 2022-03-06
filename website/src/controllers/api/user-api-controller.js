@@ -8,6 +8,7 @@ const {
   getUserById,
   getUserInDb,
   ValidationPassword,
+  userLogged,
 } = require("../../services/api/apiUser");
 
 module.exports = {
@@ -99,6 +100,35 @@ module.exports = {
       console.log(req.query.password, "query password");
       const password = req.query.password;
       const user = await ValidationPassword(userSession, password);
+      console.log(user);
+      let status;
+      let statusCode;
+      if (user) {
+        status = true;
+        statusCode = 200;
+      } else {
+        status = false;
+        statusCode = 404;
+      }
+      const response = {
+        meta: {
+          status: status,
+          total: 1,
+          statusCode: statusCode,
+          url: "/api/users/validationUser",
+        },
+        data: user,
+      };
+      res.json(response);
+    } catch (errors) {
+      console.log(errors);
+    }
+  },
+  getLogin: async (req, res) => {
+    try {
+      const email = req.query.email;
+      const password = req.query.password;
+      const user = await userLogged(email, password);
       console.log(user);
       let status;
       let statusCode;
