@@ -55,15 +55,15 @@ export default function Sidebar() {
 
       <ul class="nav flex-column bg-white mb-0">
         <li class="nav-item">
-          <Link to={"/categories"} class="nav-link text-dark font-italic">
+          <Link to={"/orders"} class="nav-link text-dark font-italic">
             <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
-            Categories
+            Orders
           </Link>
         </li>
         <li class="nav-item">
-          <Link to={"/algomas"} class="nav-link text-dark font-italic">
+          <Link to={"/categories"} class="nav-link text-dark font-italic">
             <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
-            ...
+            Categories
           </Link>
         </li>
         <li class="nav-item">

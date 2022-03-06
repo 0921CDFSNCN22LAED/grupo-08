@@ -7,14 +7,14 @@ const {
   getAllProductsSun,
   getAllProductsRead,
   getAllProductsRecetados,
+  getOrders,
 } = require("../../services/api/apiProducts");
 
 module.exports = {
   list: async (req, res) => {
     try {
       const page = req.query.page;
-      const countProd = req.query.countProd;
-      const response = await getAllProductsAllAssociations(page, countProd);
+      const response = await getAllProductsAllAssociations(page);
       res.json(response);
     } catch (error) {
       console.log(error);
@@ -27,6 +27,11 @@ module.exports = {
     } catch (error) {
       console.log(error);
     }
+  },
+  listOrders: async (req, res) => {
+    const page = req.query.page;
+    const orders = await getOrders(page);
+    res.json(orders);
   },
   men: async (req, res) => {
     try {

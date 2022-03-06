@@ -4,10 +4,12 @@ import "../App.css";
 import Sidebar from "./Sidebar";
 import ButtonHiddenMenu from "./ButtonHiddenMenu";
 import About from "./Abaut";
-import Home from "./home";
 import Products from "./Products";
 import Categories from "./Categories";
 import Users from "./Users";
+import Orders from "./Orders";
+import DetailProducts from "./DetailsProducts";
+import DetailOrder from "./DetailOrder";
 
 export default function App() {
   function hiddenNavbar() {
@@ -23,11 +25,14 @@ export default function App() {
         <ButtonHiddenMenu hiddenNavbar={hiddenNavbar} />
         <div class="separator"></div>
         <Routes>
-          <Route path="/" exact={true} element={<Home />} />
+          <Route path="/" exact={true} />
           <Route path="/about" element={<About />} />
           <Route path="/users" element={<Users />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/:id" element={<DetailProducts />} />
           <Route path="/categories" element={<Categories />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/orders/:id" element={<DetailOrder />} />
         </Routes>
       </div>
     </>

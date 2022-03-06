@@ -14,10 +14,12 @@ const {
 module.exports = {
   list: async (req, res) => {
     try {
-      const users = await getListUsers();
+      const page = req.query.page;
+      const countUsers = req.query.countUsers;
+      const { count, rows } = await getListUsers(page, countUsers);
       let status;
       let statusCode;
-      if (users) {
+      if (rows) {
         status = true;
         statusCode = 200;
       } else {
@@ -27,11 +29,11 @@ module.exports = {
       const response = {
         meta: {
           status: status,
-          total: users.length,
+          count: count,
           statusCode: statusCode,
           url: "/api/users",
         },
-        data: users,
+        data: rows,
       };
       res.json(response);
     } catch (errors) {

@@ -286,40 +286,4 @@ module.exports = {
     });
     return dataEyes;
   },
-  getOrders: async () => {
-    const orders = await db.Order_Detail.findAll({
-      include: [
-        {
-          model: db.Prescription,
-          as: "prescription",
-          include: [
-            {
-              model: db.Value_Eye,
-              as: "valueEye",
-              include: [{ all: true, include: [{ all: true }] }],
-            },
-          ],
-        },
-        {
-          model: db.Product,
-          as: "product",
-          include: ["image", "size", "material", "price", "color", "category"],
-        },
-        {
-          model: db.Order,
-          as: "order",
-          include: [
-            {
-              model: db.User,
-              as: "user",
-              attributes: {
-                exclude: ["password", "confirmPassword", "admin"],
-              },
-            },
-          ],
-        },
-      ],
-    });
-    return orders;
-  },
 };

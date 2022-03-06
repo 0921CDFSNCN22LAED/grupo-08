@@ -1,15 +1,22 @@
 const db = require("../../database/models");
 const bcrypt = require("bcryptjs");
 module.exports = {
-  getListUsers: async () => {
+  getListUsers: async (query) => {
     try {
-      const users = await db.User.findAll({
-        raw: true,
+      const limit = 10;
+      const page = query - 1;
+      const { count, rows } = await db.User.findAndCountAll({
         attributes: {
           exclude: ["password", "confirmPassword", "admin"],
         },
+        offset: page * limit,
+        limit: limit,
+        distinct: true,
       });
-      return users;
+      console.log(count, "count");
+      console.log(rows, "row");
+
+      return { count: count, rows: rows };
     } catch (error) {
       console.log(error);
     }

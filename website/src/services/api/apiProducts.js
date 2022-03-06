@@ -1,5 +1,4 @@
 const db = require("../../database/models");
-
 module.exports = {
   getProductsById: async (id) => {
     try {
@@ -30,22 +29,14 @@ module.exports = {
     }
   },
 
-  getAllProductsAllAssociations: async (query, countProd) => {
+  getAllProductsAllAssociations: async (query) => {
     try {
       const limit = 10;
       const page = query - 1;
-
-      /* < countProd
-            ? page * limit
-            : countProd - (page - 1 * limit), */
-
-      console.log(countProd, 111111111111);
-      // console.log(page, 000000000);
       const { count, rows } = await db.Product.findAndCountAll({
         include: ["image", "size", "material", "price", "color", "category"],
-        offset:
-          page * limit < countProd ? page * limit : countProd - page * limit,
-        limit: page * limit < countProd ? limit : countProd - page * limit,
+        offset: page * limit,
+        limit: limit,
         distinct: true,
       });
       let status;
@@ -61,9 +52,81 @@ module.exports = {
         meta: {
           status: status,
           statusCode: statusCode,
-          hasNext: page * limit + limit < count,
+          //  hasNext: page * limit + limit < count,
           count: count,
           url: rows ? "/api/products" : "",
+        },
+        data: rows,
+      };
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  getOrders: async (query) => {
+    try {
+      const limit = 10;
+      const page = query - 1;
+      //   let offset;
+      //   countOrd < 10 ? (offset = countOrd) : (offset = page * limit);
+      const { count, rows } = await db.Order_Detail.findAndCountAll({
+        include: [
+          {
+            model: db.Prescription,
+            as: "prescription",
+            include: [
+              {
+                model: db.Value_Eye,
+                as: "valueEye",
+                include: [{ all: true, include: [{ all: true }] }],
+              },
+            ],
+          },
+          {
+            model: db.Product,
+            as: "product",
+            include: [
+              "image",
+              "size",
+              "material",
+              "price",
+              "color",
+              "category",
+            ],
+          },
+          {
+            model: db.Order,
+            as: "order",
+            include: [
+              {
+                model: db.User,
+                as: "user",
+                attributes: {
+                  exclude: ["password", "confirmPassword", "admin"],
+                },
+              },
+            ],
+          },
+        ],
+        distinct: true,
+        offset: page * limit,
+        limit: limit,
+      });
+      let status;
+      let statusCode;
+      if (rows) {
+        status = 200;
+        statusCode = true;
+      } else {
+        status = 404;
+        statusCode = false;
+      }
+      let response = {
+        meta: {
+          status: status,
+          count: count,
+          statusCode: statusCode,
+          url: `/api/product/orders`,
         },
         data: rows,
       };
@@ -105,6 +168,7 @@ module.exports = {
         },
         data: productsMen[0].product,
       };
+      console.log(response);
       return response;
     } catch (error) {
       console.log(error);
