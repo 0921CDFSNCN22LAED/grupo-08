@@ -1,3 +1,6 @@
+LINK AL TABLERO DE TRELLO:
+https://trello.com/b/d4ypxDfx/proyecto-integrador
+
 *SPRINT 2:*
 
 Start Doing: Mejorar las reuniones para hacerlas mas eficientes
