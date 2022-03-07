@@ -32,19 +32,19 @@ export default function Sidebar() {
         <li class="nav-item">
           <Link to={"/about"} class="nav-link text-dark font-italic">
             <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-            About
+            Sobre Nosotros
           </Link>
         </li>
         <li class="nav-item">
           <Link to={"/users"} class="nav-link text-dark font-italic">
             <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
-            Users
+            Usuarios
           </Link>
         </li>
         <li class="nav-item">
           <Link to={"/products"} class="nav-link text-dark font-italic">
             <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
-            Products
+            Productos
           </Link>
         </li>
       </ul>
@@ -57,25 +57,25 @@ export default function Sidebar() {
         <li class="nav-item">
           <Link to={"/categories"} class="nav-link text-dark font-italic">
             <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
-            Categories
+            Categorias:
           </Link>
         </li>
         <li class="nav-item">
           <Link to={"/algomas"} class="nav-link text-dark font-italic">
             <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
-            al gomas
+            Hombre
           </Link>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
             <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
-            Pie charts
+            Mujer
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-dark font-italic">
             <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
-            Line charts
+            Niños
           </a>
         </li>
       </ul>

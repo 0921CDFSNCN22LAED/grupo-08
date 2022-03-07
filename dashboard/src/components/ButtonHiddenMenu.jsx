@@ -7,7 +7,7 @@ export default function ButtonHiddenMenu(props) {
       onClick={props.hiddenNavbar}
     >
       <i class="fa fa-bars mr-2"></i>
-      <small class="text-uppercase font-weight-bold">Toggle</small>
+      <small class="text-uppercase font-weight-bold">Menu</small>
     </button>
   );
 }

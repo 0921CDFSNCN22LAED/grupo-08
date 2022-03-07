@@ -4,7 +4,7 @@ import "../App.css";
 import Sidebar from "./Sidebar";
 import ButtonHiddenMenu from "./ButtonHiddenMenu";
 import About from "./About";
-import Home from "./home";
+import Home from "./Home";
 import Products from "./Products";
 import Categories from "./Categories";
 import Users from "./Users";

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import banner5 from "../img/banner5.png";
 import banner1 from "../img/banner1.jpg";
 import banner3 from "../img/banner4.jpg";
@@ -6,7 +6,7 @@ import banner4 from "../img/banner3.jpg";
 
 import "../App.css";
 
-function home() {
+function Home() {
   return (
     <div>
       <section>
@@ -22,7 +22,7 @@ function home() {
               data-bs-slide-to="0"
               class="active"
               aria-label="Slide 1"
-              ></button>
+            ></button>
             <button
               type="button"
               data-bs-target="#carouselExampleIndicators"
@@ -40,7 +40,7 @@ function home() {
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide-to="3"
               aria-label="Slide 4"
-              ></button>
+            ></button>
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -100,4 +100,4 @@ function home() {
     </div>
   );
 }
-export default home;
+export default Home;
