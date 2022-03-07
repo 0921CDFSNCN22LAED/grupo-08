@@ -1,6 +1,7 @@
 window.onload = async function () {
   const query = location.search;
-  console.log(query);
+  const footerResults = document.querySelector(".footer-results");
+
   const response = await fetch(`http://localhost:3001/api/search${query}`);
   const search = await response.json();
   console.log(search);
@@ -8,7 +9,7 @@ window.onload = async function () {
   const gondola = document.createElement("div");
   gondola.setAttribute("class", "gondola");
 
-  if (search.length != 0) {
+  if (search.data.length != 0) {
     search.data.forEach((product) => {
       const article = document.createElement("article");
       article.setAttribute(
@@ -49,13 +50,21 @@ window.onload = async function () {
       div3.appendChild(p);
       div3.appendChild(h4);
     });
+    if (search.data.length < 8) {
+      footerResults.style.position = "absolute";
+      footerResults.style.bottom = "0px";
+    }
   } else {
-    //parte si falla es decir si no hay resultados de búsqueda
+    console.log("erntro al elce");
     const divNoResults = document.createElement("div");
-    divNoResults.setAttribute("col-12");
-    const h2NoResults = document.createAttribute("h2");
+    divNoResults.setAttribute("class", "col-12");
+    const h2NoResults = document.createElement("h2");
     h2NoResults.setAttribute("class", "products-title");
     h2NoResults.style.color = "#0bc197";
     h2NoResults.innerText = "No hay productos que coincidan con esa búsqueda";
+    containerProducts.appendChild(divNoResults);
+    divNoResults.appendChild(h2NoResults);
+    footerResults.style.position = "absolute";
+    footerResults.style.bottom = "0px";
   }
 };

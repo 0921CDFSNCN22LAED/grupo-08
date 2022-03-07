@@ -49,6 +49,9 @@ module.exports = {
     return extension;
   },
   search: async (query) => {
+    if (query == "") {
+      return [];
+    }
     const products = await db.Product.findAll({
       where: {
         name: { [Op.like]: `%${query}%` },

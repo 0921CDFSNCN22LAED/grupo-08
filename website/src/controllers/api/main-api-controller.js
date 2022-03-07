@@ -37,7 +37,7 @@ module.exports = {
     let response = {
       meta: {
         status: status,
-        total: searching.length,
+        total: searching ? searching.length : null,
         url: "/api/search",
       },
       data: searching,
