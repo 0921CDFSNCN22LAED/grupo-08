@@ -3,12 +3,23 @@ import banner5 from "../img/banner5.png";
 import banner1 from "../img/banner1.jpg";
 import banner3 from "../img/banner4.jpg";
 import banner4 from "../img/banner3.jpg";
+import logo from "../img/logo-white.svg";
 
 import "../App.css";
 
 function Home() {
   return (
     <div>
+      <section class="block-A display-flex">
+        <section class="logotype display-flex">
+          <div className="logo">
+            <a href="/">
+              <img className="logotype" src={logo} alt="logo" />
+            </a>
+          </div>
+        </section>
+      </section>
+
       <section>
         <div
           id="carouselExampleIndicators"
@@ -95,6 +106,26 @@ function Home() {
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
+        </div>
+      </section>
+      <br />
+      <section className="banner-envios bgc-white">
+        <div>
+          <a className="color-black" href="/">
+            {" "}
+            ENVIOS GRATIS{" "}
+          </a>
+        </div>
+        <div>
+          <a className="color-black" href="/">
+            DEVOLUCIONES GRATIS
+          </a>
+        </div>
+        <div>
+          <a className="color-black" href="/">
+            {" "}
+            GARANTIA 30 DIAS
+          </a>
         </div>
       </section>
     </div>

@@ -19,7 +19,7 @@ export default function Sidebar() {
       </div>
 
       <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">
-        Main
+        Menu
       </p>
 
       <ul class="nav flex-column bg-white mb-0">

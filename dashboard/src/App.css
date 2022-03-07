@@ -79,3 +79,24 @@ body {
 .text-gray {
   color: #aaa;
 }
+
+/* ---------- HOME ------------ */
+
+.logotype {
+  width: 35%;
+}
+
+.banner-envios {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.bgc-white {
+  background-color: white;
+}
+
+.color-black {
+  color: black;
+}
