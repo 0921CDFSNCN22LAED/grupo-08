@@ -3,30 +3,30 @@ window.onload = async function () {
   console.log(query);
   const response = await fetch(`http://localhost:3001/api/search${query}`);
   const search = await response.json();
-
+  console.log(search);
   const containerProducts = document.getElementById("container-products");
+  const gondola = document.createElement("div");
+  gondola.setAttribute("class", "gondola");
 
   if (search.length != 0) {
     search.data.forEach((product) => {
-      const gondola = document.createElement("div");
-      gondola.setAttribute("class", "gondola");
       const article = document.createElement("article");
-      article.setAttribute("class", "margin-10 productos");
+      article.setAttribute(
+        "class",
+        "margin-10 productos container-products-list"
+      );
       const a = document.createElement("a");
       a.setAttribute("href", `products/${product.id}`);
       const div1 = document.createElement("div");
       div1.setAttribute("class", "precios-descripcion shadows");
       const img = document.createElement("img");
       img.setAttribute("class", "fotos");
-      if (product.image[0]) {
-        img.setAttribute("href", `/img/products/${product.image[0].filename}`);
-      } else {
-        img.setAttribute("href", "");
-      }
+      img.setAttribute("src", `/img/products/${product.image[0].filename}`);
+
       const div2 = document.createElement("div");
       div2.setAttribute("class", "bolsa");
       const i = document.createElement("i");
-      i.setAttribute("class", "fas fa-shopping-bag");
+      i.setAttribute("class", "fas fa-shopping-bag bagBlue");
       const div3 = document.createElement("div");
       const p = document.createElement("p");
       p.setAttribute("class", "precios");

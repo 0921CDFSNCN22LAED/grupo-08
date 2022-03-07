@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 module.exports = {
   getListUsers: async (query) => {
     try {
-      const limit = 10;
+      const limit = 12;
       const page = query - 1;
       const { count, rows } = await db.User.findAndCountAll({
         attributes: {
