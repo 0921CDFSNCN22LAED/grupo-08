@@ -36,6 +36,7 @@ module.exports = {
         });
         return user;
     },
+<<<<<<< HEAD
     passwordValidation: async (userLogged, password) => {
         try {
             const userLogged = db.User.findOne({});
@@ -43,4 +44,9 @@ module.exports = {
             console.log(error);
         }
     },
+=======
+    /* passwordValidation: async (userLogged, password) => {
+        const userLogged = User.id;
+    }, */
+>>>>>>> bbfcc48a791ab721855decc33abd050438c25fa8
 };
