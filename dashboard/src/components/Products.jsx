@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
+import dayjs from "dayjs";
 import RowProducts from "./RowProducts";
 import ColumProducts from "./ColumProducts";
 import { Link } from "react-router-dom";
@@ -33,6 +34,8 @@ export default function Products() {
     getProductsInDb();
   }, [page]);
   const products = data ? data.data : "";
+  console.log(products);
+
   return (
     <>
       {!data ? (
@@ -41,20 +44,18 @@ export default function Products() {
         <table class="table table-dark table-striped">
           <ColumProducts />
           {products.map((product) => (
+            // createdAt = dayjs(products.createdAt).format("DD/MM/YYYY/HH:mm:ss");
             <Link to={`/products/${product.id}`}>
               <RowProducts
                 keys={product.id}
                 id={product.id}
                 name={product.name}
                 price={product.price[0].price}
-                color={product.color[0].name}
                 size={product.size.size}
                 material={product.material.material}
                 active={product.active == 1 ? "activo" : "desactivada"}
-                category={
-                  product.category[0] ? product.category[0].categoryName : ""
-                }
-                createdAt={product.createdAt}
+                category={product.category.map((cat) => cat.categoryName + " ")}
+                createdAt={dayjs(product.createdAt).format("DD/MM/YYYY")}
               />
             </Link>
           ))}

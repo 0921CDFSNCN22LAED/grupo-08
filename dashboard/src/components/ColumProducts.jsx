@@ -5,7 +5,6 @@ export default function ColumProducts() {
         <th scope="col">ID</th>
         <th scope="col">Nombre</th>
         <th scope="col">Precio</th>
-        <th scope="col">Color</th>
         <th scope="col">Talle</th>
         <th scope="col">Material</th>
         <th scope="col">Estado</th>

@@ -10,6 +10,7 @@ import Users from "./Users";
 import Orders from "./Orders";
 import DetailProducts from "./DetailsProducts";
 import DetailOrder from "./DetailOrder";
+import DetailUser from "./DetailUser";
 
 export default function App() {
   function hiddenNavbar() {
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/" exact={true} />
           <Route path="/about" element={<About />} />
           <Route path="/users" element={<Users />} />
+          <Route path="/users/:id" element={<DetailUser />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<DetailProducts />} />
           <Route path="/categories" element={<Categories />} />

@@ -32,6 +32,7 @@ export default function Users() {
   }, [page]);
   countUser = data ? data.meta.count : null;
   const users = data ? data.data : null;
+  console.log(users);
   return (
     <>
       {!data ? (
@@ -44,6 +45,7 @@ export default function Users() {
               <th scope="col">Nombre</th>
               <th scope="col">Apellido</th>
               <th scope="col">País</th>
+              <th scope="col">Image</th>
             </tr>
           </thead>
           {users.map((user) => (
@@ -54,6 +56,7 @@ export default function Users() {
                 name={user.name}
                 lastName={user.lastName}
                 country={user.country}
+                avatar={user.avatar}
               />
             </Link>
           ))}
