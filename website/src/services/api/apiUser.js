@@ -37,6 +37,10 @@ module.exports = {
         return user;
     },
     passwordValidation: async (userLogged, password) => {
-        const userLogged = User.id;
+        try {
+            const userLogged = db.User.findOne({});
+        } catch (error) {
+            console.log(error);
+        }
     },
 };
