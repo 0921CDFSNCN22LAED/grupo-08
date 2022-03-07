@@ -18,6 +18,41 @@ class Gif extends Component {
     
     complonentDidMount(){
         console.log("me monte");
-        this.apiCall("", this.mostrarGif)
+        this.traerGifNuevo
     }    
+
+    traerGifNuevo = ("", this.mostrarGif)
+
+    mostrarGif=(data)=>{
+        this.setState(
+            {
+                git: data.data.img_url
+            }
+        )
+    }
+    componentDidUpdate(){
+        console.log("me actualice");
+        alert("soy un gif nuevo")
+    }
+
+    render(){
+        console.log("estoy renderizando")
+
+        let contenido;
+
+        if(this.state.gif == ""){
+            contenido = <p>cargando...</p>
+        }
+        else{
+            contenido = <img src = {this.state.gif}></img>
+        }
+
+        return( 
+            <div>
+                {contenido}
+                <button onClick={ () => traerGifNuevo }>Randum Gif</button>
+            </div>
+        );
+    }
+
 }
