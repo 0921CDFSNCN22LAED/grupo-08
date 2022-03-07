@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import "../App.css";
 import Sidebar from "./Sidebar";
 import ButtonHiddenMenu from "./ButtonHiddenMenu";
-import About from "./Abaut";
+import About from "./About";
 import Home from "./home";
 import Products from "./Products";
 import Categories from "./Categories";
