@@ -1,11 +1,11 @@
 import React from "react";
 
-class Gif extends Component {
+class Usuarios extends Component {
 
     constructor(props){
     super(props);
     this.state = {
-            gif: ""
+            usuario: ""
       }
     }
 
@@ -18,12 +18,12 @@ class Gif extends Component {
     
     complonentDidMount(){
         console.log("me monte");
-        this.traerGifNuevo
+        this.traerUsuario
     }    
 
-    traerGifNuevo = ("", this.mostrarGif)
+    traerUsuario = ("", this.mostrarUsuario)
 
-    mostrarGif=(data)=>{
+    mostrarUsuario=(data)=>{
         this.setState(
             {
                 git: data.data.img_url
@@ -32,7 +32,7 @@ class Gif extends Component {
     }
     componentDidUpdate(){
         console.log("me actualice");
-        alert("soy un gif nuevo")
+        alert("soy un usuario")
     }
 
     render(){
@@ -40,21 +40,20 @@ class Gif extends Component {
 
         let contenido;
 
-        if(this.state.gif == ""){
+        if(this.state.usuario == ""){
             contenido = <p>cargando...</p>
         }
         else{
-            contenido = <img src = {this.state.gif}></img>
+            contenido = <img src = {this.state.usuario}></img>
         }
 
         return( 
             <div>
                 {contenido}
-                <button onClick={ () => traerGifNuevo }>Randum Gif</button>
+                <button onClick={ () => traerUsuario }>Randum usuario</button>
             </div>
         );
     }
 
 }
-
-export default Gif
+export default Usuarios
