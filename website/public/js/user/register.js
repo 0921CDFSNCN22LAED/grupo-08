@@ -31,7 +31,13 @@ window.addEventListener("load", function () {
 
   avatar.addEventListener("change", function () {
     const file = this.files;
-    const extensionAcepte = ["image/gif", "image/jpg", "image/png"];
+    const extensionAcepte = [
+      "image/gif",
+      "image/jpg",
+      "image/png",
+      "image/jpeg",
+    ];
+    console.log(file);
     //como la foto no es obligatoria , solo verifico el formato en el caso que se ingrese una
     if (!extensionAcepte.includes(file[0].type)) {
       errors.avatar =
@@ -119,7 +125,7 @@ window.addEventListener("load", function () {
         }
         const userDb = await getUserInDb(email.value);
         console.log(userDb.meta.status, "status");
-        if (userDb.meta.status) {
+        if (!userDb.meta.status) {
           errors.email =
             "Este email ya registrado esta en la base de datos front";
         } else {

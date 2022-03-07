@@ -7,7 +7,7 @@ module.exports = {
       const page = query - 1;
       const { count, rows } = await db.User.findAndCountAll({
         attributes: {
-          exclude: ["password", "confirmPassword", "admin"],
+          exclude: ["password", "confirmPassword"],
         },
         offset: page * limit,
         limit: limit,
@@ -15,7 +15,6 @@ module.exports = {
       });
       console.log(count, "count");
       console.log(rows, "row");
-
       return { count: count, rows: rows };
     } catch (error) {
       console.log(error);

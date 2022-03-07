@@ -23,7 +23,12 @@ window.onload = function () {
   inputFile.addEventListener("change", function () {
     const arrayFile = this.files;
     let extensionErrors = [];
-    const extensionAcepte = ["image/gif", "image/jpg", "image/jpeg"];
+    const extensionAcepte = [
+      "image/gif",
+      "image/jpg",
+      "image/png",
+      "image/jpeg",
+    ];
     for (element of arrayFile) {
       if (!extensionAcepte.includes(element.type)) {
         extensionErrors.push(element);
