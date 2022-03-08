@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import "../App.css";
 import Sidebar from "./Sidebar";
 import ButtonHiddenMenu from "./ButtonHiddenMenu";
-import About from "./Abaut";
+
 import Products from "./Products";
 import Categories from "./Categories";
 import Users from "./Users";
@@ -12,6 +12,7 @@ import DetailProducts from "./DetailsProducts";
 import DetailOrder from "./DetailOrder";
 import DetailUser from "./DetailUser";
 import Home from "./Home";
+import About from "./About";
 
 export default function App() {
   function hiddenNavbar() {
@@ -22,12 +23,12 @@ export default function App() {
   }
   return (
     <>
+      <Sidebar />
       <div class="page-content p-5" id="content">
         <ButtonHiddenMenu hiddenNavbar={hiddenNavbar} />
-        <Sidebar />
-        {/* <div class="separator"></div> */}
+        <div class="separator"></div>
         <Routes>
-          <Route path="/" exact={true} element={<Home />} />x
+          <Route path="/" exact={true} element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/users" element={<Users />} />
           <Route path="/users/:id" element={<DetailUser />} />
