@@ -9,6 +9,9 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+        paranoid: true,
       },
       name: {
         type: Sequelize.STRING,

@@ -1,3 +1,5 @@
+const db = require("../../database/models");
+const shoppingCar = require("../../database/models/shopping-car");
 const {
   getProductsById,
   getAllProductsAllAssociations,
@@ -9,6 +11,7 @@ const {
   getAllProductsRecetados,
   getOrders,
 } = require("../../services/api/apiProducts");
+const { addToAndRemoveCar } = require("../../services/products");
 
 module.exports = {
   list: async (req, res) => {
@@ -77,6 +80,21 @@ module.exports = {
     try {
       const response = await getAllProductsRecetados();
       res.json(response);
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  favorite: async (req, res) => {
+    try {
+      const productId = req.params.productId;
+      let userId;
+      if (!req.session.userLogged) {
+        res.redirect("/user/login");
+      } else {
+        userId = req.session.userLogged.id;
+        const data = await addToAndRemoveCar(userId, productId);
+        res.json(data);
+      }
     } catch (error) {
       console.log(error);
     }

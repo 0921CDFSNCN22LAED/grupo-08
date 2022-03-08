@@ -286,4 +286,50 @@ module.exports = {
     });
     return dataEyes;
   },
+  addToAndRemoveCar: async (userId, productId) => {
+    // const user = await db.User.findByPk(userId);
+    // const shoppingCar = await db.Shopping_car.create({
+    //   user_id: userId,
+    // });
+    // const product = await db.Product.findByPk(productId);
+    // const findShoppingCar = await db.Shopping_car.findAll({
+    //   where: {
+    //     user_id: userId,
+    //   },
+    //   include: [
+    //     {
+    //       model: db.Product,
+    //       as: "product",
+    //     },
+    //     {
+    //       model: db.User,
+    //       as: "user",
+    //     },
+    //   ],
+    // });
+    // const dataOldFavorites = findShoppingCar.filter((element) => {
+    //   return element.product.length != 0;
+    // });
+    // oldFav = [];
+    // const fav = dataOldFavorites.map((element) => {
+    //   return element.product[0].id;
+    // });
+    // console.log(fav);
+    // console.log(productId, "productid");
+    // console.log(fav.includes(parseInt(productId)), "include");
+    // if (fav.includes(parseInt(productId))) {
+    //   console.log("si incluye este producto borallo");
+    //   await db.Shopping_car.destroy({
+    //     where: {
+    //       user_id: userId,
+    //     },
+    //   });
+    // }
+    // console.log(fav);
+    // await shoppingCar.setProduct(product, {
+    //   through: "product_shopping_cars",
+    // });
+    // console.log(fav);
+    // return fav;
+  },
 };

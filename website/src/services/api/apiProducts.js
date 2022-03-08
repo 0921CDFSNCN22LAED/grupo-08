@@ -31,7 +31,7 @@ module.exports = {
 
   getAllProductsAllAssociations: async (query) => {
     try {
-      const limit = 10;
+      const limit = 12;
       const page = query - 1;
       const { count, rows } = await db.Product.findAndCountAll({
         include: ["image", "size", "material", "price", "color", "category"],

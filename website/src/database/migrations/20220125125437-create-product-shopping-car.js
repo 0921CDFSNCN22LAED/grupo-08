@@ -7,10 +7,15 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+        paranoid: true,
       },
       product_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+        paranoid: true,
         references: {
           model: "products",
           key: "id",
@@ -18,21 +23,28 @@ module.exports = {
       },
       shoppingCar_id: {
         type: Sequelize.INTEGER,
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
+        paranoid: true,
         references: {
-          model: "shopping_carts",
+          model: "shopping_cars",
         },
       },
       createdAt: {
         allowNull: true,
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
         type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: true,
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE",
         type: Sequelize.DATE,
       },
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("product_cars");
+    await queryInterface.dropTable("product_shopping_cars");
   },
 };
