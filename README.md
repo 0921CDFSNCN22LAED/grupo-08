@@ -1,6 +1,6 @@
 # grupo-08
 
-Page´s name: ![alt tag] VISSION
+Page´s name: ![alt tag](VISSION)
 
 Icons pages:
 https://lineicons.com/icons/
