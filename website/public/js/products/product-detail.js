@@ -13,7 +13,9 @@ window.onload = function () {
     });
 
   let idImgActual;
+
   let setImage;
+  setImage = document.getElementById("0");
   $(document).ready(function () {
     $("#carousel-product-details").on("slid.bs.carousel", function () {
       src = $(".active").find("img");
@@ -21,6 +23,7 @@ window.onload = function () {
       console.log(idImgActual.value);
 
       setImage = document.getElementById(idImgActual.value);
+
       // console.log(setImage, "set images");
       //console.log(idImgActual);
     });
