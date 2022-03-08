@@ -68,7 +68,7 @@ module.exports = {
       },
       include: ["image", "size", "material", "price", "color"],
     });
-
+    console.log(product.image);
     res.render("products/product-detail", { product, sizes });
   },
 
