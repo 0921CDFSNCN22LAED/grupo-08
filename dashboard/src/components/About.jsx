@@ -2,33 +2,17 @@ export default function About() {
   return (
     <div class="row text-white">
       <div class="col-lg-7">
-        <p class="lead">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p class="lead">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor.
-        </p>
+        <p class="lead">Sobre Nosotros:</p>
         <div class="bg-white p-5 rounded my-5 shadow-sm">
           <p class="lead font-italic mb-0 text-muted">
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum."
+            Nuestra misión es contribuir al desarrollo de la salud visual en el
+            país al precio más bajo del mercado. Para ello, contamos con
+            asesoría profesional en todas nuestras sucursales y la más amplia
+            variedad en productos ópticos: lentes oftálmicos, lentes de sol,
+            lentes de contactos y accesorios.
           </p>
         </div>
-        <p class="lead">
+        {/* <p class="lead">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -80,7 +64,7 @@ export default function About() {
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. Duis aute irure dolor.
-        </p>
+        </p> */}
       </div>
     </div>
   );

@@ -60,9 +60,9 @@
   */
 
 body {
-  background: #599fd9;
-  background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
-  background: linear-gradient(to right, #599fd9, #c2e59c);
+  background: #0bc197;
+  /* background: -webkit-linear-gradient(to right, #599fd9, #c2e59c); */
+  background: linear-gradient(to right, #0c7e2e, #0bc197);
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -86,6 +86,7 @@ body {
   color: #aaa;
 }
 
+<<<<<<< HEAD
 th {
   width: 20%;
   text-align: center;
@@ -487,4 +488,25 @@ table.shoping-cart-table tr td:last-child {
 .pro-price {
   font-weight: bold;
   padding-left: 10px;
+=======
+/* ---------- HOME ------------ */
+
+.logotype {
+  width: 35%;
+}
+
+.banner-envios {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.bgc-white {
+  background-color: white;
+}
+
+.color-black {
+  color: black;
+>>>>>>> 0da4bdb134ff503b6b1131ecbc3d1e97337d0acd
 }

@@ -4,7 +4,7 @@ const path = require("path");
 const indexRouter = require("./routers/indexRouter");
 const session = require("express-session");
 const cookies = require("cookie-parser");
-const methodOverride = require("method-override"); //PASAR PODER USAR LOS MÉTODOS PUT Y DELETE
+const methodOverride = require("method-override"); //PARA PODER USAR LOS MÉTODOS PUT Y DELETE
 const userLoggedMiddleware = require("./middlewares/app-middleware/user-logged-middleware");
 const rememberUserCookieMiddleware = require("./middlewares/app-middleware/remember-user-cookie-middleware");
 const cors = require("cors");
@@ -20,11 +20,11 @@ app.set("view engine", "ejs");
 
 // ********  MIDDLEWARES DE APLICATION  ********//
 app.use(
-  session({
-    secret: "princesa bebe",
-    resave: false,
-    saveUninitialized: true,
-  })
+    session({
+        secret: "princesa bebe",
+        resave: false,
+        saveUninitialized: true,
+    })
 );
 app.use(cookies());
 app.use(rememberUserCookieMiddleware);

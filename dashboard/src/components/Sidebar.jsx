@@ -19,7 +19,7 @@ export default function Sidebar() {
       </div>
 
       <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">
-        Main
+        Menu
       </p>
 
       <ul class="nav flex-column bg-white mb-0">
@@ -32,19 +32,19 @@ export default function Sidebar() {
         <li class="nav-item">
           <Link to={"/about"} class="nav-link text-dark font-italic">
             <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
-            About
+            Sobre Nosotros
           </Link>
         </li>
         <li class="nav-item">
           <Link to={"/users"} class="nav-link text-dark font-italic">
             <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
-            Users
+            Usuarios
           </Link>
         </li>
         <li class="nav-item">
           <Link to={"/products"} class="nav-link text-dark font-italic">
             <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
-            Products
+            Productos
           </Link>
         </li>
       </ul>

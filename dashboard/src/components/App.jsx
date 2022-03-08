@@ -22,12 +22,12 @@ export default function App() {
   }
   return (
     <>
-      <Sidebar />
       <div class="page-content p-5" id="content">
         <ButtonHiddenMenu hiddenNavbar={hiddenNavbar} />
-        <div class="separator"></div>
+        <Sidebar />
+        {/* <div class="separator"></div> */}
         <Routes>
-          <Route path="/" exact={true} element={<Home />} />
+          <Route path="/" exact={true} element={<Home />} />x
           <Route path="/about" element={<About />} />
           <Route path="/users" element={<Users />} />
           <Route path="/users/:id" element={<DetailUser />} />
