@@ -11,6 +11,7 @@ import Orders from "./Orders";
 import DetailProducts from "./DetailsProducts";
 import DetailOrder from "./DetailOrder";
 import DetailUser from "./DetailUser";
+import Home from "./Home";
 
 export default function App() {
   function hiddenNavbar() {
@@ -26,7 +27,7 @@ export default function App() {
         <ButtonHiddenMenu hiddenNavbar={hiddenNavbar} />
         <div class="separator"></div>
         <Routes>
-          <Route path="/" exact={true} />
+          <Route path="/" exact={true} element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/users" element={<Users />} />
           <Route path="/users/:id" element={<DetailUser />} />

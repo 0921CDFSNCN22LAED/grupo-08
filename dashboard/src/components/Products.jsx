@@ -5,11 +5,11 @@ import RowProducts from "./RowProducts";
 import ColumProducts from "./ColumProducts";
 import { Link } from "react-router-dom";
 import ButtonsPaginate from "./ButtonsPaginate";
+import CardProducts from "./CardProducts";
 
 export default function Products() {
   const [data, setData] = useState(null);
   const [page, setPage] = useState(1);
-  //const [countProd, setCountProd] = useState(1000000000);
   let countProd;
   const limit = 10;
   const PORT = "http://localhost:3001";
@@ -41,25 +41,20 @@ export default function Products() {
       {!data ? (
         <div class="loader"></div>
       ) : (
-        <table class="table table-dark table-striped">
-          <ColumProducts />
-          {products.map((product) => (
-            // createdAt = dayjs(products.createdAt).format("DD/MM/YYYY/HH:mm:ss");
-            <Link to={`/products/${product.id}`}>
-              <RowProducts
-                keys={product.id}
+        <div class="container">
+          <div class="row">
+            {products.map((product) => (
+              <CardProducts
+                key={product.id}
                 id={product.id}
                 name={product.name}
                 price={product.price[0].price}
-                size={product.size.size}
-                material={product.material.material}
-                active={product.active == 1 ? "activo" : "desactivada"}
                 category={product.category.map((cat) => cat.categoryName + " ")}
-                createdAt={dayjs(product.createdAt).format("DD/MM/YYYY")}
+                image={product.image[0].filename}
               />
-            </Link>
-          ))}
-        </table>
+            ))}
+          </div>
+        </div>
       )}
       <ButtonsPaginate
         previous={previous}

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import ButtonsPaginate from "./ButtonsPaginate";
+import CardUsers from "./CardUsers";
 import RowOrdes from "./RowOrdes";
 import RowUsers from "./RowUsers";
 
@@ -8,7 +9,7 @@ export default function Users() {
   const [data, setData] = useState(null);
   const [page, setPage] = useState(1);
   const PORT = "http://localhost:3001";
-  const limit = 10;
+  const limit = 12;
   let countUser;
 
   async function getUserInDB() {
@@ -26,41 +27,48 @@ export default function Users() {
   }
   useEffect(() => {
     getUserInDB();
+    random_color();
   }, [null]);
   useEffect(() => {
     getUserInDB();
+    random_color();
   }, [page]);
+  function random_color() {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    console.log(bgColor);
+
+    // const bgColorUser = document.getElementById("colorBackgroundUsers");
+    // bgColorUser.style.background = bgColor;
+    return bgColor;
+  }
   countUser = data ? data.meta.count : null;
   const users = data ? data.data : null;
   console.log(users);
   return (
     <>
       {!data ? (
-        <div class="loader"></div>
+        <div className="loader"></div>
       ) : (
-        <table className="table table-dark table-striped">
-          <thead>
-            <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Apellido</th>
-              <th scope="col">País</th>
-              <th scope="col">Image</th>
-            </tr>
-          </thead>
-          {users.map((user) => (
-            <Link to={`/users/${user.id}`}>
-              <RowUsers
-                key={user.id}
-                id={user.id}
-                name={user.name}
-                lastName={user.lastName}
-                country={user.country}
-                avatar={user.avatar}
-              />
-            </Link>
-          ))}
-        </table>
+        <div className="container">
+          <div className="main-body">
+            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 gutters-sm">
+              {users.map((user) => (
+                <CardUsers
+                  key={user.id}
+                  name={user.name + " " + user.lastName}
+                  country={user.country}
+                  streetAddress={user.streetAddress}
+                  id={user.id}
+                  avatar={user.avatar}
+                  bgColor={random_color()}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       )}
       <ButtonsPaginate
         previous={previous}

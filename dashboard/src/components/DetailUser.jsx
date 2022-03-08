@@ -33,14 +33,12 @@ export default function DetailUser() {
     <div class="container bootstrap snippets bootdey">
       <div class="panel-body inf-content">
         <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-4" id="containerImgUserDetail">
             <img
               alt=""
-              style={{ width: "600px" }}
-              title=""
               class="img-circle img-thumbnail isTooltip"
               src={require(`../../../website/public/img/users/${user.avatar}`)}
-              data-original-title="Usuario"
+              id="imgUserDetail"
             />
           </div>
           <div class="col-md-6">
