@@ -138,10 +138,10 @@
                 </section>
             </article>
             <label for="image">Imagenes de productos</label>
-            <input type="file"
+            <input type="file id="avatar_p_edit""
                 class="form-select form-control <%=locals.errors && errors.img_product_create ?' is-invalid' : ""  %> "
                 name="img_product_create" multiple>
-            <p class="text-danger">
+            <p class="text-danger" id="msg_error_files">
                 <%=locals.errors&& errors.img_product_create ? errors.img_product_create.msg : "" %>
             </p>
 
@@ -229,6 +229,9 @@
         <%- include ("../partials/footer") %>
     </footer>
     <%- include('../partials/scripts-boostrap.ejs') %>
+
+    <%- include('../partials/scripts-boostrap.ejs') %>
+        <script src="/js/front-validation/create-product-validation.js"></script>
 
 </body>
 

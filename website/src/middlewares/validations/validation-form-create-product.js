@@ -3,14 +3,14 @@ const { body } = require("express-validator");
 module.exports = [
   body("name")
     .notEmpty()
-    .withMessage("Debe completar el campo nombre del product")
+    .withMessage("Debe completar el campo nombre del producto")
     .isLength({ min: 5 })
     .withMessage("el nombre del producto debe contener al menos 5 caracteres"),
   body("shortDescription")
     .notEmpty()
     .withMessage("Debe completar le campo de breve descripción")
     .isLength({ min: 20 })
-    .withMessage("La descripción debe contener menso de 20 caracteres"),
+    .withMessage("La descripción debe contener al menos de 20 caracteres"),
   body("price")
     .notEmpty()
     .withMessage("Debe completar el campo de precio")
