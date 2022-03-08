@@ -111,7 +111,7 @@
                         <div class="form-floating">
                             <select class="form-select <%= locals.errors && errors.size ? " is-invalid" : "" %>"
                                 name="size" id="size" aria-label="Floating label select example">
-                                <option value="">Seleccione tamaño</option>
+                                <option value="">Seleccione un talle</option>
                                 <% for(size of sizes){ %>
                                     <option value="<%=size.id %>"
                                         <%=((locals.oldData)&&(oldData.size==size.id))? 'selected' : "" %> >
