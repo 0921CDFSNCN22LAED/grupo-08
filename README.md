@@ -1,6 +1,6 @@
 # grupo-08
 
-Page´s name: # VISSION
+# VISSION
 
 Icons pages:
 https://lineicons.com/icons/
