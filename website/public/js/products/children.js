@@ -2,7 +2,7 @@ window.onload = async function () {
   const query = location.search;
   const footerResults = document.querySelector(".footer-results");
   const PROT = "http://localhost:3001";
-  const response = await fetch(`${PROT}/api/products/men`);
+  const response = await fetch(`${PROT}/api/products/children`);
   const data = await response.json();
   console.log(data);
   const containerProducts = document.getElementById("container-products");

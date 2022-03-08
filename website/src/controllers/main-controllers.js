@@ -20,6 +20,15 @@ module.exports = {
   car: (req, res) => {
     res.render("carrito");
   },
+  men: (req, res) => {
+    res.render("products/men");
+  },
+  women: (req, res) => {
+    res.render("products/women");
+  },
+  children: (req, res) => {
+    res.render("products/children");
+  },
   prueba: async (req, res) => {
     const producto = await db.Product.findOne({
       where: {

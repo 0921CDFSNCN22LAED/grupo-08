@@ -26,8 +26,8 @@ window.onload = async () => {
     img.setAttribute("class", "fotos");
     img.setAttribute("src", `/img/products/${product.image[0].filename}`);
 
-    const setFavInDb = document.createElement("a");
-    setFavInDb.setAttribute("href", `/api/products/favorite/${id}`);
+    // const setFavInDb = document.createElement("a");
+    // setFavInDb.setAttribute("href", `/api/products/favorite/${id}`);
 
     const i = document.createElement("i");
     i.setAttribute("class", "fas fa-shopping-bag ");
@@ -41,22 +41,22 @@ window.onload = async () => {
       i.classList.add("bagBlue");
     }
 
-    // bag.addEventListener("click", (event) => {
-    //   event.preventDefault();
-    //   const favoritesProduct = getFavoriteIds();
-    //   const index = favoritesProduct.indexOf(id);
-    //   if (index == -1) {
-    //     favoritesProduct.push(id);
-    //     i.classList.replace("bagBlue", "bagRose");
-    //   } else {
-    //     favoritesProduct.splice(index, 1);
-    //     i.classList.replace("bagRose", "bagBlue");
-    //   }
-    //   localStorage.setItem(
-    //     "favoritesProduct",
-    //     JSON.stringify(favoritesProduct)
-    //   );
-    // });
+    bag.addEventListener("click", (event) => {
+      event.preventDefault();
+      const favoritesProduct = getFavoriteIds();
+      const index = favoritesProduct.indexOf(id);
+      if (index == -1) {
+        favoritesProduct.push(id);
+        i.classList.replace("bagBlue", "bagRose");
+      } else {
+        favoritesProduct.splice(index, 1);
+        i.classList.replace("bagRose", "bagBlue");
+      }
+      localStorage.setItem(
+        "favoritesProduct",
+        JSON.stringify(favoritesProduct)
+      );
+    });
 
     const a2 = document.createElement("a");
     a2.setAttribute("href", "");
@@ -78,8 +78,7 @@ window.onload = async () => {
     a1.appendChild(div1);
     div1.appendChild(img);
     div1.appendChild(bag);
-    bag.appendChild(setFavInDb);
-    setFavInDb.appendChild(i);
+    bag.appendChild(i);
 
     // a2.appendChild(i);
     div1.appendChild(div3);

@@ -37,22 +37,20 @@ window.onload = function () {
     if (extensionErrors.length != 0) {
       errors.images =
         " debe ingresar una foto con formato valido front-end los formatos aceptados son jpg, png, gif, jpeg";
-      msg_error_files.innerText =
-        "debe ingresar una foto con formato valido front-end los formatos aceptados son jpg, png, gif, jpeg";
     }
-    //  msg_error_files.innerText esta para que sea mas rapido , ni vien cargas la foto te salta error si no es un formato valido
   });
 
   console.log(form);
 
   form.addEventListener("submit", function (e) {
+    e.preventDefault();
     const valueTitle = title.value;
-    console.log(valueTitle == "", "si es un string vacio");
+
     if (valueTitle == "" || valueTitle.replace(/ /g, "") == "") {
       //saco los espacios vacíos con replace
       errors.title = "Debe ingresar un titulo front-end";
     } else if (valueTitle != "" && valueTitle.length <= 5) {
-      errors.title = "El campo title debe tener al menos 5 caracteres";
+      errors.title = "El campo title debe tener al menos 5 caracteres front";
     } else {
       if (errors.title) {
         delete errors.title;
@@ -82,7 +80,7 @@ window.onload = function () {
     const valuePrice = price.value;
 
     if (valuePrice == "") {
-      errors.price = "Debe llenar el campo precio";
+      errors.price = "Debe llenar el campo precio f";
     } else if (isNaN(Number(valuePrice))) {
       //isNaN devuelve falso cundo es un numero y devuelve true cuando no lo es, por eso no lo niego
       errors.price = "El campo precio debe ser un numero";
@@ -139,7 +137,7 @@ window.onload = function () {
       form.submit();
     } else {
       console.log(errors, "hay errorees");
-      e.preventDefault();
+
       console.log(errors.title, "dentro del prevent");
 
       if (errors.title) {

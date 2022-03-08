@@ -5,6 +5,9 @@ const mainControllers = require("../controllers/main-controllers");
 router.get("/", mainControllers.home);
 router.get("/home", mainControllers.home);
 router.get("/search", mainControllers.search);
+router.get("/men", mainControllers.men);
+router.get("/women", mainControllers.women);
+router.get("/children", mainControllers.children);
 router.get("/prueba", mainControllers.prueba);
 
 // ********  COMO LEER UNA RECETA ********//
