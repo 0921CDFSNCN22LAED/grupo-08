@@ -37,6 +37,8 @@ window.onload = function () {
     if (extensionErrors.length != 0) {
       errors.images =
         " debe ingresar una foto con formato valido front-end los formatos aceptados son jpg, png, gif, jpeg";
+        msg_error_files.innerText =
+        "debe ingresar una foto con formato valido front-end los formatos aceptados son jpg, png, gif, jpeg";
     }
   });
 
@@ -136,8 +138,7 @@ window.onload = function () {
     if (Object.keys(errors) === 0) {
       form.submit();
     } else {
-      console.log(errors, "hay errorees");
-
+      e.preventDefault();
       console.log(errors.title, "dentro del prevent");
 
       if (errors.title) {
