@@ -142,7 +142,12 @@ h4 {
   color: black;
   background-color: white;
 }
-
+@media (min-width: 788px) {
+  .footer_shoppingCar {
+    position: absolute;
+    bottom: 0px;
+  }
+}
 @media (min-width: 1024px) {
   .main-carrito-de-copras {
     max-width: 800px;

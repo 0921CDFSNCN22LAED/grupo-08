@@ -68,23 +68,35 @@
                                                 </button>
                                             </form>
                                 </article>
+
                                 <% } %>
                                     <% } else { %>
                                         <h1 style="color: #0bc197;">Usted no posse actualmente nada en el
                                             carrito</h1>
-                                        <% } %>
-                                            <% } else {%>
-                                                <h1 style="color: #0bc197;">No se pudo borrar el producto
-                                                </h1>
-                                                <% } %>
-                </div>
-
             </section>
         </main>
         <footer class="footer_shoppingCar">
             <%- include('partials/footer.ejs') %>
         </footer>
-        <%- include('./partials/scripts-boostrap.ejs') %>
+
+        <% } %>
+            <% } else {%>
+                <h1 style="color: #0bc197;">No se pudo borrar el producto
+                </h1>
+                </div>
+
+                </section>
+                </main>
+                <footer class="footer_shoppingCar">
+                    <%- include('partials/footer.ejs') %>
+                </footer>
+                <% } %>
+                    </section>
+                    </main>
+                    <footer class="footer_shoppingCar" style="position: static;">
+                        <%- include('partials/footer.ejs') %>
+                    </footer>
+                    <%- include('./partials/scripts-boostrap.ejs') %>
     </body>
 
 </html>
