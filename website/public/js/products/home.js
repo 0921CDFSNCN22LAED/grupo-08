@@ -8,13 +8,6 @@ window.onload = async () => {
   const divGondola = document.createElement("div");
   divGondola.setAttribute("class", "gondola");
 
-  //   function setFavInDb(PORT, id) {
-  //     fetch(`${PORT}/api/products/favorite/${id}`).then((response) => {
-  //       response.json().then((data) => {
-  //         return data;
-  //       });
-  //     });
-  //   }
   function getFavoriteIds() {
     const jsonValue = localStorage.getItem("favoritesProduct");
     let favoritesProduct = [];
@@ -58,8 +51,6 @@ window.onload = async () => {
     setFavoriteDb.setAttribute("href", `/api/products/favorite/${id}`);
 
     bag.addEventListener("click", (event) => {
-      // console.log(dataDB);
-
       const favoritesProduct = getFavoriteIds();
       const index = favoritesProduct.indexOf(id);
       if (index == -1) {
@@ -105,3 +96,11 @@ window.onload = async () => {
     div3.appendChild(h4);
   });
 };
+
+//   function setFavInDb(PORT, id) {
+//     fetch(`${PORT}/api/products/favorite/${id}`).then((response) => {
+//       response.json().then((data) => {
+//         return data;
+//       });
+//     });
+//   }
