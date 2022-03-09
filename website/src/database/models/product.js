@@ -50,16 +50,14 @@ module.exports = (sequelize) => {
       foreignKey: "material_id",
     });
 
-    Product.belongsToMany(models.Shopping_car, {
-      onUpdate: "CASCADE",
-      onDelete: "CASCADE",
-      as: "shoppingCart",
-      through: "product_shopping_cars",
+    Product.belongsToMany(models.User, {
+      as: "user",
+      through: "product_favorites",
       foreignKey: "product_id",
-      constraints: false,
-      paranoid: true,
-
-      //otherKey: "shoppingCar_id",
+    });
+    Product.hasMany(models.Product_favorite, {
+      as: "productFavorite",
+      foreignKey: "product_id",
     });
 
     Product.belongsToMany(models.Order, {

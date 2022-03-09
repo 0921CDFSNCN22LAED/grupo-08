@@ -1,5 +1,5 @@
 const db = require("../../database/models");
-const shoppingCar = require("../../database/models/shopping-car");
+
 const {
   getProductsById,
   getAllProductsAllAssociations,
@@ -10,6 +10,10 @@ const {
   getAllProductsRead,
   getAllProductsRecetados,
   getOrders,
+  getOrderById,
+  metricsUser,
+  metricsProduct,
+  metricsOrder,
 } = require("../../services/api/apiProducts");
 const { addToAndRemoveCar } = require("../../services/products");
 
@@ -35,6 +39,24 @@ module.exports = {
     const page = req.query.page;
     const orders = await getOrders(page);
     res.json(orders);
+  },
+  getOrder: async (req, res) => {
+    const id = req.params.id;
+    const order = await getOrderById(id);
+    res.json(order);
+  },
+
+  getMetricsUser: async (req, res) => {
+    const metrics = await metricsUser();
+    res.json(metrics);
+  },
+  getMetricsProduct: async (req, res) => {
+    const metrics = await metricsProduct();
+    res.json(metrics);
+  },
+  getMetricsOrder: async (req, res) => {
+    const metrics = await metricsOrder();
+    res.json(metrics);
   },
   men: async (req, res) => {
     try {

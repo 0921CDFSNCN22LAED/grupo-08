@@ -135,6 +135,87 @@ module.exports = {
       console.log(error);
     }
   },
+  getOrderById: async (id) => {
+    try {
+      const order = await db.Order_Detail.findOne({
+        where: {
+          id: id,
+        },
+        include: [
+          {
+            model: db.Prescription,
+            as: "prescription",
+            include: [
+              {
+                model: db.Value_Eye,
+                as: "valueEye",
+                include: [{ all: true, include: [{ all: true }] }],
+              },
+            ],
+          },
+          {
+            model: db.Product,
+            as: "product",
+            include: [
+              "image",
+              "size",
+              "material",
+              "price",
+              "color",
+              "category",
+            ],
+          },
+          {
+            model: db.Order,
+            as: "order",
+            include: [
+              {
+                model: db.User,
+                as: "user",
+                attributes: {
+                  exclude: ["password", "confirmPassword", "admin"],
+                },
+              },
+            ],
+          },
+        ],
+      });
+      let status;
+      let statusCode;
+      if (order) {
+        status = 200;
+        statusCode = true;
+      } else {
+        status = 404;
+        statusCode = false;
+      }
+      let response = {
+        meta: {
+          status: status,
+          count: 1,
+          statusCode: statusCode,
+          url: `/api/product/orders`,
+        },
+        data: order,
+      };
+      return response;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  metricsUser: async () => {
+    const { count, rows } = await db.User.findAndCountAll();
+
+    return count;
+  },
+  metricsProduct: async () => {
+    const { count, rows } = await db.Product.findAndCountAll();
+    return count;
+  },
+  metricsOrder: async () => {
+    const { count, rows } = await db.Order_Detail.findAndCountAll();
+    return count;
+  },
 
   getAllProductsMen: async () => {
     try {

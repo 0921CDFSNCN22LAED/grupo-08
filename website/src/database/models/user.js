@@ -38,15 +38,15 @@ module.exports = (sequelize) => {
   const User = sequelize.define(alias, cols, config);
 
   User.associate = function (models) {
-    User.hasOne(models.Shopping_car, {
-      onUpdate: "CASCADE",
-      onDelete: "CASCADE",
-      constraints: false,
-      as: "shoppingCarts",
+    User.belongsToMany(models.Product, {
+      as: "product",
+      through: "product_favorites",
       foreignKey: "user_id",
-      paranoid: true,
     });
-
+    User.hasMany(models.Product_favorite, {
+      as: "productFavorite",
+      foreignKey: "user_id",
+    });
     User.hasMany(models.Order, {
       as: "order",
       foreignKey: "user_id",

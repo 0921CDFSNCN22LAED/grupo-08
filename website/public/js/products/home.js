@@ -41,8 +41,10 @@ window.onload = async () => {
       i.classList.add("bagBlue");
     }
 
+    const setFavoriteDb = document.createElement("a");
+    setFavoriteDb.setAttribute("href", `/api/products/favorite/${id}`);
+
     bag.addEventListener("click", (event) => {
-      event.preventDefault();
       const favoritesProduct = getFavoriteIds();
       const index = favoritesProduct.indexOf(id);
       if (index == -1) {
@@ -78,7 +80,8 @@ window.onload = async () => {
     a1.appendChild(div1);
     div1.appendChild(img);
     div1.appendChild(bag);
-    bag.appendChild(i);
+    bag.appendChild(setFavoriteDb);
+    setFavoriteDb.appendChild(i);
 
     // a2.appendChild(i);
     div1.appendChild(div3);
