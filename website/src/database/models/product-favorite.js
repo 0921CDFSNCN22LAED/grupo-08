@@ -16,7 +16,7 @@ module.exports = (sequelize) => {
     //la clave foranea en la tabla Price
     //en la tabla Price el campo que hace referencia a la foreignKey del precio es price_id
     Product_favorite.belongsTo(models.Product, {
-      as: "products",
+      as: "product",
       foreignKey: "product_id",
     });
     Product_favorite.belongsTo(models.User, {

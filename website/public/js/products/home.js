@@ -2,11 +2,27 @@ window.onload = async () => {
   //   const main = document.querySelector("main");
   //   main.style.backgroundColor = "red";
   const PORT = "http://localhost:3001";
+  const response = await fetch(`${PORT}/api/`);
+  const products = await response.json();
   const sectionContainer = document.querySelector(".container-products");
   const divGondola = document.createElement("div");
   divGondola.setAttribute("class", "gondola");
-  const response = await fetch(`${PORT}/api/`);
-  const products = await response.json();
+
+  //   function setFavInDb(PORT, id) {
+  //     fetch(`${PORT}/api/products/favorite/${id}`).then((response) => {
+  //       response.json().then((data) => {
+  //         return data;
+  //       });
+  //     });
+  //   }
+  function getFavoriteIds() {
+    const jsonValue = localStorage.getItem("favoritesProduct");
+    let favoritesProduct = [];
+    if (jsonValue) {
+      favoritesProduct = JSON.parse(jsonValue);
+    }
+    return favoritesProduct;
+  }
 
   products.data.forEach((product) => {
     const id = product.id;
@@ -26,9 +42,6 @@ window.onload = async () => {
     img.setAttribute("class", "fotos");
     img.setAttribute("src", `/img/products/${product.image[0].filename}`);
 
-    // const setFavInDb = document.createElement("a");
-    // setFavInDb.setAttribute("href", `/api/products/favorite/${id}`);
-
     const i = document.createElement("i");
     i.setAttribute("class", "fas fa-shopping-bag ");
 
@@ -45,6 +58,8 @@ window.onload = async () => {
     setFavoriteDb.setAttribute("href", `/api/products/favorite/${id}`);
 
     bag.addEventListener("click", (event) => {
+      // console.log(dataDB);
+
       const favoritesProduct = getFavoriteIds();
       const index = favoritesProduct.indexOf(id);
       if (index == -1) {
@@ -82,7 +97,7 @@ window.onload = async () => {
     div1.appendChild(bag);
     bag.appendChild(setFavoriteDb);
     setFavoriteDb.appendChild(i);
-
+    //bag.appendChild(i);
     // a2.appendChild(i);
     div1.appendChild(div3);
     //a3.appendChild(div3);
@@ -90,11 +105,3 @@ window.onload = async () => {
     div3.appendChild(h4);
   });
 };
-function getFavoriteIds() {
-  const jsonValue = localStorage.getItem("favoritesProduct");
-  let favoritesProduct = [];
-  if (jsonValue) {
-    favoritesProduct = JSON.parse(jsonValue);
-  }
-  return favoritesProduct;
-}

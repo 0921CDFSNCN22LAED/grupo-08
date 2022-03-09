@@ -256,7 +256,7 @@ module.exports = {
   },
   getDataPrescription: async (id) => {
     const dataEyes = await db.Prescription_Value.findOne({
-      where: { id: 1 },
+      where: { id: id },
       include: [
         {
           model: db.Prescription,
@@ -299,13 +299,71 @@ module.exports = {
         product_id: productId,
       });
     } else {
-      console.log("entro al else porque ese id esta en favoritos");
-      const setNullRow = await db.Product_favorite.destroy({
+      await db.Product_favorite.destroy({
         where: {
           user_id: userId,
           product_id: productId,
         },
       });
+      return checkFavInDb;
+    }
+  },
+  destroyFav: async (userId, productId) => {
+    await db.Product_favorite.destroy({
+      where: {
+        user_id: userId,
+        product_id: productId,
+      },
+    });
+    //consulto si se borro
+    const checkDelete = await db.Product_favorite.findOne({
+      where: {
+        user_id: userId,
+        product_id: productId,
+      },
+    });
+    console.log(checkDelete, 544545454545454545454545454);
+    if (!checkDelete) {
+      const updatedData = await db.Product_favorite.findAll({
+        where: {
+          user_id: userId,
+        },
+        include: [
+          {
+            model: db.Product,
+            as: "product",
+            include: [{ all: true }],
+          },
+        ],
+        row: true,
+        nest: true,
+      });
+
+      return updatedData;
+    } else {
+      return null;
+    }
+  },
+  getFavInDb: async (userId) => {
+    try {
+      const favorites = await db.Product_favorite.findAll({
+        where: {
+          user_id: userId,
+        },
+        include: [
+          {
+            model: db.Product,
+            as: "product",
+            include: [{ all: true }],
+          },
+        ],
+        row: true,
+        nest: true,
+      });
+
+      return favorites;
+    } catch (error) {
+      console.log(error);
     }
   },
 };

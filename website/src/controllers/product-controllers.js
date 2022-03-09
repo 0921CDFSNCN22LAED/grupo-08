@@ -9,6 +9,7 @@ const {
   dataEyes,
   setValuesPrescription,
   getProductById,
+  getFavInDb,
 } = require("../services/products");
 
 module.exports = {
@@ -144,5 +145,8 @@ module.exports = {
     setTimeout(function () {
       res.redirect("/");
     }, 2000);
+  },
+  listFavoriteCar: async () => {
+    // no lo voy a poder hacer con pis serguto , asi que hacer lo normar y que la vista mueste los vaboritos de cada user
   },
 };

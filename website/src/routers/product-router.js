@@ -7,7 +7,11 @@ const validationFormUpdateProduct = require("../middlewares/validations/validati
 const authMilddleware = require("../middlewares/middleware-user/auth-middleware");
 /*** GET ALL PRODUCTS ***/
 router.get("/", productControllers.index);
+
+// router.get("/favorite/car", productControllers.listFavoriteCar);
+
 // ******** CREATE PRODUCT ********//
+
 router.get("/create", productControllers.create);
 router.post(
   "/",

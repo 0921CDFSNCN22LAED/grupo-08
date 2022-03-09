@@ -11,10 +11,22 @@
 .main-carrito {
   margin-top: 80px;
 }
+.icons {
+  display: flex;
+}
 .icons i {
   font-size: 24px;
   color: black;
   transform: rotateY(180deg);
+  margin-right: 10px;
+}
+
+.icons:hover i {
+  font-size: 24px;
+  color: black;
+  transform: rotateY(540deg);
+  transition: 800ms;
+  margin-right: 10px;
 }
 .container-carro-de-compras {
   width: 100%;
@@ -33,7 +45,7 @@
 
 .main-carrito-de-copras {
   width: 90%;
-  max-height: 300px;
+
   border-top: black solid 1px;
   border-bottom: black solid 1px;
   margin: auto;
@@ -42,15 +54,30 @@
 .main-carrito-de-copras:hover {
   box-shadow: 0px 0px 10px rgb(167, 167, 167);
 }
+
 .article-carrito {
   display: flex;
   justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: black solid 1px;
+  border-bottom: black solid 1px;
+}
+.article-carrito:hover {
+  box-shadow: 0px 0px 10px #0bc197;
 }
 
 .left-div-carrito img {
-  width: 120px;
+  max-width: 120px;
+  margin-top: 33%;
 }
-
+#inputCntidadCarrito {
+  width: 35%;
+  height: 5%;
+}
+#priceCarrito {
+  color: #0bc197;
+}
 .rigth-div-carrito {
   position: relative;
 }
@@ -58,11 +85,9 @@
 h4 {
   font-size: 15px;
   padding-bottom: 10px;
+  text-align: center;
 }
-.center-div-top,
-.center-div-bottom {
-  padding: 5px 0px;
-}
+
 .center-div-bottom {
   text-align: center;
 }
@@ -118,26 +143,11 @@ h4 {
   background-color: white;
 }
 
-@media (min-width: 768px) {
-  .left-div-carrito img {
-    width: 200px;
-  }
-  .center-div-bottom {
-    position: absolute;
-    text-align: center;
-    bottom: 0px;
-    right: 27px;
-  }
-  .center-div-bottom > div {
-    width: 150px;
-  }
-}
 @media (min-width: 1024px) {
   .main-carrito-de-copras {
-    max-width: 70%;
+    max-width: 800px;
   }
   .top-carrito {
-    margin-left: 15%;
   }
   .margin-50 {
     padding-left: 155px;
@@ -162,9 +172,5 @@ h4 {
   }
   .boton-front {
     text-align: center;
-  }
-  .footer_shoppingCar {
-    position: absolute;
-    bottom: 0px;
   }
 }

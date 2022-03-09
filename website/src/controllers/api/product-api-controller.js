@@ -14,6 +14,7 @@ const {
   metricsUser,
   metricsProduct,
   metricsOrder,
+  getFavInDb,
 } = require("../../services/api/apiProducts");
 const { addToAndRemoveCar } = require("../../services/products");
 
@@ -108,14 +109,15 @@ module.exports = {
   },
   favorite: async (req, res) => {
     try {
+      //sacara de aca porque no es una api
       const productId = req.params.productId;
       let userId;
       if (!req.session.userLogged) {
         res.redirect("/user/login");
       } else {
         userId = req.session.userLogged.id;
-        const data = await addToAndRemoveCar(userId, productId);
-        res.json(data);
+        await addToAndRemoveCar(userId, productId);
+        res.redirect("back");
       }
     } catch (error) {
       console.log(error);

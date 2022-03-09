@@ -3,7 +3,10 @@
 <%- include('../partials/head.ejs') %>
 
     <body>
-        <%- include('../partials/headerSecondary') %>
+        <header class="j-space-between bgc-header font-color header">
+            <%- include ("../partials/header-home") %>
+        </header>
+        <main class="main_detail_product">
             <section>
                 <article class="article-detail-product">
 
@@ -58,10 +61,7 @@
                             </h2>
 
                             <div class="icons">
-                                <form action="/car" method="post">
-                                    <button submit><i class="fas fa-shopping-bag"></i></button>
-
-                                </form>
+                                <i class="fas fa-shopping-bag"></i>
                             </div>
                         </div>
                         <h3>
@@ -180,14 +180,14 @@
                 </section>
             </section>
 
-            </main>
-            <footer class="footer-produts">
-                <%- include('../partials/footer.ejs') %>
-            </footer>
-            <%- include('../partials/scripts-boostrap.ejs') %>
-                <script src="https://code.jquery.com/jquery-3.6.0.js"
-                    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-                <script src="/js/products/product-detail.js"></script>
+        </main>
+        <footer class="footer-produts">
+            <%- include('../partials/footer.ejs') %>
+        </footer>
+        <%- include('../partials/scripts-boostrap.ejs') %>
+            <script src="https://code.jquery.com/jquery-3.6.0.js"
+                integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+            <script src="/js/products/product-detail.js"></script>
 
     </body>
 
