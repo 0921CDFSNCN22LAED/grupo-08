@@ -87,6 +87,9 @@ footer {
     margin: auto;
     width: 100%;
     border-top: solid gray 1px;
+}
+
+.footer-login {
     bottom: 0;
     position: fixed;
 }
