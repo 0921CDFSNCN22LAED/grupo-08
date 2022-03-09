@@ -11,7 +11,7 @@ export default function Orders() {
   const PORT = "http://localhost:3001";
 
   async function getOrdersInDB() {
-    const response = await fetch(`${PORT}/api/products/orders?page=${page}`);
+    const response = await fetch(`${PORT}/api/orders?page=${page}`);
     const data = await response.json();
     console.log(data);
     setData(data);
