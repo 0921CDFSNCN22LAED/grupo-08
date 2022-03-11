@@ -54,14 +54,14 @@ window.addEventListener("load", function () {
     e.preventDefault();
 
     if (name.value == "") {
-      errors.name = "El campo Nombre no puede estar vació Front";
+      errors.name = "El campo Nombre no puede estar vació -Validaciones Front-";
     } else {
       if (errors.name) {
         delete errors.name;
         errorsName.innerText = "";
       }
       if (name.value.length < 2) {
-        errors.name = "El campo Nombre debe tener al menos 2 caracteres Front";
+        errors.name = "El campo Nombre debe tener al menos 2 caracteres -Validaciones Front-";
       } else {
         if (errors.name) {
           delete errors.name;
@@ -71,7 +71,7 @@ window.addEventListener("load", function () {
     }
 
     if (lastName.value == "") {
-      errors.lastName = "El campo apellido no puede estar vació Front";
+      errors.lastName = "El campo apellido no puede estar vació -Validaciones Front-";
     } else {
       if (errors.lastName) {
         delete errors.lastName;
@@ -79,7 +79,7 @@ window.addEventListener("load", function () {
       }
       if (lastName.value.length < 2) {
         errors.lastName =
-          "Debe campo apellido tener al menos 2 caracteres  Front";
+          "Debe campo apellido tener al menos 2 caracteres -Validaciones Front-";
       } else {
         if (errors.name) {
           delete errors.lastName;
@@ -89,7 +89,7 @@ window.addEventListener("load", function () {
     }
 
     if (country.value == "") {
-      errors.country = "Debe seleccionar un país Front";
+      errors.country = "Debe seleccionar un país -Validaciones Front-";
     } else {
       if (errors.country) {
         delete errors.country;
@@ -98,7 +98,7 @@ window.addEventListener("load", function () {
     }
     console.log(dateBirth.value);
     if (dateBirth.value == "") {
-      errors.dateBirth = "Debe indicar su fecha de nacimiento Front";
+      errors.dateBirth = "Debe indicar su fecha de nacimiento -Validaciones Front-";
     } else {
       if (errors.dateBirth) {
         delete errors.dateBirth;
@@ -107,7 +107,7 @@ window.addEventListener("load", function () {
     }
 
     if (email.value == "") {
-      errors.email = "Debe llenar el campo email front";
+      errors.email = "Debe llenar el campo email -Validaciones Front-";
     } else {
       if (errors.email) {
         delete errors.email;
@@ -117,7 +117,7 @@ window.addEventListener("load", function () {
       console.log(email.value);
       console.log(validateEmail.exec(email.value), "validation email");
       if (!validateEmail.exec(email.value)) {
-        errors.email = "El email debe ser un email valido front";
+        errors.email = "El email debe ser un email valido -Validaciones Front-";
       } else {
         if (errors.email) {
           delete errors.email;
@@ -127,7 +127,7 @@ window.addEventListener("load", function () {
         console.log(userDb.meta.status, "status");
         if (!userDb.meta.status) {
           errors.email =
-            "Este email ya registrado esta en la base de datos front";
+            "Este email ya registrado esta en la base de datos -Validaciones Front-";
         } else {
           if (errors.email) {
             delete errors.email;
@@ -138,7 +138,7 @@ window.addEventListener("load", function () {
     }
 
     if (password.value == "") {
-      errors.password = "El campo contraseña no puede estar vació Front";
+      errors.password = "El campo contraseña no puede estar vació -Validaciones Front-";
     } else {
       if (errors.password) {
         delete errors.password;
@@ -146,7 +146,7 @@ window.addEventListener("load", function () {
       }
       if (password.value.length < 8) {
         errors.password =
-          "El campo contraseña debe tener al menos 8 caracteres Front";
+          "El campo contraseña debe tener al menos 8 caracteres -Validaciones Front-";
       } else {
         if (errors.password) {
           delete errors.password;
@@ -156,7 +156,7 @@ window.addEventListener("load", function () {
     }
 
     if (confirmPassword.value == "") {
-      errors.confirmPassword = "El campo contraseña no puede estar vació Front";
+      errors.confirmPassword = "El campo contraseña no puede estar vació -Validaciones Front-";
     } else {
       if (errors.confirmPassword) {
         delete errors.confirmPassword;
@@ -164,7 +164,7 @@ window.addEventListener("load", function () {
       }
       if (confirmPassword.value.length < 8) {
         errors.confirmPassword =
-          "El campo contraseña debe tener al menos 8 caracteres Front";
+          "El campo contraseña debe tener al menos 8 caracteres -Validaciones Front-";
       } else {
         if (errors.confirmPassword) {
           delete errors.confirmPassword;
@@ -172,7 +172,7 @@ window.addEventListener("load", function () {
         }
         if (password.value != confirmPassword.value) {
           errors.password = "Las contraseñas no coinciden Front";
-          errors.confirmPassword = "Las contraseñas no coinciden Front";
+          errors.confirmPassword = "Las contraseñas no coinciden -Validaciones Front-";
         } else {
           if (password.value && errors.confirmPassword) {
             delete errors.password;
@@ -183,7 +183,7 @@ window.addEventListener("load", function () {
       }
     }
     if (address.value == "") {
-      errors.address = "El campo dirección no puede estar vació Front";
+      errors.address = "El campo dirección no puede estar vació -Validaciones Front-";
     } else {
       if (errors.address) {
         delete errors.address;
@@ -191,7 +191,7 @@ window.addEventListener("load", function () {
       }
       if (address.value.length < 4) {
         errors.address =
-          "El campo dirección debe tener al menos 5 caracteres Front";
+          "El campo dirección debe tener al menos 5 caracteres -Validaciones Front-";
       } else {
         if (errors.address) {
           delete errors.address;

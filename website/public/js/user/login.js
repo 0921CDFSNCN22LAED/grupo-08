@@ -19,7 +19,7 @@ window.onload = function () {
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
     if (email.value == "") {
-      errors.email = "El campo email no puede estar vació";
+      errors.email = "El campo email no puede estar vació -Validaciones Front-";
     } else {
       if (errors.email) {
         delete errors.email;
@@ -27,7 +27,7 @@ window.onload = function () {
         errorEmail.innerText = "";
       }
       if (!validateEmail.exec(email.value)) {
-        errors.email = "Debe ser un email valido";
+        errors.email = "Debe ser un email valido -Validaciones Front-";
       } else {
         if (errors.email) {
           delete errors.email;
@@ -38,7 +38,7 @@ window.onload = function () {
     }
 
     if (password.value == "") {
-      errors.password = "Debe ingresar un a contraseña";
+      errors.password = "Debe ingresar un a contraseña -Validaciones Front-";
     } else {
       if (errors.password) {
         delete errors.password;
@@ -46,7 +46,7 @@ window.onload = function () {
         errorPassword.innerText = "";
       }
       if (password.value.length < 7) {
-        errors.password = "La contraseña debe tener al menos 8 caracteres";
+        errors.password = "La contraseña debe tener al menos 8 caracteres -Validaciones Front-";
       } else {
         if (errors.password) {
           delete errors.password;
@@ -56,8 +56,8 @@ window.onload = function () {
         const validUser = await getDataUserInDB(email.value, password.value);
         console.log(validUser);
         if (!validUser.data) {
-          errors.email = "Las credenciales no son validas";
-          errors.password = "Las credenciales no son validas";
+          errors.email = "Las credenciales no son validas -Validaciones Front-";
+          errors.password = "Las credenciales no son validas -Validaciones Front-";
         } else {
           if (errors.email) {
             delete errors.email;

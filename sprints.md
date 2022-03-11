@@ -87,14 +87,14 @@ Stop Doing: No actualizar el trello
 
 *SPRINT 8:*
 
-Start Doing: 
+Start Doing: Poder comentar los cambios del proyecto antes de commitear
 
-More of: 
+More of: juntadas semanales, para poder proponer ideas y ayudar a los que no entienden algo puntual en el proyeto
 
-Keep Doing : 
+Keep Doing : Seguir apoyandonos entre nosotros cuando alguien no entendio algo
 
-Less of: 
+Less of: Hacer cambio muy abruptos en el proyecto sin avisar
 
-Stop Doing: 
+Stop Doing: Dejar la retro para el final del sprint :)
 
 --------------------------------------------------------------------**********\***********---------------------------------------------
