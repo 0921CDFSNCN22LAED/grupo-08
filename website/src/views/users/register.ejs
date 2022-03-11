@@ -148,29 +148,7 @@
 
 
                             </div>
-                            <div class="m-formularies">
-                                <label>Interes:</label>
-                                <select class="boton-deco" name="buySell" id="favoriteCategory">
-                                    <option value="comprar">comprar</option>
-                                    <option value="vender">vender</option>
-                                </select>
-                            </div>
-                            <div class="m-formularies checkbox-container">
-                                <label>Seleciones Categorias Favoritas:</label>
-                                <% const categories=["catgoria1","catgoria2","catgoria3","catgoria4"] %>
-                                    <% for(category of categories) { %>
-                                        <div class="flex-q-1">
-                                            <label for="">
-                                                <%= category%>
-                                            </label>
-                                            <input type="checkbox" name="favoriteCategory" value="<%=category%>"
-                                                <%=locals.oldData && (oldData.favoriteCategory===category) ? "checked"
-                                                : "" %>>
-                                        </div>
-                                        <% } %>
-                            </div>
-
-                            <div class="m-formularies">
+                            <div class="m-formularies ">
                                 <label for="avatar">Seleccione una imagen</label>
                                 <input class="form-control 
                                 <%=locals.errors && errors.avatar ? 'is-invalid' : ''%>" type="file" name="avatar"
@@ -182,7 +160,7 @@
                                 </div>
                             </div>
 
-                            <div class="m-formularies">
+                            <div class="m-formularies container_btns_register">
                                 <button class="continuar-deco" type="submit">Continuar</button>
                                 <button class="borrar-deco" type="reset">Borrar</button>
                             </div>
@@ -191,7 +169,7 @@
 
                 </form>
         </main>
-        <footer>
+        <footer class="footer_register">
             <%- include('../partials/footer.ejs') %>
         </footer>
         <%- include('../partials/scripts-boostrap.ejs') %>

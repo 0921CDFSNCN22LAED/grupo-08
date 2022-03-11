@@ -14,23 +14,28 @@
         <section id="container-section-edit">
             <article class="article-detail-product article-product-edit">
                 <section class="top-izquierda">
-                    <div class="cont-prod-edit-carrusel ">
-                        <div id=" carousel-product-details" class="carousel carrusel-product slide"
+                    <div class="container-carrusel">
+                        <div id="carousel-product-details" class="carousel carrusel-product slide"
                             data-bs-ride="carousel">
                             <div class="carousel-inner">
+
                                 <% for(let i=0; i < product.image.length ; i++) { %>
                                     <% if(i==0) { %>
-                                        <div class="carousel-item active" id="big-carrusel">
+                                        <div class="carousel-item active">
                                             <img src="<%=`/img/products/${product.image[i].filename}`%>"
-                                                class="d-block w-100 " alt="image<%=`${i}`%>">
+                                                class="d-block w-100 imageSmalCarrusel" alt="image<%=`${i}`%>"
+                                                id="<%=i%>">
                                         </div>
                                         <% } else { %>
-                                            <div class="carousel-item small-carrusel">
+                                            <div class="carousel-item ">
                                                 <img src="<%=`/img/products/${product.image[i].filename}`%>"
-                                                    class="d-block w-100" alt="image<%=`${i}`%>">
+                                                    class="d-block w-100" alt="image<%=`${i}`%>" id="<%=i%>">
                                             </div>
                                             <% } %>
                                                 <% } %>
+
+
+
                             </div>
                             <button class="carousel-control-prev" type="button"
                                 data-bs-target="#carousel-product-details" data-bs-slide="prev">
@@ -47,7 +52,7 @@
                     </div>
                     <div class="imgs-del-producto">
                         <% for(image of product.image) { %>
-                            <img src="<%=`/img/products/${image.filename}`%>" width="20%" alt="">
+                            <img src="<%=`/img/products/${image.filename}`%>" width="20%" alt="" id="imagesLowCarrusel">
                             <% } %>
                     </div>
                     <label for="image">Imagenes de productos</label>
@@ -219,7 +224,12 @@
 
 
     <%- include('../partials/scripts-boostrap.ejs') %>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="/js/front-validation/validation-form-update.js"></script>
+
+
+
+
 
 </body>
 

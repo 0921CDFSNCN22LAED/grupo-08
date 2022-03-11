@@ -161,7 +161,9 @@
 .btn-outline-info:hover {
   background-color: #009ffd;
 }
-
+#h4_priceDiscount {
+  text-align: inherit;
+}
 /***** CUADRADO SELECT COLOR *****/
 .sec-color {
   width: 3rem;

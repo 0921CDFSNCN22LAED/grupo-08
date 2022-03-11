@@ -42,9 +42,9 @@ export default function Orders() {
           <thead>
             <tr>
               <th scope="col">ID</th>
-              <th scope="col">User</th>
-              <th scope="col">Prescription</th>
-              <th scope="col">Product</th>
+              <th scope="col">Usuario</th>
+              <th scope="col">Prescripción</th>
+              <th scope="col">Producto</th>
             </tr>
           </thead>
           {orders.map((order) => (
@@ -54,7 +54,7 @@ export default function Orders() {
                 id={order.id}
                 user={order.order.user.name + " " + order.order.user.lastName}
                 product={order.product.name}
-                prescription={order.prescription ? "yes" : "no"}
+                prescription={order.prescription ? "si" : "no"}
               />
             </Link>
           ))}

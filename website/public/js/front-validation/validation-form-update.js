@@ -1,4 +1,5 @@
 window.onload = function () {
+  let errors = {};
   const form = document.getElementById("form_edit_product");
   const inputFile = document.getElementById("avatar_p_edit");
   const msg_error_files = document.getElementById("msg_error_files");
@@ -18,8 +19,44 @@ window.onload = function () {
   const error_longDescription = document.getElementById(
     "error_longDescription"
   );
+  //----------------------------------------------------------
+  //codigo de otro script  , no anda si pongo dos , averiguar porque
+  const images = document.querySelectorAll("#imagesLowCarrusel");
+  console.log(images);
 
-  let errors = {};
+  const img = document.querySelector(".carousel-item img");
+  console.log(img.src, "img");
+  img.addEventListener("change", (event) => {});
+  let src;
+  document
+    .querySelector(".imgs-del-producto")
+    .addEventListener("click", function (event) {
+      func(event.target.src);
+    });
+
+  let idImgActual;
+
+  let setImage;
+  setImage = document.getElementById("0");
+  $(document).ready(function () {
+    $("#carousel-product-details").on("slid.bs.carousel", function () {
+      src = $(".active").find("img");
+      idImgActual = src[0].attributes.id;
+      console.log(idImgActual.value);
+
+      setImage = document.getElementById(idImgActual.value);
+
+      // console.log(setImage, "set images");
+      //console.log(idImgActual);
+    });
+  });
+  function func(element) {
+    const selectedImg = element.replace("http://localhost:3001", "");
+    console.log(setImage, "setImage");
+    setImage.setAttribute("src", selectedImg);
+    img.classList.add("active");
+  }
+  //--------------------------------------------------------
   inputFile.addEventListener("change", function () {
     const arrayFile = this.files;
     let extensionErrors = [];
@@ -29,6 +66,7 @@ window.onload = function () {
       "image/png",
       "image/jpeg",
     ];
+
     for (element of arrayFile) {
       if (!extensionAcepte.includes(element.type)) {
         extensionErrors.push(element);
@@ -37,9 +75,6 @@ window.onload = function () {
     if (extensionErrors.length != 0) {
       errors.images =
         " debe ingresar una foto con formato valido front-end los formatos aceptados son jpg, png, gif, jpeg";
-      msg_error_files.innerText =
-        "debe ingresar una foto con formato valido front-end los formatos aceptados son jpg, png, gif, jpeg";
-      //  msg_error_files.innerText esta para que sea mas rapido , ni vien cargas la foto te salta error si no es un formato valido
     }
   });
   console.log(form);
@@ -127,6 +162,7 @@ window.onload = function () {
       }
     }
 
+    console.log(inputFile);
     if (Object.keys(errors) == 0) {
       form.submit();
     } else {
@@ -157,12 +193,10 @@ window.onload = function () {
         error_longDescription.innerText = errors.longDescription;
         longDescription.classList.add("is-invalid");
       }
+
       if (errors.images) {
         msg_error_files.innerText = errors.images;
         inputFile.classList.add("is-invalid");
-      } else {
-        msg_error_files.innerText = "";
-        inputFile.classList.remove("is-invalid");
       }
     }
   });

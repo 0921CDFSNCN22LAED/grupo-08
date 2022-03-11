@@ -82,6 +82,11 @@
       display: flex;
     }
   }
+
+  .container_btns_register {
+    display: flex;
+    justify-content: space-between;
+  }
   .main-register {
     justify-content: space-evenly;
     margin-top: 80px;

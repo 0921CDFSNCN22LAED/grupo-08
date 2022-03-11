@@ -30,4 +30,8 @@
   /*.main-login {
     margin-top: 64px;
   }*/
+  .footer-login {
+    position: absolute;
+    bottom: 0px;
+  }
 }

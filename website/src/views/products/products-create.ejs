@@ -18,17 +18,13 @@
                             data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <!-- hacer algo con la variable locals para que cuando se carguen las fotos se vean -->
-                                    <img src="" class="d-block w-100" alt="photo1">
-
+                                    <img src="/img/products/default_img_product.jpg" alt="img1">
                                 </div>
                                 <div class="carousel-item">
-                                    <!-- hacer algo con la variable locals para que cuando se carguen las fotos se vean -->
-                                    <img src="" class="d-block w-100 " alt="photo2">
+                                    <img src="/img/products/default_img_product.jpg" alt="img1">
                                 </div>
                                 <div class="carousel-item">
-                                    <!-- hacer algo con la variable locals para que cuando se carguen las fotos se vean -->
-                                    <img src="" class="d-block w-100" alt="photo3">
+                                    <img src="/img/products/default_img_product.jpg" alt="img1">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button"
@@ -44,9 +40,16 @@
                         </div>
 
                     </div>
-                    <div class="imgs-del-producto">
+                    <!--  <div class="imgs-del-producto">
+                    </div> -->
 
-                    </div>
+                    <label for="image">Imagenes de productos</label>
+                    <input type="file" id="avatar_p_Create"
+                        class="form-select form-control <%=locals.errors && errors.img_product_create ?' is-invalid' : ""  %> "
+                        name="img_product_create" multiple>
+                    <p class="text-danger" id="msg_error_files">
+                        <%=locals.errors&& errors.img_product_create ? errors.img_product_create.msg : "" %>
+                    </p>
 
                 </section>
                 <section class="parte-derecha data">
@@ -101,8 +104,8 @@
                                 name="size" id="size" aria-label="Floating label select example">
                                 <option value="">Seleccione un talle</option>
                                 <% for(size of sizes){%>
-                                    <option value="<%=size.id%>" 
-                                        <%=((locals.oldData)&&(oldData.size==size.id)) ? "selected" : "" %> >
+                                    <option value="<%=size.id%>" <%=((locals.oldData)&&(oldData.size==size.id))
+                                        ? "selected" : "" %> >
                                         <%= size.size %>
                                     </option>
                                     <% }%>
@@ -137,13 +140,7 @@
                     </div>
                 </section>
             </article>
-            <label for="image">Imagenes de productos</label>
-            <input type="file id="avatar_p_edit""
-                class="form-select form-control <%=locals.errors && errors.img_product_create ?' is-invalid' : ""  %> "
-                name="img_product_create" multiple>
-            <p class="text-danger" id="msg_error_files">
-                <%=locals.errors&& errors.img_product_create ? errors.img_product_create.msg : "" %>
-            </p>
+
 
             <section class=" bottom-article">
                 <nav>
@@ -190,17 +187,18 @@
                                     <select class="form-select <%=locals.errors && errors.material ? " is-invalid" : ""
                                         %>"
                                         name="material" id="material" aria-label="Floating label select example">
-                                        <option selected>Seleccione un material</option>
+                                        <option value="" selected>Seleccione un material</option>
                                         <% for(material of materials){%>
                                             <option value="<%= material.id %>" <%=locals.oldData&&
                                                 oldData.material==material.id ? "selected" : "" %>>
                                                 <%= material.material %>
                                             </option>
                                             <% }%>
-                                                <p class="text-danger" id="error_material">
-                                                    <%= locals.errors && errors.material? errors.material.msg : "" %>
-                                                </p>
+
                                     </select>
+                                    <p class="text-danger" id="error_material">
+                                        <%= locals.errors && errors.material? errors.material.msg : "" %>
+                                    </p>
                                     <label for="floatingSelect">Works with selects</label>
                                 </div>
 
@@ -230,8 +228,9 @@
     </footer>
     <%- include('../partials/scripts-boostrap.ejs') %>
 
-    <%- include('../partials/scripts-boostrap.ejs') %>
-        <script src="/js/front-validation/create-product-validation.js"></script>
+        <%- include('../partials/scripts-boostrap.ejs') %>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script src="/js/front-validation/create-product-validation.js"></script>
 
 </body>
 

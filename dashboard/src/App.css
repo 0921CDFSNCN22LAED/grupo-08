@@ -5,7 +5,10 @@
 * ==========================================
 *
 */
-
+#container_Card {
+  width: 100%;
+  display: block;
+}
 .vertical-nav {
   min-width: 17rem;
   width: 17rem;
@@ -408,6 +411,7 @@ table.shoping-cart-table tr td:last-child {
 .ibox-content {
   max-width: 100%;
 }
+
 .card {
   background-color: #fff;
   border-radius: 10px;
