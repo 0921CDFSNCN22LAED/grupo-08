@@ -126,7 +126,7 @@ window.onload = function () {
     const valueSize = size.value;
 
     if (valueSize == "") {
-      errors.size = "Debe seleccionar un tamaño";
+      errors.size = "Debe seleccionar un tamaño front";
     } else {
       if (errors.size) {
         delete errors.size;

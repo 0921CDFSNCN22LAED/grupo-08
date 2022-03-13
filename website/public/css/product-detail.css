@@ -224,12 +224,12 @@
     margin: auto;
   }
 }
-/* .footer-product-detail {
-  position: absolute;
-  bottom: 0;
-} */
 
 @media (min-width: 1024px) {
+  .footer-product-detail {
+    margin-top: 60px;
+  }
+
   .cont-btn-buy-dp {
     width: 100%;
   }

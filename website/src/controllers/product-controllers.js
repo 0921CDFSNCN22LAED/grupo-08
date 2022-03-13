@@ -69,7 +69,7 @@ module.exports = {
       },
       include: ["image", "size", "material", "price", "color"],
     });
-    console.log(product.image);
+
     res.render("products/product-detail", { product, sizes });
   },
 
@@ -82,7 +82,7 @@ module.exports = {
       },
       include: ["image", "size", "material", "price", "color"],
     });
-
+    console.log(dataParaLaVista[0]);
     res.render("products/product-edit", {
       product,
       sizes: dataParaLaVista[0],
@@ -95,8 +95,9 @@ module.exports = {
   update: async (req, res) => {
     const productId = req.params.productId;
     const body = req.body;
+    console.log(body);
     const files = req.files;
-
+    console.log(body);
     const validations = validationResult(req);
 
     if (validations.errors.length !== 0) {
