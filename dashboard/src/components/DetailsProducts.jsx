@@ -19,50 +19,50 @@ export default function DetailProducts() {
   const category = data ? data.data.category : null;
   const price = data ? data.data.price[0] : null;
   return !data ? (
-    <div class="loader"></div>
+    <div className="loader"></div>
   ) : (
-    <div class="container bootdey">
-      <div class="col-md-12">
-        <section class="panel">
-          <div class="panel-body">
-            <div class="col-md-6 d-flex">
+    <div className="container bootdey">
+      <div className="col-md-12">
+        <section className="panel">
+          <div className="panel-body">
+            <div className="col-md-6 d-flex">
               {images.map((image) => (
                 <ImagesDetailProduct image={image.filename} />
               ))}
             </div>
-            <div class="col-md-6">
-              <h4 class="pro-d-title">
-                <a href="#" class="">
+            <div className="col-md-6">
+              <h4 className="pro-d-title">
+                <a href="#" className="">
                   {product.name}
                 </a>
               </h4>
               <p>{product.longDescription}</p>
-              <div class="product_meta">
-                <span class="posted_in">
+              <div className="product_meta">
+                <span className="posted_in">
                   {" "}
                   <strong>Categorías:</strong>{" "}
                   {category.map((cat) => cat.categoryName + ", ")}
                 </span>
               </div>
-              <div class="m-bot15">
+              <div className="m-bot15">
                 {" "}
                 <strong>Precio : </strong>{" "}
-                <span class="amount-old">$ {price.priceDiscount}</span>{" "}
-                <span class="pro-price">$ {price.price}</span>
+                <span className="amount-old">$ {price.priceDiscount}</span>{" "}
+                <span className="pro-price">$ {price.price}</span>
               </div>
               <strong>Descuento : </strong>{" "}
-              <span class="text-success"> {price.discount}%</span>
-              <div class="form-group">
+              <span className="text-success"> {price.discount}%</span>
+              <div className="form-group">
                 <label>Cantidad</label>
                 <input
                   type="quantiy"
                   placeholder="1"
-                  class="form-control quantity"
+                  className="form-control quantity"
                 />
               </div>
               <p>
-                <button class="btn btn-round btn-danger" type="button">
-                  <i class="fa fa-shopping-cart"></i> Add to Cart
+                <button className="btn btn-round btn-danger" type="button">
+                  <i className="fa fa-shopping-cart"></i> Add to Cart
                 </button>
               </p>
             </div>

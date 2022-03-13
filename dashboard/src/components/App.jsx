@@ -24,9 +24,9 @@ export default function App() {
   return (
     <>
       <Sidebar />
-      <div class="page-content p-2" id="content">
+      <div className="page-content p-2" id="content">
         <ButtonHiddenMenu hiddenNavbar={hiddenNavbar} />
-        <div class="separator"></div>
+        <div className="separator"></div>
         <Routes>
           <Route path="/" exact={true} element={<Home />} />
           <Route path="/about" element={<About />} />

@@ -1,6 +1,6 @@
 export default function ImagesDetailProduct(props) {
   return (
-    <div class="pro-img-list">
+    <div className="pro-img-list">
       <a href="#">
         <img
           src={require(`../../../website/public/img/products/${props.image}`)}

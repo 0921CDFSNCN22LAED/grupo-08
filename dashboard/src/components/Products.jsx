@@ -39,10 +39,10 @@ export default function Products() {
   return (
     <>
       {!data ? (
-        <div class="loader"></div>
+        <div className="loader"></div>
       ) : (
-        <div class="container">
-          <div class="row">
+        <div className="container">
+          <div className="row">
             {products.map((product) => (
               <CardProducts
                 key={product.id}

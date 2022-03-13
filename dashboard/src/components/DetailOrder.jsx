@@ -54,151 +54,151 @@ export default function DetailOrder(props) {
     pupillaryDistance = valuesPrescription.pupillaryDistance.pupillaryDistance;
   }
   return !data ? (
-    <div class="loader"></div>
+    <div className="loader"></div>
   ) : (
-    <div class="container bootstrap snippets bootdey">
-      <div class="panel-body inf-content">
-        <div class="row">
-          <div class="col-md-4" id="containerImgUserDetail">
+    <div className="container bootstrap snippets bootdey">
+      <div className="panel-body inf-content">
+        <div className="row">
+          <div className="col-md-4" id="containerImgUserDetail">
             <img
               alt=""
-              class="img-circle img-thumbnail isTooltip"
+              className="img-circle img-thumbnail isTooltip"
               src={require(`../../../website/public/img/products/${data.data.product.image[0].filename}`)}
               id="imgUserDetail"
             />
           </div>
-          <div class="col-md-6">
+          <div className="col-md-6">
             <strong>Información</strong>
             <br />
-            <div class="table-responsive">
-              <table class="table table-user-information">
+            <div className="table-responsive">
+              <table className="table table-user-information">
                 <tbody>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                        <span className="glyphicon glyphicon-asterisk text-primary"></span>
                         Orden id
                       </strong>
                     </td>
-                    <td class="text-primary">{order.id}</td>
+                    <td className="text-primary">{order.id}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-user  text-primary"></span>
+                        <span className="glyphicon glyphicon-user  text-primary"></span>
                         Usuario
                       </strong>
                     </td>
-                    <td class="text-primary">{user}</td>
+                    <td className="text-primary">{user}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-cloud text-primary"></span>
+                        <span className="glyphicon glyphicon-cloud text-primary"></span>
                         Dirección
                       </strong>
                     </td>
-                    <td class="text-primary">{streetAddress}</td>
+                    <td className="text-primary">{streetAddress}</td>
                   </tr>
 
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-bookmark text-primary"></span>
+                        <span className="glyphicon glyphicon-bookmark text-primary"></span>
                         Email
                       </strong>
                     </td>
-                    <td class="text-primary">{email}</td>
+                    <td className="text-primary">{email}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-bookmark text-primary"></span>
+                        <span className="glyphicon glyphicon-bookmark text-primary"></span>
                         Producto
                       </strong>
                     </td>
-                    <td class="text-primary">{productName}</td>
+                    <td className="text-primary">{productName}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-bookmark text-primary"></span>
+                        <span className="glyphicon glyphicon-bookmark text-primary"></span>
                         Fecha de compra
                       </strong>
                     </td>
-                    <td class="text-primary">{createdAt}</td>
+                    <td className="text-primary">{createdAt}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-eye-open text-primary"></span>
+                        <span className="glyphicon glyphicon-eye-open text-primary"></span>
                         Prescripción
                       </strong>
                     </td>
-                    <td class="text-primary">{prescription}</td>
+                    <td className="text-primary">{prescription}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-eye-open text-primary"></span>
+                        <span className="glyphicon glyphicon-eye-open text-primary"></span>
                         Esfera ojo derecho
                       </strong>
                     </td>
-                    <td class="text-primary">{rightEye_sph}</td>
+                    <td className="text-primary">{rightEye_sph}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-envelope text-primary"></span>
+                        <span className="glyphicon glyphicon-envelope text-primary"></span>
                         Esfera ojo izquierdo
                       </strong>
                     </td>
-                    <td class="text-primary">{leftEye_sph}</td>
+                    <td className="text-primary">{leftEye_sph}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-calendar text-primary"></span>
+                        <span className="glyphicon glyphicon-calendar text-primary"></span>
                         Cilindro ojo derecho
                       </strong>
                     </td>
-                    <td class="text-primary">{rightEye_cyl}</td>
+                    <td className="text-primary">{rightEye_cyl}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-calendar text-primary"></span>
+                        <span className="glyphicon glyphicon-calendar text-primary"></span>
                         Cilindro ojo izquierdo
                       </strong>
                     </td>
-                    <td class="text-primary">{leftEye_cyl}</td>
+                    <td className="text-primary">{leftEye_cyl}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-calendar text-primary"></span>
+                        <span className="glyphicon glyphicon-calendar text-primary"></span>
                         Axis ojo derecho
                       </strong>
                     </td>
-                    <td class="text-primary">{rightEyeAxis}</td>
+                    <td className="text-primary">{rightEyeAxis}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-calendar text-primary"></span>
+                        <span className="glyphicon glyphicon-calendar text-primary"></span>
                         Axis ojo izquierdo
                       </strong>
                     </td>
-                    <td class="text-primary">{leftEyeAxis}</td>
+                    <td className="text-primary">{leftEyeAxis}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-calendar text-primary"></span>
+                        <span className="glyphicon glyphicon-calendar text-primary"></span>
                         Distancia pupilar
                       </strong>
                     </td>
-                    <td class="text-primary">{pupillaryDistance}</td>
+                    <td className="text-primary">{pupillaryDistance}</td>
                   </tr>
                 </tbody>
               </table>

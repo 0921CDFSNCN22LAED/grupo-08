@@ -28,126 +28,126 @@ export default function DetailUser() {
   user && (user.admin = 1) ? (rol = "admin") : (rol = "usuario");
 
   return !data ? (
-    <div class="loader"></div>
+    <div className="loader"></div>
   ) : (
-    <div class="container bootstrap snippets bootdey">
-      <div class="panel-body inf-content">
-        <div class="row">
-          <div class="col-md-4" id="containerImgUserDetail">
+    <div className="container bootstrap snippets bootdey">
+      <div className="panel-body inf-content">
+        <div className="row">
+          <div className="col-md-4" id="containerImgUserDetail">
             <img
               alt=""
-              class="img-circle img-thumbnail isTooltip"
+              className="img-circle img-thumbnail isTooltip"
               src={require(`../../../website/public/img/users/${user.avatar}`)}
               id="imgUserDetail"
             />
           </div>
-          <div class="col-md-6">
+          <div className="col-md-6">
             <strong>Información</strong>
             <br />
-            <div class="table-responsive">
-              <table class="table table-user-information">
+            <div className="table-responsive">
+              <table className="table table-user-information">
                 <tbody>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                        <span className="glyphicon glyphicon-asterisk text-primary"></span>
                         id
                       </strong>
                     </td>
-                    <td class="text-primary">{(user, id)}</td>
+                    <td className="text-primary">{(user, id)}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-user  text-primary"></span>
+                        <span className="glyphicon glyphicon-user  text-primary"></span>
                         Nombre
                       </strong>
                     </td>
-                    <td class="text-primary">{user.name}</td>
+                    <td className="text-primary">{user.name}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-cloud text-primary"></span>
+                        <span className="glyphicon glyphicon-cloud text-primary"></span>
                         Apellido
                       </strong>
                     </td>
-                    <td class="text-primary">{user.lastName}</td>
+                    <td className="text-primary">{user.lastName}</td>
                   </tr>
 
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-bookmark text-primary"></span>
+                        <span className="glyphicon glyphicon-bookmark text-primary"></span>
                         Dirección
                       </strong>
                     </td>
-                    <td class="text-primary">{user.streetAddress}</td>
+                    <td className="text-primary">{user.streetAddress}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-bookmark text-primary"></span>
+                        <span className="glyphicon glyphicon-bookmark text-primary"></span>
                         País
                       </strong>
                     </td>
-                    <td class="text-primary">{user.country}</td>
+                    <td className="text-primary">{user.country}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-bookmark text-primary"></span>
+                        <span className="glyphicon glyphicon-bookmark text-primary"></span>
                         Fecha de nacimiento
                       </strong>
                     </td>
-                    <td class="text-primary">{dateBirth}</td>
+                    <td className="text-primary">{dateBirth}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-eye-open text-primary"></span>
+                        <span className="glyphicon glyphicon-eye-open text-primary"></span>
                         Rol
                       </strong>
                     </td>
-                    <td class="text-primary">{rol}</td>
+                    <td className="text-primary">{rol}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-eye-open text-primary"></span>
+                        <span className="glyphicon glyphicon-eye-open text-primary"></span>
                         Estado
                       </strong>
                     </td>
-                    <td class="text-primary">
+                    <td className="text-primary">
                       {user.active == 1 ? "activo" : "inactivo"}
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-envelope text-primary"></span>
+                        <span className="glyphicon glyphicon-envelope text-primary"></span>
                         Email
                       </strong>
                     </td>
-                    <td class="text-primary">{user.email}</td>
+                    <td className="text-primary">{user.email}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-calendar text-primary"></span>
+                        <span className="glyphicon glyphicon-calendar text-primary"></span>
                         Creado en
                       </strong>
                     </td>
-                    <td class="text-primary">{createdAt}</td>
+                    <td className="text-primary">{createdAt}</td>
                   </tr>
                   <tr>
                     <td>
                       <strong>
-                        <span class="glyphicon glyphicon-calendar text-primary"></span>
+                        <span className="glyphicon glyphicon-calendar text-primary"></span>
                         Editado en
                       </strong>
                     </td>
-                    <td class="text-primary">{updatedAt}</td>
+                    <td className="text-primary">{updatedAt}</td>
                   </tr>
                 </tbody>
               </table>

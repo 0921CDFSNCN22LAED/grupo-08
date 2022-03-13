@@ -31,37 +31,39 @@ export default function Home() {
   return (
     <>
       {!product && !order && !user ? (
-        <div class="loader"></div>
+        <div className="loader"></div>
       ) : (
-        <div class="col-md-10 w-100 ">
-          <div class="row ">
-            <div class=" col-lg-6">
+        <div className="col-md-10 w-100 ">
+          <div className="row ">
+            <div className=" col-lg-6">
               <Link to={"/orders"} style={{ textDecoration: "none" }}>
-                <div class="card l-bg-cherry" id="cardHome">
-                  <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large">
-                      <i class="fas fa-shopping-cart"></i>
+                <div className="card l-bg-cherry" id="cardHome">
+                  <div className="card-statistic-3 p-4">
+                    <div className="card-icon card-icon-large">
+                      <i className="fas fa-shopping-cart"></i>
                     </div>
-                    <div class="mb-4">
-                      <h5 class="card-title mb-0">Nuevas Ordenes</h5>
+                    <div className="mb-4">
+                      <h5 className="card-title mb-0">Nuevas Ordenes</h5>
                     </div>
-                    <div class="row align-items-center mb-2 d-flex">
-                      <div class="col-8">
-                        <h2 class="d-flex align-items-center mb-0">{order}</h2>
+                    <div className="row align-items-center mb-2 d-flex">
+                      <div className="col-8">
+                        <h2 className="d-flex align-items-center mb-0">
+                          {order}
+                        </h2>
                       </div>
-                      <div class="col-4 text-right">
+                      <div className="col-4 text-right">
                         <span>
-                          {porCenOrder}% <i class="fa fa-arrow-up"></i>
+                          {porCenOrder}% <i className="fa fa-arrow-up"></i>
                         </span>
                       </div>
                     </div>
                     <div
-                      class="progress mt-1 "
+                      className="progress mt-1 "
                       data-height="8"
                       style={{ height: "8px" }}
                     >
                       <div
-                        class="progress-bar l-bg-cyan"
+                        className="progress-bar l-bg-cyan"
                         role="progressbar"
                         data-width="25%"
                         aria-valuenow="25"
@@ -74,33 +76,35 @@ export default function Home() {
                 </div>
               </Link>
             </div>
-            <div class="col-lg-6">
+            <div className="col-lg-6">
               <Link to={"/users"} style={{ textDecoration: "none" }}>
-                <div class="card l-bg-blue-dark" id="cardHome">
-                  <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large">
-                      <i class="fas fa-users"></i>
+                <div className="card l-bg-blue-dark" id="cardHome">
+                  <div className="card-statistic-3 p-4">
+                    <div className="card-icon card-icon-large">
+                      <i className="fas fa-users"></i>
                     </div>
-                    <div class="mb-4">
-                      <h5 class="card-title mb-0">Usuarios</h5>
+                    <div className="mb-4">
+                      <h5 className="card-title mb-0">Usuarios</h5>
                     </div>
-                    <div class="row align-items-center mb-2 d-flex">
-                      <div class="col-8">
-                        <h2 class="d-flex align-items-center mb-0">{user}</h2>
+                    <div className="row align-items-center mb-2 d-flex">
+                      <div className="col-8">
+                        <h2 className="d-flex align-items-center mb-0">
+                          {user}
+                        </h2>
                       </div>
-                      <div class="col-4 text-right">
+                      <div className="col-4 text-right">
                         <span>
-                          {porCenUser}% <i class="fa fa-arrow-up"></i>
+                          {porCenUser}% <i className="fa fa-arrow-up"></i>
                         </span>
                       </div>
                     </div>
                     <div
-                      class="progress mt-1 "
+                      className="progress mt-1 "
                       data-height="8"
                       style={{ height: "8px" }}
                     >
                       <div
-                        class="progress-bar l-bg-green"
+                        className="progress-bar l-bg-green"
                         role="progressbar"
                         data-width="25%"
                         aria-valuenow="25"
@@ -114,35 +118,35 @@ export default function Home() {
               </Link>
             </div>
 
-            <div class=" col-lg-6">
+            <div className=" col-lg-6">
               <Link to={"/products"} style={{ textDecoration: "none" }}>
-                <div class="card l-bg-green-dark" id="cardHome">
-                  <div class="card-statistic-3 p-4">
-                    <div class="card-icon card-icon-large">
-                      <i class="fas fa-ticket-alt"></i>
+                <div className="card l-bg-green-dark" id="cardHome">
+                  <div className="card-statistic-3 p-4">
+                    <div className="card-icon card-icon-large">
+                      <i className="fas fa-ticket-alt"></i>
                     </div>
-                    <div class="mb-4">
-                      <h5 class="card-title mb-0">Productos</h5>
+                    <div className="mb-4">
+                      <h5 className="card-title mb-0">Productos</h5>
                     </div>
-                    <div class="row align-items-center mb-2 d-flex">
-                      <div class="col-8">
-                        <h2 class="d-flex align-items-center mb-0">
+                    <div className="row align-items-center mb-2 d-flex">
+                      <div className="col-8">
+                        <h2 className="d-flex align-items-center mb-0">
                           {product}
                         </h2>
                       </div>
-                      <div class="col-4 text-right">
+                      <div className="col-4 text-right">
                         <span>
-                          {porCenProduct}% <i class="fa fa-arrow-up"></i>
+                          {porCenProduct}% <i className="fa fa-arrow-up"></i>
                         </span>
                       </div>
                     </div>
                     <div
-                      class="progress mt-1 "
+                      className="progress mt-1 "
                       data-height="8"
                       style={{ height: "8px" }}
                     >
                       <div
-                        class="progress-bar l-bg-orange"
+                        className="progress-bar l-bg-orange"
                         role="progressbar"
                         data-width="25%"
                         aria-valuenow="25"

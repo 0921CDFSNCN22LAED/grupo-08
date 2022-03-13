@@ -42,7 +42,7 @@ export default function Categories() {
   return (
     <>
       {!data ? (
-        <div class="loader"></div>
+        <div className="loader"></div>
       ) : (
         <table className="table table-dark table-striped">
           <thead>
