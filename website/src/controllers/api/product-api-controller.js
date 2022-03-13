@@ -15,6 +15,7 @@ const {
   metricsProduct,
   metricsOrder,
   getFavInDb,
+  getAllCategories,
 } = require("../../services/api/apiProducts");
 const { addToAndRemoveCar } = require("../../services/products");
 
@@ -105,6 +106,15 @@ module.exports = {
       res.json(response);
     } catch (error) {
       console.log(error);
+    }
+  },
+  categories: async (req, res) => {
+    try {
+      const response = await getAllCategories();
+      res.json(response);
+    } catch (error) {
+      console.log(error);
+      res.send("algo salio mal");
     }
   },
   favorite: async (req, res) => {

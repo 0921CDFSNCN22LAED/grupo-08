@@ -50,7 +50,7 @@ export default function DetailOrder(props) {
     rightEye_cyl = valuesPrescription.rightEye.cylinder.cylinder;
     leftEye_cyl = valuesPrescription.rightEye.cylinder.cylinder;
     rightEyeAxis = valuesPrescription.rightEye.axisRightEye;
-    leftEyeAxis = valuesPrescription.rightEye.axisLeftEye;
+    leftEyeAxis = valuesPrescription.leftEyes.axisLeftEye;
     pupillaryDistance = valuesPrescription.pupillaryDistance.pupillaryDistance;
   }
   return !data ? (
@@ -63,7 +63,7 @@ export default function DetailOrder(props) {
             <img
               alt=""
               class="img-circle img-thumbnail isTooltip"
-              //src={}
+              src={require(`../../../website/public/img/products/${data.data.product.image[0].filename}`)}
               id="imgUserDetail"
             />
           </div>

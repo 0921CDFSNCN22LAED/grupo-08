@@ -11,6 +11,7 @@ router.get("/children", productApiController.children);
 router.get("/sun", productApiController.sun);
 router.get("/read", productApiController.read);
 router.get("/recetados", productApiController.recetados);
+router.get("/categories", productApiController.categories);
 router.get("/:productId", productApiController.detail);
 router.get("/favorite/:productId", productApiController.favorite);
 

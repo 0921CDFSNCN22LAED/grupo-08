@@ -443,4 +443,29 @@ module.exports = {
       console.log(error);
     }
   },
+  getAllCategories: async () => {
+    const categories = await db.Category.findAll({
+      raw: true,
+      nest: true,
+    });
+    let status;
+    let statusCode;
+    if (categories) {
+      status = 200;
+      statusCode = true;
+    } else {
+      status = 404;
+      statusCode = false;
+    }
+    let response = {
+      meta: {
+        status: status,
+        statusCode: statusCode,
+        count: categories ? categories.length : null,
+        url: "/api/products/categories",
+      },
+      data: categories,
+    };
+    return response;
+  },
 };
