@@ -24,7 +24,7 @@ export default function App() {
   return (
     <>
       <Sidebar />
-      <div class="page-content p-5" id="content">
+      <div class="page-content p-2" id="content">
         <ButtonHiddenMenu hiddenNavbar={hiddenNavbar} />
         <div class="separator"></div>
         <Routes>

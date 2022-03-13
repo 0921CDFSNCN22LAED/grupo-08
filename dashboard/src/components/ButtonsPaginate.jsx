@@ -4,7 +4,7 @@ export default function ButtonsPaginate(props) {
       {props.page > 1 ? (
         <button
           type="button"
-          class="btn btn-dark"
+          class="btn btn-primary"
           onClick={props.previous}
           id="btnPreviousPage"
         >
@@ -16,7 +16,7 @@ export default function ButtonsPaginate(props) {
       {props.countProd - props.page * props.limit > 0 ? (
         <button
           type="button"
-          class="btn btn-dark"
+          class="btn btn-primary"
           onClick={props.next}
           id="btnNextPage"
         >
