@@ -9,7 +9,7 @@ const userLoggedMiddleware = require("./middlewares/app-middleware/user-logged-m
 const rememberUserCookieMiddleware = require("./middlewares/app-middleware/remember-user-cookie-middleware");
 const cors = require("cors");
 const PORT = process.env.PORT;
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors({ origin: "*" }));
 app.listen(PORT || 3001, () =>
   console.log("Server funcionando en el puerto 3001")
 );
