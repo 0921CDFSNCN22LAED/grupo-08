@@ -1,9 +1,9 @@
 module.exports = {
   development: {
-    username: "root",
-    password: null,
-    database: "vission",
-    host: "127.0.0.1",
+    username: "b1604073e85b79",
+    password: "720f2d7c",
+    database: "heroku_b3b6be68c024224",
+    host: "us-cdbr-east-05.cleardb.net",
     dialect: "mysql",
   },
   test: {
