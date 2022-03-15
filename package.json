@@ -1,5 +1,9 @@
 {
   "scripts": {
-    "start": "node website/src/app.js"
+    "start": "cd website && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0921CDFSNCN22LAED/grupo-08.git"
   }
 }
