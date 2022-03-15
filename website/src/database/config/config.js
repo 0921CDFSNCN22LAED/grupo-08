@@ -14,10 +14,10 @@ module.exports = {
     dialect: "mysql",
   },
   production: {
-    username: "root",
-    password: null,
-    database: "database_production",
-    host: "127.0.0.1",
+    username: "bda8d6309ab1d8",
+    password: "dd4878f8",
+    database: "heroku_8fcdca16489fd09",
+    host: "us-cdbr-east-05.cleardb.net",
     dialect: "mysql",
   },
 };
