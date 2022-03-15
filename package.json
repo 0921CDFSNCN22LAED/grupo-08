@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "node website/src/app.js"
+    "start": "node website/src/app.js",
+    "build": "cd website && npm install"
   },
   "repository": {
     "type": "git",
