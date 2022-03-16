@@ -1,7 +1,7 @@
 window.onload = async () => {
   //   const main = document.querySelector("main");
   //   main.style.backgroundColor = "red";
-  const PORT = process.env.PORT;
+  const PORT = "https://vission.herokuapp.com/";
   const response = await fetch(`${PORT}/api/`);
   const products = await response.json();
   const sectionContainer = document.querySelector(".container-products");
