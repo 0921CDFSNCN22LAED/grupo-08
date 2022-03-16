@@ -1,5 +1,5 @@
 window.onload = async () => {
-  const PORT = "http://localhost:3001";
+  const PORT = "https://vission.herokuapp.com";
   const response = await fetch(`${PORT}/api/products/women`);
   const products = await response.json();
   console.log(products);

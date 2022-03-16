@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
   const errorAddress = document.getElementById("errorAddress");
   const avatar = document.getElementById("avatar");
   const errorAvatar = document.getElementById("errorAvatar");
-  const PORT = `http://localhost:3001/`;
+  const PORT = "https://vission.herokuapp.com";
 
   async function getUserInDb(email) {
     const response = await fetch(
@@ -61,7 +61,8 @@ window.addEventListener("load", function () {
         errorsName.innerText = "";
       }
       if (name.value.length < 2) {
-        errors.name = "El campo Nombre debe tener al menos 2 caracteres -Validaciones Front-";
+        errors.name =
+          "El campo Nombre debe tener al menos 2 caracteres -Validaciones Front-";
       } else {
         if (errors.name) {
           delete errors.name;
@@ -71,7 +72,8 @@ window.addEventListener("load", function () {
     }
 
     if (lastName.value == "") {
-      errors.lastName = "El campo apellido no puede estar vació -Validaciones Front-";
+      errors.lastName =
+        "El campo apellido no puede estar vació -Validaciones Front-";
     } else {
       if (errors.lastName) {
         delete errors.lastName;
@@ -98,7 +100,8 @@ window.addEventListener("load", function () {
     }
     console.log(dateBirth.value);
     if (dateBirth.value == "") {
-      errors.dateBirth = "Debe indicar su fecha de nacimiento -Validaciones Front-";
+      errors.dateBirth =
+        "Debe indicar su fecha de nacimiento -Validaciones Front-";
     } else {
       if (errors.dateBirth) {
         delete errors.dateBirth;
@@ -138,7 +141,8 @@ window.addEventListener("load", function () {
     }
 
     if (password.value == "") {
-      errors.password = "El campo contraseña no puede estar vació -Validaciones Front-";
+      errors.password =
+        "El campo contraseña no puede estar vació -Validaciones Front-";
     } else {
       if (errors.password) {
         delete errors.password;
@@ -156,7 +160,8 @@ window.addEventListener("load", function () {
     }
 
     if (confirmPassword.value == "") {
-      errors.confirmPassword = "El campo contraseña no puede estar vació -Validaciones Front-";
+      errors.confirmPassword =
+        "El campo contraseña no puede estar vació -Validaciones Front-";
     } else {
       if (errors.confirmPassword) {
         delete errors.confirmPassword;
@@ -172,7 +177,8 @@ window.addEventListener("load", function () {
         }
         if (password.value != confirmPassword.value) {
           errors.password = "Las contraseñas no coinciden Front";
-          errors.confirmPassword = "Las contraseñas no coinciden -Validaciones Front-";
+          errors.confirmPassword =
+            "Las contraseñas no coinciden -Validaciones Front-";
         } else {
           if (password.value && errors.confirmPassword) {
             delete errors.password;
@@ -183,7 +189,8 @@ window.addEventListener("load", function () {
       }
     }
     if (address.value == "") {
-      errors.address = "El campo dirección no puede estar vació -Validaciones Front-";
+      errors.address =
+        "El campo dirección no puede estar vació -Validaciones Front-";
     } else {
       if (errors.address) {
         delete errors.address;

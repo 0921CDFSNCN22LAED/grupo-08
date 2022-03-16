@@ -1,8 +1,8 @@
 window.onload = async function () {
   const query = location.search;
   const footerResults = document.querySelector(".footer-results");
-
-  const response = await fetch(`http://localhost:3001/api/search${query}`);
+  const PORT = "https://vission.herokuapp.com";
+  const response = await fetch(`${PORT}/api/search${query}`);
   const search = await response.json();
   console.log(search);
   const containerProducts = document.getElementById("container-products");

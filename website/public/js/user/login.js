@@ -5,7 +5,7 @@ window.onload = function () {
   const errorEmail = document.getElementById("errorEmail");
   const password = document.getElementById("password");
   const errorPassword = document.getElementById("errorPassword");
-  const PORT = `http://localhost:3001`;
+  const PORT = "https://vission.herokuapp.com";
   const validateEmail = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
 
   async function getDataUserInDB(email, password) {
@@ -46,7 +46,8 @@ window.onload = function () {
         errorPassword.innerText = "";
       }
       if (password.value.length < 7) {
-        errors.password = "La contraseña debe tener al menos 8 caracteres -Validaciones Front-";
+        errors.password =
+          "La contraseña debe tener al menos 8 caracteres -Validaciones Front-";
       } else {
         if (errors.password) {
           delete errors.password;
@@ -57,7 +58,8 @@ window.onload = function () {
         console.log(validUser);
         if (!validUser.data) {
           errors.email = "Las credenciales no son validas -Validaciones Front-";
-          errors.password = "Las credenciales no son validas -Validaciones Front-";
+          errors.password =
+            "Las credenciales no son validas -Validaciones Front-";
         } else {
           if (errors.email) {
             delete errors.email;
