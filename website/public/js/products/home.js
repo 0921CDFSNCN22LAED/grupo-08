@@ -1,7 +1,7 @@
 window.onload = async () => {
   //   const main = document.querySelector("main");
   //   main.style.backgroundColor = "red";
-  const PORT = "us-cdbr-east-05.cleardb.net";
+  const PORT = process.env.PORT;
   const response = await fetch(`${PORT}/api/`);
   const products = await response.json();
   const sectionContainer = document.querySelector(".container-products");
