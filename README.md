@@ -1,9 +1,9 @@
 # grupo-08
 
-# VISSION
+# Vission
 # https://vission.herokuapp.com/
 
-# dashboard
+# Dashboard
 # https://dashboard-vission.herokuapp.com/
 
 
