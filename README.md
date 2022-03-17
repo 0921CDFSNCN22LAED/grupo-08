@@ -1,8 +1,11 @@
 # grupo-08
 
-# VISSION
-
+# Vission
 # https://vission.herokuapp.com/
+
+# Dashboard
+# https://dashboard-vission.herokuapp.com/
+
 
 Icons pages:
 https://lineicons.com/icons/
