@@ -1,9 +1,9 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import dayjs from "dayjs";
-import RowProducts from "./RowProducts";
-import ColumProducts from "./ColumProducts";
-import { Link } from "react-router-dom";
+// import dayjs from "dayjs";
+// import RowProducts from "./RowProducts";
+// import ColumProducts from "./ColumProducts";
+// import { Link } from "react-router-dom";
 import ButtonsPaginate from "./ButtonsPaginate";
 import CardProducts from "./CardProducts";
 
@@ -12,7 +12,7 @@ export default function Products() {
   const [page, setPage] = useState(1);
   let countProd;
   const limit = 10;
-  const PORT = "http://localhost:3001";
+  const PORT = "https://vission.herokuapp.com";
   async function getProductsInDb() {
     const response = await axios(`${PORT}/api/products?page=${page}`);
     setData(response.data);

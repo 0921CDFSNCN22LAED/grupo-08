@@ -9,7 +9,7 @@ export default function RowUsers(props) {
         <td>
           <div id="containerImgUser">
             <img
-              src={require(`../../../website/public/img/users/${props.avatar}`)}
+              src={`https://vission.herokuapp.com/img/users/${props.avatar}`}
               id="userAvatar"
             />
           </div>

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 export default function DetailUser() {
   const [data, setData] = useState(null);
   const { id } = useParams();
-  const PORT = "http://localhost:3001";
+  const PORT = "https://vission.herokuapp.com";
   async function getUserInDb() {
     const response = await fetch(`${PORT}/api/users/${id}`);
     const data = await response.json();
@@ -37,7 +37,7 @@ export default function DetailUser() {
             <img
               alt=""
               className="img-circle img-thumbnail isTooltip"
-              src={require(`../../../website/public/img/users/${user.avatar}`)}
+              src={`https://vission.herokuapp.com/img/users/${user.avatar}`}
               id="imgUserDetail"
             />
           </div>

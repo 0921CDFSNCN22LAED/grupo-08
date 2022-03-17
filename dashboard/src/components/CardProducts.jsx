@@ -7,7 +7,7 @@ export default function CardProducts(props) {
         <div className="ibox-content product-box">
           <div className="product-imitation">
             <img
-              src={require(`../../../website/public/img/products/${props.image}`)}
+              src={`https://vission.herokuapp.com/img/products/${props.image}`}
               alt=""
               style={{ width: "100%" }}
             />

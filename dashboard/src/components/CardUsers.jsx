@@ -11,7 +11,7 @@ export default function CardUsers(props) {
         />
         <div className="card-body text-center">
           <img
-            src={require(`../../../website/public/img/users/${props.avatar}`)}
+            src={`https://vission.herokuapp.com/img/users/${props.avatar}`}
             id="imageCenterUsers"
             alt="User"
             className="img-fluid img-thumbnail rounded-circle border-0 mb-3"

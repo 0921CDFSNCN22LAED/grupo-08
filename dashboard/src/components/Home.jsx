@@ -5,7 +5,7 @@ export default function Home() {
   const [product, setProduct] = useState(null);
   const [order, setOrder] = useState(null);
   const [user, setUser] = useState(null);
-  const PORT = "http://localhost:3001";
+  const PORT = "https://vission.herokuapp.com";
   async function getMetrics() {
     const data = await Promise.all([
       fetch(`${PORT}/api/metrics/product`),

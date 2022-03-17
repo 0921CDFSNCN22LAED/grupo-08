@@ -5,7 +5,7 @@ export default function DetailOrder(props) {
   const [data, setData] = useState(null);
 
   const { id } = useParams();
-  const PORT = "http://localhost:3001";
+  const PORT = "https://vission.herokuapp.com";
   async function getOrdersInDB() {
     const response = await fetch(`${PORT}/api/orders/${id}`);
     const data = await response.json();
@@ -63,7 +63,7 @@ export default function DetailOrder(props) {
             <img
               alt=""
               className="img-circle img-thumbnail isTooltip"
-              src={require(`../../../website/public/img/products/${data.data.product.image[0].filename}`)}
+              src={`https://vission.herokuapp.com/img/products/${data.data.product.image[0].filename}`}
               id="imgUserDetail"
             />
           </div>

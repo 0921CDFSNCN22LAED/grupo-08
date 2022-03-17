@@ -4,7 +4,7 @@ import ImagesDetailProduct from "./ImagesDetailProduct";
 export default function DetailProducts() {
   const [data, setData] = useState(null);
   const { id } = useParams();
-  const PORT = "http://localhost:3001";
+  const PORT = "https://vission.herokuapp.com";
   async function getProductInDb() {
     const response = await fetch(`${PORT}/api/products/${id}`);
     const data = await response.json();

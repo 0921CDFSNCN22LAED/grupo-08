@@ -3,7 +3,7 @@ export default function ImagesDetailProduct(props) {
     <div className="pro-img-list">
       <a href="#">
         <img
-          src={require(`../../../website/public/img/products/${props.image}`)}
+          src={`https://vission.herokuapp.com/img/products/${props.image}`}
           alt=""
           style={{ width: "300px" }}
         />

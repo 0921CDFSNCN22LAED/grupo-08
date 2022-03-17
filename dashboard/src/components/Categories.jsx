@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import ButtonsPaginate from "./ButtonsPaginate";
 import RowCategory from "./RowCategory";
 
@@ -10,7 +9,7 @@ export default function Categories() {
 
   let countCategory;
   let countOrd = null;
-  const PORT = "http://localhost:3001";
+  const PORT = "https://vission.herokuapp.com";
 
   async function getCategoriesInDb() {
     const response = await fetch(
@@ -47,7 +46,7 @@ export default function Categories() {
         <table className="table table-dark table-striped">
           <thead>
             <tr>
-              <th scope="col">ID</th>
+              <th scope="col">Id</th>
               <th scope="col">Categoría</th>
               <th scope="col">Activa</th>
             </tr>
