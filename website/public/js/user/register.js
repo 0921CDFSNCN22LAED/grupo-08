@@ -49,6 +49,7 @@ window.addEventListener("load", function () {
       }
     }
   });
+  const userDb = await getUserInDb(email.value);
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -117,8 +118,7 @@ window.addEventListener("load", function () {
         errorEmail.innerText = "";
       }
       const validateEmail = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
-      console.log(email.value);
-      console.log(validateEmail.exec(email.value), "validation email");
+
       if (!validateEmail.exec(email.value)) {
         errors.email = "El email debe ser un email valido -Validaciones Front-";
       } else {
@@ -126,7 +126,6 @@ window.addEventListener("load", function () {
           delete errors.email;
           errorEmail.innerText = "";
         }
-        const userDb = await getUserInDb(email.value);
         console.log(userDb.meta.status, "status");
         if (!userDb.meta.status) {
           errors.email =
